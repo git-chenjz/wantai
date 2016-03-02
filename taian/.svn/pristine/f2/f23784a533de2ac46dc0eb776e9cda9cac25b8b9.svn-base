@@ -1,0 +1,35 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Scripts/ueditor/themes/default/css/ueditor.min.css" rel="stylesheet" />
+    <title></title>
+</head>
+<body>
+    <div class="form-group">
+        <label for="" class="col-sm-2 control-label">商品描述：</label>
+        <div class="col-sm-10">
+            <textarea id="des"></textarea>
+        </div>
+    </div>
+</body>
+</html>
+<script src="~/Scripts/jquery-2.1.1.min.js"></script>
+<script src="~/Scripts/ueditor/ueditor.config.js"></script>
+<script src="~/Scripts/ueditor/ueditor.all.min.js"></script>
+<script type="text/javascript">
+       var eidtor;
+       $(function () {
+           (function initRichTextEditor() {
+               eidtor = UE.getEditor('des');
+               eidtor.addListener('contentChange', function () {
+                   $('#contentError').hide();
+               });
+           })();
+       });
+</script>

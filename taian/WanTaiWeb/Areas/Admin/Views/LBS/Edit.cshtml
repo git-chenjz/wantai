@@ -1,0 +1,173 @@
+﻿@model LBS
+@{
+    ViewBag.Title = "LBS编辑";
+    var types = ViewBag.types as IEnumerable<VaccineType>;
+}
+<div class="navbar-fixed-top row">
+    <div class="col-lg-12">
+        <ol class="breadcrumb">
+            <li>
+                <a href="@Url.Content("~/admin/home/main")">主页</a>
+            </li>
+            <li>
+                <a href="@Url.Action("Index")">LBS</a>
+            </li>
+            <li>
+                <strong>@(Model.Id == 0 ? "添加LBS" : "修改LBS")</strong>
+            </li>
+        </ol>
+    </div>
+</div>
+
+<div class="m-t-lg">
+    <div class="row">
+        <div class="col-lg-12">
+
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>@(Model.Id == 0 ? "添加LBS" : "修改LBS")</h5>
+                    <div class="ibox-tools">
+                        <a class="collapse-link" href="javascript:void();"><i class="fa fa-chevron-up"></i></a>
+                        <a href="javascript:void();" onclick="javascript:window.location.reload();"><i class="fa fa-refresh"></i></a>
+                    </div>
+                </div>
+                <div class="ibox-content">
+                    <form class="form-horizontal m-t" id="adform" method="post" action="@Url.Action("Save")">
+                        <input name="id" value="@Model.Id" type="hidden" />
+                        <input name="Province" value="@Model.Province" type="hidden" />
+                        <input name="City" value="@Model.City" type="hidden" />
+                        <input name="District" value="@Model.District" type="hidden" />
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">名称：</label>
+                            <div class="col-sm-8">
+                                <input class="form-control" name="Name" value="@Model.Name" type="text" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">项目：</label>
+                            <div class="col-sm-8">
+                                @foreach (var x in types)
+                                {
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" value="@x.Id" name="TypeID" @(Model.LBSVaccineTypes != null && Model.LBSVaccineTypes.Any(a => a.VaccineTypeId.Equals(x.Id)) ? "checked" : "")>@x.Name
+                                        </label>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">联系方式：</label>
+                            <div class="col-sm-8">
+                                <input class="form-control" name="Tel" value="@Model.Tel" type="text" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">地址：</label>
+                            <div class="col-sm-8">
+                                <input class="form-control" name="Address" value="@Model.Address" type="text" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">描述：</label>
+                            <div class="col-sm-8">
+                                <textarea class="form-control" name="Des" rows="5">@Model.Des</textarea>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">经度：</label>
+                            <div class="col-sm-8">
+                                <input class="form-control" name="Latitude" value="@Model.Latitude" type="text" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">维度：</label>
+                            <div class="col-sm-8">
+                                <input class="form-control" name="Longitude" value="@Model.Longitude" type="text" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-8 col-sm-offset-3">
+                                <button class="btn btn-primary" type="submit"><i class="fa fa-save"></i>&nbsp;保存</button>
+                                <button class="btn btn-primary" type="button" onclick="javascript:history.go(-1);"><i class="fa fa-circle-o-notch"></i>&nbsp;取消</button>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">点击地图选点：</label>
+                            <div class="col-sm-8" id="map" style="height:500px;">
+
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=813efbd6dd009952afaeaad72d8ac205"></script>
+<script>
+    $(function () {
+        var map = new BMap.Map("map");
+        var point = new BMap.Point(@Model.Longitude, @Model.Latitude);
+        map.centerAndZoom(point, 12);
+
+        var marker = new BMap.Marker(point);  // 创建标注
+        map.addOverlay(marker);               // 将标注添加到地图中
+        marker.setAnimation(BMAP_ANIMATION_BOUNCE); //跳动的动画	
+        
+        var geoc = new BMap.Geocoder();    
+
+        //单击获取点击的经纬度
+        map.addEventListener("click", function (e) {
+            $('input[name=Latitude]').val(e.point.lat);
+            $('input[name=Longitude]').val(e.point.lng);
+
+            map.clearOverlays();
+
+            point=new BMap.Point(e.point.lng,e.point.lat);
+
+            marker = new BMap.Marker(point);  // 创建标注
+            map.addOverlay(marker);               // 将标注添加到地图中
+            marker.setAnimation(BMAP_ANIMATION_BOUNCE); //跳动的动画
+
+            //写地址
+            geoc.getLocation(e.point, function(rs){
+                var addComp = rs.addressComponents;
+                $('input[name=Province]').val(addComp.province);
+                $('input[name=City]').val(addComp.city);
+                $('input[name=District]').val(addComp.district);
+            }); 
+        });
+        map.enableScrollWheelZoom();
+
+
+        $('#adform').bootstrapValidator({
+            message: '表单数据验证无效',
+            feedbackIcons: {
+                valid: 'glyphicon glyphicon-ok',
+                invalid: 'glyphicon glyphicon-remove',
+                validating: 'glyphicon glyphicon-refresh'
+            },
+            fields: {
+                ImgPath: {
+                    validators: {
+                        notEmpty: { message: '请上传图片' }
+                    }
+                }
+            },
+            submitHandler: function (validator, form, submitButton) {
+                $.post(form.attr('action'), form.serialize(), function (result) {
+                    top.bootbox.alert(result.msg, function () {
+                        if (result.success)
+                            location.href = '@Url.Action("index")';
+                    });
+                }, 'json');
+            }
+        });
+
+    })
+</script>
+<style>
+    .anchorBL{display:none;}
+</style>

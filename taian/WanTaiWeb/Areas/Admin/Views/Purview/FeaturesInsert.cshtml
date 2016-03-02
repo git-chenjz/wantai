@@ -1,0 +1,208 @@
+﻿@{
+    ViewBag.Title = "万泰后台管理-权限";
+}
+@section style{}
+<div class="navbar-fixed-top row">
+    <div class="col-lg-12">
+        <ol class="breadcrumb">
+            <li>
+                <a href="@Url.Content("~/admin/home/main")">主页</a>
+            </li>
+            <li>
+                <a href="@Url.Content("~/admin/purview")">功能管理</a>
+            </li>
+            <li>
+                <strong>新增</strong>
+            </li>
+        </ol>
+    </div>
+</div>
+<div class="animated fadeInRight m-t-lg">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>新增</h5>
+                    <div class="ibox-tools">
+                        <a class="collapse-link" href="javascript:void();"><i class="fa fa-chevron-up"></i></a>
+                        <a href="javascript:void();" onclick="javacript:window.location.reload();"><i class="fa fa-refresh"></i></a>
+                    </div>
+                </div>
+                <div class="ibox-content">
+                    <form class="form-horizontal m-t" method="post" id="features_frm" action="@Url.Content("~/admin/purview/featuressave")"
+                    data-bv-message="数据验证无效"
+                    data-bv-feedbackicons-valid="glyphicon glyphicon-ok"
+                    data-bv-feedbackicons-invalid="glyphicon glyphicon-remove"
+                    data-bv-feedbackicons-validating="glyphicon glyphicon-refresh">
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">名称：</label>
+                            <div class="col-sm-8">
+                                <input id="name" name="name" class="form-control" type="text"
+                                    data-bv-notempty="true"
+                                    data-bv-notempty-message="请填写功能名称"
+                                    data-bv-stringlength="true"
+                                    data-bv-stringlength-min="1"
+                                    data-bv-stringlength-max="25"
+                                    data-bv-stringlength-message="功能名称的长度在1-25个字" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">图标：</label>
+                            <div class="col-sm-8">
+                                <div class="input-group m-b">
+                                    <span class="input-group-addon"><i class=""></i></span>
+                                    <input id="icon" name="icon" class="form-control" type="text" placeholder="选择图标" data-toggle="modal" data-target="#fontawesomeModal"
+                                        readonly="true" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">上级：</label>
+                            <div class="col-sm-8">
+                                <select class="form-control m-b" name="pid">
+                                    <option value="0">选择上级</option>
+                                    @{var list = (IEnumerable<Features>)ViewBag.FristFeatures;
+                                      foreach (var item in list) {
+                                        <option value="@item.ID">@item.Name</option>
+                                      }
+                                    }
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">类型：</label>
+                            <div class="col-sm-8" id="type_choose">
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="type" value="0" />栏目
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="type" value="1" />功能
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="type" value="2" />外链
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="type_1" style="display: none;">
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">选择功能：</label>
+                                <div class="col-sm-8">
+                                    <select class="form-control m-b" name="method">
+                                        @{var actions = ViewBag.ReadAction as IList<MyFrameWork.Mvc.ActionPermission>;
+                                          foreach (var item in actions) {
+                                            <option value="@item.ActionUrl">@item.Description</option>
+                                          }
+                                        }
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="type_2" style="display: none;">
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">url：</label>
+                                <div class="col-sm-8">
+                                    <input id="url" name="url" class="form-control" type="text">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">排序：</label>
+                            <div class="col-sm-8">
+                                <input id="sort" name="sort" class="form-control" type="text" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">备注：</label>
+                            <div class="col-sm-8">
+                                <textarea id="remark" name="remark" class="form-control"></textarea>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-8 col-sm-offset-3">
+                                <button class="btn btn-primary" type="submit"><i class="fa fa-save"></i>&nbsp;保存</button>
+                                <button class="btn btn-primary" type="button" onclick="javacript:history.go(-1);"><i class="fa fa-circle-o-notch"></i>&nbsp;取消</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@Html.Partial("_Fontawesome")
+@section scripts{
+    <script type="text/javascript">
+        $(function () {
+            $('select[name=method]').change(function () {
+                var val = $(this).val().toLowerCase();
+                $('input[name=url]').val(val);
+                var text = $('select[name=method] option:selected').text();
+                $('input[name=name]').val(text);
+                $('textarea[name=remark]').val(text + '(' + val + ')');
+            });
+            $('#features_frm').bootstrapValidator({
+                message: '表单数据验证无效',
+                feedbackIcons: {
+                    valid: 'glyphicon glyphicon-ok',
+                    invalid: 'glyphicon glyphicon-remove',
+                    validating: 'glyphicon glyphicon-refresh'
+                },
+                fields: {
+                    name: {
+                        validators: {
+                            notEmpty: { message: '请填写功能名称' },
+                            stringLength: { max: 25, message: '功能名称的长度在1-25个字' }
+                        }
+                    },
+                    type: {
+                        validators: { notEmpty: { message: '请选择类型，必须1项' } }
+                    },
+                    sort: {
+                        validators: {
+                            notEmpty: { message: '请填写排序，只能是数字' },
+                            integer: { message: '排序只能是数字' }
+                        }
+                    },
+                    url: {
+                        validators: { notEmpty: { message: '请填写url地址，外接须加http://' } }
+                    }
+                },
+                submitHandler: function (validator, form, submitButton) {
+                    $.post(form.attr('action'), form.serialize(), function (result) {
+                        top.bootbox.alert(result.msg, function () { location.href = '@Url.Content("~/admin/purview")'; });
+                    }, 'json');
+                }
+            }).find('#type_choose .radio').each(function () {
+                var val = $(this).find('input[name=type]').val();
+                if (val == 0) {
+                    $(this).click(function () {
+                        $('#type_1').hide();
+                        $('#type_2').hide();
+                    });
+                } else if (val == 1) {
+                    $(this).click(function () {
+                        $('#type_1').show();
+                        $('#type_2').show();
+                        if (!$('#type_2').is(':visible')) {
+                            $('#features_frm').data('bootstrapValidator').disableSubmitButtons(false);
+                        }
+                    });
+                } else {
+                    $(this).click(function () {
+                        $('#type_1').hide();
+                        $('#type_2').show();
+                        if (!$('#type_2').is(':visible')) {
+                            $('#features_frm').data('bootstrapValidator').disableSubmitButtons(false);
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+}

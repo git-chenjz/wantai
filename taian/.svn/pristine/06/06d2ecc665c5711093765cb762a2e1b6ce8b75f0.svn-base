@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="initial-scale=0.5, maximum-scale=0.5, minimum-scale=0.5, user-scalable=no">
+	<title>关于我们</title>
+	<link rel="stylesheet" href="css/reset.css">
+	<script src="js/flexible.js" type="text/javascript"></script>
+</head>
+	<style>
+		.about-main {
+			width: 91%;
+			margin: 0.6rem auto 0;
+			padding-bottom: 3.75rem;
+		}
+		.about-main img {
+			display: block;
+			width: 100%;
+			height: 5.65rem;
+			margin-bottom: 0.7rem;
+		}
+		.about-main p{
+			float: left;
+			width: 100%;
+			color: #333;
+			font-size: 0.6rem;
+			line-height: 1rem;
+			text-align: left;
+		}
+	</style>
+<body>
+	<div class="about-main clearfix">
+		<img src="images/link14.png" alt="" title="">
+		<p>
+			&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp厦门万泰沧海生物技术有限公司,作为国内一家新成立的生物科技公司，专注于疫苗、诊断试剂和医学仪器的研发、生产和销售。<br><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp公司致力于先进的生物技术的研究，并以为人类预防和控制疾病提供创新疫苗和新型诊断产品为使命。<br><br>2012年&nbsp&nbsp&nbsp&nbsp戊肝疫苗获得在新加坡举行的第六届世界疫苗大会评出的“亚洲最佳技术创  新奖”；<br><br>2011年&nbsp&nbsp&nbsp&nbsp戊肝疫苗获得国家一类新药证书；<br><br>2011年&nbsp&nbsp中国人民共和国科学技术部授予重组戊型肝炎疫苗三期临床研究团队“十一五”国家科技计划执行优秀团队奖；<br><br>2011年&nbsp&nbsp参加第十三届中国国际高新技术成果交易会，获得中国国际高新技术成果交易会颁布的优秀产品奖证书；<br><br>2010年&nbsp&nbsp&nbsp&nbsp戊肝诊断相关研究成果获“国家技术发明二等奖”；<br><br>2010年&nbsp&nbsp&nbsp&nbsp戊肝疫苗III期临床试验结果发表于国际医学顶级刊物《Lancet》、 《Hepatology》，赢得广泛关注和正面评价；<br><br>2006年&nbsp&nbsp&nbsp&nbsp“重组戊肝疫苗”获批进入“国家火炬计划项目”。<br><br>2011年&nbsp&nbsp&nbsp&nbsp设立医学仪器部，主要从事便携式诊断设备的研制及产业化；<br>2010年&nbsp&nbsp&nbsp&nbsp诊断研发部正式成立，主要从事新型诊断试剂的开发和生物活性原料的产业化；  <br><br>2008年&nbsp&nbsp&nbsp&nbsp厦门养生堂生物技术有限公司正式并入北京万泰生物药业股份有限公司，并更名为厦门万泰沧海生物技术有限公司；<br><br>2005年&nbsp&nbsp&nbsp&nbsp养生堂有限公司在厦门独资成立厦门养生堂生物技术有限公司，主要从事基 因工程疫苗的产业化；<br><br>2001年&nbsp&nbsp养生堂收购北京万泰生物药业股份有限公司，标志着养生堂进入生物制药产业领域；<br><br>2000年&nbsp&nbsp&nbsp&nbsp养生堂有限公司与厦门大学，共同组建了“厦门大学养生堂生物药物联合实验室”；<br><br>1993年&nbsp&nbsp&nbsp&nbsp钟睒睒先生创立海南养生堂药业有限公司
+		</p>
+	</div>			
+</body>
+</html>

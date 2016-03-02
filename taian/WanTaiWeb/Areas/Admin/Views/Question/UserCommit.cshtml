@@ -1,0 +1,125 @@
+﻿@model  IEnumerable<QuestionUser>
+@{
+    var questions = ViewBag.questions as IEnumerable<Question>;
+    var question = ViewBag.question as Question;
+    var id = ViewBag.id;
+    var i = 1;
+}
+
+
+<div class="navbar-fixed-top row">
+    <div class="col-lg-12">
+        <ol class="breadcrumb">
+            <li>
+                <a href="@Url.Content("~/admin/home/main")">主页</a>
+            </li>
+            <li>
+                <strong>用户答卷</strong>
+            </li>
+        </ol>
+    </div>
+</div>
+
+<div class="animated m-t-lg">
+    <div class="row">
+        <div class="col-lg-12">
+
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>用户答卷</h5>
+                    <div class="ibox-tools">
+                        <a class="collapse-link" href="javascript:void();"><i class="fa fa-chevron-up"></i></a>
+                        <a href="javascript:void();" onclick="javascript:window.location.reload();"><i class="fa fa-refresh"></i></a>
+                    </div>
+                </div>
+                <div class="ibox-content">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <form class="form-horizontal">
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">选择问卷</label>
+
+                                    <div class="col-sm-10">
+                                        <select class="form-control m-b" name="meetingid" onchange="window.location = '@Url.Action("UserCommit", new {id="" })?id='+$(this).find(':selected').val();">
+                                            @foreach (var x in questions)
+                                            {
+                                                <option value="@x.ID" @(id.Equals(x.ID) ? "selected" : "")>@x.Title</option>
+                                            }
+                                        </select>
+
+                                    </div>
+                                </div>
+                            </form>
+                            <form class="form-horizontal">
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">图片</label>
+                                    <div class="col-sm-10">
+                                        <p class="form-control-static">
+                                            <img class="img-responsive img-rounded" src="@question.ImgPath" />
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">标题</label>
+                                    <div class="col-sm-10">
+                                        <p class="form-control-static">@question.Title</p>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">备注</label>
+                                    <div class="col-sm-10">
+                                        <p class="form-control-static">@question.Des</p>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">状态</label>
+                                    <div class="col-sm-10">
+                                        <p class="form-control-static">@question.Status.ToString()</p>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">创建时间</label>
+                                    <div class="col-sm-10">
+                                        <p class="form-control-static">@question.CreateTime.ToString("yyyy年MM月dd日 HH点mm分")</p>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-sm-8">
+                            <div class="table-responsive">
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th width="60">编号</th>
+                                            <th>姓名</th>
+                                            <th>电话</th>
+                                            <th width="160">管理</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var x in Model)
+                                        {
+                                            <tr>
+                                                <td>@(i++)</td>
+                                                <td>@x.Name</td>
+                                                <td>@x.Tel</td>
+                                                <td>
+                                                    <a class="btn btn-primary btn-sm" onclick="window.open('@Url.Action("Detail", new { uid = x.WechatUserID, qid = x.QuestionID })')"><i class="fa fa-search"></i> 查看答卷</a>
+                                                </td>
+                                            </tr>
+                                        }
+                                    </tbody>
+                                    <tfoot>
+                                        <tr>
+                                            <td colspan="4"></td>
+                                        </tr>
+                                    </tfoot>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

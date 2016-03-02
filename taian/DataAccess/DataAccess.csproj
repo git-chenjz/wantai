@@ -1,0 +1,163 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F531F22C-4CA4-401B-B129-0604941136CE}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DataAccess</RootNamespace>
+    <AssemblyName>DataAccess</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper, Version=4.1.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.4.1.0\lib\net45\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AutoMapperStartupTask.cs" />
+    <Compile Include="Context\MSSQLContext.cs" />
+    <Compile Include="Domain\AD.cs" />
+    <Compile Include="Domain\AdminDto.cs" />
+    <Compile Include="Domain\AdminInfo.cs" />
+    <Compile Include="Domain\CycleTable.cs" />
+    <Compile Include="Domain\InnovateFeed.cs" />
+    <Compile Include="Domain\LBS.cs" />
+    <Compile Include="Domain\Features.cs" />
+    <Compile Include="Domain\LBSVaccineType.cs" />
+    <Compile Include="Domain\Meeting.cs" />
+    <Compile Include="Domain\MeetingUser.cs" />
+    <Compile Include="Domain\MyProblem.cs" />
+    <Compile Include="Domain\Operate.cs" />
+    <Compile Include="Domain\Page.cs" />
+    <Compile Include="Domain\PurviewField.cs" />
+    <Compile Include="Domain\Question.cs" />
+    <Compile Include="Domain\QuestionItem.cs" />
+    <Compile Include="Domain\QuestionSelect.cs" />
+    <Compile Include="Domain\QuestionSelectUser.cs" />
+    <Compile Include="Domain\QuestionUser.cs" />
+    <Compile Include="Domain\Role.cs" />
+    <Compile Include="Domain\SiteSettings.cs" />
+    <Compile Include="Domain\UserIdentity.cs" />
+    <Compile Include="Domain\Users.cs" />
+    <Compile Include="Domain\UsersDto.cs" />
+    <Compile Include="Domain\VaccineType.cs" />
+    <Compile Include="Domain\Video.cs" />
+    <Compile Include="Domain\WechatConfig.cs" />
+    <Compile Include="Domain\WechatRedPack.cs" />
+    <Compile Include="Domain\WechatTemplate.cs" />
+    <Compile Include="Domain\WechatUser.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\IAdminRepository.cs" />
+    <Compile Include="Repositories\IADRepository.cs" />
+    <Compile Include="Repositories\ICycleTableRepository.cs" />
+    <Compile Include="Repositories\IFeaturesRepository.cs" />
+    <Compile Include="Repositories\IInnovateFeedRepository.cs" />
+    <Compile Include="Repositories\ILBSRepository.cs" />
+    <Compile Include="Repositories\ILBSVaccineTypeRepository.cs" />
+    <Compile Include="Repositories\IMeetingRepository.cs" />
+    <Compile Include="Repositories\IMeetingUserRepository.cs" />
+    <Compile Include="Repositories\Impl\AdminRepository.cs" />
+    <Compile Include="Repositories\Impl\ADRepository.cs" />
+    <Compile Include="Repositories\Impl\CycleTableRepository.cs" />
+    <Compile Include="Repositories\Impl\FeaturesRepository.cs" />
+    <Compile Include="Repositories\Impl\InnovateFeedRepository.cs" />
+    <Compile Include="Repositories\Impl\LBSRepository.cs" />
+    <Compile Include="Repositories\Impl\LBSVaccineTypeRepository.cs" />
+    <Compile Include="Repositories\Impl\MeetingRepository.cs" />
+    <Compile Include="Repositories\Impl\MeetingUserRepository.cs" />
+    <Compile Include="Repositories\Impl\OperateRepository.cs" />
+    <Compile Include="Repositories\Impl\PageRepository.cs" />
+    <Compile Include="Repositories\Impl\ProblemRepository.cs" />
+    <Compile Include="Repositories\Impl\PurviewFieldRepository.cs" />
+    <Compile Include="Repositories\Impl\QuestionRepository.cs" />
+    <Compile Include="Repositories\Impl\RoleRepository.cs" />
+    <Compile Include="Repositories\Impl\SiteSettingsRepository.cs" />
+    <Compile Include="Repositories\Impl\UsersRepository.cs" />
+    <Compile Include="Repositories\Impl\VaccineTypeRepository.cs" />
+    <Compile Include="Repositories\Impl\VideoRepository.cs" />
+    <Compile Include="Repositories\Impl\WechatConfigRepository.cs" />
+    <Compile Include="Repositories\Impl\WechatRedPackRepository.cs" />
+    <Compile Include="Repositories\Impl\WechatTemplateRepository.cs" />
+    <Compile Include="Repositories\Impl\WechatUserRepository.cs" />
+    <Compile Include="Repositories\IOperateRepository.cs" />
+    <Compile Include="Repositories\IPageRepository.cs" />
+    <Compile Include="Repositories\IProblemRepository.cs" />
+    <Compile Include="Repositories\IPurviewFieldRepository.cs" />
+    <Compile Include="Repositories\IQuestionRepository.cs" />
+    <Compile Include="Repositories\IRoleRepository.cs" />
+    <Compile Include="Repositories\ISiteSettingsRepository.cs" />
+    <Compile Include="Repositories\IUsersRepository.cs" />
+    <Compile Include="Repositories\IVaccineTypeRepository.cs" />
+    <Compile Include="Repositories\IVideoRepository.cs" />
+    <Compile Include="Repositories\IWechatConfigRepository.cs" />
+    <Compile Include="Repositories\IWechatRedPackRepository.cs" />
+    <Compile Include="Repositories\IWechatTemplateRepository.cs" />
+    <Compile Include="Repositories\IWechatUserRepository.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MyFrameWork\MyFrameWork.csproj">
+      <Project>{c32ebd53-ec41-4aa6-945a-9ff4c1ee82af}</Project>
+      <Name>MyFrameWork</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

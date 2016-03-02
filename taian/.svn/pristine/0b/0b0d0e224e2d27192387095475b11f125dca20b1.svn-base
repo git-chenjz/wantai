@@ -1,0 +1,197 @@
+@charset "utf-8";
+/* 潘博士回答 */
+.answer-header {
+	float: left;
+	width: 100%;
+	height: 1.5rem;
+	background-color: #f6931e;
+}
+.answer-doam {
+	float: left;
+	width: 94%;
+	height: 1rem;
+	margin: 0.25rem 0 0 3%;
+	background-color: #fff;
+	-webkit-border-radius: 0.25rem;
+	-moz-border-radius: 0.25rem;
+	border-radius: 0.25rem;
+}
+.answer-doam i {
+	float: left;
+	width: 6%;
+	height: 0.85rem;
+	margin: 0.07rem 0 0 1%;
+	background-image: url(../images/link18.png);
+	-webkit-background-size: 100% 100%;
+	background-size: 100% 100%;
+}
+.answer-ask {
+	float: left;
+	width: 88%;
+	height: 1rem;
+	background-color: #fff;
+	color: #4d4d4d;
+	font-size: 0.6rem;
+	padding-left: 3%;
+	line-height: 1rem;
+}
+.answer-top {
+	float: left;
+	width: 100%;
+	height: 2.05rem;
+	border-bottom: 0.25rem solid #efefef;
+}
+.answer-link {
+	float: left;
+	width: 96%;
+	height: 1.15rem;
+	margin: 0.5rem 0 0 4%;
+}
+.answer-link span {
+	overflow: hidden;
+	float: left;
+	width: 32.5%;
+	height: 1.15rem;
+	border-left: 2px solid #ddd;
+	color: #1d1a1a;
+	font-size: 0.7rem;
+	line-height: 1.15rem;
+	text-align: center;
+}
+.answer-link .answer-mor {
+	color: #f6931e;
+}
+.answer-link .em {
+	border-left: none;
+}
+.answer-content {
+	float: left;
+	width: 100%;	
+}
+.answer-list {
+	display: none;
+	float: left;
+	width: 100%;
+	padding-bottom: 2rem;
+}
+.an-list-main {
+	float: left;
+	width: 94%;
+	margin-left: 3%;
+}
+.an-list-tit {
+	float: left;
+	width: 100%;
+	height: 6.25rem;
+	border-bottom: 1px solid #d3d3d3;
+}
+.an-list-tit a h2 {
+	overflow: hidden;
+	float: left;
+	width: 100%;
+	height: 0.85rem;
+	color: #1d1a1a;
+	font-size: 0.7rem;
+	line-height: 0.85rem;
+	margin: 0.65rem 0 0.5rem 0;
+	white-space: nowrap; 
+	text-overflow: ellipsis;
+}
+.an-list-tit p {
+	overflow: hidden;
+	float: left;
+	width: 100%;
+	height: 1.72rem;
+	color: #807e7e;
+	font-size: 0.6rem;
+	line-height: 0.9rem;
+}
+.an-list-tit span,
+.an-list-tit a strong {
+	overflow: hidden;
+	float: left;
+	width: 50%;
+	height: 0.63rem;
+	margin-top: 1.4rem;
+	line-height: 0.63rem;
+	color: #f6931e;
+	font-size: 0.55rem;
+}
+.an-list-tit a strong {
+	text-align: right;
+}
+.answer-bing {
+	display: none;
+	float: left;
+	width: 100%:
+}
+.answer-content .content-link {
+	display: block;
+}
+
+.answer-bing-top {
+	float: left;
+	width: 94%;
+	height: 1.35rem;
+	margin: 0.5rem 0 0 3%;
+}
+.answer-bing-top span {
+	float: left;	
+	width: 12%;
+	height: 1.35rem;
+	color: #000;
+	font-size: 0.65rem;
+	line-height: 1.35rem;
+	text-align: left;
+}
+.an-bing-ask {
+	float: left;
+	width: 84%;
+	height: 1.32rem;
+	margin-left: 1%;
+	padding-left: 2%;
+	border: 1px solid #f6931e;
+	font-size: 0.6rem;
+	line-height: 1.35rem;
+	-webkit-border-radius: 0.13rem;
+	-moz-border-radius: 0.13rem;
+	border-radius: 0.13rem;
+}
+.ans-nav {
+	float: left;
+	width: 94%;
+	height: 1.75rem;
+	margin: 0.57rem 0 0 3%;
+	line-height: 1.75rem;
+	color: #000;
+	font-size: 0.65rem;
+}
+.answer-bing form textarea {
+	float: left;
+	width: 91%;
+	height: 7.75rem;
+	border: 1px solid #d3d3d3;
+	margin-left: 3%;
+	padding: 0.3rem 0 0 2%;
+	color: #000;
+	font-size: 0.55rem;
+	line-height: 1rem;
+	-webkit-border-radius: 0.13rem;
+	-moz-border-radius: 0.13rem;
+	border-radius: 0.13rem;
+}
+.ans-hostspq {
+	float: left;
+	width: 94%;
+	height: 1.3rem;
+	margin: 1.3rem 0 0 3%;
+	background-color: #fff;
+	border: 1px solid #f6931e;
+	color: #f6931e;
+	font-size: 0.75rem;
+	line-height: 1.25rem;
+	text-align: center;
+	-webkit-border-radius: 0.13rem;
+	-moz-border-radius: 0.13rem;
+	border-radius: 0.13rem;
+}

@@ -1,0 +1,18 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="http://weui.github.io/weui/weui.css" />
+    <script src="~/Scripts/jquery-2.1.1.min.js"></script>
+    <style>
+        :not(i) {
+            font-family: 'Microsoft YaHei';
+        }
+    </style>
+</head>
+<body ontouchstart>
+    @RenderBody()
+</body>
+</html>

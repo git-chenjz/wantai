@@ -1,0 +1,171 @@
+﻿@model IEnumerable<InnovateFeed>
+@{
+    ViewBag.Title = "创新疫苗";
+    var type = (InnovateFeedType)ViewBag.type;
+}
+
+@section style{
+    <link href="~/Content/css/reset.css" rel="stylesheet" />
+    <link href="~/Content/css/content.css" rel="stylesheet" />
+    <style>
+        html, body {
+            padding-top: 0.38rem;
+            background: #efefef;
+        }
+
+        .nav {
+            background: white;
+            margin-bottom: 0.38rem;
+        }
+
+            .nav li {
+                float: left;
+                width: 25%;
+                padding: 0.48rem 0;
+            }
+
+                .nav li span {
+                    overflow: hidden;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                    display: block;
+                    height: 1.05rem;
+                    border-right: 2px solid #dddddd;
+                    color: #303232;
+                    font-size: 0.52rem;
+                    text-align: center;
+                    line-height: 1.05rem;
+                }
+
+            .nav .active span {
+                color: #f6931e;
+            }
+
+            .nav li:nth-child(4) span {
+                border: 0;
+            }
+
+        .content li {
+            display: none;
+        }
+
+        .content .display {
+            display: block;
+        }
+
+        .content dl {
+            position: relative;
+            padding: 0.48rem 3%;
+            margin-bottom: 0.38rem;
+            background: white;
+        }
+
+            .content dl img {
+                display: block;
+                width: 4.76rem;
+                height: 4.76rem;
+            }
+
+            .content dl dt,
+            .content dl dd {
+                float: left;
+            }
+
+            .content dl dt {
+                margin-right: 0.55rem;
+            }
+
+            .content dl dd {
+                width: 8.9rem;
+            }
+
+                .content dl dd h2 {
+                    overflow: hidden;
+                    padding-top: 0.21rem;
+                    height: 3.24rem;
+                    color: #303232;
+                    font-size: 0.48rem;
+                    line-height: 0.81rem;
+                }
+
+                .content dl dd div {
+                    -webkit-box-sizing: border-box;
+                    -moz-box-sizing: border-box;
+                    box-sizing: border-box;
+                    border-top: 1px solid #d3d3d3;
+                    padding-top: 0.52rem;
+                }
+
+                    .content dl dd div span {
+                        font-size: 0.48rem;
+                        line-height: 0.48rem;
+                        height: 0.48rem;
+                    }
+
+                    .content dl dd div .time {
+                        float: left;
+                        color: #f6931e;
+                    }
+
+                    .content dl dd div .num {
+                        position: relative;
+                        float: right;
+                        padding-left: 0.93rem;
+                        color: #2e2d33;
+                    }
+
+                        .content dl dd div .num:before {
+                            position: absolute;
+                            bottom: 0;
+                            left: 0;
+                            width: 0.76rem;
+                            height: 0.4rem;
+                            content: "\200B";
+                            background: url(/Images/link11.png);
+                            background-size: 100% 100%;
+                        }
+
+        .content .link {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+}
+
+<!-- 疾病知识导航 循环li -->
+<ul class="nav clearfix">
+    @foreach (InnovateFeedType x in Enum.GetValues(typeof(InnovateFeedType)))
+    {
+        <li class="@(x == type ? "active" : "")" onclick="location = '@Url.Action("Innovate", new { type = (int)x })';"><span>@x.ToString()</span></li>
+    }
+</ul>
+
+<div id="VaccineList">
+    <ul class="content">
+        <li class="display">
+            @foreach (var item in Model)
+            {
+                <dl class="clearfix">
+                    <dt>
+                        <img src="@item.ImgPath" alt="" title="" class="img-responsive img-rounded">
+                    </dt>
+                    <dd>
+                        <h2>@item.Des</h2>
+                        <div class="clearfix">
+                            <span class="time">@item.CreateTime.ToString("yyyy-MM-dd")</span>
+                            <span class="num">@item.ClickNum</span>
+                        </div>
+                        <a href="@Url.Action("InnovateDetail", new { id=item.ID})" title="" class="link"></a>
+                    </dd>
+                </dl>
+            }
+        </li>
+    </ul>
+</div>
+
+@section scripts{
+    <script src="~/Content/js/flexible.js"></script>
+}

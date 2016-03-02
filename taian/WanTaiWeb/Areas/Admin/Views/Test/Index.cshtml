@@ -1,0 +1,11 @@
+﻿@*@model WechatRedPack
+@{
+    var ps = Model.GetType().GetProperties();
+}
+
+@foreach(var x in ps)
+{
+    <p>
+        <strong>@x.Name</strong> @x.GetValue(Model,null)
+    </p>
+}*@

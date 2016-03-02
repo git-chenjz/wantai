@@ -1,0 +1,13 @@
+﻿<div class="answer-bing content-link">
+    <form action="@Url.Action("SaveProblem")" method="post">
+        <div class="answer-bing-top">
+            <span>标题</span>
+            <input type="text" name="title" placeholder="请输入问题标题" class="an-bing-ask" id="problem-title">
+        </div>
+        <strong class="ans-nav">提问详情</strong>
+        <textarea name="des" id="textContent" cols="30" rows="3" placeholder="请输入问题详情"></textarea>
+        <a href="" title="">
+            <input type="submit" value="向潘博士提问" class="ans-hostspq" id="submit">
+        </a>
+    </form>
+</div>

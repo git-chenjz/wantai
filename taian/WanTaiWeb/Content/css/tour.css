@@ -1,0 +1,78 @@
+﻿.frm-l-w {
+    width: 120px;
+}
+
+.frm-txt-w {
+    width: 200px;
+    display: inline;
+}
+
+.frm-btn-bg {
+    background-color: #18a689;
+    border-color: #18a689;
+}
+
+.frm-i {
+    color: red;
+}
+
+.RecordHead {
+    margin-left: 40px;
+    margin-top: 10px;
+}
+
+.RecordList {
+    margin: 0 50px;
+}
+
+.RecordDetail {
+    display: none;
+}
+.lbl-lh {
+    line-height: 30px;
+}
+
+.lbl-left {
+    float: left;
+}
+
+.lbl-lh {
+    line-height: 30px;
+}
+.txt-w {
+    width: 150px;
+    margin-right: 5px;
+}
+
+.txt-h {
+    height: 30px;
+}
+
+.txt-inline {
+    display: inline;
+}
+.wrap {
+        position: relative;
+        width: 100px;
+        float: left;
+        margin-right: 2px;
+    }
+
+    .img-w {
+        width: 100px;
+        height: 30px;
+    }
+
+    .img-close {
+        position: absolute;
+        top: 0;
+        right: 0px;
+        width: 10px;
+        line-height: 10px;
+        cursor: pointer;
+    }
+
+        .img-close:hover {
+            border: 1px solid gray;
+            background-color: green;
+        }

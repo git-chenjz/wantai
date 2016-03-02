@@ -1,0 +1,194 @@
+﻿@{
+    ViewBag.Title = "主页";
+    var index = 0;
+    var dot = 0;
+    var video = (Video)ViewBag.Video;
+}
+
+@model IEnumerable<AD>
+
+@section style{
+    <link href="~/Content/css/reset.css" rel="stylesheet" />
+    <link href="~/Content/css/details.css" rel="stylesheet" />
+    <link href="~/Content/css/content.css" rel="stylesheet" />
+    <style>
+        .wt-main dl {
+            position: relative;
+        }
+
+            .wt-main dl .link {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+            }
+    </style>
+}
+
+<div class="wt-top">
+    <img src="" alt="" title="">
+</div>
+<div class="slide">
+    <ul class="slide-wrapper">
+        @foreach (var ad in Model)
+        {
+            if (index == 0)
+            {
+        <li class="show">
+            <a href="" title="">
+                <img src="@ad.ImgPath" alt="" title="">
+            </a>
+        </li>
+            }
+            else
+            {
+        <li>
+            <a href="" title="">
+                <img src="@ad.ImgPath" alt="" title="">
+            </a>
+        </li>
+            }
+            index++;
+        }
+    </ul>
+    <div class="slide-box">
+        <div class="slide-wrap">
+            <ul class="slide-nav">
+                @foreach (var ad in Model)
+                {
+                    if (dot == 0)
+                    {
+                <li class="current"></li>
+                    }
+                    else
+                    {
+                <li></li>
+                    }
+                }
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="wt-main">
+    <dl class="wt-content">
+        <dt>
+            <a href="" title="">
+                <img src="/images/link.png" alt="" title="">
+            </a>
+        </dt>
+        <dd>
+            <a href="" title="">创新疫苗</a>
+            <a href="@Url.Action("Innovate","Feed")" title="" class="link"></a>
+        </dd>
+    </dl>
+    <dl class="wt-content">
+        <dt>
+            <a href="" title="">
+                <img src="/images/link02.png" alt="" title="">
+            </a>
+        </dt>
+        <dd>
+            <a href="" title="">潘博士回答</a>
+            <a href="/web/problem/Index" title="" class="link"></a>
+        </dd>
+    </dl>
+    <dl class="wt-content">
+        <dt>
+            <a href="" title="">
+                <img src="/images/link03.png" alt="" title="">
+            </a>
+        </dt>
+        <dd>
+            <a href="" title="">有奖调研</a>
+            <a href="@Url.Action("Index","Question")" title="" class="link"></a>
+        </dd>
+    </dl>
+    <dl class="wt-content">
+        <dt>
+            <a href="@Url.Action("Index","Meeting")" title="">
+                <img src="/images/link04.png" alt="" title="">
+            </a>
+        </dt>
+        <dd>
+            <a href="@Url.Action("Index","Meeting")" title="">会议签到</a>
+            <a href="@Url.Action("Index","Meeting")" title="" class="link"></a>
+        </dd>
+    </dl>
+    <dl class="wt-content">
+        <dt>
+            <a href="" title="">
+                <img src="/images/link05.png" alt="" title="">
+            </a>
+        </dt>
+        <dd>
+            <a href="" title="">接种周期表</a>
+            <a href="/web/home/cycleTable" title="" class="link"></a>
+        </dd>
+    </dl>
+    <dl class="wt-content">
+        <dt>
+            <a href="@Url.Action("Index","LBS")" title="">
+                <img src="/images/link06.png" alt="" title="">
+            </a>
+        </dt>
+        <dd>
+            <a href="@Url.Action("Index","LBS")" title="">接种点分布</a>
+            <a href="@Url.Action("Index","LBS")" title="" class="link"></a>
+        </dd>
+    </dl>
+    <dl class="wt-content">
+        <dt>
+            <a href="" title="">
+                <img src="/images/link07.png" alt="" title="">
+            </a>
+        </dt>
+        <dd>
+            <a href="" title="">会员中心</a>
+            <a href="/web/account/index" title="" class="link"></a>
+        </dd>
+    </dl>
+    <dl class="wt-content">
+        <dt>
+            <a href="" title="">
+                <img src="/images/link08.png" alt="" title="">
+            </a>
+        </dt>
+        <dd>
+            <a href="" title="">关于我们</a>
+            <a href="/web/home/AboutUs" title="" class="link"></a>
+        </dd>
+    </dl>
+</div>
+<div class="wt-wrap">
+    <div class="wt-wrap-one">
+        <iframe src="@video.VideoPath" width="100%" height="100%" frameborder=0 allowfullscreen></iframe>
+    </div>
+    <div class="wt-wrap-two">
+        <a href="/web/home/video" title="">
+            <h2>宣传视频</h2>
+            <p>@video.Des</p>
+            <i></i>
+        </a>
+    </div>
+</div>
+<div class="bottom">
+    <span class="bottom-rac">地址：厦门市海沧区新园路130号</span>
+    <p class="bottom-text">
+        <span>电话：+86-592-6536555</span>
+        <span>传真：+86-592-6536567</span>
+    </p>
+</div>
+
+@section scripts{
+    <script src="~/Content/js/flexible.js"></script>
+    <script src="~/Content/js/slide.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $('.slide').ckSlide({
+                autoPlay: true
+            });
+        });
+    </script>
+}
+

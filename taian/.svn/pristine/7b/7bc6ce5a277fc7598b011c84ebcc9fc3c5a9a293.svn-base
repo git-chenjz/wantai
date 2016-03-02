@@ -1,0 +1,104 @@
+﻿@{
+    ViewBag.Title = "万泰后台管理-权限";
+}
+@model IEnumerable<Operate>
+<div class="navbar-fixed-top row">
+    <div class="col-lg-12">
+        <ol class="breadcrumb">
+            <li>
+                <a href="@Url.Content("~/admin/home/main")">主页</a>
+            </li>
+            <li>
+                <a href="@Url.Content("~/admin/purview")">功能</a>
+            </li>
+            <li>
+                <strong>功能操作</strong>
+            </li>
+        </ol>
+    </div>
+</div>
+<div class="animated fadeInRight m-t-lg">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>功能操作</h5>
+                    <div class="ibox-tools">
+                        <a class="collapse-link" href="javascript:void();"><i class="fa fa-chevron-up"></i></a>
+                        <a href="javascript:void();" onclick="javacript:window.location.reload();"><i class="fa fa-refresh"></i></a>
+                    </div>
+                </div>
+                <div class="ibox-content">
+                    <div class="row">
+                        <div class="col-sm-9 m-b-xs">
+                            <label>
+                                <input type="checkbox" class="i-checks checkAll" />
+                                <span>全选</span></label>
+                            <a href="@Url.Content("~/admin/purview/operateinsert/" + ViewBag.FeaturesID)" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i>&nbsp;新增</a>
+                            <a href="javascript:void(0);" class="btn btn-primary btn-sm" id="del_choose"><i class="fa fa-minus"></i>&nbsp;删除</a>
+                        </div>
+                        <div class="col-sm-3">
+                        </div>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>名称</th>
+                                    <th>链接</th>
+                                    <th>备注</th>
+                                    <th>操作</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model) {
+                                    <tr>
+                                        <td>
+                                            <input type="checkbox" class="i-checks itemCheck" name="id" value="@item.ID"></td>
+                                        <td>@item.Name</td>
+                                        <td>@item.Url</td>
+                                        <td>@item.Remark</td>
+                                        <td>
+                                            <a href="@Url.Content("~/admin/purview/operateupdate/" + item.ID)"><i class="fa fa-edit text-navy"></i>编辑</a>
+                                            <a href="@Url.Content("~/admin/purview/purviewfield/" + item.ID + "?type=1")"><i class="fa fa-th text-navy"></i>字段设置</a>
+                                            <a href="javascript:void(0);" data-url="@Url.Content("~/admin/purview/operatedelete/" + item.ID)" class="del"><i class="fa fa-close text-navy"></i>删除</a>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section scripts{
+    <script type="text/javascript">
+        $(function () {
+            $('#del_choose').click(function () {
+                var choose_objs = $(this).parents('.ibox-content').find('.itemCheck:checked');
+                if (choose_objs.length > 0) {
+                    top.bootbox.confirm("确认要删除记录吗?", function (result) {
+                        if (result) {
+                            var ids = new Array();
+                            choose_objs.each(function () { ids.push($(this).val()); });
+                            $.post('@Url.Content("~/admin/purview/operatedelete")', ids, function (del_result) {
+                                top.bootbox.alert(del_result.msg, function () { if (del_result.success) window.location.reload(); });
+                            });
+                        }
+                    });
+                } else
+                    top.bootbox.alert('请选择记录');
+            });
+            $('.del').click(function () {
+                var url = $(this).attr('data-url');
+                top.bootbox.confirm("确认要删除记录吗?", function (result) {
+                    if (result)
+                        $.post(url, function (del_result) { top.bootbox.alert(del_result.msg, function () { if (del_result.success) window.location.reload(); }); });
+                });
+            });
+        })
+    </script>
+}

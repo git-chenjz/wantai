@@ -1,0 +1,126 @@
+﻿@{
+    ViewBag.Title = "新增接种周期表";
+    IEnumerable<VaccineType> types = (IEnumerable<VaccineType>)ViewBag.Types;
+    var index = 0;
+}
+
+@section style{
+    <link href="~/Scripts/ueditor/themes/default/css/ueditor.min.css" rel="stylesheet" />
+}
+
+<div class="navbar-fixed-top row">
+    <div class="col-lg-12">
+        <ol class="breadcrumb">
+            <li>
+                <a href="@Url.Content("~/admin/home/main")">主页</a>
+            </li>
+            <li>
+                <a href="@Url.Content("~/admin/CycleTable/Index")">接种周期表</a>
+            </li>
+            <li>
+                <strong>新增</strong>
+            </li>
+        </ol>
+    </div>
+</div>
+
+<div class="animated fadeInRight m-t-lg">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>新增</h5>
+                    <div class="ibox-tools">
+                        <a class="collapse-link" href="javascript:void();"><i class="fa fa-chevron-up"></i></a>
+                        <a href="javascript:void();" onclick="javacript:window.location.reload();"><i class="fa fa-refresh"></i></a>
+                    </div>
+                </div>
+                <div class="ibox-content">
+                    <form class="form-horizontal m-t" method="post" id="CycleTable_frm" action="@Url.Content("~/admin/CycleTable/SaveCycleTable")">
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">类型：</label>
+                            <div class="col-sm-8">
+                                <select class="form-control" name="Type">
+                                    @foreach (var type in types)
+                                    {
+                                        <option value="@type.Id">@type.Name</option>
+                                    }
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">标题：</label>
+                            <div class="col-sm-8">
+                                <input name="Title" placeholder="标题" class="form-control" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">主办方：</label>
+                            <div class="col-sm-8">
+                                <input name="Sponsor" type="text" placeholder="主办方" class="form-control" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">是否显示：</label>
+                            <div class="col-sm-8">
+                                <input type="checkbox" name="IsShow" value="1" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">内容描述：</label>
+                            <div class="col-sm-8">
+                                <textarea name="Content" id="Content" placeholder="内容描述"></textarea>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-8 col-sm-offset-3">
+                                <button class="btn btn-primary" type="submit"><i class="fa fa-save"></i>&nbsp;保存</button>
+                                <button class="btn btn-primary" type="button" onclick="javacript:history.go(-1);"><i class="fa fa-circle-o-notch"></i>&nbsp;取消</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+    <script src="~/Scripts/ueditor/ueditor.config.js"></script>
+    <script src="~/Scripts/ueditor/ueditor.all.min.js"></script>
+    <script type="text/javascript">
+        var eidtor;
+        $(function () {
+            (function initRichTextEditor() {
+                eidtor = UE.getEditor('Content');
+                eidtor.addListener('contentChange', function () {
+                    $('#contentError').hide();
+                });
+            })();
+            $('#CycleTable_frm').bootstrapValidator({
+                message: '表单数据验证无效',
+                feedbackIcons: {
+                    valid: 'glyphicon glyphicon-ok',
+                    invalid: 'glyphicon glyphicon-remove',
+                    validating: 'glyphicon glyphicon-refresh'
+                },
+                fields: {
+                    Title: {
+                        validators: {
+                            notEmpty: { message: '请填写标题名称' },
+                            stringLength: { max: 25, message: '名称的长度在1-25个字' }
+                        }
+                    }
+                },
+                submitHandler: function (validator, form, submitButton) {
+                    $.post(form.attr('action'), form.serialize(), function (result) {
+                        top.bootbox.alert(result.msg, function () {
+                            if (result.success)
+                                location.href = '@Url.Content("~/admin/CycleTable/Index")';
+                        });
+                    }, 'json');
+                }
+            });
+        });
+    </script>
+}

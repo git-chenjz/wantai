@@ -1,0 +1,46 @@
+﻿@model WanTaiWeb.Areas.Web.Models.ProblemModel
+@{
+    ViewBag.Title = "潘博士问答";
+    var user = (Users)ViewBag.CurrentUser;
+}
+
+@section style{
+    <link href="~/Content/css/reset.css" rel="stylesheet" />
+    <link href="~/Content/css/answer.css" rel="stylesheet" />
+    <style>
+        .an-list-tit {
+            position: relative;
+        }
+
+            .an-list-tit .link {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+            }
+    </style>
+}
+
+<div class="answer-header">
+        <div class="answer-doam">
+            <i></i>
+            <input type="text" placeholder="搜索" class="answer-ask" id="searchText" onchange="location = '@Url.Action("Index", new { tab=Model.Tab })&key='+$(this).val()" value="@Model.Key">
+        </div>
+</div>
+<div class="answer-top">
+    <p class="answer-link" id="answer-link">
+        <span class="@(Model.Tab == 0 ? "answer-mor" : "")" onclick="location='@Url.Action("Index", new { tab = 0 })'">全部问题</span>
+        <span class="@(Model.Tab == 1 ? "answer-mor" : "")" onclick="location='@Url.Action("Index", new { tab = 1 })'">我的提问</span>
+        <span class="@(Model.Tab == 2 ? "answer-mor" : "")" onclick="location='@Url.Action("Index", new { tab = 2 })'">我要提问</span>
+    </p>
+</div>
+<div class="answer-content clearfix" id="answer-content">
+    <div id="ProblemList">
+        @Html.Partial("Problem"+Model.Tab)
+    </div>
+</div>
+
+@section scripts{
+    <script src="~/Content/js/flexible.js"></script>
+}

@@ -1,0 +1,57 @@
+﻿using DataService;
+using MyFrameWork.Wechat;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.Mvc;
+
+namespace WanTaiWeb.Areas.Admin.Controllers
+{
+    public class TestController : Controller
+    {
+        #region 字段
+        private IWechatService _wechatService;
+        private IWechatTemplateService _wechatTemplateService;
+        #endregion
+
+        #region 构造
+        public TestController(IWechatService wechatService, IWechatTemplateService wechatTemplateService)
+        {
+            _wechatService = wechatService;
+            _wechatTemplateService = wechatTemplateService;
+        }
+        #endregion
+        // GET: Admin/Test
+        public ActionResult Index(string id)
+        {
+            var openid = "o4yC_jqt4emrS-7phHl5gKBNCU28";
+
+            _wechatTemplateService.SendTemplate(openid, "IpesuJ1aAqMGrhJGrxYTcO7w803qev5d4dtgK6icBV8",
+                 new
+                 {
+                     first = new { value = "测试", color = "#173177" },
+                     keyword1 = new { value = "测试", color = "#173177" },
+                     keyword2 = new { value = "测试", color = "#173177" },
+                     keyword3 = new { value = "测试", color = "#173177" },
+                     remark = new { value = "测试", color = "#173177" }
+                 });
+
+            //var result = SessionService.ServiceSendTemplate(new WX_TemplateSend
+            //{
+            //    touser = openid,
+            //    template_id = "IpesuJ1aAqMGrhJGrxYTcO7w803qev5d4dtgK6icBV8",
+            //    data = new
+            //    {
+            //        first = new { value = "测试", color = "#173177" },
+            //        keyword1 = new { value = "测试", color = "#173177" },
+            //        keyword2 = new { value = "测试", color = "#173177" },
+            //        keyword3 = new { value = "测试", color = "#173177" },
+            //        remark = new { value = "测试", color = "#173177" }
+            //    }
+            //});
+
+            return View();
+        }
+    }
+}

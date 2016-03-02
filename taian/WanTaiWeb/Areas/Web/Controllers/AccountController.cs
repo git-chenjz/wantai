@@ -1,0 +1,477 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.Mvc;
+
+using DataAccess.Domain;
+using DataService;
+using MyFrameWork.Mvc;
+using MyFrameWork.Common;
+using System.ComponentModel;
+using System.Text;
+using MyFrameWork.Common.Email;
+using System.Text.RegularExpressions;
+using WanTaiWeb.Infrastructure;
+using MyFrameWork.Wechat;
+
+namespace WanTaiWeb.Areas.Web.Controllers
+{
+    public class AccountController : Controller
+    {
+        #region 字段
+
+        private IUsersService _usersService;
+        private IWechatService _wecharService;
+        private IMeetingService _meetingService;
+        private IWechatTemplateService _templateService;
+
+        #endregion
+
+        #region 构造
+
+        public AccountController(IUsersService usersService, IWechatService wecharService, IMeetingService meetingService, IWechatTemplateService templateService)
+        {
+            _usersService = usersService;
+            _wecharService = wecharService;
+            _meetingService = meetingService;
+            _templateService = templateService;
+        }
+
+        #endregion
+
+        #region 微信登录
+        /// <summary>
+        /// 进入微信登录
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult WechatLogin()
+        {
+            //如果已登录过，则返回首页
+            if (UserCache.IsLoginWechatUser)
+                return RedirectToAction("Index", "Home", new { area = "Web" });
+
+            //测试代码 直接登录某一账号
+            UserCache.LoginWechatUserByOpenID("o4yC_jqt4emrS-7phHl5gKBNCU28");
+            return RedirectToAction("Index", "Home", new { area = "Web" });
+            //测试结束
+
+            //前一步地址
+            var fromUrl = TempData["from"];
+            //跳转到微信第三方登录
+            return Redirect(WebService.GetCurrentUserCodeBySnsapi_base(string.Format("http://{0}/Web/Account/WechatLoginGetCode?from={2}"
+                , Request.Url.Port, fromUrl)));
+        }
+        /// <summary>
+        /// 微信返回接收数据
+        /// </summary>
+        /// <param name="code"></param>
+        /// <param name="from"></param>
+        /// <returns></returns>
+        public ActionResult WechatLoginGetCode(string code = "", string from = "")
+        {
+            UserCache.LoginWechatUserByCode(code);
+
+            if (string.IsNullOrWhiteSpace(from))
+            {
+                return RedirectToAction("Index", "Home", new { area = "Web" });
+            }
+            else
+            {
+                return Redirect(from);
+            }
+        }
+        #endregion
+
+        //#region 方法
+
+
+
+
+
+
+        //#region 会员中心
+        //[@Authorize(AuthorizeEnum.CheckLogin)]
+        //public ActionResult Index()
+        //{
+        //    return View();
+        //}
+        //#endregion
+
+        //#region 登录
+        //public ActionResult Login()
+        //{
+        //    return View();
+        //}
+        //[HttpPost]
+        //public ActionResult Login(Users user)
+        //{
+        //    if (CheckUser(user))
+        //    {
+        //        user.Password = Md5.Encode(user.Password);
+        //        user = _usersService.Login(user.LoginName, user.Password);
+        //        if (user != null)
+        //        {
+        //            string str = Models.UserCookieEncryptHelper.Encrypt(user.ID, "Web");
+        //            WebHelper.SetCookie(CookieKeysCollection.WANTAI_USER, str, DateTime.Now.AddDays(7.0));
+        //            return Redirect("/web/home/index");
+        //        }
+        //    }
+
+        //    ViewBag.Message = "用户名或密码错误！";
+        //    return View();
+        //}
+
+        //private bool CheckUser(Users user)
+        //{
+        //    bool result = false;
+        //    if (user == null)
+        //        return result;
+        //    if (user.Password.IsNullOrEmpty())
+        //        return result;
+        //    if (user.LoginName.IsNullOrEmpty())
+        //        return result;
+        //    if (!CheckEmail(user.LoginName))
+        //        return result;
+        //    return true;
+        //}
+        //#endregion
+
+        //#region 注册
+        //public ActionResult Register()
+        //{
+        //    return View();
+        //}
+        //[Description("用户注册")]
+        //[HttpPost]
+        //public ActionResult Register(Users user)
+        //{
+        //    if (CheckUser(user))
+        //    {
+        //        bool userIsExist = _usersService.CheckUser(user.LoginName);
+        //        if (userIsExist)
+        //        {
+        //            ViewBag.Message = "该用户已注册！";
+        //            return View();
+        //        }
+        //        string wechartUser = WebHelper.GetCookie(CookieKeysCollection.WX_USER);
+        //        if (!string.IsNullOrEmpty(wechartUser))
+        //        {
+        //            WechatUser wxUser = wechartUser.ToObject<WechatUser>();
+        //            user.Password = Md5.Encode(user.Password);
+        //            user.Openid = wxUser.ID;
+        //            user.RegTime = DateTime.Now;
+        //            _usersService.Insert(user);
+        //            WebHelper.DeleteCookie(CookieKeysCollection.WX_USER);
+        //        }
+        //        else
+        //        {
+        //            user.Password = Md5.Encode(user.Password);
+        //            user.RegTime = DateTime.Now;
+        //            _usersService.Insert(user);
+
+        //            string str = Models.UserCookieEncryptHelper.Encrypt(user.ID, "Web");
+        //            WebHelper.SetCookie(CookieKeysCollection.WANTAI_USER, str, DateTime.Now.AddDays(7.0));
+        //        }
+
+        //        return Redirect("/web/home/index");
+        //    }
+
+        //    ViewBag.Message = "用户注册错误！";
+        //    return View();
+
+        //}
+        //#endregion
+
+        //#region 注销
+        //[Description("注销")]
+        //public ActionResult Logout()
+        //{
+        //    WebHelper.DeleteCookie(CookieKeysCollection.WANTAI_USER);
+        //    return Redirect("/web/account/login");
+        //}
+        //#endregion
+
+        //#region 修改密码
+
+        //public ActionResult UpdatePassword()
+        //{
+        //    return View();
+        //}
+        //[HttpPost]
+        //public ActionResult UpdatePassword(string oldPwd, string newPwd)
+        //{
+        //    if (IsValidPwd(oldPwd, newPwd))
+        //    {
+        //        Users user = _usersService.GetUserByUid(base.CurrentUser.ID);
+        //        user.Password = Md5.Encode(newPwd);
+        //        _usersService.Update(user);
+        //        return Redirect("/web/Account/index");
+        //    }
+
+        //    ViewBag.Message = "输入原密码不正确！";
+        //    return View();
+        //}
+
+        //private bool IsValidPwd(string oldPwd, string newPwd)
+        //{
+        //    bool result = false;
+        //    if (oldPwd.IsNullOrEmpty())
+        //        return result;
+        //    if (newPwd.IsNullOrEmpty())
+        //        return result;
+        //    result = _usersService.UserIsExsit(base.CurrentUser.LoginName, Md5.Encode(oldPwd));
+        //    return result;
+        //}
+
+        //#endregion
+
+        //#region 忘记密码
+        //public ActionResult FindPassWord()
+        //{
+        //    return View();
+        //}
+        //[Description("找回密码")]
+        //[HttpPost]
+        //public JsonResult ForgetPwd(string email)
+        //{
+        //    if (!CheckEmail(email))
+        //        return Json(new RetrunJsonMsg(false, "输入邮箱地址错误！"));
+        //    bool emailIsExist = _usersService.CheckUser(email);
+        //    if (!emailIsExist)
+        //        return Json(new RetrunJsonMsg(false, "输入邮箱地址不存在！"));
+        //    string code = WebHelper.GetCode();
+        //    try
+        //    {
+        //        new SendMail().SendEmail("找回密码", new string[] { email }, code, false);
+        //        _usersService.UpdatePwd(email, code);
+        //        return Json(new RetrunJsonMsg(true, "密码已发送您的邮箱！"));
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        return Json(new RetrunJsonMsg(false, "密码发送失败！"));
+        //    }
+
+        //}
+
+        //private bool CheckEmail(string email)
+        //{
+        //    bool result = false;
+        //    if (email.IsNullOrEmpty())
+        //        return result;
+        //    result = Regex.IsMatch(email, @"\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*");
+        //    return result;
+        //}
+        //#endregion
+
+        //public ActionResult WxCode()
+        //{
+        //    string code = Request.QueryString["code"];
+        //    string state = Request.QueryString["state"];
+        //    string cookieValue = string.Empty;
+        //    if (!string.IsNullOrEmpty(code))
+        //    {
+        //        if (!string.IsNullOrEmpty(state))
+        //        {
+        //            WechatUser wxUser = _wecharService.GetWechatUserByCode(code);
+        //            WebHelper.SetCookie(CookieKeysCollection.WX_USER, SecureHelper.EncodeBase64(Encoding.UTF8, wxUser.ToJson()));
+        //            cookieValue = Models.UserCookieEncryptHelper.Encrypt(long.Parse(state), "Web");
+        //            WebHelper.SetCookie(CookieKeysCollection.WANTAI_USER, cookieValue, DateTime.Now.AddDays(7.0));
+        //            return View("BindWeChart");
+        //        }
+        //        //获取微信登录信息，写入cookie,如果微信未注册web站点，引导其注册，否则做自动登录操作。
+        //        WechatUser wechatUser = _wecharService.GetWechatUserByCode(code);
+        //        //判断微信是否已绑定用户，如果已绑定账户直接登录，否则调整注册页面。
+        //        Users user = _usersService.GetUsersByOpenId(wechatUser.ID);
+        //        if (user == null)
+        //        {
+        //            return View("Register");
+        //        }
+        //        //将用户id写入cookie
+        //        cookieValue = Models.UserCookieEncryptHelper.Encrypt(user.ID, "Web");
+        //        WebHelper.SetCookie(CookieKeysCollection.WANTAI_USER, cookieValue, DateTime.Now.AddDays(7.0));
+        //        return View("Index");
+
+        //    }
+        //    return View("Login");
+        //}
+
+        //#region 绑定邮箱
+        //public ActionResult BindEmail()
+        //{
+        //    ViewBag.isBindEmail = (base.CurrentUser.BindEmail == null ? false : true);
+        //    var user = _usersService.GetUserByUid(base.CurrentUser.ID);
+        //    return View(user);
+        //}
+        //[HttpPost]
+        //public JsonResult BindEmail(string email)
+        //{
+        //    if (!CheckEmail(email))
+        //        return Json(new RetrunJsonMsg(false, "邮箱绑定失败"));
+        //    try
+        //    {
+        //        _usersService.BindEmail(base.CurrentUser.ID, email);
+        //        return Json(new RetrunJsonMsg(true, "邮箱绑定成功"));
+        //    }
+        //    catch
+        //    {
+        //        return Json(new RetrunJsonMsg(false, "邮箱绑定失败"));
+        //    }
+        //}
+        //[HttpPost]
+        //public JsonResult UnBindEmail()
+        //{
+        //    try
+        //    {
+        //        _usersService.UnBindEmail(base.CurrentUser.ID);
+        //        return Json(new RetrunJsonMsg(true, "解除绑定成功"));
+        //    }
+        //    catch
+        //    {
+        //        return Json(new RetrunJsonMsg(false, "解除绑定失败"));
+        //    }
+        //}
+        //#endregion
+
+        //#region 绑定微信
+        //[@Authorize(AuthorizeEnum.CheckLogin)]
+        //public ActionResult BindWeChart()
+        //{
+        //    ViewBag.isBindWX = (base.CurrentUser.Openid == null ? false : true);
+        //    WechatUser wxUser = _wecharService.GetWechatUserById(base.CurrentUser.Openid);
+        //    return View(wxUser);
+        //}
+        //[HttpPost]
+        //public JsonResult BindWeChat()
+        //{
+        //    string data = WebHelper.GetCookie(CookieKeysCollection.WANTAI_USER);
+        //    if (!string.IsNullOrEmpty(data))
+        //    {
+        //        WechatUser wxUser = data.ToObject<WechatUser>();
+        //        WechatUser wechatUser = _wecharService.WebChatUserByOpenId(wxUser.OpenID);
+        //        Users user = _usersService.GetUsersByOpenId(wechatUser.ID);
+        //        if (user != null)
+        //        {
+        //            return Json(new RetrunJsonMsg(false, "该微信已绑定其他账户"));
+        //        }
+        //        _usersService.BindWxChat(base.CurrentUser.ID, wechatUser.ID);
+        //        WebHelper.DeleteCookie(CookieKeysCollection.WX_USER);
+        //        return Json(new RetrunJsonMsg(true, "微信绑定成功"));
+        //    }
+        //    return Json(new RetrunJsonMsg(false, "微信绑定失败"));
+        //}
+
+        //[HttpPost]
+        //public JsonResult UnBindWeChat()
+        //{
+        //    try
+        //    {
+        //        _usersService.UnBindWxChat(base.CurrentUser.ID);
+        //        return Json(new RetrunJsonMsg(true, "解除绑定成功"));
+        //    }
+        //    catch
+        //    {
+        //        return Json(new RetrunJsonMsg(false, "解除绑定失败"));
+        //    }
+        //}
+        //#endregion
+
+        //#region 我的资料
+
+        //public ActionResult MyProfile()
+        //{
+        //    var user = _usersService.GetUserByUid(base.CurrentUser.ID);
+        //    return View(user);
+        //}
+        //[HttpPost]
+        //public ActionResult MyProfile(Users user)
+        //{
+        //    Users model = _usersService.GetUserByUid(base.CurrentUser.ID);
+        //    if (IsValid(user))
+        //    {
+        //        model.UserName = user.UserName;
+        //        model.Email = user.Email;
+        //        model.Tel = user.Tel;
+        //        _usersService.Update(model);
+        //        return Redirect("/web/account/Index");
+        //    }
+        //    ViewBag.Message = "修改资料错误！";
+        //    return View(model);
+        //}
+
+        //private bool IsValid(Users user)
+        //{
+        //    var result = false;
+        //    if (user == null)
+        //        return result;
+        //    if (user.UserName.IsNullOrEmpty())
+        //        return result;
+        //    if (user.Tel.IsNullOrEmpty())
+        //        return result;
+        //    if (user.Email.IsNullOrEmpty())
+        //        return result;
+        //    if (!CheckEmail(user.Email))
+        //        return result;
+        //    if (!IsPhone(user.Tel))
+        //        return result;
+        //    return true;
+        //}
+
+        //private bool IsPhone(string input)
+        //{
+        //    string pattern = @"(^1[3,5,8]\d{9}$)";
+        //    Regex regex = new Regex(pattern);
+        //    return regex.IsMatch(input);
+        //}
+
+        //#endregion
+
+        //#region 参会信息
+
+        //public ActionResult Meeting()
+        //{
+        //    return View();
+        //}
+        ///// <summary>
+        ///// 会议列表
+        ///// </summary>
+        ///// <param name="type">【0：已报名会议，1：已参加会议】</param>
+        ///// <returns></returns>
+        //public PartialViewResult MeetingList(int type)
+        //{
+        //    var meetings = _meetingService.GetPagedByUid(base.CurrentUser.ID, type);
+        //    return PartialView(meetings);
+        //}
+        //[Description("会议内容详情页")]
+        //public ActionResult MeetingDetail(int id)
+        //{
+        //    var meeting = _meetingService.GetMeetingUserByMetId(id);
+        //    return View(meeting);
+        //}
+
+        //#endregion
+
+        //#region 消息提醒
+
+        //public ActionResult MessageTip()
+        //{
+        //    Users user = _usersService.GetUserByUid(base.CurrentUser.ID);
+        //    WechatUser wechatUser = _wecharService.GetWechatUserById(user.Openid);
+        //    var templates = _templateService.GetUserTemplates(wechatUser.OpenID);
+        //    return View(templates);
+        //}
+
+        //#endregion
+
+        //#region 接种周期表
+
+        //public ActionResult CycleTimeTable()
+        //{
+        //    return View();
+        //}
+
+        //#endregion
+
+        //#endregion
+    }
+}

@@ -1,0 +1,37 @@
+﻿@{
+    ViewBag.Title = "调查问卷";
+    Layout = "~/Areas/Web/Views/Shared/_LayoutWeUI.cshtml";
+    var question = ViewBag.question as Question;
+    var selects = ViewBag.selects as IEnumerable<QuestionSelectUser>;
+    var index = 1;
+    var i = 0;
+    var j = 0;
+}
+
+<div class="page slideIn cell">
+    <div class="hd" style="padding:10px 0;">
+        <h3 class="page_title" style="color: #225fba;text-align:center;">@question.Title</h3>
+    </div>
+    <div class="bd">
+            @foreach (var x in question.QuestionItems.OrderBy(a => a.Sort))
+            {
+                <div class="weui_cells_title"><h4>@(index++) 、 @(x.Title) (@(x.IsRadio ? "单选" : "多选"))</h4></div>
+                <div class="weui_cells weui_cells_checkbox">
+                    @foreach (var y in x.QuestionSelects.OrderBy(a => a.Sort))
+                    {
+                        <label class="weui_cell weui_check_label" for="s@(j)">
+                            <div class="weui_cell_hd">
+                                <input type="@(x.IsRadio ? "radio" : "checkbox")" class="weui_check" name="q_@i" id="s@(j)" disabled @(selects.Any(a=>a.QuestionSelectID==y.ID)?"checked":"")>
+                                <i class="weui_icon_checked"></i>
+                            </div>
+                            <div class="weui_cell_bd weui_cell_primary">
+                                <p>@y.Value</p>
+                            </div>
+                        </label>
+                        j++;
+                    }
+                </div>
+                i++;
+            }
+    </div>
+</div>

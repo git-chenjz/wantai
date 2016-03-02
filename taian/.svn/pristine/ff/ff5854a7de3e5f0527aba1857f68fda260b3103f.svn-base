@@ -1,0 +1,2936 @@
+2016-01-18 10:09:54,057 [9] INFO  SqlResult - 已于 2016/1/18 10:09:54 +08:00
+ 打开了连接
+2016-01-18 10:09:54,065 [9] INFO  SqlResult - 
+SELECT Count(*)
+FROM INFORMATION_SCHEMA.TABLES AS t
+WHERE t.TABLE_SCHEMA + '.' + t.TABLE_NAME IN ('dbo.eb_admin','dbo.eb_role','dbo.eb_operate','dbo.eb_purview_field','dbo.eb_user','dbo.eb_features')
+    OR t.TABLE_NAME = 'EdmMetadata'
+2016-01-18 10:09:54,065 [9] INFO  SqlResult - 
+
+2016-01-18 10:09:54,065 [9] INFO  SqlResult - -- 正在 2016/1/18 10:09:54 +08:00
+ 执行
+2016-01-18 10:09:54,083 [9] INFO  SqlResult - -- 已在 16 毫秒内完成，结果为: 5
+
+2016-01-18 10:09:54,083 [9] INFO  SqlResult - 
+
+2016-01-18 10:09:54,083 [9] INFO  SqlResult - 已于 2016/1/18 10:09:54 +08:00
+ 关闭了连接
+2016-01-18 10:09:54,271 [9] INFO  SqlResult - 已于 2016/1/18 10:09:54 +08:00
+ 打开了连接
+2016-01-18 10:09:54,880 [9] INFO  SqlResult - SELECT 
+    [GroupBy1].[A1] AS [C1]
+    FROM ( SELECT 
+        COUNT(1) AS [A1]
+        FROM [dbo].[__MigrationHistory] AS [Extent1]
+        WHERE [Extent1].[ContextKey] = @p__linq__0
+    )  AS [GroupBy1]
+2016-01-18 10:09:54,880 [9] INFO  SqlResult - 
+
+2016-01-18 10:09:54,881 [9] INFO  SqlResult - -- p__linq__0: 'DataAccess.Context.MySqlContext' (Type = String, Size = 4000)
+
+2016-01-18 10:09:54,881 [9] INFO  SqlResult - -- 正在 2016/1/18 10:09:54 +08:00
+ 执行
+2016-01-18 10:09:55,019 [9] INFO  SqlResult - -- 已在 137 毫秒内失败，错误为: 对象名 'dbo.__MigrationHistory' 无效。
+
+2016-01-18 10:09:55,019 [9] INFO  SqlResult - 
+
+2016-01-18 10:09:55,107 [9] INFO  SqlResult - 已于 2016/1/18 10:09:55 +08:00
+ 关闭了连接
+2016-01-18 10:09:55,164 [9] INFO  SqlResult - 已于 2016/1/18 10:09:55 +08:00
+ 打开了连接
+2016-01-18 10:09:55,166 [9] INFO  SqlResult - SELECT 
+    [GroupBy1].[A1] AS [C1]
+    FROM ( SELECT 
+        COUNT(1) AS [A1]
+        FROM [dbo].[__MigrationHistory] AS [Extent1]
+    )  AS [GroupBy1]
+2016-01-18 10:09:55,166 [9] INFO  SqlResult - 
+
+2016-01-18 10:09:55,166 [9] INFO  SqlResult - -- 正在 2016/1/18 10:09:55 +08:00
+ 执行
+2016-01-18 10:09:55,277 [9] INFO  SqlResult - -- 已在 110 毫秒内失败，错误为: 对象名 'dbo.__MigrationHistory' 无效。
+
+2016-01-18 10:09:55,277 [9] INFO  SqlResult - 
+
+2016-01-18 10:09:55,364 [9] INFO  SqlResult - 已于 2016/1/18 10:09:55 +08:00
+ 关闭了连接
+2016-01-18 10:09:55,738 [9] INFO  SqlResult - 已于 2016/1/18 10:09:55 +08:00
+ 打开了连接
+2016-01-18 10:09:55,841 [9] INFO  SqlResult - SELECT TOP (1) 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[UserName] AS [UserName], 
+    [Extent1].[Password] AS [Password], 
+    [Extent1].[role_id] AS [role_id], 
+    [Extent1].[Login] AS [Login], 
+    [Extent1].[reg_time] AS [reg_time], 
+    [Extent1].[login_time] AS [login_time], 
+    [Extent1].[update_time] AS [update_time], 
+    [Extent1].[login_ip] AS [login_ip], 
+    [Extent1].[Status] AS [Status], 
+    [Extent1].[Remark] AS [Remark]
+    FROM [dbo].[eb_admin] AS [Extent1]
+    WHERE (([Extent1].[UserName] = @p__linq__0) OR (([Extent1].[UserName] IS NULL) AND (@p__linq__0 IS NULL))) AND (([Extent1].[Password] = @p__linq__1) OR (([Extent1].[Password] IS NULL) AND (@p__linq__1 IS NULL)))
+2016-01-18 10:09:55,841 [9] INFO  SqlResult - 
+
+2016-01-18 10:09:55,841 [9] INFO  SqlResult - -- p__linq__0: 'admin' (Type = String, Size = 4000)
+
+2016-01-18 10:09:55,841 [9] INFO  SqlResult - -- p__linq__1: '21232f297a57a5a743894a0e4a801fc3' (Type = String, Size = 4000)
+
+2016-01-18 10:09:55,841 [9] INFO  SqlResult - -- 正在 2016/1/18 10:09:55 +08:00
+ 执行
+2016-01-18 10:09:55,853 [9] INFO  SqlResult - -- 已在 12 毫秒内完成，结果为: SqlDataReader
+
+2016-01-18 10:09:55,853 [9] INFO  SqlResult - 
+
+2016-01-18 10:09:55,900 [9] INFO  SqlResult - 已于 2016/1/18 10:09:55 +08:00
+ 关闭了连接
+2016-01-18 10:09:55,939 [9] INFO  SqlResult - 已于 2016/1/18 10:09:55 +08:00
+ 打开了连接
+2016-01-18 10:09:55,941 [9] INFO  SqlResult - 已于 2016/1/18 10:09:55 +08:00
+ 启动了事务
+2016-01-18 10:09:56,010 [9] INFO  SqlResult - UPDATE [dbo].[eb_admin]
+SET [UserName] = @0, [Password] = @1, [role_id] = @2, [Login] = @3, [reg_time] = @4, [login_time] = @5, [update_time] = @6, [login_ip] = @7, [Status] = @8, [Remark] = NULL
+WHERE ([ID] = @9)
+
+2016-01-18 10:09:56,011 [9] INFO  SqlResult - -- @0: 'admin' (Type = String, Size = 50)
+
+2016-01-18 10:09:56,011 [9] INFO  SqlResult - -- @1: '21232f297a57a5a743894a0e4a801fc3' (Type = String, Size = -1)
+
+2016-01-18 10:09:56,011 [9] INFO  SqlResult - -- @2: '1' (Type = Int32)
+
+2016-01-18 10:09:56,011 [9] INFO  SqlResult - -- @3: '113' (Type = Int32)
+
+2016-01-18 10:09:56,011 [9] INFO  SqlResult - -- @4: '2015/1/15 0:00:00' (Type = DateTime2)
+
+2016-01-18 10:09:56,011 [9] INFO  SqlResult - -- @5: '2016/1/18 10:09:55' (Type = DateTime2)
+
+2016-01-18 10:09:56,011 [9] INFO  SqlResult - -- @6: '2015/1/15 0:00:00' (Type = DateTime2)
+
+2016-01-18 10:09:56,011 [9] INFO  SqlResult - -- @7: '::1' (Type = String, Size = -1)
+
+2016-01-18 10:09:56,011 [9] INFO  SqlResult - -- @8: '0' (Type = Int32)
+
+2016-01-18 10:09:56,011 [9] INFO  SqlResult - -- @9: '1' (Type = Int32)
+
+2016-01-18 10:09:56,011 [9] INFO  SqlResult - -- 正在 2016/1/18 10:09:56 +08:00
+ 执行
+2016-01-18 10:09:56,030 [9] INFO  SqlResult - -- 已在 18 毫秒内完成，结果为: 1
+
+2016-01-18 10:09:56,030 [9] INFO  SqlResult - 
+
+2016-01-18 10:09:56,033 [9] INFO  SqlResult - 已于 2016/1/18 10:09:56 +08:00
+ 提交了事务
+2016-01-18 10:09:56,033 [9] INFO  SqlResult - 已于 2016/1/18 10:09:56 +08:00
+ 关闭了连接
+2016-01-18 10:09:56,177 [8] INFO  SqlResult - 已于 2016/1/18 10:09:56 +08:00
+ 打开了连接
+2016-01-18 10:09:56,184 [8] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[Pid] AS [Pid], 
+    [Extent1].[depth_pid] AS [depth_pid], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[Url] AS [Url], 
+    [Extent1].[Remark] AS [Remark], 
+    [Extent1].[Type] AS [Type], 
+    [Extent1].[Sort] AS [Sort], 
+    [Extent1].[Icon] AS [Icon]
+    FROM [dbo].[eb_features] AS [Extent1]
+2016-01-18 10:09:56,184 [8] INFO  SqlResult - 
+
+2016-01-18 10:09:56,184 [8] INFO  SqlResult - -- 正在 2016/1/18 10:09:56 +08:00
+ 执行
+2016-01-18 10:09:56,199 [8] INFO  SqlResult - -- 已在 15 毫秒内完成，结果为: SqlDataReader
+
+2016-01-18 10:09:56,199 [8] INFO  SqlResult - 
+
+2016-01-18 10:09:56,202 [8] INFO  SqlResult - 已于 2016/1/18 10:09:56 +08:00
+ 关闭了连接
+2016-01-18 10:10:11,885 [7] INFO  SqlResult - 已于 2016/1/18 10:10:11 +08:00
+ 打开了连接
+2016-01-18 10:10:11,885 [7] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[Pid] AS [Pid], 
+    [Extent1].[depth_pid] AS [depth_pid], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[Url] AS [Url], 
+    [Extent1].[Remark] AS [Remark], 
+    [Extent1].[Type] AS [Type], 
+    [Extent1].[Sort] AS [Sort], 
+    [Extent1].[Icon] AS [Icon]
+    FROM [dbo].[eb_features] AS [Extent1]
+2016-01-18 10:10:11,885 [7] INFO  SqlResult - 
+
+2016-01-18 10:10:11,885 [7] INFO  SqlResult - -- 正在 2016/1/18 10:10:11 +08:00
+ 执行
+2016-01-18 10:10:11,913 [7] INFO  SqlResult - -- 已在 28 毫秒内完成，结果为: SqlDataReader
+
+2016-01-18 10:10:11,913 [7] INFO  SqlResult - 
+
+2016-01-18 10:10:11,913 [7] INFO  SqlResult - 已于 2016/1/18 10:10:11 +08:00
+ 关闭了连接
+2016-01-18 10:10:49,398 [5] INFO  SqlResult - 已于 2016/1/18 10:10:49 +08:00
+ 打开了连接
+2016-01-18 10:10:49,399 [5] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[Pid] AS [Pid], 
+    [Extent1].[depth_pid] AS [depth_pid], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[Url] AS [Url], 
+    [Extent1].[Remark] AS [Remark], 
+    [Extent1].[Type] AS [Type], 
+    [Extent1].[Sort] AS [Sort], 
+    [Extent1].[Icon] AS [Icon]
+    FROM [dbo].[eb_features] AS [Extent1]
+2016-01-18 10:10:49,399 [5] INFO  SqlResult - 
+
+2016-01-18 10:10:49,399 [5] INFO  SqlResult - -- 正在 2016/1/18 10:10:49 +08:00
+ 执行
+2016-01-18 10:10:49,420 [5] INFO  SqlResult - -- 已在 21 毫秒内完成，结果为: SqlDataReader
+
+2016-01-18 10:10:49,420 [5] INFO  SqlResult - 
+
+2016-01-18 10:10:49,420 [5] INFO  SqlResult - 已于 2016/1/18 10:10:49 +08:00
+ 关闭了连接
+2016-01-18 10:11:24,614 [8] INFO  SqlResult - 已于 2016/1/18 10:11:24 +08:00
+ 打开了连接
+2016-01-18 10:11:24,614 [8] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[Pid] AS [Pid], 
+    [Extent1].[depth_pid] AS [depth_pid], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[Url] AS [Url], 
+    [Extent1].[Remark] AS [Remark], 
+    [Extent1].[Type] AS [Type], 
+    [Extent1].[Sort] AS [Sort], 
+    [Extent1].[Icon] AS [Icon]
+    FROM [dbo].[eb_features] AS [Extent1]
+2016-01-18 10:11:24,614 [8] INFO  SqlResult - 
+
+2016-01-18 10:11:24,614 [8] INFO  SqlResult - -- 正在 2016/1/18 10:11:24 +08:00
+ 执行
+2016-01-18 10:11:24,638 [8] INFO  SqlResult - -- 已在 23 毫秒内完成，结果为: SqlDataReader
+
+2016-01-18 10:11:24,638 [8] INFO  SqlResult - 
+
+2016-01-18 10:11:24,638 [8] INFO  SqlResult - 已于 2016/1/18 10:11:24 +08:00
+ 关闭了连接
+2016-01-18 10:11:31,489 [8] INFO  SqlResult - 已于 2016/1/18 10:11:31 +08:00
+ 打开了连接
+2016-01-18 10:11:31,491 [8] INFO  SqlResult - SELECT TOP (1) 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[UserName] AS [UserName], 
+    [Extent1].[Password] AS [Password], 
+    [Extent1].[role_id] AS [role_id], 
+    [Extent1].[Login] AS [Login], 
+    [Extent1].[reg_time] AS [reg_time], 
+    [Extent1].[login_time] AS [login_time], 
+    [Extent1].[update_time] AS [update_time], 
+    [Extent1].[login_ip] AS [login_ip], 
+    [Extent1].[Status] AS [Status], 
+    [Extent1].[Remark] AS [Remark]
+    FROM [dbo].[eb_admin] AS [Extent1]
+    WHERE (([Extent1].[UserName] = @p__linq__0) OR (([Extent1].[UserName] IS NULL) AND (@p__linq__0 IS NULL))) AND (([Extent1].[Password] = @p__linq__1) OR (([Extent1].[Password] IS NULL) AND (@p__linq__1 IS NULL)))
+2016-01-18 10:11:31,491 [8] INFO  SqlResult - 
+
+2016-01-18 10:11:31,491 [8] INFO  SqlResult - -- p__linq__0: 'admin' (Type = String, Size = 4000)
+
+2016-01-18 10:11:31,491 [8] INFO  SqlResult - -- p__linq__1: '21232f297a57a5a743894a0e4a801fc3' (Type = String, Size = 4000)
+
+2016-01-18 10:11:31,491 [8] INFO  SqlResult - -- 正在 2016/1/18 10:11:31 +08:00
+ 执行
+2016-01-18 10:11:31,512 [8] INFO  SqlResult - -- 已在 21 毫秒内完成，结果为: SqlDataReader
+
+2016-01-18 10:11:31,512 [8] INFO  SqlResult - 
+
+2016-01-18 10:11:31,513 [8] INFO  SqlResult - 已于 2016/1/18 10:11:31 +08:00
+ 关闭了连接
+2016-01-18 10:11:31,513 [8] INFO  SqlResult - 已于 2016/1/18 10:11:31 +08:00
+ 打开了连接
+2016-01-18 10:11:31,514 [8] INFO  SqlResult - 已于 2016/1/18 10:11:31 +08:00
+ 启动了事务
+2016-01-18 10:11:31,515 [8] INFO  SqlResult - UPDATE [dbo].[eb_admin]
+SET [UserName] = @0, [Password] = @1, [role_id] = @2, [Login] = @3, [reg_time] = @4, [login_time] = @5, [update_time] = @6, [login_ip] = @7, [Status] = @8, [Remark] = NULL
+WHERE ([ID] = @9)
+
+2016-01-18 10:11:31,515 [8] INFO  SqlResult - -- @0: 'admin' (Type = String, Size = 50)
+
+2016-01-18 10:11:31,515 [8] INFO  SqlResult - -- @1: '21232f297a57a5a743894a0e4a801fc3' (Type = String, Size = -1)
+
+2016-01-18 10:11:31,515 [8] INFO  SqlResult - -- @2: '1' (Type = Int32)
+
+2016-01-18 10:11:31,515 [8] INFO  SqlResult - -- @3: '114' (Type = Int32)
+
+2016-01-18 10:11:31,515 [8] INFO  SqlResult - -- @4: '2015/1/15 0:00:00' (Type = DateTime2)
+
+2016-01-18 10:11:31,515 [8] INFO  SqlResult - -- @5: '2016/1/18 10:11:31' (Type = DateTime2)
+
+2016-01-18 10:11:31,515 [8] INFO  SqlResult - -- @6: '2015/1/15 0:00:00' (Type = DateTime2)
+
+2016-01-18 10:11:31,515 [8] INFO  SqlResult - -- @7: '::1' (Type = String, Size = -1)
+
+2016-01-18 10:11:31,515 [8] INFO  SqlResult - -- @8: '0' (Type = Int32)
+
+2016-01-18 10:11:31,515 [8] INFO  SqlResult - -- @9: '1' (Type = Int32)
+
+2016-01-18 10:11:31,515 [8] INFO  SqlResult - -- 正在 2016/1/18 10:11:31 +08:00
+ 执行
+2016-01-18 10:11:31,533 [8] INFO  SqlResult - -- 已在 18 毫秒内完成，结果为: 1
+
+2016-01-18 10:11:31,533 [8] INFO  SqlResult - 
+
+2016-01-18 10:11:31,536 [8] INFO  SqlResult - 已于 2016/1/18 10:11:31 +08:00
+ 提交了事务
+2016-01-18 10:11:31,536 [8] INFO  SqlResult - 已于 2016/1/18 10:11:31 +08:00
+ 关闭了连接
+2016-01-18 10:11:31,548 [7] INFO  SqlResult - 已于 2016/1/18 10:11:31 +08:00
+ 打开了连接
+2016-01-18 10:11:31,548 [7] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[Pid] AS [Pid], 
+    [Extent1].[depth_pid] AS [depth_pid], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[Url] AS [Url], 
+    [Extent1].[Remark] AS [Remark], 
+    [Extent1].[Type] AS [Type], 
+    [Extent1].[Sort] AS [Sort], 
+    [Extent1].[Icon] AS [Icon]
+    FROM [dbo].[eb_features] AS [Extent1]
+2016-01-18 10:11:31,549 [7] INFO  SqlResult - 
+
+2016-01-18 10:11:31,549 [7] INFO  SqlResult - -- 正在 2016/1/18 10:11:31 +08:00
+ 执行
+2016-01-18 10:11:31,562 [7] INFO  SqlResult - -- 已在 13 毫秒内完成，结果为: SqlDataReader
+
+2016-01-18 10:11:31,562 [7] INFO  SqlResult - 
+
+2016-01-18 10:11:31,563 [7] INFO  SqlResult - 已于 2016/1/18 10:11:31 +08:00
+ 关闭了连接
+2016-01-18 10:11:38,773 [8] INFO  SqlResult - 已于 2016/1/18 10:11:38 +08:00
+ 打开了连接
+2016-01-18 10:11:38,774 [8] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[Pid] AS [Pid], 
+    [Extent1].[depth_pid] AS [depth_pid], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[Url] AS [Url], 
+    [Extent1].[Remark] AS [Remark], 
+    [Extent1].[Type] AS [Type], 
+    [Extent1].[Sort] AS [Sort], 
+    [Extent1].[Icon] AS [Icon]
+    FROM [dbo].[eb_features] AS [Extent1]
+2016-01-18 10:11:38,774 [8] INFO  SqlResult - 
+
+2016-01-18 10:11:38,774 [8] INFO  SqlResult - -- 正在 2016/1/18 10:11:38 +08:00
+ 执行
+2016-01-18 10:11:38,798 [8] INFO  SqlResult - -- 已在 23 毫秒内完成，结果为: SqlDataReader
+
+2016-01-18 10:11:38,798 [8] INFO  SqlResult - 
+
+2016-01-18 10:11:38,798 [8] INFO  SqlResult - 已于 2016/1/18 10:11:38 +08:00
+ 关闭了连接
+2016-01-18 10:12:27,571 [5] INFO  SqlResult - 已于 2016/1/18 10:12:27 +08:00
+ 打开了连接
+2016-01-18 10:12:27,579 [5] INFO  SqlResult - 
+SELECT Count(*)
+FROM INFORMATION_SCHEMA.TABLES AS t
+WHERE t.TABLE_SCHEMA + '.' + t.TABLE_NAME IN ('dbo.eb_admin','dbo.eb_role','dbo.eb_operate','dbo.eb_purview_field','dbo.eb_user','dbo.eb_features')
+    OR t.TABLE_NAME = 'EdmMetadata'
+2016-01-18 10:12:27,579 [5] INFO  SqlResult - 
+
+2016-01-18 10:12:27,580 [5] INFO  SqlResult - -- 正在 2016/1/18 10:12:27 +08:00
+ 执行
+2016-01-18 10:12:27,594 [5] INFO  SqlResult - -- 已在 13 毫秒内完成，结果为: 5
+
+2016-01-18 10:12:27,594 [5] INFO  SqlResult - 
+
+2016-01-18 10:12:27,594 [5] INFO  SqlResult - 已于 2016/1/18 10:12:27 +08:00
+ 关闭了连接
+2016-01-18 10:12:27,594 [7] INFO  SqlResult - 已于 2016/1/18 10:12:27 +08:00
+ 打开了连接
+2016-01-18 10:12:28,084 [5] INFO  SqlResult - SELECT 
+    [GroupBy1].[A1] AS [C1]
+    FROM ( SELECT 
+        COUNT(1) AS [A1]
+        FROM [dbo].[__MigrationHistory] AS [Extent1]
+        WHERE [Extent1].[ContextKey] = @p__linq__0
+    )  AS [GroupBy1]
+2016-01-18 10:12:28,084 [5] INFO  SqlResult - 
+
+2016-01-18 10:12:28,084 [5] INFO  SqlResult - -- p__linq__0: 'DataAccess.Context.MySqlContext' (Type = String, Size = 4000)
+
+2016-01-18 10:12:28,084 [5] INFO  SqlResult - -- 正在 2016/1/18 10:12:28 +08:00
+ 执行
+2016-01-18 10:12:28,247 [5] INFO  SqlResult - -- 已在 162 毫秒内失败，错误为: 对象名 'dbo.__MigrationHistory' 无效。
+
+2016-01-18 10:12:28,247 [5] INFO  SqlResult - 
+
+2016-01-18 10:12:28,298 [7] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[Pid] AS [Pid], 
+    [Extent1].[depth_pid] AS [depth_pid], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[Url] AS [Url], 
+    [Extent1].[Remark] AS [Remark], 
+    [Extent1].[Type] AS [Type], 
+    [Extent1].[Sort] AS [Sort], 
+    [Extent1].[Icon] AS [Icon]
+    FROM [dbo].[eb_features] AS [Extent1]
+2016-01-18 10:12:28,298 [7] INFO  SqlResult - 
+
+2016-01-18 10:12:28,298 [7] INFO  SqlResult - -- 正在 2016/1/18 10:12:28 +08:00
+ 执行
+2016-01-18 10:12:28,377 [7] INFO  SqlResult - -- 已在 78 毫秒内完成，结果为: SqlDataReader
+
+2016-01-18 10:12:28,377 [7] INFO  SqlResult - 
+
+2016-01-18 10:12:28,500 [5] INFO  SqlResult - SELECT 
+    [GroupBy1].[A1] AS [C1]
+    FROM ( SELECT 
+        COUNT(1) AS [A1]
+        FROM [dbo].[__MigrationHistory] AS [Extent1]
+    )  AS [GroupBy1]
+2016-01-18 10:12:28,500 [5] INFO  SqlResult - 
+
+2016-01-18 10:12:28,500 [5] INFO  SqlResult - -- 正在 2016/1/18 10:12:28 +08:00
+ 执行
+2016-01-18 10:12:28,628 [5] INFO  SqlResult - -- 已在 128 毫秒内失败，错误为: 对象名 'dbo.__MigrationHistory' 无效。
+
+2016-01-18 10:12:28,628 [5] INFO  SqlResult - 
+
+2016-01-18 10:12:28,814 [7] INFO  SqlResult - 已于 2016/1/18 10:12:28 +08:00
+ 关闭了连接
+2016-01-18 10:12:29,189 [5] INFO  SqlResult - 已于 2016/1/18 10:12:29 +08:00
+ 打开了连接
+2016-01-18 10:12:29,189 [5] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[Pid] AS [Pid], 
+    [Extent1].[depth_pid] AS [depth_pid], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[Url] AS [Url], 
+    [Extent1].[Remark] AS [Remark], 
+    [Extent1].[Type] AS [Type], 
+    [Extent1].[Sort] AS [Sort], 
+    [Extent1].[Icon] AS [Icon]
+    FROM [dbo].[eb_features] AS [Extent1]
+2016-01-18 10:12:29,189 [5] INFO  SqlResult - 
+
+2016-01-18 10:12:29,189 [5] INFO  SqlResult - -- 正在 2016/1/18 10:12:29 +08:00
+ 执行
+2016-01-18 10:12:29,220 [5] INFO  SqlResult - -- 已在 30 毫秒内完成，结果为: SqlDataReader
+
+2016-01-18 10:12:29,220 [5] INFO  SqlResult - 
+
+2016-01-18 10:12:29,220 [5] INFO  SqlResult - 已于 2016/1/18 10:12:29 +08:00
+ 关闭了连接
+2016-01-18 10:13:07,966 [5] INFO  SqlResult - 已于 2016/1/18 10:13:07 +08:00
+ 打开了连接
+2016-01-18 10:13:07,974 [5] INFO  SqlResult - 
+SELECT Count(*)
+FROM INFORMATION_SCHEMA.TABLES AS t
+WHERE t.TABLE_SCHEMA + '.' + t.TABLE_NAME IN ('dbo.eb_admin','dbo.eb_role','dbo.eb_operate','dbo.eb_purview_field','dbo.eb_user','dbo.eb_features')
+    OR t.TABLE_NAME = 'EdmMetadata'
+2016-01-18 10:13:07,974 [5] INFO  SqlResult - 
+
+2016-01-18 10:13:07,974 [5] INFO  SqlResult - -- 正在 2016/1/18 10:13:07 +08:00
+ 执行
+2016-01-18 10:13:07,988 [5] INFO  SqlResult - -- 已在 12 毫秒内完成，结果为: 5
+
+2016-01-18 10:13:07,988 [5] INFO  SqlResult - 
+
+2016-01-18 10:13:07,988 [5] INFO  SqlResult - 已于 2016/1/18 10:13:07 +08:00
+ 关闭了连接
+2016-01-18 10:13:07,989 [7] INFO  SqlResult - 已于 2016/1/18 10:13:07 +08:00
+ 打开了连接
+2016-01-18 10:13:08,478 [5] INFO  SqlResult - SELECT 
+    [GroupBy1].[A1] AS [C1]
+    FROM ( SELECT 
+        COUNT(1) AS [A1]
+        FROM [dbo].[__MigrationHistory] AS [Extent1]
+        WHERE [Extent1].[ContextKey] = @p__linq__0
+    )  AS [GroupBy1]
+2016-01-18 10:13:08,478 [5] INFO  SqlResult - 
+
+2016-01-18 10:13:08,479 [5] INFO  SqlResult - -- p__linq__0: 'DataAccess.Context.MySqlContext' (Type = String, Size = 4000)
+
+2016-01-18 10:13:08,479 [5] INFO  SqlResult - -- 正在 2016/1/18 10:13:08 +08:00
+ 执行
+2016-01-18 10:13:08,662 [5] INFO  SqlResult - -- 已在 182 毫秒内失败，错误为: 对象名 'dbo.__MigrationHistory' 无效。
+
+2016-01-18 10:13:08,662 [5] INFO  SqlResult - 
+
+2016-01-18 10:13:08,662 [7] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[Pid] AS [Pid], 
+    [Extent1].[depth_pid] AS [depth_pid], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[Url] AS [Url], 
+    [Extent1].[Remark] AS [Remark], 
+    [Extent1].[Type] AS [Type], 
+    [Extent1].[Sort] AS [Sort], 
+    [Extent1].[Icon] AS [Icon]
+    FROM [dbo].[eb_features] AS [Extent1]
+2016-01-18 10:13:08,678 [7] INFO  SqlResult - 
+
+2016-01-18 10:13:08,678 [7] INFO  SqlResult - -- 正在 2016/1/18 10:13:08 +08:00
+ 执行
+2016-01-18 10:13:08,707 [7] INFO  SqlResult - -- 已在 12 毫秒内完成，结果为: SqlDataReader
+
+2016-01-18 10:13:08,707 [7] INFO  SqlResult - 
+
+2016-01-18 10:13:08,854 [5] INFO  SqlResult - SELECT 
+    [GroupBy1].[A1] AS [C1]
+    FROM ( SELECT 
+        COUNT(1) AS [A1]
+        FROM [dbo].[__MigrationHistory] AS [Extent1]
+    )  AS [GroupBy1]
+2016-01-18 10:13:08,854 [5] INFO  SqlResult - 
+
+2016-01-18 10:13:08,854 [5] INFO  SqlResult - -- 正在 2016/1/18 10:13:08 +08:00
+ 执行
+2016-01-18 10:13:08,979 [5] INFO  SqlResult - -- 已在 125 毫秒内失败，错误为: 对象名 'dbo.__MigrationHistory' 无效。
+
+2016-01-18 10:13:08,979 [5] INFO  SqlResult - 
+
+2016-01-18 10:13:09,215 [7] INFO  SqlResult - 已于 2016/1/18 10:13:09 +08:00
+ 关闭了连接
+2016-01-18 10:13:09,469 [5] INFO  SqlResult - 已于 2016/1/18 10:13:09 +08:00
+ 打开了连接
+2016-01-18 10:13:09,470 [5] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[Pid] AS [Pid], 
+    [Extent1].[depth_pid] AS [depth_pid], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[Url] AS [Url], 
+    [Extent1].[Remark] AS [Remark], 
+    [Extent1].[Type] AS [Type], 
+    [Extent1].[Sort] AS [Sort], 
+    [Extent1].[Icon] AS [Icon]
+    FROM [dbo].[eb_features] AS [Extent1]
+2016-01-18 10:13:09,470 [5] INFO  SqlResult - 
+
+2016-01-18 10:13:09,470 [5] INFO  SqlResult - -- 正在 2016/1/18 10:13:09 +08:00
+ 执行
+2016-01-18 10:13:09,481 [5] INFO  SqlResult - -- 已在 10 毫秒内完成，结果为: SqlDataReader
+
+2016-01-18 10:13:09,481 [5] INFO  SqlResult - 
+
+2016-01-18 10:13:09,481 [5] INFO  SqlResult - 已于 2016/1/18 10:13:09 +08:00
+ 关闭了连接
+2016-01-18 10:15:52,159 [8] INFO  SqlResult - 已于 2016/1/18 10:15:52 +08:00
+ 打开了连接
+2016-01-18 10:15:52,160 [8] INFO  SqlResult - 
+SELECT Count(*)
+FROM INFORMATION_SCHEMA.TABLES AS t
+WHERE t.TABLE_SCHEMA + '.' + t.TABLE_NAME IN ('dbo.eb_admin','dbo.eb_role','dbo.eb_operate','dbo.eb_purview_field','dbo.eb_user','dbo.eb_features')
+    OR t.TABLE_NAME = 'EdmMetadata'
+2016-01-18 10:15:52,160 [8] INFO  SqlResult - 
+
+2016-01-18 10:15:52,160 [8] INFO  SqlResult - -- 正在 2016/1/18 10:15:52 +08:00
+ 执行
+2016-01-18 10:15:52,175 [8] INFO  SqlResult - -- 已在 14 毫秒内完成，结果为: 5
+
+2016-01-18 10:15:52,175 [8] INFO  SqlResult - 
+
+2016-01-18 10:15:52,175 [8] INFO  SqlResult - 已于 2016/1/18 10:15:52 +08:00
+ 关闭了连接
+2016-01-18 10:15:52,403 [8] INFO  SqlResult - 已于 2016/1/18 10:15:52 +08:00
+ 打开了连接
+2016-01-18 10:15:53,015 [8] INFO  SqlResult - SELECT 
+    [GroupBy1].[A1] AS [C1]
+    FROM ( SELECT 
+        COUNT(1) AS [A1]
+        FROM [dbo].[__MigrationHistory] AS [Extent1]
+        WHERE [Extent1].[ContextKey] = @p__linq__0
+    )  AS [GroupBy1]
+2016-01-18 10:15:53,016 [8] INFO  SqlResult - 
+
+2016-01-18 10:15:53,016 [8] INFO  SqlResult - -- p__linq__0: 'DataAccess.Context.MySqlContext' (Type = String, Size = 4000)
+
+2016-01-18 10:15:53,016 [8] INFO  SqlResult - -- 正在 2016/1/18 10:15:53 +08:00
+ 执行
+2016-01-18 10:15:53,153 [8] INFO  SqlResult - -- 已在 137 毫秒内失败，错误为: 对象名 'dbo.__MigrationHistory' 无效。
+
+2016-01-18 10:15:53,153 [8] INFO  SqlResult - 
+
+2016-01-18 10:15:53,243 [8] INFO  SqlResult - 已于 2016/1/18 10:15:53 +08:00
+ 关闭了连接
+2016-01-18 10:15:53,300 [8] INFO  SqlResult - 已于 2016/1/18 10:15:53 +08:00
+ 打开了连接
+2016-01-18 10:15:53,301 [8] INFO  SqlResult - SELECT 
+    [GroupBy1].[A1] AS [C1]
+    FROM ( SELECT 
+        COUNT(1) AS [A1]
+        FROM [dbo].[__MigrationHistory] AS [Extent1]
+    )  AS [GroupBy1]
+2016-01-18 10:15:53,301 [8] INFO  SqlResult - 
+
+2016-01-18 10:15:53,301 [8] INFO  SqlResult - -- 正在 2016/1/18 10:15:53 +08:00
+ 执行
+2016-01-18 10:15:53,415 [8] INFO  SqlResult - -- 已在 113 毫秒内失败，错误为: 对象名 'dbo.__MigrationHistory' 无效。
+
+2016-01-18 10:15:53,415 [8] INFO  SqlResult - 
+
+2016-01-18 10:15:53,503 [8] INFO  SqlResult - 已于 2016/1/18 10:15:53 +08:00
+ 关闭了连接
+2016-01-18 10:15:53,900 [8] INFO  SqlResult - 已于 2016/1/18 10:15:53 +08:00
+ 打开了连接
+2016-01-18 10:15:53,998 [8] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[Pid] AS [Pid], 
+    [Extent1].[depth_pid] AS [depth_pid], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[Url] AS [Url], 
+    [Extent1].[Remark] AS [Remark], 
+    [Extent1].[Type] AS [Type], 
+    [Extent1].[Sort] AS [Sort], 
+    [Extent1].[Icon] AS [Icon]
+    FROM [dbo].[eb_features] AS [Extent1]
+2016-01-18 10:15:53,998 [8] INFO  SqlResult - 
+
+2016-01-18 10:15:53,998 [8] INFO  SqlResult - -- 正在 2016/1/18 10:15:53 +08:00
+ 执行
+2016-01-18 10:15:54,010 [8] INFO  SqlResult - -- 已在 11 毫秒内完成，结果为: SqlDataReader
+
+2016-01-18 10:15:54,010 [8] INFO  SqlResult - 
+
+2016-01-18 10:15:54,041 [8] INFO  SqlResult - 已于 2016/1/18 10:15:54 +08:00
+ 关闭了连接
+2016-01-18 10:15:56,184 [8] INFO  SqlResult - 已于 2016/1/18 10:15:56 +08:00
+ 打开了连接
+2016-01-18 10:15:56,184 [8] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[Pid] AS [Pid], 
+    [Extent1].[depth_pid] AS [depth_pid], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[Url] AS [Url], 
+    [Extent1].[Remark] AS [Remark], 
+    [Extent1].[Type] AS [Type], 
+    [Extent1].[Sort] AS [Sort], 
+    [Extent1].[Icon] AS [Icon]
+    FROM [dbo].[eb_features] AS [Extent1]
+2016-01-18 10:15:56,184 [8] INFO  SqlResult - 
+
+2016-01-18 10:15:56,184 [8] INFO  SqlResult - -- 正在 2016/1/18 10:15:56 +08:00
+ 执行
+2016-01-18 10:15:56,218 [8] INFO  SqlResult - -- 已在 33 毫秒内完成，结果为: SqlDataReader
+
+2016-01-18 10:15:56,218 [8] INFO  SqlResult - 
+
+2016-01-18 10:15:56,218 [8] INFO  SqlResult - 已于 2016/1/18 10:15:56 +08:00
+ 关闭了连接
+2016-01-18 10:15:59,443 [10] INFO  SqlResult - 已于 2016/1/18 10:15:59 +08:00
+ 打开了连接
+2016-01-18 10:15:59,466 [10] INFO  SqlResult - SELECT TOP (2) 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[role_name] AS [role_name], 
+    [Extent1].[Actions] AS [Actions], 
+    [Extent1].[Remark] AS [Remark]
+    FROM [dbo].[eb_role] AS [Extent1]
+    WHERE [Extent1].[ID] = @p0
+2016-01-18 10:15:59,466 [10] INFO  SqlResult - 
+
+2016-01-18 10:15:59,466 [10] INFO  SqlResult - -- p0: '1' (Type = Int32)
+
+2016-01-18 10:15:59,466 [10] INFO  SqlResult - -- 正在 2016/1/18 10:15:59 +08:00
+ 执行
+2016-01-18 10:15:59,480 [10] INFO  SqlResult - -- 已在 13 毫秒内完成，结果为: SqlDataReader
+
+2016-01-18 10:15:59,480 [10] INFO  SqlResult - 
+
+2016-01-18 10:15:59,483 [10] INFO  SqlResult - 已于 2016/1/18 10:15:59 +08:00
+ 关闭了连接
+2016-01-18 10:15:59,497 [10] INFO  SqlResult - 已于 2016/1/18 10:15:59 +08:00
+ 打开了连接
+2016-01-18 10:15:59,497 [10] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[Pid] AS [Pid], 
+    [Extent1].[depth_pid] AS [depth_pid], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[Url] AS [Url], 
+    [Extent1].[Remark] AS [Remark], 
+    [Extent1].[Type] AS [Type], 
+    [Extent1].[Sort] AS [Sort], 
+    [Extent1].[Icon] AS [Icon]
+    FROM [dbo].[eb_features] AS [Extent1]
+2016-01-18 10:15:59,497 [10] INFO  SqlResult - 
+
+2016-01-18 10:15:59,497 [10] INFO  SqlResult - -- 正在 2016/1/18 10:15:59 +08:00
+ 执行
+2016-01-18 10:15:59,514 [10] INFO  SqlResult - -- 已在 16 毫秒内完成，结果为: SqlDataReader
+
+2016-01-18 10:15:59,514 [10] INFO  SqlResult - 
+
+2016-01-18 10:15:59,514 [10] INFO  SqlResult - 已于 2016/1/18 10:15:59 +08:00
+ 关闭了连接
+2016-01-18 10:16:03,115 [9] INFO  SqlResult - 已于 2016/1/18 10:16:03 +08:00
+ 打开了连接
+2016-01-18 10:16:03,182 [9] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[UserName] AS [UserName], 
+    [Extent1].[Password] AS [Password], 
+    [Extent1].[role_id] AS [role_id], 
+    [Extent1].[Login] AS [Login], 
+    [Extent1].[reg_time] AS [reg_time], 
+    [Extent1].[login_time] AS [login_time], 
+    [Extent1].[update_time] AS [update_time], 
+    [Extent1].[login_ip] AS [login_ip], 
+    [Extent1].[Status] AS [Status], 
+    [Extent1].[Remark] AS [Remark], 
+    [Extent2].[ID] AS [ID1], 
+    [Extent2].[role_name] AS [role_name], 
+    [Extent2].[Actions] AS [Actions], 
+    [Extent2].[Remark] AS [Remark1]
+    FROM  [dbo].[eb_admin] AS [Extent1]
+    LEFT OUTER JOIN [dbo].[eb_role] AS [Extent2] ON [Extent1].[role_id] = [Extent2].[ID]
+2016-01-18 10:16:03,182 [9] INFO  SqlResult - 
+
+2016-01-18 10:16:03,182 [9] INFO  SqlResult - -- 正在 2016/1/18 10:16:03 +08:00
+ 执行
+2016-01-18 10:16:03,199 [9] INFO  SqlResult - -- 已在 17 毫秒内完成，结果为: SqlDataReader
+
+2016-01-18 10:16:03,200 [9] INFO  SqlResult - 
+
+2016-01-18 10:16:03,234 [9] INFO  SqlResult - 已于 2016/1/18 10:16:03 +08:00
+ 关闭了连接
+2016-01-18 10:16:09,830 [7] INFO  SqlResult - 已于 2016/1/18 10:16:09 +08:00
+ 打开了连接
+2016-01-18 10:16:09,831 [7] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[UserName] AS [UserName], 
+    [Extent1].[Password] AS [Password], 
+    [Extent1].[role_id] AS [role_id], 
+    [Extent1].[Login] AS [Login], 
+    [Extent1].[reg_time] AS [reg_time], 
+    [Extent1].[login_time] AS [login_time], 
+    [Extent1].[update_time] AS [update_time], 
+    [Extent1].[login_ip] AS [login_ip], 
+    [Extent1].[Status] AS [Status], 
+    [Extent1].[Remark] AS [Remark], 
+    [Extent2].[ID] AS [ID1], 
+    [Extent2].[role_name] AS [role_name], 
+    [Extent2].[Actions] AS [Actions], 
+    [Extent2].[Remark] AS [Remark1]
+    FROM  [dbo].[eb_admin] AS [Extent1]
+    LEFT OUTER JOIN [dbo].[eb_role] AS [Extent2] ON [Extent1].[role_id] = [Extent2].[ID]
+2016-01-18 10:16:09,831 [7] INFO  SqlResult - 
+
+2016-01-18 10:16:09,831 [7] INFO  SqlResult - -- 正在 2016/1/18 10:16:09 +08:00
+ 执行
+2016-01-18 10:16:09,853 [7] INFO  SqlResult - -- 已在 21 毫秒内完成，结果为: SqlDataReader
+
+2016-01-18 10:16:09,853 [7] INFO  SqlResult - 
+
+2016-01-18 10:16:09,853 [7] INFO  SqlResult - 已于 2016/1/18 10:16:09 +08:00
+ 关闭了连接
+2016-01-18 10:16:11,257 [10] INFO  SqlResult - 已于 2016/1/18 10:16:11 +08:00
+ 打开了连接
+2016-01-18 10:16:11,259 [10] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[role_name] AS [role_name], 
+    [Extent1].[Actions] AS [Actions], 
+    [Extent1].[Remark] AS [Remark]
+    FROM [dbo].[eb_role] AS [Extent1]
+2016-01-18 10:16:11,259 [10] INFO  SqlResult - 
+
+2016-01-18 10:16:11,259 [10] INFO  SqlResult - -- 正在 2016/1/18 10:16:11 +08:00
+ 执行
+2016-01-18 10:16:11,284 [10] INFO  SqlResult - -- 已在 24 毫秒内完成，结果为: SqlDataReader
+
+2016-01-18 10:16:11,284 [10] INFO  SqlResult - 
+
+2016-01-18 10:16:11,284 [10] INFO  SqlResult - 已于 2016/1/18 10:16:11 +08:00
+ 关闭了连接
+2016-01-18 10:16:16,073 [5] INFO  SqlResult - 已于 2016/1/18 10:16:16 +08:00
+ 打开了连接
+2016-01-18 10:16:16,073 [5] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[UserName] AS [UserName], 
+    [Extent1].[Password] AS [Password], 
+    [Extent1].[role_id] AS [role_id], 
+    [Extent1].[Login] AS [Login], 
+    [Extent1].[reg_time] AS [reg_time], 
+    [Extent1].[login_time] AS [login_time], 
+    [Extent1].[update_time] AS [update_time], 
+    [Extent1].[login_ip] AS [login_ip], 
+    [Extent1].[Status] AS [Status], 
+    [Extent1].[Remark] AS [Remark], 
+    [Extent2].[ID] AS [ID1], 
+    [Extent2].[role_name] AS [role_name], 
+    [Extent2].[Actions] AS [Actions], 
+    [Extent2].[Remark] AS [Remark1]
+    FROM  [dbo].[eb_admin] AS [Extent1]
+    LEFT OUTER JOIN [dbo].[eb_role] AS [Extent2] ON [Extent1].[role_id] = [Extent2].[ID]
+2016-01-18 10:16:16,073 [5] INFO  SqlResult - 
+
+2016-01-18 10:16:16,073 [5] INFO  SqlResult - -- 正在 2016/1/18 10:16:16 +08:00
+ 执行
+2016-01-18 10:16:16,098 [5] INFO  SqlResult - -- 已在 24 毫秒内完成，结果为: SqlDataReader
+
+2016-01-18 10:16:16,098 [5] INFO  SqlResult - 
+
+2016-01-18 10:16:16,098 [5] INFO  SqlResult - 已于 2016/1/18 10:16:16 +08:00
+ 关闭了连接
+2016-01-18 10:16:40,460 [8] INFO  SqlResult - 已于 2016/1/18 10:16:40 +08:00
+ 打开了连接
+2016-01-18 10:16:40,461 [8] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[UserName] AS [UserName], 
+    [Extent1].[Password] AS [Password], 
+    [Extent1].[role_id] AS [role_id], 
+    [Extent1].[Login] AS [Login], 
+    [Extent1].[reg_time] AS [reg_time], 
+    [Extent1].[login_time] AS [login_time], 
+    [Extent1].[update_time] AS [update_time], 
+    [Extent1].[login_ip] AS [login_ip], 
+    [Extent1].[Status] AS [Status], 
+    [Extent1].[Remark] AS [Remark], 
+    [Extent2].[ID] AS [ID1], 
+    [Extent2].[role_name] AS [role_name], 
+    [Extent2].[Actions] AS [Actions], 
+    [Extent2].[Remark] AS [Remark1]
+    FROM  [dbo].[eb_admin] AS [Extent1]
+    LEFT OUTER JOIN [dbo].[eb_role] AS [Extent2] ON [Extent1].[role_id] = [Extent2].[ID]
+2016-01-18 10:16:40,461 [8] INFO  SqlResult - 
+
+2016-01-18 10:16:40,461 [8] INFO  SqlResult - -- 正在 2016/1/18 10:16:40 +08:00
+ 执行
+2016-01-18 10:16:40,480 [8] INFO  SqlResult - -- 已在 18 毫秒内完成，结果为: SqlDataReader
+
+2016-01-18 10:16:40,480 [8] INFO  SqlResult - 
+
+2016-01-18 10:16:40,480 [8] INFO  SqlResult - 已于 2016/1/18 10:16:40 +08:00
+ 关闭了连接
+2016-01-18 10:16:50,195 [10] INFO  SqlResult - 已于 2016/1/18 10:16:50 +08:00
+ 打开了连接
+2016-01-18 10:16:50,195 [10] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[role_name] AS [role_name], 
+    [Extent1].[Actions] AS [Actions], 
+    [Extent1].[Remark] AS [Remark]
+    FROM [dbo].[eb_role] AS [Extent1]
+2016-01-18 10:16:50,195 [10] INFO  SqlResult - 
+
+2016-01-18 10:16:50,195 [10] INFO  SqlResult - -- 正在 2016/1/18 10:16:50 +08:00
+ 执行
+2016-01-18 10:16:50,239 [10] INFO  SqlResult - -- 已在 43 毫秒内完成，结果为: SqlDataReader
+
+2016-01-18 10:16:50,239 [10] INFO  SqlResult - 
+
+2016-01-18 10:16:50,239 [10] INFO  SqlResult - 已于 2016/1/18 10:16:50 +08:00
+ 关闭了连接
+2016-01-18 10:16:51,383 [5] INFO  SqlResult - 已于 2016/1/18 10:16:51 +08:00
+ 打开了连接
+2016-01-18 10:16:51,383 [5] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[Pid] AS [Pid], 
+    [Extent1].[depth_pid] AS [depth_pid], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[Url] AS [Url], 
+    [Extent1].[Remark] AS [Remark], 
+    [Extent1].[Type] AS [Type], 
+    [Extent1].[Sort] AS [Sort], 
+    [Extent1].[Icon] AS [Icon]
+    FROM [dbo].[eb_features] AS [Extent1]
+2016-01-18 10:16:51,383 [5] INFO  SqlResult - 
+
+2016-01-18 10:16:51,383 [5] INFO  SqlResult - -- 正在 2016/1/18 10:16:51 +08:00
+ 执行
+2016-01-18 10:16:51,402 [5] INFO  SqlResult - -- 已在 18 毫秒内完成，结果为: SqlDataReader
+
+2016-01-18 10:16:51,402 [5] INFO  SqlResult - 
+
+2016-01-18 10:16:51,402 [5] INFO  SqlResult - 已于 2016/1/18 10:16:51 +08:00
+ 关闭了连接
+2016-01-18 10:16:54,932 [5] INFO  SqlResult - 已于 2016/1/18 10:16:54 +08:00
+ 打开了连接
+2016-01-18 10:16:54,932 [5] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[UserName] AS [UserName], 
+    [Extent1].[Password] AS [Password], 
+    [Extent1].[role_id] AS [role_id], 
+    [Extent1].[Login] AS [Login], 
+    [Extent1].[reg_time] AS [reg_time], 
+    [Extent1].[login_time] AS [login_time], 
+    [Extent1].[update_time] AS [update_time], 
+    [Extent1].[login_ip] AS [login_ip], 
+    [Extent1].[Status] AS [Status], 
+    [Extent1].[Remark] AS [Remark], 
+    [Extent2].[ID] AS [ID1], 
+    [Extent2].[role_name] AS [role_name], 
+    [Extent2].[Actions] AS [Actions], 
+    [Extent2].[Remark] AS [Remark1]
+    FROM  [dbo].[eb_admin] AS [Extent1]
+    LEFT OUTER JOIN [dbo].[eb_role] AS [Extent2] ON [Extent1].[role_id] = [Extent2].[ID]
+2016-01-18 10:16:54,932 [5] INFO  SqlResult - 
+
+2016-01-18 10:16:54,932 [5] INFO  SqlResult - -- 正在 2016/1/18 10:16:54 +08:00
+ 执行
+2016-01-18 10:16:54,965 [5] INFO  SqlResult - -- 已在 32 毫秒内完成，结果为: SqlDataReader
+
+2016-01-18 10:16:54,965 [5] INFO  SqlResult - 
+
+2016-01-18 10:16:54,965 [5] INFO  SqlResult - 已于 2016/1/18 10:16:54 +08:00
+ 关闭了连接
+2016-01-18 10:16:56,309 [5] INFO  SqlResult - 已于 2016/1/18 10:16:56 +08:00
+ 打开了连接
+2016-01-18 10:16:56,309 [5] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[role_name] AS [role_name], 
+    [Extent1].[Actions] AS [Actions], 
+    [Extent1].[Remark] AS [Remark]
+    FROM [dbo].[eb_role] AS [Extent1]
+2016-01-18 10:16:56,309 [5] INFO  SqlResult - 
+
+2016-01-18 10:16:56,309 [5] INFO  SqlResult - -- 正在 2016/1/18 10:16:56 +08:00
+ 执行
+2016-01-18 10:16:56,334 [5] INFO  SqlResult - -- 已在 25 毫秒内完成，结果为: SqlDataReader
+
+2016-01-18 10:16:56,334 [5] INFO  SqlResult - 
+
+2016-01-18 10:16:56,335 [5] INFO  SqlResult - 已于 2016/1/18 10:16:56 +08:00
+ 关闭了连接
+2016-01-18 10:17:00,798 [7] INFO  SqlResult - 已于 2016/1/18 10:17:00 +08:00
+ 打开了连接
+2016-01-18 10:17:00,798 [7] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[Pid] AS [Pid], 
+    [Extent1].[depth_pid] AS [depth_pid], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[Url] AS [Url], 
+    [Extent1].[Remark] AS [Remark], 
+    [Extent1].[Type] AS [Type], 
+    [Extent1].[Sort] AS [Sort], 
+    [Extent1].[Icon] AS [Icon]
+    FROM [dbo].[eb_features] AS [Extent1]
+2016-01-18 10:17:00,798 [7] INFO  SqlResult - 
+
+2016-01-18 10:17:00,798 [7] INFO  SqlResult - -- 正在 2016/1/18 10:17:00 +08:00
+ 执行
+2016-01-18 10:17:00,812 [7] INFO  SqlResult - -- 已在 14 毫秒内完成，结果为: SqlDataReader
+
+2016-01-18 10:17:00,812 [7] INFO  SqlResult - 
+
+2016-01-18 10:17:00,812 [7] INFO  SqlResult - 已于 2016/1/18 10:17:00 +08:00
+ 关闭了连接
+2016-01-18 10:17:00,868 [7] INFO  SqlResult - 已于 2016/1/18 10:17:00 +08:00
+ 打开了连接
+2016-01-18 10:17:00,875 [7] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[features_id] AS [features_id], 
+    [Extent1].[name] AS [name], 
+    [Extent1].[Url] AS [Url], 
+    [Extent1].[Remark] AS [Remark]
+    FROM [dbo].[eb_operate] AS [Extent1]
+2016-01-18 10:17:00,875 [7] INFO  SqlResult - 
+
+2016-01-18 10:17:00,875 [7] INFO  SqlResult - -- 正在 2016/1/18 10:17:00 +08:00
+ 执行
+2016-01-18 10:17:00,887 [7] INFO  SqlResult - -- 已在 12 毫秒内完成，结果为: SqlDataReader
+
+2016-01-18 10:17:00,887 [7] INFO  SqlResult - 
+
+2016-01-18 10:17:00,888 [7] INFO  SqlResult - 已于 2016/1/18 10:17:00 +08:00
+ 关闭了连接
+2016-01-18 10:17:00,941 [7] INFO  SqlResult - 已于 2016/1/18 10:17:00 +08:00
+ 打开了连接
+2016-01-18 10:17:00,946 [7] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[obj_id] AS [obj_id], 
+    [Extent1].[name] AS [name], 
+    [Extent1].[Code] AS [Code], 
+    [Extent1].[Type] AS [Type]
+    FROM [dbo].[eb_purview_field] AS [Extent1]
+2016-01-18 10:17:00,946 [7] INFO  SqlResult - 
+
+2016-01-18 10:17:00,946 [7] INFO  SqlResult - -- 正在 2016/1/18 10:17:00 +08:00
+ 执行
+2016-01-18 10:17:00,959 [7] INFO  SqlResult - -- 已在 12 毫秒内完成，结果为: SqlDataReader
+
+2016-01-18 10:17:00,959 [7] INFO  SqlResult - 
+
+2016-01-18 10:17:00,959 [7] INFO  SqlResult - 已于 2016/1/18 10:17:00 +08:00
+ 关闭了连接
+2016-01-18 10:17:09,743 [7] INFO  SqlResult - 已于 2016/1/18 10:17:09 +08:00
+ 打开了连接
+2016-01-18 10:17:09,743 [7] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[role_name] AS [role_name], 
+    [Extent1].[Actions] AS [Actions], 
+    [Extent1].[Remark] AS [Remark]
+    FROM [dbo].[eb_role] AS [Extent1]
+2016-01-18 10:17:09,743 [7] INFO  SqlResult - 
+
+2016-01-18 10:17:09,743 [7] INFO  SqlResult - -- 正在 2016/1/18 10:17:09 +08:00
+ 执行
+2016-01-18 10:17:09,765 [7] INFO  SqlResult - -- 已在 21 毫秒内完成，结果为: SqlDataReader
+
+2016-01-18 10:17:09,765 [7] INFO  SqlResult - 
+
+2016-01-18 10:17:09,765 [7] INFO  SqlResult - 已于 2016/1/18 10:17:09 +08:00
+ 关闭了连接
+2016-01-18 10:17:11,289 [7] INFO  SqlResult - 已于 2016/1/18 10:17:11 +08:00
+ 打开了连接
+2016-01-18 10:17:11,289 [7] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[UserName] AS [UserName], 
+    [Extent1].[Password] AS [Password], 
+    [Extent1].[role_id] AS [role_id], 
+    [Extent1].[Login] AS [Login], 
+    [Extent1].[reg_time] AS [reg_time], 
+    [Extent1].[login_time] AS [login_time], 
+    [Extent1].[update_time] AS [update_time], 
+    [Extent1].[login_ip] AS [login_ip], 
+    [Extent1].[Status] AS [Status], 
+    [Extent1].[Remark] AS [Remark], 
+    [Extent2].[ID] AS [ID1], 
+    [Extent2].[role_name] AS [role_name], 
+    [Extent2].[Actions] AS [Actions], 
+    [Extent2].[Remark] AS [Remark1]
+    FROM  [dbo].[eb_admin] AS [Extent1]
+    LEFT OUTER JOIN [dbo].[eb_role] AS [Extent2] ON [Extent1].[role_id] = [Extent2].[ID]
+2016-01-18 10:17:11,289 [7] INFO  SqlResult - 
+
+2016-01-18 10:17:11,289 [7] INFO  SqlResult - -- 正在 2016/1/18 10:17:11 +08:00
+ 执行
+2016-01-18 10:17:11,309 [7] INFO  SqlResult - -- 已在 20 毫秒内完成，结果为: SqlDataReader
+
+2016-01-18 10:17:11,309 [7] INFO  SqlResult - 
+
+2016-01-18 10:17:11,310 [7] INFO  SqlResult - 已于 2016/1/18 10:17:11 +08:00
+ 关闭了连接
+2016-01-18 10:17:14,234 [9] INFO  SqlResult - 已于 2016/1/18 10:17:14 +08:00
+ 打开了连接
+2016-01-18 10:17:14,234 [9] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[role_name] AS [role_name], 
+    [Extent1].[Actions] AS [Actions], 
+    [Extent1].[Remark] AS [Remark]
+    FROM [dbo].[eb_role] AS [Extent1]
+2016-01-18 10:17:14,235 [9] INFO  SqlResult - 
+
+2016-01-18 10:17:14,235 [9] INFO  SqlResult - -- 正在 2016/1/18 10:17:14 +08:00
+ 执行
+2016-01-18 10:17:14,260 [9] INFO  SqlResult - -- 已在 24 毫秒内完成，结果为: SqlDataReader
+
+2016-01-18 10:17:14,260 [9] INFO  SqlResult - 
+
+2016-01-18 10:17:14,260 [9] INFO  SqlResult - 已于 2016/1/18 10:17:14 +08:00
+ 关闭了连接
+2016-01-18 10:17:18,052 [8] INFO  SqlResult - 已于 2016/1/18 10:17:18 +08:00
+ 打开了连接
+2016-01-18 10:17:18,052 [8] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[role_name] AS [role_name], 
+    [Extent1].[Actions] AS [Actions], 
+    [Extent1].[Remark] AS [Remark]
+    FROM [dbo].[eb_role] AS [Extent1]
+2016-01-18 10:17:18,053 [8] INFO  SqlResult - 
+
+2016-01-18 10:17:18,053 [8] INFO  SqlResult - -- 正在 2016/1/18 10:17:18 +08:00
+ 执行
+2016-01-18 10:17:18,081 [8] INFO  SqlResult - -- 已在 28 毫秒内完成，结果为: SqlDataReader
+
+2016-01-18 10:17:18,081 [8] INFO  SqlResult - 
+
+2016-01-18 10:17:18,081 [8] INFO  SqlResult - 已于 2016/1/18 10:17:18 +08:00
+ 关闭了连接
+2016-01-18 10:17:20,285 [9] INFO  SqlResult - 已于 2016/1/18 10:17:20 +08:00
+ 打开了连接
+2016-01-18 10:17:20,285 [9] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[Pid] AS [Pid], 
+    [Extent1].[depth_pid] AS [depth_pid], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[Url] AS [Url], 
+    [Extent1].[Remark] AS [Remark], 
+    [Extent1].[Type] AS [Type], 
+    [Extent1].[Sort] AS [Sort], 
+    [Extent1].[Icon] AS [Icon]
+    FROM [dbo].[eb_features] AS [Extent1]
+2016-01-18 10:17:20,285 [9] INFO  SqlResult - 
+
+2016-01-18 10:17:20,285 [9] INFO  SqlResult - -- 正在 2016/1/18 10:17:20 +08:00
+ 执行
+2016-01-18 10:17:20,313 [9] INFO  SqlResult - -- 已在 28 毫秒内完成，结果为: SqlDataReader
+
+2016-01-18 10:17:20,314 [9] INFO  SqlResult - 
+
+2016-01-18 10:17:20,314 [9] INFO  SqlResult - 已于 2016/1/18 10:17:20 +08:00
+ 关闭了连接
+2016-01-18 10:17:20,314 [9] INFO  SqlResult - 已于 2016/1/18 10:17:20 +08:00
+ 打开了连接
+2016-01-18 10:17:20,315 [9] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[features_id] AS [features_id], 
+    [Extent1].[name] AS [name], 
+    [Extent1].[Url] AS [Url], 
+    [Extent1].[Remark] AS [Remark]
+    FROM [dbo].[eb_operate] AS [Extent1]
+2016-01-18 10:17:20,315 [9] INFO  SqlResult - 
+
+2016-01-18 10:17:20,315 [9] INFO  SqlResult - -- 正在 2016/1/18 10:17:20 +08:00
+ 执行
+2016-01-18 10:17:20,332 [9] INFO  SqlResult - -- 已在 17 毫秒内完成，结果为: SqlDataReader
+
+2016-01-18 10:17:20,332 [9] INFO  SqlResult - 
+
+2016-01-18 10:17:20,332 [9] INFO  SqlResult - 已于 2016/1/18 10:17:20 +08:00
+ 关闭了连接
+2016-01-18 10:17:20,332 [9] INFO  SqlResult - 已于 2016/1/18 10:17:20 +08:00
+ 打开了连接
+2016-01-18 10:17:20,332 [9] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[obj_id] AS [obj_id], 
+    [Extent1].[name] AS [name], 
+    [Extent1].[Code] AS [Code], 
+    [Extent1].[Type] AS [Type]
+    FROM [dbo].[eb_purview_field] AS [Extent1]
+2016-01-18 10:17:20,332 [9] INFO  SqlResult - 
+
+2016-01-18 10:17:20,332 [9] INFO  SqlResult - -- 正在 2016/1/18 10:17:20 +08:00
+ 执行
+2016-01-18 10:17:20,344 [9] INFO  SqlResult - -- 已在 11 毫秒内完成，结果为: SqlDataReader
+
+2016-01-18 10:17:20,344 [9] INFO  SqlResult - 
+
+2016-01-18 10:17:20,344 [9] INFO  SqlResult - 已于 2016/1/18 10:17:20 +08:00
+ 关闭了连接
+2016-01-18 10:17:29,226 [12] INFO  SqlResult - 已于 2016/1/18 10:17:29 +08:00
+ 打开了连接
+2016-01-18 10:17:29,226 [12] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[role_name] AS [role_name], 
+    [Extent1].[Actions] AS [Actions], 
+    [Extent1].[Remark] AS [Remark]
+    FROM [dbo].[eb_role] AS [Extent1]
+2016-01-18 10:17:29,226 [12] INFO  SqlResult - 
+
+2016-01-18 10:17:29,226 [12] INFO  SqlResult - -- 正在 2016/1/18 10:17:29 +08:00
+ 执行
+2016-01-18 10:17:29,256 [12] INFO  SqlResult - -- 已在 29 毫秒内完成，结果为: SqlDataReader
+
+2016-01-18 10:17:29,256 [12] INFO  SqlResult - 
+
+2016-01-18 10:17:29,256 [12] INFO  SqlResult - 已于 2016/1/18 10:17:29 +08:00
+ 关闭了连接
+2016-01-18 10:17:31,596 [8] INFO  SqlResult - 已于 2016/1/18 10:17:31 +08:00
+ 打开了连接
+2016-01-18 10:17:31,596 [8] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[Pid] AS [Pid], 
+    [Extent1].[depth_pid] AS [depth_pid], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[Url] AS [Url], 
+    [Extent1].[Remark] AS [Remark], 
+    [Extent1].[Type] AS [Type], 
+    [Extent1].[Sort] AS [Sort], 
+    [Extent1].[Icon] AS [Icon]
+    FROM [dbo].[eb_features] AS [Extent1]
+2016-01-18 10:17:31,597 [8] INFO  SqlResult - 
+
+2016-01-18 10:17:31,597 [8] INFO  SqlResult - -- 正在 2016/1/18 10:17:31 +08:00
+ 执行
+2016-01-18 10:17:31,624 [8] INFO  SqlResult - -- 已在 27 毫秒内完成，结果为: SqlDataReader
+
+2016-01-18 10:17:31,624 [8] INFO  SqlResult - 
+
+2016-01-18 10:17:31,624 [8] INFO  SqlResult - 已于 2016/1/18 10:17:31 +08:00
+ 关闭了连接
+2016-01-18 10:17:38,663 [12] INFO  SqlResult - 已于 2016/1/18 10:17:38 +08:00
+ 打开了连接
+2016-01-18 10:17:38,663 [12] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[Pid] AS [Pid], 
+    [Extent1].[depth_pid] AS [depth_pid], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[Url] AS [Url], 
+    [Extent1].[Remark] AS [Remark], 
+    [Extent1].[Type] AS [Type], 
+    [Extent1].[Sort] AS [Sort], 
+    [Extent1].[Icon] AS [Icon]
+    FROM [dbo].[eb_features] AS [Extent1]
+2016-01-18 10:17:38,663 [12] INFO  SqlResult - 
+
+2016-01-18 10:17:38,663 [12] INFO  SqlResult - -- 正在 2016/1/18 10:17:38 +08:00
+ 执行
+2016-01-18 10:17:38,686 [12] INFO  SqlResult - -- 已在 22 毫秒内完成，结果为: SqlDataReader
+
+2016-01-18 10:17:38,686 [12] INFO  SqlResult - 
+
+2016-01-18 10:17:38,686 [12] INFO  SqlResult - 已于 2016/1/18 10:17:38 +08:00
+ 关闭了连接
+2016-01-18 10:17:38,745 [12] INFO  SqlResult - 已于 2016/1/18 10:17:38 +08:00
+ 打开了连接
+2016-01-18 10:17:38,747 [12] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[Pid] AS [Pid], 
+    [Extent1].[depth_pid] AS [depth_pid], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[Url] AS [Url], 
+    [Extent1].[Remark] AS [Remark], 
+    [Extent1].[Type] AS [Type], 
+    [Extent1].[Sort] AS [Sort], 
+    [Extent1].[Icon] AS [Icon]
+    FROM [dbo].[eb_features] AS [Extent1]
+    WHERE 1 = [Extent1].[Type]
+2016-01-18 10:17:38,747 [12] INFO  SqlResult - 
+
+2016-01-18 10:17:38,747 [12] INFO  SqlResult - -- 正在 2016/1/18 10:17:38 +08:00
+ 执行
+2016-01-18 10:17:38,760 [12] INFO  SqlResult - -- 已在 13 毫秒内完成，结果为: SqlDataReader
+
+2016-01-18 10:17:38,760 [12] INFO  SqlResult - 
+
+2016-01-18 10:17:38,761 [12] INFO  SqlResult - 已于 2016/1/18 10:17:38 +08:00
+ 关闭了连接
+2016-01-18 10:17:38,761 [12] INFO  SqlResult - 已于 2016/1/18 10:17:38 +08:00
+ 打开了连接
+2016-01-18 10:17:38,761 [12] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[features_id] AS [features_id], 
+    [Extent1].[name] AS [name], 
+    [Extent1].[Url] AS [Url], 
+    [Extent1].[Remark] AS [Remark]
+    FROM [dbo].[eb_operate] AS [Extent1]
+2016-01-18 10:17:38,762 [12] INFO  SqlResult - 
+
+2016-01-18 10:17:38,762 [12] INFO  SqlResult - -- 正在 2016/1/18 10:17:38 +08:00
+ 执行
+2016-01-18 10:17:38,773 [12] INFO  SqlResult - -- 已在 11 毫秒内完成，结果为: SqlDataReader
+
+2016-01-18 10:17:38,773 [12] INFO  SqlResult - 
+
+2016-01-18 10:17:38,773 [12] INFO  SqlResult - 已于 2016/1/18 10:17:38 +08:00
+ 关闭了连接
+2016-01-18 10:17:45,323 [12] INFO  SqlResult - 已于 2016/1/18 10:17:45 +08:00
+ 打开了连接
+2016-01-18 10:17:45,323 [12] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[Pid] AS [Pid], 
+    [Extent1].[depth_pid] AS [depth_pid], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[Url] AS [Url], 
+    [Extent1].[Remark] AS [Remark], 
+    [Extent1].[Type] AS [Type], 
+    [Extent1].[Sort] AS [Sort], 
+    [Extent1].[Icon] AS [Icon]
+    FROM [dbo].[eb_features] AS [Extent1]
+2016-01-18 10:17:45,323 [12] INFO  SqlResult - 
+
+2016-01-18 10:17:45,323 [12] INFO  SqlResult - -- 正在 2016/1/18 10:17:45 +08:00
+ 执行
+2016-01-18 10:17:45,356 [12] INFO  SqlResult - -- 已在 32 毫秒内完成，结果为: SqlDataReader
+
+2016-01-18 10:17:45,356 [12] INFO  SqlResult - 
+
+2016-01-18 10:17:45,356 [12] INFO  SqlResult - 已于 2016/1/18 10:17:45 +08:00
+ 关闭了连接
+2016-01-18 10:18:20,248 [5] INFO  SqlResult - 已于 2016/1/18 10:18:20 +08:00
+ 打开了连接
+2016-01-18 10:18:20,248 [5] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[Pid] AS [Pid], 
+    [Extent1].[depth_pid] AS [depth_pid], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[Url] AS [Url], 
+    [Extent1].[Remark] AS [Remark], 
+    [Extent1].[Type] AS [Type], 
+    [Extent1].[Sort] AS [Sort], 
+    [Extent1].[Icon] AS [Icon]
+    FROM [dbo].[eb_features] AS [Extent1]
+2016-01-18 10:18:20,248 [5] INFO  SqlResult - 
+
+2016-01-18 10:18:20,248 [5] INFO  SqlResult - -- 正在 2016/1/18 10:18:20 +08:00
+ 执行
+2016-01-18 10:18:20,272 [5] INFO  SqlResult - -- 已在 23 毫秒内完成，结果为: SqlDataReader
+
+2016-01-18 10:18:20,272 [5] INFO  SqlResult - 
+
+2016-01-18 10:18:20,272 [5] INFO  SqlResult - 已于 2016/1/18 10:18:20 +08:00
+ 关闭了连接
+2016-01-18 10:18:20,273 [5] INFO  SqlResult - 已于 2016/1/18 10:18:20 +08:00
+ 打开了连接
+2016-01-18 10:18:20,273 [5] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[Pid] AS [Pid], 
+    [Extent1].[depth_pid] AS [depth_pid], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[Url] AS [Url], 
+    [Extent1].[Remark] AS [Remark], 
+    [Extent1].[Type] AS [Type], 
+    [Extent1].[Sort] AS [Sort], 
+    [Extent1].[Icon] AS [Icon]
+    FROM [dbo].[eb_features] AS [Extent1]
+    WHERE 1 = [Extent1].[Type]
+2016-01-18 10:18:20,273 [5] INFO  SqlResult - 
+
+2016-01-18 10:18:20,273 [5] INFO  SqlResult - -- 正在 2016/1/18 10:18:20 +08:00
+ 执行
+2016-01-18 10:18:20,292 [5] INFO  SqlResult - -- 已在 18 毫秒内完成，结果为: SqlDataReader
+
+2016-01-18 10:18:20,292 [5] INFO  SqlResult - 
+
+2016-01-18 10:18:20,292 [5] INFO  SqlResult - 已于 2016/1/18 10:18:20 +08:00
+ 关闭了连接
+2016-01-18 10:18:20,292 [5] INFO  SqlResult - 已于 2016/1/18 10:18:20 +08:00
+ 打开了连接
+2016-01-18 10:18:20,292 [5] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[features_id] AS [features_id], 
+    [Extent1].[name] AS [name], 
+    [Extent1].[Url] AS [Url], 
+    [Extent1].[Remark] AS [Remark]
+    FROM [dbo].[eb_operate] AS [Extent1]
+2016-01-18 10:18:20,292 [5] INFO  SqlResult - 
+
+2016-01-18 10:18:20,292 [5] INFO  SqlResult - -- 正在 2016/1/18 10:18:20 +08:00
+ 执行
+2016-01-18 10:18:20,305 [5] INFO  SqlResult - -- 已在 13 毫秒内完成，结果为: SqlDataReader
+
+2016-01-18 10:18:20,305 [5] INFO  SqlResult - 
+
+2016-01-18 10:18:20,305 [5] INFO  SqlResult - 已于 2016/1/18 10:18:20 +08:00
+ 关闭了连接
+2016-01-18 10:20:28,153 [6] INFO  SqlResult - 已于 2016/1/18 10:20:28 +08:00
+ 打开了连接
+2016-01-18 10:20:28,161 [6] INFO  SqlResult - 
+SELECT Count(*)
+FROM INFORMATION_SCHEMA.TABLES AS t
+WHERE t.TABLE_SCHEMA + '.' + t.TABLE_NAME IN ('dbo.eb_admin','dbo.eb_role','dbo.eb_operate','dbo.eb_purview_field','dbo.eb_user','dbo.eb_features')
+    OR t.TABLE_NAME = 'EdmMetadata'
+2016-01-18 10:20:28,161 [6] INFO  SqlResult - 
+
+2016-01-18 10:20:28,161 [6] INFO  SqlResult - -- 正在 2016/1/18 10:20:28 +08:00
+ 执行
+2016-01-18 10:20:28,174 [6] INFO  SqlResult - -- 已在 12 毫秒内完成，结果为: 5
+
+2016-01-18 10:20:28,174 [6] INFO  SqlResult - 
+
+2016-01-18 10:20:28,174 [6] INFO  SqlResult - 已于 2016/1/18 10:20:28 +08:00
+ 关闭了连接
+2016-01-18 10:20:28,258 [6] INFO  SqlResult - 已于 2016/1/18 10:20:28 +08:00
+ 打开了连接
+2016-01-18 10:20:28,771 [7] INFO  SqlResult - 已于 2016/1/18 10:20:28 +08:00
+ 打开了连接
+2016-01-18 10:20:28,929 [6] INFO  SqlResult - SELECT 
+    [GroupBy1].[A1] AS [C1]
+    FROM ( SELECT 
+        COUNT(1) AS [A1]
+        FROM [dbo].[__MigrationHistory] AS [Extent1]
+        WHERE [Extent1].[ContextKey] = @p__linq__0
+    )  AS [GroupBy1]
+2016-01-18 10:20:28,929 [6] INFO  SqlResult - 
+
+2016-01-18 10:20:28,930 [6] INFO  SqlResult - -- p__linq__0: 'DataAccess.Context.MySqlContext' (Type = String, Size = 4000)
+
+2016-01-18 10:20:28,930 [6] INFO  SqlResult - -- 正在 2016/1/18 10:20:28 +08:00
+ 执行
+2016-01-18 10:20:29,156 [6] INFO  SqlResult - -- 已在 225 毫秒内失败，错误为: 对象名 'dbo.__MigrationHistory' 无效。
+
+2016-01-18 10:20:29,156 [6] INFO  SqlResult - 
+
+2016-01-18 10:20:29,281 [6] INFO  SqlResult - 已于 2016/1/18 10:20:29 +08:00
+ 关闭了连接
+2016-01-18 10:20:29,348 [6] INFO  SqlResult - 已于 2016/1/18 10:20:29 +08:00
+ 打开了连接
+2016-01-18 10:20:29,349 [7] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[Pid] AS [Pid], 
+    [Extent1].[depth_pid] AS [depth_pid], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[Url] AS [Url], 
+    [Extent1].[Remark] AS [Remark], 
+    [Extent1].[Type] AS [Type], 
+    [Extent1].[Sort] AS [Sort], 
+    [Extent1].[Icon] AS [Icon]
+    FROM [dbo].[eb_features] AS [Extent1]
+2016-01-18 10:20:29,349 [7] INFO  SqlResult - 
+
+2016-01-18 10:20:29,349 [7] INFO  SqlResult - -- 正在 2016/1/18 10:20:29 +08:00
+ 执行
+2016-01-18 10:20:29,349 [6] INFO  SqlResult - SELECT 
+    [GroupBy1].[A1] AS [C1]
+    FROM ( SELECT 
+        COUNT(1) AS [A1]
+        FROM [dbo].[__MigrationHistory] AS [Extent1]
+    )  AS [GroupBy1]
+2016-01-18 10:20:29,361 [6] INFO  SqlResult - 
+
+2016-01-18 10:20:29,361 [6] INFO  SqlResult - -- 正在 2016/1/18 10:20:29 +08:00
+ 执行
+2016-01-18 10:20:29,376 [7] INFO  SqlResult - -- 已在 14 毫秒内完成，结果为: SqlDataReader
+
+2016-01-18 10:20:29,376 [7] INFO  SqlResult - 
+
+2016-01-18 10:20:29,488 [6] INFO  SqlResult - -- 已在 14 毫秒内失败，错误为: 对象名 'dbo.__MigrationHistory' 无效。
+
+2016-01-18 10:20:29,488 [6] INFO  SqlResult - 
+
+2016-01-18 10:20:29,646 [6] INFO  SqlResult - 已于 2016/1/18 10:20:29 +08:00
+ 关闭了连接
+2016-01-18 10:20:29,743 [7] INFO  SqlResult - 已于 2016/1/18 10:20:29 +08:00
+ 关闭了连接
+2016-01-18 10:20:30,362 [6] INFO  SqlResult - 已于 2016/1/18 10:20:30 +08:00
+ 打开了连接
+2016-01-18 10:20:30,362 [6] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[Pid] AS [Pid], 
+    [Extent1].[depth_pid] AS [depth_pid], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[Url] AS [Url], 
+    [Extent1].[Remark] AS [Remark], 
+    [Extent1].[Type] AS [Type], 
+    [Extent1].[Sort] AS [Sort], 
+    [Extent1].[Icon] AS [Icon]
+    FROM [dbo].[eb_features] AS [Extent1]
+2016-01-18 10:20:30,362 [6] INFO  SqlResult - 
+
+2016-01-18 10:20:30,362 [6] INFO  SqlResult - -- 正在 2016/1/18 10:20:30 +08:00
+ 执行
+2016-01-18 10:20:30,378 [6] INFO  SqlResult - -- 已在 15 毫秒内完成，结果为: SqlDataReader
+
+2016-01-18 10:20:30,378 [6] INFO  SqlResult - 
+
+2016-01-18 10:20:30,378 [6] INFO  SqlResult - 已于 2016/1/18 10:20:30 +08:00
+ 关闭了连接
+2016-01-18 10:20:33,641 [8] INFO  SqlResult - 已于 2016/1/18 10:20:33 +08:00
+ 打开了连接
+2016-01-18 10:20:33,666 [8] INFO  SqlResult - SELECT TOP (2) 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[role_name] AS [role_name], 
+    [Extent1].[Actions] AS [Actions], 
+    [Extent1].[Remark] AS [Remark]
+    FROM [dbo].[eb_role] AS [Extent1]
+    WHERE [Extent1].[ID] = @p0
+2016-01-18 10:20:33,666 [8] INFO  SqlResult - 
+
+2016-01-18 10:20:33,666 [8] INFO  SqlResult - -- p0: '1' (Type = Int32)
+
+2016-01-18 10:20:33,666 [8] INFO  SqlResult - -- 正在 2016/1/18 10:20:33 +08:00
+ 执行
+2016-01-18 10:20:33,680 [8] INFO  SqlResult - -- 已在 13 毫秒内完成，结果为: SqlDataReader
+
+2016-01-18 10:20:33,680 [8] INFO  SqlResult - 
+
+2016-01-18 10:20:33,682 [8] INFO  SqlResult - 已于 2016/1/18 10:20:33 +08:00
+ 关闭了连接
+2016-01-18 10:20:33,698 [8] INFO  SqlResult - 已于 2016/1/18 10:20:33 +08:00
+ 打开了连接
+2016-01-18 10:20:33,698 [8] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[Pid] AS [Pid], 
+    [Extent1].[depth_pid] AS [depth_pid], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[Url] AS [Url], 
+    [Extent1].[Remark] AS [Remark], 
+    [Extent1].[Type] AS [Type], 
+    [Extent1].[Sort] AS [Sort], 
+    [Extent1].[Icon] AS [Icon]
+    FROM [dbo].[eb_features] AS [Extent1]
+2016-01-18 10:20:33,698 [8] INFO  SqlResult - 
+
+2016-01-18 10:20:33,698 [8] INFO  SqlResult - -- 正在 2016/1/18 10:20:33 +08:00
+ 执行
+2016-01-18 10:20:33,710 [8] INFO  SqlResult - -- 已在 11 毫秒内完成，结果为: SqlDataReader
+
+2016-01-18 10:20:33,710 [8] INFO  SqlResult - 
+
+2016-01-18 10:20:33,711 [8] INFO  SqlResult - 已于 2016/1/18 10:20:33 +08:00
+ 关闭了连接
+2016-01-18 10:20:36,876 [8] INFO  SqlResult - 已于 2016/1/18 10:20:36 +08:00
+ 打开了连接
+2016-01-18 10:20:36,876 [8] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[Pid] AS [Pid], 
+    [Extent1].[depth_pid] AS [depth_pid], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[Url] AS [Url], 
+    [Extent1].[Remark] AS [Remark], 
+    [Extent1].[Type] AS [Type], 
+    [Extent1].[Sort] AS [Sort], 
+    [Extent1].[Icon] AS [Icon]
+    FROM [dbo].[eb_features] AS [Extent1]
+2016-01-18 10:20:36,877 [8] INFO  SqlResult - 
+
+2016-01-18 10:20:36,877 [8] INFO  SqlResult - -- 正在 2016/1/18 10:20:36 +08:00
+ 执行
+2016-01-18 10:20:36,888 [8] INFO  SqlResult - -- 已在 11 毫秒内完成，结果为: SqlDataReader
+
+2016-01-18 10:20:36,888 [8] INFO  SqlResult - 
+
+2016-01-18 10:20:36,888 [8] INFO  SqlResult - 已于 2016/1/18 10:20:36 +08:00
+ 关闭了连接
+2016-01-18 10:20:36,943 [8] INFO  SqlResult - 已于 2016/1/18 10:20:36 +08:00
+ 打开了连接
+2016-01-18 10:20:36,944 [8] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[Pid] AS [Pid], 
+    [Extent1].[depth_pid] AS [depth_pid], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[Url] AS [Url], 
+    [Extent1].[Remark] AS [Remark], 
+    [Extent1].[Type] AS [Type], 
+    [Extent1].[Sort] AS [Sort], 
+    [Extent1].[Icon] AS [Icon]
+    FROM [dbo].[eb_features] AS [Extent1]
+    WHERE 1 = [Extent1].[Type]
+2016-01-18 10:20:36,944 [8] INFO  SqlResult - 
+
+2016-01-18 10:20:36,944 [8] INFO  SqlResult - -- 正在 2016/1/18 10:20:36 +08:00
+ 执行
+2016-01-18 10:20:36,956 [8] INFO  SqlResult - -- 已在 12 毫秒内完成，结果为: SqlDataReader
+
+2016-01-18 10:20:36,956 [8] INFO  SqlResult - 
+
+2016-01-18 10:20:36,956 [8] INFO  SqlResult - 已于 2016/1/18 10:20:36 +08:00
+ 关闭了连接
+2016-01-18 10:20:36,958 [8] INFO  SqlResult - 已于 2016/1/18 10:20:36 +08:00
+ 打开了连接
+2016-01-18 10:20:36,962 [8] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[features_id] AS [features_id], 
+    [Extent1].[name] AS [name], 
+    [Extent1].[Url] AS [Url], 
+    [Extent1].[Remark] AS [Remark]
+    FROM [dbo].[eb_operate] AS [Extent1]
+2016-01-18 10:20:36,962 [8] INFO  SqlResult - 
+
+2016-01-18 10:20:36,962 [8] INFO  SqlResult - -- 正在 2016/1/18 10:20:36 +08:00
+ 执行
+2016-01-18 10:20:36,973 [8] INFO  SqlResult - -- 已在 10 毫秒内完成，结果为: SqlDataReader
+
+2016-01-18 10:20:36,973 [8] INFO  SqlResult - 
+
+2016-01-18 10:20:36,974 [8] INFO  SqlResult - 已于 2016/1/18 10:20:36 +08:00
+ 关闭了连接
+2016-01-18 10:45:06,637 [7] INFO  SqlResult - 已于 2016/1/18 10:45:06 +08:00
+ 打开了连接
+2016-01-18 10:45:06,644 [7] INFO  SqlResult - 
+SELECT Count(*)
+FROM INFORMATION_SCHEMA.TABLES AS t
+WHERE t.TABLE_SCHEMA + '.' + t.TABLE_NAME IN ('dbo.eb_admin','dbo.eb_role','dbo.eb_operate','dbo.eb_purview_field','dbo.eb_user','dbo.eb_features')
+    OR t.TABLE_NAME = 'EdmMetadata'
+2016-01-18 10:45:06,644 [7] INFO  SqlResult - 
+
+2016-01-18 10:45:06,645 [7] INFO  SqlResult - -- 正在 2016/1/18 10:45:06 +08:00
+ 执行
+2016-01-18 10:45:06,658 [7] INFO  SqlResult - -- 已在 12 毫秒内完成，结果为: 5
+
+2016-01-18 10:45:06,658 [7] INFO  SqlResult - 
+
+2016-01-18 10:45:06,658 [7] INFO  SqlResult - 已于 2016/1/18 10:45:06 +08:00
+ 关闭了连接
+2016-01-18 10:45:06,841 [7] INFO  SqlResult - 已于 2016/1/18 10:45:06 +08:00
+ 打开了连接
+2016-01-18 10:45:07,442 [7] INFO  SqlResult - SELECT 
+    [GroupBy1].[A1] AS [C1]
+    FROM ( SELECT 
+        COUNT(1) AS [A1]
+        FROM [dbo].[__MigrationHistory] AS [Extent1]
+        WHERE [Extent1].[ContextKey] = @p__linq__0
+    )  AS [GroupBy1]
+2016-01-18 10:45:07,442 [7] INFO  SqlResult - 
+
+2016-01-18 10:45:07,442 [7] INFO  SqlResult - -- p__linq__0: 'DataAccess.Context.MySqlContext' (Type = String, Size = 4000)
+
+2016-01-18 10:45:07,442 [7] INFO  SqlResult - -- 正在 2016/1/18 10:45:07 +08:00
+ 执行
+2016-01-18 10:45:07,576 [7] INFO  SqlResult - -- 已在 132 毫秒内失败，错误为: 对象名 'dbo.__MigrationHistory' 无效。
+
+2016-01-18 10:45:07,576 [7] INFO  SqlResult - 
+
+2016-01-18 10:45:07,667 [7] INFO  SqlResult - 已于 2016/1/18 10:45:07 +08:00
+ 关闭了连接
+2016-01-18 10:45:07,727 [7] INFO  SqlResult - 已于 2016/1/18 10:45:07 +08:00
+ 打开了连接
+2016-01-18 10:45:07,728 [7] INFO  SqlResult - SELECT 
+    [GroupBy1].[A1] AS [C1]
+    FROM ( SELECT 
+        COUNT(1) AS [A1]
+        FROM [dbo].[__MigrationHistory] AS [Extent1]
+    )  AS [GroupBy1]
+2016-01-18 10:45:07,728 [7] INFO  SqlResult - 
+
+2016-01-18 10:45:07,728 [7] INFO  SqlResult - -- 正在 2016/1/18 10:45:07 +08:00
+ 执行
+2016-01-18 10:45:07,843 [7] INFO  SqlResult - -- 已在 114 毫秒内失败，错误为: 对象名 'dbo.__MigrationHistory' 无效。
+
+2016-01-18 10:45:07,843 [7] INFO  SqlResult - 
+
+2016-01-18 10:45:07,933 [7] INFO  SqlResult - 已于 2016/1/18 10:45:07 +08:00
+ 关闭了连接
+2016-01-18 10:45:08,327 [7] INFO  SqlResult - 已于 2016/1/18 10:45:08 +08:00
+ 打开了连接
+2016-01-18 10:45:08,479 [7] INFO  SqlResult - SELECT TOP (1) 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[UserName] AS [UserName], 
+    [Extent1].[Password] AS [Password], 
+    [Extent1].[role_id] AS [role_id], 
+    [Extent1].[Login] AS [Login], 
+    [Extent1].[reg_time] AS [reg_time], 
+    [Extent1].[login_time] AS [login_time], 
+    [Extent1].[update_time] AS [update_time], 
+    [Extent1].[login_ip] AS [login_ip], 
+    [Extent1].[Status] AS [Status], 
+    [Extent1].[Remark] AS [Remark]
+    FROM [dbo].[eb_admin] AS [Extent1]
+    WHERE (([Extent1].[UserName] = @p__linq__0) OR (([Extent1].[UserName] IS NULL) AND (@p__linq__0 IS NULL))) AND (([Extent1].[Password] = @p__linq__1) OR (([Extent1].[Password] IS NULL) AND (@p__linq__1 IS NULL)))
+2016-01-18 10:45:08,479 [7] INFO  SqlResult - 
+
+2016-01-18 10:45:08,479 [7] INFO  SqlResult - -- p__linq__0: 'admin' (Type = String, Size = 4000)
+
+2016-01-18 10:45:08,479 [7] INFO  SqlResult - -- p__linq__1: '21232f297a57a5a743894a0e4a801fc3' (Type = String, Size = 4000)
+
+2016-01-18 10:45:08,479 [7] INFO  SqlResult - -- 正在 2016/1/18 10:45:08 +08:00
+ 执行
+2016-01-18 10:45:08,490 [7] INFO  SqlResult - -- 已在 10 毫秒内完成，结果为: SqlDataReader
+
+2016-01-18 10:45:08,490 [7] INFO  SqlResult - 
+
+2016-01-18 10:45:08,536 [7] INFO  SqlResult - 已于 2016/1/18 10:45:08 +08:00
+ 关闭了连接
+2016-01-18 10:45:08,574 [7] INFO  SqlResult - 已于 2016/1/18 10:45:08 +08:00
+ 打开了连接
+2016-01-18 10:45:08,576 [7] INFO  SqlResult - 已于 2016/1/18 10:45:08 +08:00
+ 启动了事务
+2016-01-18 10:45:08,646 [7] INFO  SqlResult - UPDATE [dbo].[eb_admin]
+SET [UserName] = @0, [Password] = @1, [role_id] = @2, [Login] = @3, [reg_time] = @4, [login_time] = @5, [update_time] = @6, [login_ip] = @7, [Status] = @8, [Remark] = NULL
+WHERE ([ID] = @9)
+
+2016-01-18 10:45:08,646 [7] INFO  SqlResult - -- @0: 'admin' (Type = String, Size = 50)
+
+2016-01-18 10:45:08,647 [7] INFO  SqlResult - -- @1: '21232f297a57a5a743894a0e4a801fc3' (Type = String, Size = -1)
+
+2016-01-18 10:45:08,647 [7] INFO  SqlResult - -- @2: '1' (Type = Int32)
+
+2016-01-18 10:45:08,647 [7] INFO  SqlResult - -- @3: '115' (Type = Int32)
+
+2016-01-18 10:45:08,647 [7] INFO  SqlResult - -- @4: '2015/1/15 0:00:00' (Type = DateTime2)
+
+2016-01-18 10:45:08,647 [7] INFO  SqlResult - -- @5: '2016/1/18 10:45:08' (Type = DateTime2)
+
+2016-01-18 10:45:08,647 [7] INFO  SqlResult - -- @6: '2015/1/15 0:00:00' (Type = DateTime2)
+
+2016-01-18 10:45:08,647 [7] INFO  SqlResult - -- @7: '::1' (Type = String, Size = -1)
+
+2016-01-18 10:45:08,647 [7] INFO  SqlResult - -- @8: '0' (Type = Int32)
+
+2016-01-18 10:45:08,647 [7] INFO  SqlResult - -- @9: '1' (Type = Int32)
+
+2016-01-18 10:45:08,647 [7] INFO  SqlResult - -- 正在 2016/1/18 10:45:08 +08:00
+ 执行
+2016-01-18 10:45:08,663 [7] INFO  SqlResult - -- 已在 15 毫秒内完成，结果为: 1
+
+2016-01-18 10:45:08,663 [7] INFO  SqlResult - 
+
+2016-01-18 10:45:08,666 [7] INFO  SqlResult - 已于 2016/1/18 10:45:08 +08:00
+ 提交了事务
+2016-01-18 10:45:08,666 [7] INFO  SqlResult - 已于 2016/1/18 10:45:08 +08:00
+ 关闭了连接
+2016-01-18 10:45:08,811 [9] INFO  SqlResult - 已于 2016/1/18 10:45:08 +08:00
+ 打开了连接
+2016-01-18 10:45:08,818 [9] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[Pid] AS [Pid], 
+    [Extent1].[depth_pid] AS [depth_pid], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[Url] AS [Url], 
+    [Extent1].[Remark] AS [Remark], 
+    [Extent1].[Type] AS [Type], 
+    [Extent1].[Sort] AS [Sort], 
+    [Extent1].[Icon] AS [Icon]
+    FROM [dbo].[eb_features] AS [Extent1]
+2016-01-18 10:45:08,818 [9] INFO  SqlResult - 
+
+2016-01-18 10:45:08,818 [9] INFO  SqlResult - -- 正在 2016/1/18 10:45:08 +08:00
+ 执行
+2016-01-18 10:45:08,833 [9] INFO  SqlResult - -- 已在 14 毫秒内完成，结果为: SqlDataReader
+
+2016-01-18 10:45:08,833 [9] INFO  SqlResult - 
+
+2016-01-18 10:45:08,835 [9] INFO  SqlResult - 已于 2016/1/18 10:45:08 +08:00
+ 关闭了连接
+2016-01-18 10:54:03,027 [7] INFO  SqlResult - 已于 2016/1/18 10:54:03 +08:00
+ 打开了连接
+2016-01-18 10:54:03,034 [7] INFO  SqlResult - 
+SELECT Count(*)
+FROM INFORMATION_SCHEMA.TABLES AS t
+WHERE t.TABLE_SCHEMA + '.' + t.TABLE_NAME IN ('dbo.eb_admin','dbo.eb_role','dbo.eb_operate','dbo.eb_purview_field','dbo.eb_user','dbo.eb_features')
+    OR t.TABLE_NAME = 'EdmMetadata'
+2016-01-18 10:54:03,034 [7] INFO  SqlResult - 
+
+2016-01-18 10:54:03,034 [7] INFO  SqlResult - -- 正在 2016/1/18 10:54:03 +08:00
+ 执行
+2016-01-18 10:54:03,047 [7] INFO  SqlResult - -- 已在 11 毫秒内完成，结果为: 5
+
+2016-01-18 10:54:03,047 [7] INFO  SqlResult - 
+
+2016-01-18 10:54:03,047 [7] INFO  SqlResult - 已于 2016/1/18 10:54:03 +08:00
+ 关闭了连接
+2016-01-18 10:54:03,129 [7] INFO  SqlResult - 已于 2016/1/18 10:54:03 +08:00
+ 打开了连接
+2016-01-18 10:54:03,742 [7] INFO  SqlResult - SELECT 
+    [GroupBy1].[A1] AS [C1]
+    FROM ( SELECT 
+        COUNT(1) AS [A1]
+        FROM [dbo].[__MigrationHistory] AS [Extent1]
+        WHERE [Extent1].[ContextKey] = @p__linq__0
+    )  AS [GroupBy1]
+2016-01-18 10:54:03,742 [7] INFO  SqlResult - 
+
+2016-01-18 10:54:03,743 [7] INFO  SqlResult - -- p__linq__0: 'DataAccess.Context.MySqlContext' (Type = String, Size = 4000)
+
+2016-01-18 10:54:03,743 [7] INFO  SqlResult - -- 正在 2016/1/18 10:54:03 +08:00
+ 执行
+2016-01-18 10:54:03,874 [7] INFO  SqlResult - -- 已在 130 毫秒内失败，错误为: 对象名 'dbo.__MigrationHistory' 无效。
+
+2016-01-18 10:54:03,874 [7] INFO  SqlResult - 
+
+2016-01-18 10:54:03,963 [7] INFO  SqlResult - 已于 2016/1/18 10:54:03 +08:00
+ 关闭了连接
+2016-01-18 10:54:04,021 [7] INFO  SqlResult - 已于 2016/1/18 10:54:04 +08:00
+ 打开了连接
+2016-01-18 10:54:04,022 [7] INFO  SqlResult - SELECT 
+    [GroupBy1].[A1] AS [C1]
+    FROM ( SELECT 
+        COUNT(1) AS [A1]
+        FROM [dbo].[__MigrationHistory] AS [Extent1]
+    )  AS [GroupBy1]
+2016-01-18 10:54:04,022 [7] INFO  SqlResult - 
+
+2016-01-18 10:54:04,022 [7] INFO  SqlResult - -- 正在 2016/1/18 10:54:04 +08:00
+ 执行
+2016-01-18 10:54:04,138 [7] INFO  SqlResult - -- 已在 115 毫秒内失败，错误为: 对象名 'dbo.__MigrationHistory' 无效。
+
+2016-01-18 10:54:04,138 [7] INFO  SqlResult - 
+
+2016-01-18 10:54:04,227 [7] INFO  SqlResult - 已于 2016/1/18 10:54:04 +08:00
+ 关闭了连接
+2016-01-18 10:54:04,622 [7] INFO  SqlResult - 已于 2016/1/18 10:54:04 +08:00
+ 打开了连接
+2016-01-18 10:54:04,727 [7] INFO  SqlResult - SELECT TOP (1) 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[UserName] AS [UserName], 
+    [Extent1].[Password] AS [Password], 
+    [Extent1].[role_id] AS [role_id], 
+    [Extent1].[Login] AS [Login], 
+    [Extent1].[reg_time] AS [reg_time], 
+    [Extent1].[login_time] AS [login_time], 
+    [Extent1].[update_time] AS [update_time], 
+    [Extent1].[login_ip] AS [login_ip], 
+    [Extent1].[Status] AS [Status], 
+    [Extent1].[Remark] AS [Remark]
+    FROM [dbo].[eb_admin] AS [Extent1]
+    WHERE (([Extent1].[UserName] = @p__linq__0) OR (([Extent1].[UserName] IS NULL) AND (@p__linq__0 IS NULL))) AND (([Extent1].[Password] = @p__linq__1) OR (([Extent1].[Password] IS NULL) AND (@p__linq__1 IS NULL)))
+2016-01-18 10:54:04,727 [7] INFO  SqlResult - 
+
+2016-01-18 10:54:04,728 [7] INFO  SqlResult - -- p__linq__0: 'admin' (Type = String, Size = 4000)
+
+2016-01-18 10:54:04,728 [7] INFO  SqlResult - -- p__linq__1: '21232f297a57a5a743894a0e4a801fc3' (Type = String, Size = 4000)
+
+2016-01-18 10:54:04,728 [7] INFO  SqlResult - -- 正在 2016/1/18 10:54:04 +08:00
+ 执行
+2016-01-18 10:54:04,739 [7] INFO  SqlResult - -- 已在 11 毫秒内完成，结果为: SqlDataReader
+
+2016-01-18 10:54:04,739 [7] INFO  SqlResult - 
+
+2016-01-18 10:54:04,789 [7] INFO  SqlResult - 已于 2016/1/18 10:54:04 +08:00
+ 关闭了连接
+2016-01-18 10:54:04,827 [7] INFO  SqlResult - 已于 2016/1/18 10:54:04 +08:00
+ 打开了连接
+2016-01-18 10:54:04,830 [7] INFO  SqlResult - 已于 2016/1/18 10:54:04 +08:00
+ 启动了事务
+2016-01-18 10:54:04,900 [7] INFO  SqlResult - UPDATE [dbo].[eb_admin]
+SET [UserName] = @0, [Password] = @1, [role_id] = @2, [Login] = @3, [reg_time] = @4, [login_time] = @5, [update_time] = @6, [login_ip] = @7, [Status] = @8, [Remark] = NULL
+WHERE ([ID] = @9)
+
+2016-01-18 10:54:04,900 [7] INFO  SqlResult - -- @0: 'admin' (Type = String, Size = 50)
+
+2016-01-18 10:54:04,900 [7] INFO  SqlResult - -- @1: '21232f297a57a5a743894a0e4a801fc3' (Type = String, Size = -1)
+
+2016-01-18 10:54:04,900 [7] INFO  SqlResult - -- @2: '1' (Type = Int32)
+
+2016-01-18 10:54:04,900 [7] INFO  SqlResult - -- @3: '116' (Type = Int32)
+
+2016-01-18 10:54:04,900 [7] INFO  SqlResult - -- @4: '2015/1/15 0:00:00' (Type = DateTime2)
+
+2016-01-18 10:54:04,900 [7] INFO  SqlResult - -- @5: '2016/1/18 10:54:04' (Type = DateTime2)
+
+2016-01-18 10:54:04,900 [7] INFO  SqlResult - -- @6: '2015/1/15 0:00:00' (Type = DateTime2)
+
+2016-01-18 10:54:04,900 [7] INFO  SqlResult - -- @7: '::1' (Type = String, Size = -1)
+
+2016-01-18 10:54:04,900 [7] INFO  SqlResult - -- @8: '0' (Type = Int32)
+
+2016-01-18 10:54:04,900 [7] INFO  SqlResult - -- @9: '1' (Type = Int32)
+
+2016-01-18 10:54:04,900 [7] INFO  SqlResult - -- 正在 2016/1/18 10:54:04 +08:00
+ 执行
+2016-01-18 10:54:04,917 [7] INFO  SqlResult - -- 已在 15 毫秒内完成，结果为: 1
+
+2016-01-18 10:54:04,917 [7] INFO  SqlResult - 
+
+2016-01-18 10:54:04,922 [7] INFO  SqlResult - 已于 2016/1/18 10:54:04 +08:00
+ 提交了事务
+2016-01-18 10:54:04,922 [7] INFO  SqlResult - 已于 2016/1/18 10:54:04 +08:00
+ 关闭了连接
+2016-01-18 10:54:05,060 [6] INFO  SqlResult - 已于 2016/1/18 10:54:05 +08:00
+ 打开了连接
+2016-01-18 10:54:05,066 [6] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[Pid] AS [Pid], 
+    [Extent1].[depth_pid] AS [depth_pid], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[Url] AS [Url], 
+    [Extent1].[Remark] AS [Remark], 
+    [Extent1].[Type] AS [Type], 
+    [Extent1].[Sort] AS [Sort], 
+    [Extent1].[Icon] AS [Icon]
+    FROM [dbo].[eb_features] AS [Extent1]
+2016-01-18 10:54:05,066 [6] INFO  SqlResult - 
+
+2016-01-18 10:54:05,066 [6] INFO  SqlResult - -- 正在 2016/1/18 10:54:05 +08:00
+ 执行
+2016-01-18 10:54:05,080 [6] INFO  SqlResult - -- 已在 13 毫秒内完成，结果为: SqlDataReader
+
+2016-01-18 10:54:05,080 [6] INFO  SqlResult - 
+
+2016-01-18 10:54:05,083 [6] INFO  SqlResult - 已于 2016/1/18 10:54:05 +08:00
+ 关闭了连接
+2016-01-18 10:54:09,049 [8] INFO  SqlResult - 已于 2016/1/18 10:54:09 +08:00
+ 打开了连接
+2016-01-18 10:54:09,072 [8] INFO  SqlResult - SELECT TOP (2) 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[role_name] AS [role_name], 
+    [Extent1].[Actions] AS [Actions], 
+    [Extent1].[Remark] AS [Remark]
+    FROM [dbo].[eb_role] AS [Extent1]
+    WHERE [Extent1].[ID] = @p0
+2016-01-18 10:54:09,072 [8] INFO  SqlResult - 
+
+2016-01-18 10:54:09,072 [8] INFO  SqlResult - -- p0: '1' (Type = Int32)
+
+2016-01-18 10:54:09,072 [8] INFO  SqlResult - -- 正在 2016/1/18 10:54:09 +08:00
+ 执行
+2016-01-18 10:54:09,090 [8] INFO  SqlResult - -- 已在 17 毫秒内完成，结果为: SqlDataReader
+
+2016-01-18 10:54:09,090 [8] INFO  SqlResult - 
+
+2016-01-18 10:54:09,104 [8] INFO  SqlResult - 已于 2016/1/18 10:54:09 +08:00
+ 关闭了连接
+2016-01-18 10:54:09,117 [8] INFO  SqlResult - 已于 2016/1/18 10:54:09 +08:00
+ 打开了连接
+2016-01-18 10:54:09,117 [8] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[Pid] AS [Pid], 
+    [Extent1].[depth_pid] AS [depth_pid], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[Url] AS [Url], 
+    [Extent1].[Remark] AS [Remark], 
+    [Extent1].[Type] AS [Type], 
+    [Extent1].[Sort] AS [Sort], 
+    [Extent1].[Icon] AS [Icon]
+    FROM [dbo].[eb_features] AS [Extent1]
+2016-01-18 10:54:09,117 [8] INFO  SqlResult - 
+
+2016-01-18 10:54:09,117 [8] INFO  SqlResult - -- 正在 2016/1/18 10:54:09 +08:00
+ 执行
+2016-01-18 10:54:09,131 [8] INFO  SqlResult - -- 已在 13 毫秒内完成，结果为: SqlDataReader
+
+2016-01-18 10:54:09,131 [8] INFO  SqlResult - 
+
+2016-01-18 10:54:09,131 [8] INFO  SqlResult - 已于 2016/1/18 10:54:09 +08:00
+ 关闭了连接
+2016-01-18 10:54:12,245 [8] INFO  SqlResult - 已于 2016/1/18 10:54:12 +08:00
+ 打开了连接
+2016-01-18 10:54:12,245 [8] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[Pid] AS [Pid], 
+    [Extent1].[depth_pid] AS [depth_pid], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[Url] AS [Url], 
+    [Extent1].[Remark] AS [Remark], 
+    [Extent1].[Type] AS [Type], 
+    [Extent1].[Sort] AS [Sort], 
+    [Extent1].[Icon] AS [Icon]
+    FROM [dbo].[eb_features] AS [Extent1]
+2016-01-18 10:54:12,245 [8] INFO  SqlResult - 
+
+2016-01-18 10:54:12,245 [8] INFO  SqlResult - -- 正在 2016/1/18 10:54:12 +08:00
+ 执行
+2016-01-18 10:54:12,268 [8] INFO  SqlResult - -- 已在 22 毫秒内完成，结果为: SqlDataReader
+
+2016-01-18 10:54:12,268 [8] INFO  SqlResult - 
+
+2016-01-18 10:54:12,268 [8] INFO  SqlResult - 已于 2016/1/18 10:54:12 +08:00
+ 关闭了连接
+2016-01-18 10:54:12,379 [8] INFO  SqlResult - 已于 2016/1/18 10:54:12 +08:00
+ 打开了连接
+2016-01-18 10:54:12,381 [8] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[Pid] AS [Pid], 
+    [Extent1].[depth_pid] AS [depth_pid], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[Url] AS [Url], 
+    [Extent1].[Remark] AS [Remark], 
+    [Extent1].[Type] AS [Type], 
+    [Extent1].[Sort] AS [Sort], 
+    [Extent1].[Icon] AS [Icon]
+    FROM [dbo].[eb_features] AS [Extent1]
+    WHERE 1 = [Extent1].[Type]
+2016-01-18 10:54:12,381 [8] INFO  SqlResult - 
+
+2016-01-18 10:54:12,381 [8] INFO  SqlResult - -- 正在 2016/1/18 10:54:12 +08:00
+ 执行
+2016-01-18 10:54:12,395 [8] INFO  SqlResult - -- 已在 13 毫秒内完成，结果为: SqlDataReader
+
+2016-01-18 10:54:12,395 [8] INFO  SqlResult - 
+
+2016-01-18 10:54:12,395 [8] INFO  SqlResult - 已于 2016/1/18 10:54:12 +08:00
+ 关闭了连接
+2016-01-18 10:54:12,395 [8] INFO  SqlResult - 已于 2016/1/18 10:54:12 +08:00
+ 打开了连接
+2016-01-18 10:54:12,401 [8] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[features_id] AS [features_id], 
+    [Extent1].[name] AS [name], 
+    [Extent1].[Url] AS [Url], 
+    [Extent1].[Remark] AS [Remark]
+    FROM [dbo].[eb_operate] AS [Extent1]
+2016-01-18 10:54:12,401 [8] INFO  SqlResult - 
+
+2016-01-18 10:54:12,402 [8] INFO  SqlResult - -- 正在 2016/1/18 10:54:12 +08:00
+ 执行
+2016-01-18 10:54:12,414 [8] INFO  SqlResult - -- 已在 12 毫秒内完成，结果为: SqlDataReader
+
+2016-01-18 10:54:12,414 [8] INFO  SqlResult - 
+
+2016-01-18 10:54:12,414 [8] INFO  SqlResult - 已于 2016/1/18 10:54:12 +08:00
+ 关闭了连接
+2016-01-18 10:55:19,642 [6] INFO  SqlResult - 已于 2016/1/18 10:55:19 +08:00
+ 打开了连接
+2016-01-18 10:55:19,649 [6] INFO  SqlResult - 
+SELECT Count(*)
+FROM INFORMATION_SCHEMA.TABLES AS t
+WHERE t.TABLE_SCHEMA + '.' + t.TABLE_NAME IN ('dbo.eb_admin','dbo.eb_role','dbo.eb_operate','dbo.eb_purview_field','dbo.eb_user','dbo.eb_features')
+    OR t.TABLE_NAME = 'EdmMetadata'
+2016-01-18 10:55:19,649 [6] INFO  SqlResult - 
+
+2016-01-18 10:55:19,649 [6] INFO  SqlResult - -- 正在 2016/1/18 10:55:19 +08:00
+ 执行
+2016-01-18 10:55:19,662 [6] INFO  SqlResult - -- 已在 11 毫秒内完成，结果为: 5
+
+2016-01-18 10:55:19,662 [6] INFO  SqlResult - 
+
+2016-01-18 10:55:19,662 [6] INFO  SqlResult - 已于 2016/1/18 10:55:19 +08:00
+ 关闭了连接
+2016-01-18 10:55:19,766 [8] INFO  SqlResult - 已于 2016/1/18 10:55:19 +08:00
+ 打开了连接
+2016-01-18 10:55:19,852 [6] INFO  SqlResult - 已于 2016/1/18 10:55:19 +08:00
+ 打开了连接
+2016-01-18 10:55:20,242 [6] INFO  SqlResult - SELECT 
+    [GroupBy1].[A1] AS [C1]
+    FROM ( SELECT 
+        COUNT(1) AS [A1]
+        FROM [dbo].[__MigrationHistory] AS [Extent1]
+        WHERE [Extent1].[ContextKey] = @p__linq__0
+    )  AS [GroupBy1]
+2016-01-18 10:55:20,242 [6] INFO  SqlResult - 
+
+2016-01-18 10:55:20,242 [6] INFO  SqlResult - -- p__linq__0: 'DataAccess.Context.MySqlContext' (Type = String, Size = 4000)
+
+2016-01-18 10:55:20,242 [6] INFO  SqlResult - -- 正在 2016/1/18 10:55:20 +08:00
+ 执行
+2016-01-18 10:55:20,385 [6] INFO  SqlResult - -- 已在 142 毫秒内失败，错误为: 对象名 'dbo.__MigrationHistory' 无效。
+
+2016-01-18 10:55:20,385 [6] INFO  SqlResult - 
+
+2016-01-18 10:55:20,405 [8] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[Pid] AS [Pid], 
+    [Extent1].[depth_pid] AS [depth_pid], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[Url] AS [Url], 
+    [Extent1].[Remark] AS [Remark], 
+    [Extent1].[Type] AS [Type], 
+    [Extent1].[Sort] AS [Sort], 
+    [Extent1].[Icon] AS [Icon]
+    FROM [dbo].[eb_features] AS [Extent1]
+2016-01-18 10:55:20,405 [8] INFO  SqlResult - 
+
+2016-01-18 10:55:20,423 [8] INFO  SqlResult - -- 正在 2016/1/18 10:55:20 +08:00
+ 执行
+2016-01-18 10:55:20,489 [8] INFO  SqlResult - -- 已在 66 毫秒内完成，结果为: SqlDataReader
+
+2016-01-18 10:55:20,504 [8] INFO  SqlResult - 
+
+2016-01-18 10:55:20,505 [6] INFO  SqlResult - 已于 2016/1/18 10:55:20 +08:00
+ 关闭了连接
+2016-01-18 10:55:20,570 [6] INFO  SqlResult - 已于 2016/1/18 10:55:20 +08:00
+ 打开了连接
+2016-01-18 10:55:20,572 [6] INFO  SqlResult - SELECT 
+    [GroupBy1].[A1] AS [C1]
+    FROM ( SELECT 
+        COUNT(1) AS [A1]
+        FROM [dbo].[__MigrationHistory] AS [Extent1]
+    )  AS [GroupBy1]
+2016-01-18 10:55:20,572 [6] INFO  SqlResult - 
+
+2016-01-18 10:55:20,572 [6] INFO  SqlResult - -- 正在 2016/1/18 10:55:20 +08:00
+ 执行
+2016-01-18 10:55:20,690 [6] INFO  SqlResult - -- 已在 118 毫秒内失败，错误为: 对象名 'dbo.__MigrationHistory' 无效。
+
+2016-01-18 10:55:20,690 [6] INFO  SqlResult - 
+
+2016-01-18 10:55:20,790 [6] INFO  SqlResult - 已于 2016/1/18 10:55:20 +08:00
+ 关闭了连接
+2016-01-18 10:55:20,881 [8] INFO  SqlResult - 已于 2016/1/18 10:55:20 +08:00
+ 关闭了连接
+2016-01-18 10:55:21,147 [6] INFO  SqlResult - 已于 2016/1/18 10:55:21 +08:00
+ 打开了连接
+2016-01-18 10:55:21,148 [6] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[Pid] AS [Pid], 
+    [Extent1].[depth_pid] AS [depth_pid], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[Url] AS [Url], 
+    [Extent1].[Remark] AS [Remark], 
+    [Extent1].[Type] AS [Type], 
+    [Extent1].[Sort] AS [Sort], 
+    [Extent1].[Icon] AS [Icon]
+    FROM [dbo].[eb_features] AS [Extent1]
+2016-01-18 10:55:21,148 [6] INFO  SqlResult - 
+
+2016-01-18 10:55:21,148 [6] INFO  SqlResult - -- 正在 2016/1/18 10:55:21 +08:00
+ 执行
+2016-01-18 10:55:21,158 [6] INFO  SqlResult - -- 已在 10 毫秒内完成，结果为: SqlDataReader
+
+2016-01-18 10:55:21,158 [6] INFO  SqlResult - 
+
+2016-01-18 10:55:21,159 [6] INFO  SqlResult - 已于 2016/1/18 10:55:21 +08:00
+ 关闭了连接
+2016-01-18 10:55:23,282 [9] INFO  SqlResult - 已于 2016/1/18 10:55:23 +08:00
+ 打开了连接
+2016-01-18 10:55:23,305 [9] INFO  SqlResult - SELECT TOP (2) 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[role_name] AS [role_name], 
+    [Extent1].[Actions] AS [Actions], 
+    [Extent1].[Remark] AS [Remark]
+    FROM [dbo].[eb_role] AS [Extent1]
+    WHERE [Extent1].[ID] = @p0
+2016-01-18 10:55:23,306 [9] INFO  SqlResult - 
+
+2016-01-18 10:55:23,306 [9] INFO  SqlResult - -- p0: '1' (Type = Int32)
+
+2016-01-18 10:55:23,306 [9] INFO  SqlResult - -- 正在 2016/1/18 10:55:23 +08:00
+ 执行
+2016-01-18 10:55:23,319 [9] INFO  SqlResult - -- 已在 12 毫秒内完成，结果为: SqlDataReader
+
+2016-01-18 10:55:23,319 [9] INFO  SqlResult - 
+
+2016-01-18 10:55:23,321 [9] INFO  SqlResult - 已于 2016/1/18 10:55:23 +08:00
+ 关闭了连接
+2016-01-18 10:55:23,336 [9] INFO  SqlResult - 已于 2016/1/18 10:55:23 +08:00
+ 打开了连接
+2016-01-18 10:55:23,337 [9] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[Pid] AS [Pid], 
+    [Extent1].[depth_pid] AS [depth_pid], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[Url] AS [Url], 
+    [Extent1].[Remark] AS [Remark], 
+    [Extent1].[Type] AS [Type], 
+    [Extent1].[Sort] AS [Sort], 
+    [Extent1].[Icon] AS [Icon]
+    FROM [dbo].[eb_features] AS [Extent1]
+2016-01-18 10:55:23,337 [9] INFO  SqlResult - 
+
+2016-01-18 10:55:23,337 [9] INFO  SqlResult - -- 正在 2016/1/18 10:55:23 +08:00
+ 执行
+2016-01-18 10:55:23,348 [9] INFO  SqlResult - -- 已在 11 毫秒内完成，结果为: SqlDataReader
+
+2016-01-18 10:55:23,348 [9] INFO  SqlResult - 
+
+2016-01-18 10:55:23,348 [9] INFO  SqlResult - 已于 2016/1/18 10:55:23 +08:00
+ 关闭了连接
+2016-01-18 10:55:25,153 [6] INFO  SqlResult - 已于 2016/1/18 10:55:25 +08:00
+ 打开了连接
+2016-01-18 10:55:25,153 [6] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[Pid] AS [Pid], 
+    [Extent1].[depth_pid] AS [depth_pid], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[Url] AS [Url], 
+    [Extent1].[Remark] AS [Remark], 
+    [Extent1].[Type] AS [Type], 
+    [Extent1].[Sort] AS [Sort], 
+    [Extent1].[Icon] AS [Icon]
+    FROM [dbo].[eb_features] AS [Extent1]
+2016-01-18 10:55:25,153 [6] INFO  SqlResult - 
+
+2016-01-18 10:55:25,153 [6] INFO  SqlResult - -- 正在 2016/1/18 10:55:25 +08:00
+ 执行
+2016-01-18 10:55:25,165 [6] INFO  SqlResult - -- 已在 11 毫秒内完成，结果为: SqlDataReader
+
+2016-01-18 10:55:25,165 [6] INFO  SqlResult - 
+
+2016-01-18 10:55:25,165 [6] INFO  SqlResult - 已于 2016/1/18 10:55:25 +08:00
+ 关闭了连接
+2016-01-18 10:55:25,221 [6] INFO  SqlResult - 已于 2016/1/18 10:55:25 +08:00
+ 打开了连接
+2016-01-18 10:55:25,223 [6] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[Pid] AS [Pid], 
+    [Extent1].[depth_pid] AS [depth_pid], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[Url] AS [Url], 
+    [Extent1].[Remark] AS [Remark], 
+    [Extent1].[Type] AS [Type], 
+    [Extent1].[Sort] AS [Sort], 
+    [Extent1].[Icon] AS [Icon]
+    FROM [dbo].[eb_features] AS [Extent1]
+    WHERE 1 = [Extent1].[Type]
+2016-01-18 10:55:25,223 [6] INFO  SqlResult - 
+
+2016-01-18 10:55:25,223 [6] INFO  SqlResult - -- 正在 2016/1/18 10:55:25 +08:00
+ 执行
+2016-01-18 10:55:25,235 [6] INFO  SqlResult - -- 已在 11 毫秒内完成，结果为: SqlDataReader
+
+2016-01-18 10:55:25,235 [6] INFO  SqlResult - 
+
+2016-01-18 10:55:25,235 [6] INFO  SqlResult - 已于 2016/1/18 10:55:25 +08:00
+ 关闭了连接
+2016-01-18 10:55:25,236 [6] INFO  SqlResult - 已于 2016/1/18 10:55:25 +08:00
+ 打开了连接
+2016-01-18 10:55:25,240 [6] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[features_id] AS [features_id], 
+    [Extent1].[name] AS [name], 
+    [Extent1].[Url] AS [Url], 
+    [Extent1].[Remark] AS [Remark]
+    FROM [dbo].[eb_operate] AS [Extent1]
+2016-01-18 10:55:25,241 [6] INFO  SqlResult - 
+
+2016-01-18 10:55:25,241 [6] INFO  SqlResult - -- 正在 2016/1/18 10:55:25 +08:00
+ 执行
+2016-01-18 10:55:25,252 [6] INFO  SqlResult - -- 已在 11 毫秒内完成，结果为: SqlDataReader
+
+2016-01-18 10:55:25,252 [6] INFO  SqlResult - 
+
+2016-01-18 10:55:25,252 [6] INFO  SqlResult - 已于 2016/1/18 10:55:25 +08:00
+ 关闭了连接
+2016-01-18 10:57:10,828 [9] INFO  SqlResult - 已于 2016/1/18 10:57:10 +08:00
+ 打开了连接
+2016-01-18 10:57:10,828 [9] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[Pid] AS [Pid], 
+    [Extent1].[depth_pid] AS [depth_pid], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[Url] AS [Url], 
+    [Extent1].[Remark] AS [Remark], 
+    [Extent1].[Type] AS [Type], 
+    [Extent1].[Sort] AS [Sort], 
+    [Extent1].[Icon] AS [Icon]
+    FROM [dbo].[eb_features] AS [Extent1]
+2016-01-18 10:57:10,828 [9] INFO  SqlResult - 
+
+2016-01-18 10:57:10,828 [9] INFO  SqlResult - -- 正在 2016/1/18 10:57:10 +08:00
+ 执行
+2016-01-18 10:57:10,840 [9] INFO  SqlResult - -- 已在 11 毫秒内完成，结果为: SqlDataReader
+
+2016-01-18 10:57:10,840 [9] INFO  SqlResult - 
+
+2016-01-18 10:57:10,840 [9] INFO  SqlResult - 已于 2016/1/18 10:57:10 +08:00
+ 关闭了连接
+2016-01-18 10:57:10,840 [9] INFO  SqlResult - 已于 2016/1/18 10:57:10 +08:00
+ 打开了连接
+2016-01-18 10:57:10,841 [9] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[Pid] AS [Pid], 
+    [Extent1].[depth_pid] AS [depth_pid], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[Url] AS [Url], 
+    [Extent1].[Remark] AS [Remark], 
+    [Extent1].[Type] AS [Type], 
+    [Extent1].[Sort] AS [Sort], 
+    [Extent1].[Icon] AS [Icon]
+    FROM [dbo].[eb_features] AS [Extent1]
+    WHERE 1 = [Extent1].[Type]
+2016-01-18 10:57:10,841 [9] INFO  SqlResult - 
+
+2016-01-18 10:57:10,841 [9] INFO  SqlResult - -- 正在 2016/1/18 10:57:10 +08:00
+ 执行
+2016-01-18 10:57:10,853 [9] INFO  SqlResult - -- 已在 11 毫秒内完成，结果为: SqlDataReader
+
+2016-01-18 10:57:10,853 [9] INFO  SqlResult - 
+
+2016-01-18 10:57:10,853 [9] INFO  SqlResult - 已于 2016/1/18 10:57:10 +08:00
+ 关闭了连接
+2016-01-18 10:57:10,853 [9] INFO  SqlResult - 已于 2016/1/18 10:57:10 +08:00
+ 打开了连接
+2016-01-18 10:57:10,853 [9] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[features_id] AS [features_id], 
+    [Extent1].[name] AS [name], 
+    [Extent1].[Url] AS [Url], 
+    [Extent1].[Remark] AS [Remark]
+    FROM [dbo].[eb_operate] AS [Extent1]
+2016-01-18 10:57:10,853 [9] INFO  SqlResult - 
+
+2016-01-18 10:57:10,853 [9] INFO  SqlResult - -- 正在 2016/1/18 10:57:10 +08:00
+ 执行
+2016-01-18 10:57:10,865 [9] INFO  SqlResult - -- 已在 11 毫秒内完成，结果为: SqlDataReader
+
+2016-01-18 10:57:10,865 [9] INFO  SqlResult - 
+
+2016-01-18 10:57:10,865 [9] INFO  SqlResult - 已于 2016/1/18 10:57:10 +08:00
+ 关闭了连接
+2016-01-18 10:57:22,463 [6] INFO  SqlResult - 已于 2016/1/18 10:57:22 +08:00
+ 打开了连接
+2016-01-18 10:57:22,464 [6] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[role_name] AS [role_name], 
+    [Extent1].[Actions] AS [Actions], 
+    [Extent1].[Remark] AS [Remark]
+    FROM [dbo].[eb_role] AS [Extent1]
+2016-01-18 10:57:22,464 [6] INFO  SqlResult - 
+
+2016-01-18 10:57:22,464 [6] INFO  SqlResult - -- 正在 2016/1/18 10:57:22 +08:00
+ 执行
+2016-01-18 10:57:22,496 [6] INFO  SqlResult - -- 已在 32 毫秒内完成，结果为: SqlDataReader
+
+2016-01-18 10:57:22,496 [6] INFO  SqlResult - 
+
+2016-01-18 10:57:22,497 [6] INFO  SqlResult - 已于 2016/1/18 10:57:22 +08:00
+ 关闭了连接
+2016-01-18 10:57:26,982 [6] INFO  SqlResult - 已于 2016/1/18 10:57:26 +08:00
+ 打开了连接
+2016-01-18 10:57:26,982 [6] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[Pid] AS [Pid], 
+    [Extent1].[depth_pid] AS [depth_pid], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[Url] AS [Url], 
+    [Extent1].[Remark] AS [Remark], 
+    [Extent1].[Type] AS [Type], 
+    [Extent1].[Sort] AS [Sort], 
+    [Extent1].[Icon] AS [Icon]
+    FROM [dbo].[eb_features] AS [Extent1]
+2016-01-18 10:57:26,982 [6] INFO  SqlResult - 
+
+2016-01-18 10:57:26,982 [6] INFO  SqlResult - -- 正在 2016/1/18 10:57:26 +08:00
+ 执行
+2016-01-18 10:57:27,014 [6] INFO  SqlResult - -- 已在 32 毫秒内完成，结果为: SqlDataReader
+
+2016-01-18 10:57:27,014 [6] INFO  SqlResult - 
+
+2016-01-18 10:57:27,014 [6] INFO  SqlResult - 已于 2016/1/18 10:57:27 +08:00
+ 关闭了连接
+2016-01-18 10:57:27,070 [6] INFO  SqlResult - 已于 2016/1/18 10:57:27 +08:00
+ 打开了连接
+2016-01-18 10:57:27,072 [6] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[features_id] AS [features_id], 
+    [Extent1].[name] AS [name], 
+    [Extent1].[Url] AS [Url], 
+    [Extent1].[Remark] AS [Remark]
+    FROM [dbo].[eb_operate] AS [Extent1]
+2016-01-18 10:57:27,073 [6] INFO  SqlResult - 
+
+2016-01-18 10:57:27,073 [6] INFO  SqlResult - -- 正在 2016/1/18 10:57:27 +08:00
+ 执行
+2016-01-18 10:57:27,084 [6] INFO  SqlResult - -- 已在 11 毫秒内完成，结果为: SqlDataReader
+
+2016-01-18 10:57:27,084 [6] INFO  SqlResult - 
+
+2016-01-18 10:57:27,084 [6] INFO  SqlResult - 已于 2016/1/18 10:57:27 +08:00
+ 关闭了连接
+2016-01-18 10:57:27,137 [6] INFO  SqlResult - 已于 2016/1/18 10:57:27 +08:00
+ 打开了连接
+2016-01-18 10:57:27,141 [6] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[obj_id] AS [obj_id], 
+    [Extent1].[name] AS [name], 
+    [Extent1].[Code] AS [Code], 
+    [Extent1].[Type] AS [Type]
+    FROM [dbo].[eb_purview_field] AS [Extent1]
+2016-01-18 10:57:27,141 [6] INFO  SqlResult - 
+
+2016-01-18 10:57:27,141 [6] INFO  SqlResult - -- 正在 2016/1/18 10:57:27 +08:00
+ 执行
+2016-01-18 10:57:27,156 [6] INFO  SqlResult - -- 已在 14 毫秒内完成，结果为: SqlDataReader
+
+2016-01-18 10:57:27,156 [6] INFO  SqlResult - 
+
+2016-01-18 10:57:27,156 [6] INFO  SqlResult - 已于 2016/1/18 10:57:27 +08:00
+ 关闭了连接
+2016-01-18 10:57:57,950 [6] INFO  SqlResult - 已于 2016/1/18 10:57:57 +08:00
+ 打开了连接
+2016-01-18 10:57:57,951 [6] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[Pid] AS [Pid], 
+    [Extent1].[depth_pid] AS [depth_pid], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[Url] AS [Url], 
+    [Extent1].[Remark] AS [Remark], 
+    [Extent1].[Type] AS [Type], 
+    [Extent1].[Sort] AS [Sort], 
+    [Extent1].[Icon] AS [Icon]
+    FROM [dbo].[eb_features] AS [Extent1]
+2016-01-18 10:57:57,951 [6] INFO  SqlResult - 
+
+2016-01-18 10:57:57,951 [6] INFO  SqlResult - -- 正在 2016/1/18 10:57:57 +08:00
+ 执行
+2016-01-18 10:57:57,963 [6] INFO  SqlResult - -- 已在 11 毫秒内完成，结果为: SqlDataReader
+
+2016-01-18 10:57:57,963 [6] INFO  SqlResult - 
+
+2016-01-18 10:57:57,963 [6] INFO  SqlResult - 已于 2016/1/18 10:57:57 +08:00
+ 关闭了连接
+2016-01-18 10:58:11,079 [8] INFO  SqlResult - 已于 2016/1/18 10:58:11 +08:00
+ 打开了连接
+2016-01-18 10:58:11,082 [8] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[features_id] AS [features_id], 
+    [Extent1].[name] AS [name], 
+    [Extent1].[Url] AS [Url], 
+    [Extent1].[Remark] AS [Remark]
+    FROM [dbo].[eb_operate] AS [Extent1]
+    WHERE [Extent1].[features_id] = @p__linq__0
+2016-01-18 10:58:11,082 [8] INFO  SqlResult - 
+
+2016-01-18 10:58:11,082 [8] INFO  SqlResult - -- p__linq__0: '2' (Type = Int32)
+
+2016-01-18 10:58:11,082 [8] INFO  SqlResult - -- 正在 2016/1/18 10:58:11 +08:00
+ 执行
+2016-01-18 10:58:11,100 [8] INFO  SqlResult - -- 已在 17 毫秒内完成，结果为: SqlDataReader
+
+2016-01-18 10:58:11,100 [8] INFO  SqlResult - 
+
+2016-01-18 10:58:11,100 [8] INFO  SqlResult - 已于 2016/1/18 10:58:11 +08:00
+ 关闭了连接
+2016-01-18 10:58:14,753 [6] INFO  SqlResult - 已于 2016/1/18 10:58:14 +08:00
+ 打开了连接
+2016-01-18 10:58:14,753 [6] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[Pid] AS [Pid], 
+    [Extent1].[depth_pid] AS [depth_pid], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[Url] AS [Url], 
+    [Extent1].[Remark] AS [Remark], 
+    [Extent1].[Type] AS [Type], 
+    [Extent1].[Sort] AS [Sort], 
+    [Extent1].[Icon] AS [Icon]
+    FROM [dbo].[eb_features] AS [Extent1]
+2016-01-18 10:58:14,753 [6] INFO  SqlResult - 
+
+2016-01-18 10:58:14,753 [6] INFO  SqlResult - -- 正在 2016/1/18 10:58:14 +08:00
+ 执行
+2016-01-18 10:58:14,765 [6] INFO  SqlResult - -- 已在 11 毫秒内完成，结果为: SqlDataReader
+
+2016-01-18 10:58:14,765 [6] INFO  SqlResult - 
+
+2016-01-18 10:58:14,765 [6] INFO  SqlResult - 已于 2016/1/18 10:58:14 +08:00
+ 关闭了连接
+2016-01-18 10:58:16,181 [9] INFO  SqlResult - 已于 2016/1/18 10:58:16 +08:00
+ 打开了连接
+2016-01-18 10:58:16,185 [9] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[obj_id] AS [obj_id], 
+    [Extent1].[name] AS [name], 
+    [Extent1].[Code] AS [Code], 
+    [Extent1].[Type] AS [Type]
+    FROM [dbo].[eb_purview_field] AS [Extent1]
+    WHERE ([Extent1].[Type] = @p__linq__0) AND ([Extent1].[obj_id] = @p__linq__1)
+2016-01-18 10:58:16,185 [9] INFO  SqlResult - 
+
+2016-01-18 10:58:16,185 [9] INFO  SqlResult - -- p__linq__0: '0' (Type = Int32)
+
+2016-01-18 10:58:16,185 [9] INFO  SqlResult - -- p__linq__1: '2' (Type = Int32)
+
+2016-01-18 10:58:16,185 [9] INFO  SqlResult - -- 正在 2016/1/18 10:58:16 +08:00
+ 执行
+2016-01-18 10:58:16,202 [9] INFO  SqlResult - -- 已在 17 毫秒内完成，结果为: SqlDataReader
+
+2016-01-18 10:58:16,202 [9] INFO  SqlResult - 
+
+2016-01-18 10:58:16,202 [9] INFO  SqlResult - 已于 2016/1/18 10:58:16 +08:00
+ 关闭了连接
+2016-01-18 10:58:22,339 [6] INFO  SqlResult - 已于 2016/1/18 10:58:22 +08:00
+ 打开了连接
+2016-01-18 10:58:22,401 [6] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[UserName] AS [UserName], 
+    [Extent1].[Password] AS [Password], 
+    [Extent1].[role_id] AS [role_id], 
+    [Extent1].[Login] AS [Login], 
+    [Extent1].[reg_time] AS [reg_time], 
+    [Extent1].[login_time] AS [login_time], 
+    [Extent1].[update_time] AS [update_time], 
+    [Extent1].[login_ip] AS [login_ip], 
+    [Extent1].[Status] AS [Status], 
+    [Extent1].[Remark] AS [Remark], 
+    [Extent2].[ID] AS [ID1], 
+    [Extent2].[role_name] AS [role_name], 
+    [Extent2].[Actions] AS [Actions], 
+    [Extent2].[Remark] AS [Remark1]
+    FROM  [dbo].[eb_admin] AS [Extent1]
+    LEFT OUTER JOIN [dbo].[eb_role] AS [Extent2] ON [Extent1].[role_id] = [Extent2].[ID]
+2016-01-18 10:58:22,401 [6] INFO  SqlResult - 
+
+2016-01-18 10:58:22,401 [6] INFO  SqlResult - -- 正在 2016/1/18 10:58:22 +08:00
+ 执行
+2016-01-18 10:58:22,432 [6] INFO  SqlResult - -- 已在 31 毫秒内完成，结果为: SqlDataReader
+
+2016-01-18 10:58:22,432 [6] INFO  SqlResult - 
+
+2016-01-18 10:58:22,470 [6] INFO  SqlResult - 已于 2016/1/18 10:58:22 +08:00
+ 关闭了连接
+2016-01-18 10:58:24,377 [6] INFO  SqlResult - 已于 2016/1/18 10:58:24 +08:00
+ 打开了连接
+2016-01-18 10:58:24,377 [6] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[role_name] AS [role_name], 
+    [Extent1].[Actions] AS [Actions], 
+    [Extent1].[Remark] AS [Remark]
+    FROM [dbo].[eb_role] AS [Extent1]
+2016-01-18 10:58:24,377 [6] INFO  SqlResult - 
+
+2016-01-18 10:58:24,377 [6] INFO  SqlResult - -- 正在 2016/1/18 10:58:24 +08:00
+ 执行
+2016-01-18 10:58:24,391 [6] INFO  SqlResult - -- 已在 13 毫秒内完成，结果为: SqlDataReader
+
+2016-01-18 10:58:24,391 [6] INFO  SqlResult - 
+
+2016-01-18 10:58:24,391 [6] INFO  SqlResult - 已于 2016/1/18 10:58:24 +08:00
+ 关闭了连接
+2016-01-18 10:59:31,757 [13] INFO  SqlResult - 已于 2016/1/18 10:59:31 +08:00
+ 打开了连接
+2016-01-18 10:59:31,757 [13] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[Pid] AS [Pid], 
+    [Extent1].[depth_pid] AS [depth_pid], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[Url] AS [Url], 
+    [Extent1].[Remark] AS [Remark], 
+    [Extent1].[Type] AS [Type], 
+    [Extent1].[Sort] AS [Sort], 
+    [Extent1].[Icon] AS [Icon]
+    FROM [dbo].[eb_features] AS [Extent1]
+2016-01-18 10:59:31,757 [13] INFO  SqlResult - 
+
+2016-01-18 10:59:31,757 [13] INFO  SqlResult - -- 正在 2016/1/18 10:59:31 +08:00
+ 执行
+2016-01-18 10:59:31,768 [13] INFO  SqlResult - -- 已在 10 毫秒内完成，结果为: SqlDataReader
+
+2016-01-18 10:59:31,768 [13] INFO  SqlResult - 
+
+2016-01-18 10:59:31,768 [13] INFO  SqlResult - 已于 2016/1/18 10:59:31 +08:00
+ 关闭了连接
+2016-01-18 10:59:31,768 [13] INFO  SqlResult - 已于 2016/1/18 10:59:31 +08:00
+ 打开了连接
+2016-01-18 10:59:31,769 [13] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[features_id] AS [features_id], 
+    [Extent1].[name] AS [name], 
+    [Extent1].[Url] AS [Url], 
+    [Extent1].[Remark] AS [Remark]
+    FROM [dbo].[eb_operate] AS [Extent1]
+2016-01-18 10:59:31,769 [13] INFO  SqlResult - 
+
+2016-01-18 10:59:31,769 [13] INFO  SqlResult - -- 正在 2016/1/18 10:59:31 +08:00
+ 执行
+2016-01-18 10:59:31,782 [13] INFO  SqlResult - -- 已在 13 毫秒内完成，结果为: SqlDataReader
+
+2016-01-18 10:59:31,782 [13] INFO  SqlResult - 
+
+2016-01-18 10:59:31,782 [13] INFO  SqlResult - 已于 2016/1/18 10:59:31 +08:00
+ 关闭了连接
+2016-01-18 10:59:31,782 [13] INFO  SqlResult - 已于 2016/1/18 10:59:31 +08:00
+ 打开了连接
+2016-01-18 10:59:31,783 [13] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[obj_id] AS [obj_id], 
+    [Extent1].[name] AS [name], 
+    [Extent1].[Code] AS [Code], 
+    [Extent1].[Type] AS [Type]
+    FROM [dbo].[eb_purview_field] AS [Extent1]
+2016-01-18 10:59:31,783 [13] INFO  SqlResult - 
+
+2016-01-18 10:59:31,783 [13] INFO  SqlResult - -- 正在 2016/1/18 10:59:31 +08:00
+ 执行
+2016-01-18 10:59:31,794 [13] INFO  SqlResult - -- 已在 11 毫秒内完成，结果为: SqlDataReader
+
+2016-01-18 10:59:31,794 [13] INFO  SqlResult - 
+
+2016-01-18 10:59:31,794 [13] INFO  SqlResult - 已于 2016/1/18 10:59:31 +08:00
+ 关闭了连接
+2016-01-18 10:59:37,621 [13] INFO  SqlResult - 已于 2016/1/18 10:59:37 +08:00
+ 打开了连接
+2016-01-18 10:59:37,621 [13] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[Pid] AS [Pid], 
+    [Extent1].[depth_pid] AS [depth_pid], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[Url] AS [Url], 
+    [Extent1].[Remark] AS [Remark], 
+    [Extent1].[Type] AS [Type], 
+    [Extent1].[Sort] AS [Sort], 
+    [Extent1].[Icon] AS [Icon]
+    FROM [dbo].[eb_features] AS [Extent1]
+2016-01-18 10:59:37,621 [13] INFO  SqlResult - 
+
+2016-01-18 10:59:37,621 [13] INFO  SqlResult - -- 正在 2016/1/18 10:59:37 +08:00
+ 执行
+2016-01-18 10:59:37,633 [13] INFO  SqlResult - -- 已在 11 毫秒内完成，结果为: SqlDataReader
+
+2016-01-18 10:59:37,633 [13] INFO  SqlResult - 
+
+2016-01-18 10:59:37,633 [13] INFO  SqlResult - 已于 2016/1/18 10:59:37 +08:00
+ 关闭了连接
+2016-01-18 10:59:37,633 [13] INFO  SqlResult - 已于 2016/1/18 10:59:37 +08:00
+ 打开了连接
+2016-01-18 10:59:37,633 [13] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[features_id] AS [features_id], 
+    [Extent1].[name] AS [name], 
+    [Extent1].[Url] AS [Url], 
+    [Extent1].[Remark] AS [Remark]
+    FROM [dbo].[eb_operate] AS [Extent1]
+2016-01-18 10:59:37,633 [13] INFO  SqlResult - 
+
+2016-01-18 10:59:37,633 [13] INFO  SqlResult - -- 正在 2016/1/18 10:59:37 +08:00
+ 执行
+2016-01-18 10:59:37,664 [13] INFO  SqlResult - -- 已在 30 毫秒内完成，结果为: SqlDataReader
+
+2016-01-18 10:59:37,664 [13] INFO  SqlResult - 
+
+2016-01-18 10:59:37,664 [13] INFO  SqlResult - 已于 2016/1/18 10:59:37 +08:00
+ 关闭了连接
+2016-01-18 10:59:37,664 [13] INFO  SqlResult - 已于 2016/1/18 10:59:37 +08:00
+ 打开了连接
+2016-01-18 10:59:37,664 [13] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[obj_id] AS [obj_id], 
+    [Extent1].[name] AS [name], 
+    [Extent1].[Code] AS [Code], 
+    [Extent1].[Type] AS [Type]
+    FROM [dbo].[eb_purview_field] AS [Extent1]
+2016-01-18 10:59:37,664 [13] INFO  SqlResult - 
+
+2016-01-18 10:59:37,664 [13] INFO  SqlResult - -- 正在 2016/1/18 10:59:37 +08:00
+ 执行
+2016-01-18 10:59:37,676 [13] INFO  SqlResult - -- 已在 11 毫秒内完成，结果为: SqlDataReader
+
+2016-01-18 10:59:37,676 [13] INFO  SqlResult - 
+
+2016-01-18 10:59:37,676 [13] INFO  SqlResult - 已于 2016/1/18 10:59:37 +08:00
+ 关闭了连接
+2016-01-18 11:00:54,305 [16] INFO  SqlResult - 已于 2016/1/18 11:00:54 +08:00
+ 打开了连接
+2016-01-18 11:00:54,305 [16] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[Pid] AS [Pid], 
+    [Extent1].[depth_pid] AS [depth_pid], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[Url] AS [Url], 
+    [Extent1].[Remark] AS [Remark], 
+    [Extent1].[Type] AS [Type], 
+    [Extent1].[Sort] AS [Sort], 
+    [Extent1].[Icon] AS [Icon]
+    FROM [dbo].[eb_features] AS [Extent1]
+2016-01-18 11:00:54,305 [16] INFO  SqlResult - 
+
+2016-01-18 11:00:54,305 [16] INFO  SqlResult - -- 正在 2016/1/18 11:00:54 +08:00
+ 执行
+2016-01-18 11:00:54,344 [16] INFO  SqlResult - -- 已在 39 毫秒内完成，结果为: SqlDataReader
+
+2016-01-18 11:00:54,345 [16] INFO  SqlResult - 
+
+2016-01-18 11:00:54,345 [16] INFO  SqlResult - 已于 2016/1/18 11:00:54 +08:00
+ 关闭了连接
+2016-01-18 11:01:17,797 [15] INFO  SqlResult - 已于 2016/1/18 11:01:17 +08:00
+ 打开了连接
+2016-01-18 11:01:17,798 [15] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[Pid] AS [Pid], 
+    [Extent1].[depth_pid] AS [depth_pid], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[Url] AS [Url], 
+    [Extent1].[Remark] AS [Remark], 
+    [Extent1].[Type] AS [Type], 
+    [Extent1].[Sort] AS [Sort], 
+    [Extent1].[Icon] AS [Icon]
+    FROM [dbo].[eb_features] AS [Extent1]
+2016-01-18 11:01:17,798 [15] INFO  SqlResult - 
+
+2016-01-18 11:01:17,798 [15] INFO  SqlResult - -- 正在 2016/1/18 11:01:17 +08:00
+ 执行
+2016-01-18 11:01:17,822 [15] INFO  SqlResult - -- 已在 24 毫秒内完成，结果为: SqlDataReader
+
+2016-01-18 11:01:17,822 [15] INFO  SqlResult - 
+
+2016-01-18 11:01:17,823 [15] INFO  SqlResult - 已于 2016/1/18 11:01:17 +08:00
+ 关闭了连接
+2016-01-18 11:04:31,491 [20] INFO  SqlResult - 已于 2016/1/18 11:04:31 +08:00
+ 打开了连接
+2016-01-18 11:04:31,491 [20] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[Pid] AS [Pid], 
+    [Extent1].[depth_pid] AS [depth_pid], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[Url] AS [Url], 
+    [Extent1].[Remark] AS [Remark], 
+    [Extent1].[Type] AS [Type], 
+    [Extent1].[Sort] AS [Sort], 
+    [Extent1].[Icon] AS [Icon]
+    FROM [dbo].[eb_features] AS [Extent1]
+2016-01-18 11:04:31,491 [20] INFO  SqlResult - 
+
+2016-01-18 11:04:31,491 [20] INFO  SqlResult - -- 正在 2016/1/18 11:04:31 +08:00
+ 执行
+2016-01-18 11:04:31,511 [20] INFO  SqlResult - -- 已在 20 毫秒内完成，结果为: SqlDataReader
+
+2016-01-18 11:04:31,511 [20] INFO  SqlResult - 
+
+2016-01-18 11:04:31,512 [20] INFO  SqlResult - 已于 2016/1/18 11:04:31 +08:00
+ 关闭了连接
+2016-01-18 11:05:17,811 [21] INFO  SqlResult - 已于 2016/1/18 11:05:17 +08:00
+ 打开了连接
+2016-01-18 11:05:17,811 [21] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[UserName] AS [UserName], 
+    [Extent1].[Password] AS [Password], 
+    [Extent1].[role_id] AS [role_id], 
+    [Extent1].[Login] AS [Login], 
+    [Extent1].[reg_time] AS [reg_time], 
+    [Extent1].[login_time] AS [login_time], 
+    [Extent1].[update_time] AS [update_time], 
+    [Extent1].[login_ip] AS [login_ip], 
+    [Extent1].[Status] AS [Status], 
+    [Extent1].[Remark] AS [Remark], 
+    [Extent2].[ID] AS [ID1], 
+    [Extent2].[role_name] AS [role_name], 
+    [Extent2].[Actions] AS [Actions], 
+    [Extent2].[Remark] AS [Remark1]
+    FROM  [dbo].[eb_admin] AS [Extent1]
+    LEFT OUTER JOIN [dbo].[eb_role] AS [Extent2] ON [Extent1].[role_id] = [Extent2].[ID]
+2016-01-18 11:05:17,811 [21] INFO  SqlResult - 
+
+2016-01-18 11:05:17,811 [21] INFO  SqlResult - -- 正在 2016/1/18 11:05:17 +08:00
+ 执行
+2016-01-18 11:05:17,833 [21] INFO  SqlResult - -- 已在 21 毫秒内完成，结果为: SqlDataReader
+
+2016-01-18 11:05:17,833 [21] INFO  SqlResult - 
+
+2016-01-18 11:05:17,833 [21] INFO  SqlResult - 已于 2016/1/18 11:05:17 +08:00
+ 关闭了连接
+2016-01-18 11:05:26,581 [16] INFO  SqlResult - 已于 2016/1/18 11:05:26 +08:00
+ 打开了连接
+2016-01-18 11:05:26,582 [16] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[Pid] AS [Pid], 
+    [Extent1].[depth_pid] AS [depth_pid], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[Url] AS [Url], 
+    [Extent1].[Remark] AS [Remark], 
+    [Extent1].[Type] AS [Type], 
+    [Extent1].[Sort] AS [Sort], 
+    [Extent1].[Icon] AS [Icon]
+    FROM [dbo].[eb_features] AS [Extent1]
+2016-01-18 11:05:26,582 [16] INFO  SqlResult - 
+
+2016-01-18 11:05:26,582 [16] INFO  SqlResult - -- 正在 2016/1/18 11:05:26 +08:00
+ 执行
+2016-01-18 11:05:26,602 [16] INFO  SqlResult - -- 已在 20 毫秒内完成，结果为: SqlDataReader
+
+2016-01-18 11:05:26,602 [16] INFO  SqlResult - 
+
+2016-01-18 11:05:26,602 [16] INFO  SqlResult - 已于 2016/1/18 11:05:26 +08:00
+ 关闭了连接
+2016-01-18 11:05:31,044 [18] INFO  SqlResult - 已于 2016/1/18 11:05:31 +08:00
+ 打开了连接
+2016-01-18 11:05:31,044 [18] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[role_name] AS [role_name], 
+    [Extent1].[Actions] AS [Actions], 
+    [Extent1].[Remark] AS [Remark]
+    FROM [dbo].[eb_role] AS [Extent1]
+2016-01-18 11:05:31,044 [18] INFO  SqlResult - 
+
+2016-01-18 11:05:31,044 [18] INFO  SqlResult - -- 正在 2016/1/18 11:05:31 +08:00
+ 执行
+2016-01-18 11:05:31,065 [18] INFO  SqlResult - -- 已在 21 毫秒内完成，结果为: SqlDataReader
+
+2016-01-18 11:05:31,065 [18] INFO  SqlResult - 
+
+2016-01-18 11:05:31,066 [18] INFO  SqlResult - 已于 2016/1/18 11:05:31 +08:00
+ 关闭了连接
+2016-01-18 11:05:33,940 [20] INFO  SqlResult - 已于 2016/1/18 11:05:33 +08:00
+ 打开了连接
+2016-01-18 11:05:33,941 [20] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[UserName] AS [UserName], 
+    [Extent1].[Password] AS [Password], 
+    [Extent1].[role_id] AS [role_id], 
+    [Extent1].[Login] AS [Login], 
+    [Extent1].[reg_time] AS [reg_time], 
+    [Extent1].[login_time] AS [login_time], 
+    [Extent1].[update_time] AS [update_time], 
+    [Extent1].[login_ip] AS [login_ip], 
+    [Extent1].[Status] AS [Status], 
+    [Extent1].[Remark] AS [Remark], 
+    [Extent2].[ID] AS [ID1], 
+    [Extent2].[role_name] AS [role_name], 
+    [Extent2].[Actions] AS [Actions], 
+    [Extent2].[Remark] AS [Remark1]
+    FROM  [dbo].[eb_admin] AS [Extent1]
+    LEFT OUTER JOIN [dbo].[eb_role] AS [Extent2] ON [Extent1].[role_id] = [Extent2].[ID]
+2016-01-18 11:05:33,941 [20] INFO  SqlResult - 
+
+2016-01-18 11:05:33,941 [20] INFO  SqlResult - -- 正在 2016/1/18 11:05:33 +08:00
+ 执行
+2016-01-18 11:05:33,966 [20] INFO  SqlResult - -- 已在 25 毫秒内完成，结果为: SqlDataReader
+
+2016-01-18 11:05:33,966 [20] INFO  SqlResult - 
+
+2016-01-18 11:05:33,966 [20] INFO  SqlResult - 已于 2016/1/18 11:05:33 +08:00
+ 关闭了连接
+2016-01-18 11:05:34,693 [18] INFO  SqlResult - 已于 2016/1/18 11:05:34 +08:00
+ 打开了连接
+2016-01-18 11:05:34,694 [18] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[Pid] AS [Pid], 
+    [Extent1].[depth_pid] AS [depth_pid], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[Url] AS [Url], 
+    [Extent1].[Remark] AS [Remark], 
+    [Extent1].[Type] AS [Type], 
+    [Extent1].[Sort] AS [Sort], 
+    [Extent1].[Icon] AS [Icon]
+    FROM [dbo].[eb_features] AS [Extent1]
+2016-01-18 11:05:34,694 [18] INFO  SqlResult - 
+
+2016-01-18 11:05:34,694 [18] INFO  SqlResult - -- 正在 2016/1/18 11:05:34 +08:00
+ 执行
+2016-01-18 11:05:34,706 [18] INFO  SqlResult - -- 已在 11 毫秒内完成，结果为: SqlDataReader
+
+2016-01-18 11:05:34,706 [18] INFO  SqlResult - 
+
+2016-01-18 11:05:34,706 [18] INFO  SqlResult - 已于 2016/1/18 11:05:34 +08:00
+ 关闭了连接
+2016-01-18 11:05:37,453 [20] INFO  SqlResult - 已于 2016/1/18 11:05:37 +08:00
+ 打开了连接
+2016-01-18 11:05:37,453 [20] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[UserName] AS [UserName], 
+    [Extent1].[Password] AS [Password], 
+    [Extent1].[role_id] AS [role_id], 
+    [Extent1].[Login] AS [Login], 
+    [Extent1].[reg_time] AS [reg_time], 
+    [Extent1].[login_time] AS [login_time], 
+    [Extent1].[update_time] AS [update_time], 
+    [Extent1].[login_ip] AS [login_ip], 
+    [Extent1].[Status] AS [Status], 
+    [Extent1].[Remark] AS [Remark], 
+    [Extent2].[ID] AS [ID1], 
+    [Extent2].[role_name] AS [role_name], 
+    [Extent2].[Actions] AS [Actions], 
+    [Extent2].[Remark] AS [Remark1]
+    FROM  [dbo].[eb_admin] AS [Extent1]
+    LEFT OUTER JOIN [dbo].[eb_role] AS [Extent2] ON [Extent1].[role_id] = [Extent2].[ID]
+2016-01-18 11:05:37,453 [20] INFO  SqlResult - 
+
+2016-01-18 11:05:37,453 [20] INFO  SqlResult - -- 正在 2016/1/18 11:05:37 +08:00
+ 执行
+2016-01-18 11:05:37,486 [20] INFO  SqlResult - -- 已在 33 毫秒内完成，结果为: SqlDataReader
+
+2016-01-18 11:05:37,486 [20] INFO  SqlResult - 
+
+2016-01-18 11:05:37,487 [20] INFO  SqlResult - 已于 2016/1/18 11:05:37 +08:00
+ 关闭了连接
+2016-01-18 11:05:40,183 [16] INFO  SqlResult - 已于 2016/1/18 11:05:40 +08:00
+ 打开了连接
+2016-01-18 11:05:40,183 [16] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[role_name] AS [role_name], 
+    [Extent1].[Actions] AS [Actions], 
+    [Extent1].[Remark] AS [Remark]
+    FROM [dbo].[eb_role] AS [Extent1]
+2016-01-18 11:05:40,183 [16] INFO  SqlResult - 
+
+2016-01-18 11:05:40,183 [16] INFO  SqlResult - -- 正在 2016/1/18 11:05:40 +08:00
+ 执行
+2016-01-18 11:05:40,215 [16] INFO  SqlResult - -- 已在 31 毫秒内完成，结果为: SqlDataReader
+
+2016-01-18 11:05:40,215 [16] INFO  SqlResult - 
+
+2016-01-18 11:05:40,216 [16] INFO  SqlResult - 已于 2016/1/18 11:05:40 +08:00
+ 关闭了连接
+2016-01-18 11:05:42,609 [18] INFO  SqlResult - 已于 2016/1/18 11:05:42 +08:00
+ 打开了连接
+2016-01-18 11:05:42,610 [18] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[Pid] AS [Pid], 
+    [Extent1].[depth_pid] AS [depth_pid], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[Url] AS [Url], 
+    [Extent1].[Remark] AS [Remark], 
+    [Extent1].[Type] AS [Type], 
+    [Extent1].[Sort] AS [Sort], 
+    [Extent1].[Icon] AS [Icon]
+    FROM [dbo].[eb_features] AS [Extent1]
+2016-01-18 11:05:42,610 [18] INFO  SqlResult - 
+
+2016-01-18 11:05:42,610 [18] INFO  SqlResult - -- 正在 2016/1/18 11:05:42 +08:00
+ 执行
+2016-01-18 11:05:42,632 [18] INFO  SqlResult - -- 已在 22 毫秒内完成，结果为: SqlDataReader
+
+2016-01-18 11:05:42,632 [18] INFO  SqlResult - 
+
+2016-01-18 11:05:42,632 [18] INFO  SqlResult - 已于 2016/1/18 11:05:42 +08:00
+ 关闭了连接
+2016-01-18 11:11:58,182 [24] INFO  SqlResult - 已于 2016/1/18 11:11:58 +08:00
+ 打开了连接
+2016-01-18 11:11:58,182 [24] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[role_name] AS [role_name], 
+    [Extent1].[Actions] AS [Actions], 
+    [Extent1].[Remark] AS [Remark]
+    FROM [dbo].[eb_role] AS [Extent1]
+2016-01-18 11:11:58,182 [24] INFO  SqlResult - 
+
+2016-01-18 11:11:58,182 [24] INFO  SqlResult - -- 正在 2016/1/18 11:11:58 +08:00
+ 执行
+2016-01-18 11:11:58,209 [24] INFO  SqlResult - -- 已在 26 毫秒内完成，结果为: SqlDataReader
+
+2016-01-18 11:11:58,209 [24] INFO  SqlResult - 
+
+2016-01-18 11:11:58,209 [24] INFO  SqlResult - 已于 2016/1/18 11:11:58 +08:00
+ 关闭了连接
+2016-01-18 11:12:00,115 [27] INFO  SqlResult - 已于 2016/1/18 11:12:00 +08:00
+ 打开了连接
+2016-01-18 11:12:00,115 [27] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[Pid] AS [Pid], 
+    [Extent1].[depth_pid] AS [depth_pid], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[Url] AS [Url], 
+    [Extent1].[Remark] AS [Remark], 
+    [Extent1].[Type] AS [Type], 
+    [Extent1].[Sort] AS [Sort], 
+    [Extent1].[Icon] AS [Icon]
+    FROM [dbo].[eb_features] AS [Extent1]
+2016-01-18 11:12:00,115 [27] INFO  SqlResult - 
+
+2016-01-18 11:12:00,115 [27] INFO  SqlResult - -- 正在 2016/1/18 11:12:00 +08:00
+ 执行
+2016-01-18 11:12:00,133 [27] INFO  SqlResult - -- 已在 17 毫秒内完成，结果为: SqlDataReader
+
+2016-01-18 11:12:00,134 [27] INFO  SqlResult - 
+
+2016-01-18 11:12:00,134 [27] INFO  SqlResult - 已于 2016/1/18 11:12:00 +08:00
+ 关闭了连接
+2016-01-18 11:12:00,134 [27] INFO  SqlResult - 已于 2016/1/18 11:12:00 +08:00
+ 打开了连接
+2016-01-18 11:12:00,134 [27] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[features_id] AS [features_id], 
+    [Extent1].[name] AS [name], 
+    [Extent1].[Url] AS [Url], 
+    [Extent1].[Remark] AS [Remark]
+    FROM [dbo].[eb_operate] AS [Extent1]
+2016-01-18 11:12:00,134 [27] INFO  SqlResult - 
+
+2016-01-18 11:12:00,134 [27] INFO  SqlResult - -- 正在 2016/1/18 11:12:00 +08:00
+ 执行
+2016-01-18 11:12:00,149 [27] INFO  SqlResult - -- 已在 14 毫秒内完成，结果为: SqlDataReader
+
+2016-01-18 11:12:00,149 [27] INFO  SqlResult - 
+
+2016-01-18 11:12:00,149 [27] INFO  SqlResult - 已于 2016/1/18 11:12:00 +08:00
+ 关闭了连接
+2016-01-18 11:12:00,149 [27] INFO  SqlResult - 已于 2016/1/18 11:12:00 +08:00
+ 打开了连接
+2016-01-18 11:12:00,149 [27] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[obj_id] AS [obj_id], 
+    [Extent1].[name] AS [name], 
+    [Extent1].[Code] AS [Code], 
+    [Extent1].[Type] AS [Type]
+    FROM [dbo].[eb_purview_field] AS [Extent1]
+2016-01-18 11:12:00,149 [27] INFO  SqlResult - 
+
+2016-01-18 11:12:00,149 [27] INFO  SqlResult - -- 正在 2016/1/18 11:12:00 +08:00
+ 执行
+2016-01-18 11:12:00,160 [27] INFO  SqlResult - -- 已在 10 毫秒内完成，结果为: SqlDataReader
+
+2016-01-18 11:12:00,160 [27] INFO  SqlResult - 
+
+2016-01-18 11:12:00,160 [27] INFO  SqlResult - 已于 2016/1/18 11:12:00 +08:00
+ 关闭了连接
+2016-01-18 11:12:14,885 [27] INFO  SqlResult - 已于 2016/1/18 11:12:14 +08:00
+ 打开了连接
+2016-01-18 11:12:14,888 [27] INFO  SqlResult - 已于 2016/1/18 11:12:14 +08:00
+ 启动了事务
+2016-01-18 11:12:14,958 [27] INFO  SqlResult - UPDATE [dbo].[eb_role]
+SET [role_name] = @0, [Actions] = @1, [Remark] = NULL
+WHERE ([ID] = @2)
+
+2016-01-18 11:12:14,959 [27] INFO  SqlResult - -- @0: '超级管理员' (Type = String, Size = -1)
+
+2016-01-18 11:12:14,959 [27] INFO  SqlResult - -- @1: '[{"ID":1,"Url":"","Type":0,"Fields":[]},{"ID":2,"Url":"/admin/purview/index","Type":1,"Fields":[]},{"ID":4,"Url":"/admin/purview/admininfo","Type":0,"Fields":[]},{"ID":3,"Url":"/admin/purview/roleinfo","Type":1,"Fields":[]}]' (Type = String, Size = -1)
+
+2016-01-18 11:12:14,959 [27] INFO  SqlResult - -- @2: '1' (Type = Int32)
+
+2016-01-18 11:12:14,959 [27] INFO  SqlResult - -- 正在 2016/1/18 11:12:14 +08:00
+ 执行
+2016-01-18 11:12:14,979 [27] INFO  SqlResult - -- 已在 19 毫秒内完成，结果为: 1
+
+2016-01-18 11:12:14,979 [27] INFO  SqlResult - 
+
+2016-01-18 11:12:14,985 [27] INFO  SqlResult - 已于 2016/1/18 11:12:14 +08:00
+ 提交了事务
+2016-01-18 11:12:14,985 [27] INFO  SqlResult - 已于 2016/1/18 11:12:14 +08:00
+ 关闭了连接
+2016-01-18 11:12:16,604 [25] INFO  SqlResult - 已于 2016/1/18 11:12:16 +08:00
+ 打开了连接
+2016-01-18 11:12:16,604 [25] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[role_name] AS [role_name], 
+    [Extent1].[Actions] AS [Actions], 
+    [Extent1].[Remark] AS [Remark]
+    FROM [dbo].[eb_role] AS [Extent1]
+2016-01-18 11:12:16,604 [25] INFO  SqlResult - 
+
+2016-01-18 11:12:16,604 [25] INFO  SqlResult - -- 正在 2016/1/18 11:12:16 +08:00
+ 执行
+2016-01-18 11:12:16,621 [25] INFO  SqlResult - -- 已在 16 毫秒内完成，结果为: SqlDataReader
+
+2016-01-18 11:12:16,621 [25] INFO  SqlResult - 
+
+2016-01-18 11:12:16,621 [25] INFO  SqlResult - 已于 2016/1/18 11:12:16 +08:00
+ 关闭了连接
+2016-01-18 11:12:46,785 [22] INFO  SqlResult - 已于 2016/1/18 11:12:46 +08:00
+ 打开了连接
+2016-01-18 11:12:46,785 [22] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[Pid] AS [Pid], 
+    [Extent1].[depth_pid] AS [depth_pid], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[Url] AS [Url], 
+    [Extent1].[Remark] AS [Remark], 
+    [Extent1].[Type] AS [Type], 
+    [Extent1].[Sort] AS [Sort], 
+    [Extent1].[Icon] AS [Icon]
+    FROM [dbo].[eb_features] AS [Extent1]
+2016-01-18 11:12:46,785 [22] INFO  SqlResult - 
+
+2016-01-18 11:12:46,785 [22] INFO  SqlResult - -- 正在 2016/1/18 11:12:46 +08:00
+ 执行
+2016-01-18 11:12:46,815 [22] INFO  SqlResult - -- 已在 30 毫秒内完成，结果为: SqlDataReader
+
+2016-01-18 11:12:46,816 [22] INFO  SqlResult - 
+
+2016-01-18 11:12:46,816 [22] INFO  SqlResult - 已于 2016/1/18 11:12:46 +08:00
+ 关闭了连接

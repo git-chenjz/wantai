@@ -1,0 +1,123 @@
+﻿
+@{
+    ViewBag.Title = "修改密码";
+}
+
+@section style{
+    <link href="~/Content/css/reset.css" rel="stylesheet" />
+    <link href="~/Content/css/content.css" rel="stylesheet" />
+    <style>
+        html, body {
+            padding: 0;
+            margin: 0;
+            background-color: #efefef;
+        }
+
+        .pro-main {
+            float: left;
+            width: 100%;
+            padding-top: 1.38rem;
+        }
+
+        .pro-list {
+            float: left;
+            width: 94%;
+            height: 1.8rem;
+            margin: 0 0 0.45rem 3%;
+        }
+
+            .pro-list span {
+                float: left;
+                width: 22%;
+                height: 1.8rem;
+                color: #1d1a1a;
+                font-size: 0.7rem;
+                line-height: 1.8rem;
+                text-align: center;
+            }
+
+            .pro-list input {
+                float: left;
+                width: 74%;
+                height: 1.7rem;
+                color: #1d1a1a;
+                padding-left: 3%;
+                border: 1px solid #d3d3d3;
+                background-color: #fff;
+                font-size: 0.65rem;
+                line-height: 1.7rem;
+                text-align: left;
+            }
+    </style>
+}
+
+<div class="pro-main clearfix">
+    <form method="post">
+        <div class="pro-list">
+            <span>原密码</span>
+            <input type="password" placeholder="原密码" name="oldPwd" id="oldPwd">
+        </div>
+        <div class="pro-list">
+            <span>新密码</span>
+            <input type="password" placeholder="新密码" name="newPwd" id="newPwd">
+        </div>
+        <div class="pro-list">
+            <span>确认密码</span>
+            <input type="password" placeholder="确认密码" name="confrimPwd" id="confrimPwd">
+        </div>
+        @if (ViewBag.Message != null)
+        {
+            <span class="land-host" style="text-align:center;color:red;">@ViewBag.Message</span>
+        }
+        <a href="" title="">
+            <input type="submit" value="保存" class="reg-bottom" id="submit">
+        </a>
+    </form>
+</div>
+
+<div class="bottom un-deable">
+    <span class="bottom-rac">地址：厦门市海沧区新园路130号</span>
+    <p class="bottom-text">
+        <span>电话：+86-592-6536555</span>
+        <span>传真：+86-592-6536567</span>
+    </p>
+</div>
+
+@section scripts{
+    <script src="~/Content/js/flexible.js"></script>
+    <script type="text/javascript">
+        function Check()
+        {
+            var oldPwd = $("#oldPwd").val();
+            var newPwd = $("#newPwd").val();
+            var confirmPwd = $("#confrimPwd").val();
+
+            if (!IsEmpty(oldPwd)) {
+                toastr.warning('请输入原密码');
+                return false;
+            }
+
+            if (!IsEmpty(newPwd)) {
+                toastr.warning('请输入新密码');
+                return false;
+            }
+
+            if (!IsEmpty(confirmPwd)) {
+                toastr.warning('请输入确认密码');
+                return false;
+            }
+
+            if (newPwd != confirmPwd)
+            {
+                toastr.warning('输入两次密码不一致');
+                return false;
+            }
+        }
+        $(function () {
+            $("#submit").click(function () {
+                return Check();
+            });
+        });
+    </script>
+}
+

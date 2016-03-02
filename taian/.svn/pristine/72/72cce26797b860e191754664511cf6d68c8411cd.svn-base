@@ -1,0 +1,89 @@
+﻿@{
+    ViewBag.Title = "会员管理";
+}
+@using DataAccess.Domain
+@model PagedResult<Users>
+
+<div class="navbar-fixed-top row">
+    <div class="col-lg-12">
+        <ol class="breadcrumb">
+            <li>
+                <a href="@Url.Content("~/admin/home/main")">主页</a>
+            </li>
+            <li>
+                <strong>会员管理</strong>
+            </li>
+        </ol>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="ibox float-e-margins">
+            <div class="ibox-title">
+                <h5>列表</h5>
+                <div class="ibox-tools">
+                    <a class="collapse-link">
+                        <i class="fa fa-chevron-up"></i>
+                        <i class="fa fa-refresh" onclick="javacript:window.location.reload();"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="ibox-content">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <label>
+                            <input id="comment_cb" type="checkbox" class="i-checks checkAll"><span>全选</span>
+                        </label>
+
+                        <a href="@Url.Content("~/admin/Users/UserInsert")" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i>&nbsp;新增</a>
+                        <a href="javascript:void(0);" class="btn btn-primary btn-sm" id="del_choose"><i class="fa fa-minus"></i>&nbsp;删除</a>
+                    </div>
+                    <div class="col-sm-8">
+                        @using (Ajax.BeginForm("Index", new RouteValueDictionary { { "page", "" } }, new AjaxOptions { UpdateTargetId = "UserId", InsertionMode = InsertionMode.Replace },
+                                new RouteValueDictionary { { "id", "searchForm" }, { "class", "form-inline" } }))
+                        {
+                            <div class="col-md-4">
+                                <input type="text" placeholder="登录名" class="form-control input-sm" name="loginName" />
+                            </div>
+                            <div class="col-md-4">
+                                <input type="text" placeholder="电话" class="form-control input-sm" name="tel" />
+                            </div>
+                                <div class="input-group">
+                                    <input type="text" placeholder="用户名" class="form-control input-sm" name="userName" />
+                                    <span class="input-group-btn">
+                                        <button type="submit" class="btn btn-primary btn-sm"><i class="fa fa-search"></i>&nbsp;搜索</button>
+                                    </span>
+                                </div>
+                                }
+                            </div>
+                </div>
+
+                <div id="UserId">
+                    @Html.Partial("UserList", Model)
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+    <script type="text/javascript">
+
+        function UserPage() {
+            this.base = Page;
+            this.base();
+
+            this.Init = function () {
+                this.MultipleDel($('#del_choose'), '@Url.Content("~/admin/Users/DeleteUser")');
+                this.SingleDel($('.del'));
+            }
+        }
+
+        $(function () {
+            new UserPage().Init();
+        });
+    </script>
+    @{Html.RegisterMvcPagerScriptResource();}
+}
+

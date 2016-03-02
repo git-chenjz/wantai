@@ -1,0 +1,57 @@
+﻿@{
+    ViewBag.Title = "**后台管理-主页";
+    int page = 0, pageSize = 3;
+    int.TryParse(Request["page"], out page); page = page == 0 ? 1 : page;
+    //var list = new PagedResult<Goods>(new List<Goods>(), 80, page, pageSize);
+}
+@inherits UnityWebViewPage<dynamic>
+<div class="navbar-fixed-top row">
+    <div class="col-lg-12">
+        <ol class="breadcrumb">
+            <li>
+                <strong>主页</strong>
+            </li>
+        </ol>
+    </div>
+</div>
+<div class="animated fadeInRight m-t-lg">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>主页</h5>
+                    <div class="ibox-tools">
+                        <a class="collapse-link" href="javascript:void();"><i class="fa fa-chevron-up"></i></a>
+                        <a href="javascript:void();" onclick="javacript:window.location.reload();"><i class="fa fa-refresh"></i></a>
+                    </div>
+                </div>
+                <div class="ibox-content">
+                    <div class="row">
+                        <div class="col-sm-8">
+                            <div class="dataTables_paginate">
+                                @*@Html.Pager(list.Total, list.PageSize, list.PageIndex, new PagerOptions {
+        PageIndexParameterName = "page", ContainerTagName = "ul", CssClass = "pagination",
+        CurrentPagerItemTemplate = "<li class=\"active\"><a href=\"#\">{0}</a></li>",
+        DisabledPagerItemTemplate = "<li class=\"disabled\"><a>{0}</a></li>",
+        PagerItemTemplate = "<li>{0}</li>", Id = "bootstrappager",
+        PageIndexBoxId = "pageIndexBox", GoToButtonId = "goToBtn"
+    })*@
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="dataTables_info">
+                                <div class="input-group">
+                                    @*<span class="input-group-addon input-sm">共 @list.TotalPageCount 页 @list.Total 条记录，当前第 @list.PageIndex 页</span>*@
+                                    <select id="pageIndexBox" class="form-control input-sm pageIndexBox"></select>
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-primary btn-sm" id="goToBtn">跳转</button></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section scripts{@{Html.RegisterMvcPagerScriptResource();}}

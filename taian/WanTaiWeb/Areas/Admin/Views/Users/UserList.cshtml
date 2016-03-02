@@ -1,0 +1,72 @@
+﻿@model PagedResult<Users>
+
+<div class="table-responsive">
+    <table id="purview_tb" class="table table-striped">
+        <thead>
+            <tr>
+                <th></th>
+                <th>登陆名</th>
+                <th>姓名</th>
+                <th>电话</th>
+                <th>性别</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var item in Model.Result)
+            {
+                <tr>
+                    <td>
+                        <input type="checkbox" class="i-checks itemCheck" name="id" value="@item.ID">
+                    </td>
+                    <td>@item.LoginName</td>
+                    <td>@item.UserName</td>
+                    <td>@item.Tel</td>
+                    <td>@item.Gender</td>
+                    <td>
+                        <a href="@Url.Content("~/admin/Users/UserUpdate/"+item.ID)"><i class="fa fa-edit text-navy"></i> 编辑</a>
+                        <a href="javascript:void(0);" data-url="@Url.Content("~/admin/Users/DeleteUser?ids=" + item.ID)" class="del"><i class="fa fa-edit text-navy"></i>删除</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+
+    </table>
+</div>
+
+<div class="row">
+    <div class="col-sm-8">
+        <div class="dataTables_paginate">
+            @Ajax.Pager(Model.Total, Model.PageSize, Model.PageIndex, new PagerOptions
+                       {
+                           PageIndexParameterName = "page",
+                           ContainerTagName = "ul",
+                           CssClass = "pagination",
+                           CurrentPagerItemTemplate = "<li class=\"active\"><a href=\"#\">{0}</a></li>",
+                           DisabledPagerItemTemplate = "<li class=\"disabled\"><a>{0}</a></li>",
+                           PagerItemTemplate = "<li>{0}</li>",
+                           Id = "bootstrappager",
+                           PageIndexBoxId = "pageIndexBox",
+                           GoToButtonId = "goToBtn"
+                       },
+                                    new MvcAjaxOptions { EnablePartialLoading = true, UpdateTargetId = "UserId" })
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="dataTables_info">
+            <div class="input-group">
+                <span class="input-group-addon input-sm">共 @Model.TotalPageCount 页 @Model.Total 条记录，当前第 @Model.PageIndex 页</span>
+                <select id="pageIndexBox" class="form-control input-sm pageIndexBox"></select>
+                <span class="input-group-btn">
+                    <button class="btn btn-primary btn-sm" id="goToBtn">跳转</button>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+@this.ScriptBlock(
+    @<script type="text/javascript">
+        @{Html.RegisterMvcPagerScriptResource();}
+    </script>)

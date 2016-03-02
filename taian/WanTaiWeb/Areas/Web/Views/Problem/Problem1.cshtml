@@ -1,0 +1,23 @@
+﻿@model ProblemModel
+@{
+    Model.GetNextProblems(UserCache.WechatUser.ID);
+}
+
+<div class="answer-list content-link">
+    <ul class="an-list-main">
+        @foreach (var x in Model.Problems)
+        {
+            <li class="an-list-tit">
+                <a href="" title="">
+                    <h2>@x.Title</h2>
+                </a>
+                <p>@x.Content</p>
+                <span>@x.CreateTime.ToString("yyyy-MM-dd hh:mm")</span>
+                <a href="" title="">
+                    <strong class="an-bottom">详情</strong>
+                </a>
+                <a href="@Url.Action("ProblemDetail", new { id = x.ID })" class="link"></a>
+            </li>
+        }
+    </ul>
+</div>

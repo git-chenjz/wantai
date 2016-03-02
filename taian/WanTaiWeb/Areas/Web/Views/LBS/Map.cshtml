@@ -1,0 +1,121 @@
+﻿@model LBS
+@{
+    ViewBag.Title = "Map";
+    var lbses = ViewBag.LBSes as IEnumerable<LBS>;
+}
+
+@section style{
+    <link href="~/Content/css/reset.css" rel="stylesheet" />
+    <style>
+        #place-logo {
+            float: left;
+            width: 100%;
+            height: 11.2rem;
+        }
+
+        .place-main {
+            float: left;
+            width: 92%;
+            margin: 0.9rem 0 0 4%;
+            padding-bottom: 3rem;
+        }
+
+            .place-main h2 {
+                overflow: hidden;
+                float: left;
+                width: 100%;
+                height: 0.9rem;
+                color: #1d1a1a;
+                font-size: 0.75rem;
+                margin-bottom: 0.6rem;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+            }
+
+            .place-main p {
+                overflow: hidden;
+                float: left;
+                width: 100%;
+                height: 0.67rem;
+                color: #1d1a1a;
+                font-size: 0.65rem;
+                margin-bottom: 0.4rem;
+                line-height: 0.67rem;
+            }
+
+                .place-main p strong {
+                    color: #807e7e;
+                }
+
+        .place-long em,
+        .place-long a {
+            color: #f6931e;
+        }
+
+        .place-main .host {
+            overflow: hidden;
+            height: 4rem;
+            line-height: 1rem;
+        }
+    </style>
+}
+
+<div id="place-logo">
+
+</div>
+<div class="place-main">
+    <h2>@Model.Name</h2>
+    <p class="place-rac">
+        <span>接种项目：</span>
+        <strong>@string.Join("、", Model.LBSVaccineTypes.Select(a => a.VaccineType.Name))</strong>
+    </p>
+    <p class="place-long">
+        <span>联系电话：</span>
+        <a href="tel:@Model.Tel">@Model.Tel</a>
+    </p>
+    <p class="place-bing">
+        <span>联系地址：</span>
+        <strong>@(Model.Province + Model.City + Model.District + Model.Address)</strong>
+    </p>
+    <p class="host">@Model.Des</p>
+</div>
+
+@section scripts{
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=813efbd6dd009952afaeaad72d8ac205"></script>
+<script>
+    $(function () {
+        var map = new BMap.Map("place-logo");
+        var point = new BMap.Point(@Model.Longitude, @Model.Latitude);
+        map.centerAndZoom(point,12);
+
+        var marker = new BMap.Marker(point);  // 创建标注
+        map.addOverlay(marker);               // 将标注添加到地图中
+        marker.setAnimation(BMAP_ANIMATION_BOUNCE); //跳动的动画
+
+        var temp=[];
+
+        @foreach(var x in lbses.Where(a=>a.Id!=Model.Id))
+        {
+            <text>
+
+        temp.push([@x.Longitude,@x.Latitude,'@x.Id']);
+
+            </text>
+                        }
+        for(var i=0;i<temp.length;i++){
+            var mk=new BMap.Marker(new BMap.Point(temp[i][0],temp[i][1]));
+            setClick(mk,temp[i][2]);
+            map.addOverlay(mk);
+
+        }
+
+        map.enableScrollWheelZoom();
+    })
+
+    function setClick(e,id){
+        e.addEventListener('click',function(e){
+            window.location="@Url.Action("Map", new { id=""})?id="+id;
+        });
+    }
+</script>
+}

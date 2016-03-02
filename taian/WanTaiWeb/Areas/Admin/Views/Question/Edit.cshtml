@@ -1,0 +1,118 @@
+﻿@model Question
+@{
+    ViewBag.Title = "问卷编辑";
+}
+
+<div class="navbar-fixed-top row">
+    <div class="col-lg-12">
+        <ol class="breadcrumb">
+            <li>
+                <a href="@Url.Content("~/admin/home/main")">主页</a>
+            </li>
+            <li>
+                <a href="@Url.Action("Index")">问卷管理</a>
+            </li>
+            <li>
+                <strong>@(Model.ID == 0 ? "添加问卷" : "修改问卷")</strong>
+            </li>
+        </ol>
+    </div>
+</div>
+
+<div class="m-t-lg">
+    <div class="row">
+        <div class="col-lg-12">
+
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>@(Model.ID == 0 ? "添加问卷" : "修改问卷")</h5>
+                    <div class="ibox-tools">
+                        <a class="collapse-link" href="javascript:void();"><i class="fa fa-chevron-up"></i></a>
+                        <a href="javascript:void();" onclick="javascript:window.location.reload();"><i class="fa fa-refresh"></i></a>
+                    </div>
+                </div>
+                <div class="ibox-content">
+                    <form class="form-horizontal m-t" id="adform" method="post" action="@Url.Action("Save")">
+                        <input name="id" value="@Model.ID" type="hidden" />
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">图片：</label>
+                            <div class="col-sm-8">
+                                <span id="btnImg" class="btn btn-sm btn-primary"><i class="fa fa-upload"></i> 上传</span>
+                                <input name="ImgPath" class="form-control" value="@Model.ImgPath" readonly />
+                            </div>
+                            <div class="col-sm-8 col-sm-push-3" style="margin-top:20px;">
+                                <img id="img" width="100" src="@Model.ImgPath" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">标题：</label>
+                            <div class="col-sm-8">
+                                <input name="Title" class="form-control" value="@Model.Title" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">描述：</label>
+                            <div class="col-sm-8">
+                                <textarea class="form-control" name="Des" rows="5">@Model.Des</textarea>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">状态</label>
+                            <div class="col-sm-8">
+                                @foreach (QuestionStatus x in Enum.GetValues(typeof(QuestionStatus)))
+                                {
+                                    <input type="radio" name="Status" value="@x" @(Model.Status == x ? "checked" : "") /> @x.ToString() 
+                                }
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-8 col-sm-offset-3">
+                                <button class="btn btn-primary" type="submit"><i class="fa fa-save"></i>&nbsp;保存</button>
+                                <button class="btn btn-primary" type="button" onclick="javascript:history.go(-1);"><i class="fa fa-circle-o-notch"></i>&nbsp;取消</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+
+        $('#adform').bootstrapValidator({
+            message: '表单数据验证无效',
+            feedbackIcons: {
+                valid: 'glyphicon glyphicon-ok',
+                invalid: 'glyphicon glyphicon-remove',
+                validating: 'glyphicon glyphicon-refresh'
+            },
+            fields: {
+                ImgPath: {
+                    validators: {
+                        notEmpty: { message: '请选择一个图片' }
+                    }
+                }
+            },
+            submitHandler: function (validator, form, submitButton) {
+                $.post(form.attr('action'), form.serialize(), function (result) {
+                    top.bootbox.alert(result.msg, function () {
+                        if (result.success)
+                            location.href = '@Url.Action("index")';
+                    });
+                }, 'json');
+            }
+        });
+
+
+        uploadfiy({
+            uploadID: $('#btnImg'), url: '/admin/home/Upload?type=question', callback: function (data) {
+                if (data.success) {
+                    $("#img").attr("src", data.url);
+                    $("input[name='ImgPath']").val(data.url);
+                }
+            }
+        });
+    })
+</script>

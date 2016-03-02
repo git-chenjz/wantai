@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="initial-scale=0.5, maximum-scale=0.5, minimum-scale=0.5, user-scalable=no">
+	<title>会议信息</title>
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/content.css">
+	<script src="js/flexible.js" type="text/javascript"></script>
+	<script src="js/jquery-1.11.3.min.js"></script>
+	<style>
+		html,body {
+			padding: 0;
+			margin: 0;
+			background-color: #efefef;
+		}
+		.part-header {
+			float: left;
+			width: 100%;
+			height: 2rem;
+			margin: 0.3rem 0;
+			background-color: #fff;
+		}
+		.part-header p {
+			float: left;
+			width: 49.5%;
+			height: 1.2rem;
+			margin-top: 0.4rem;
+			color: #1d1d1e;
+			font-size: 0.75rem;
+			line-height: 1.2rem;
+			text-align: center;
+		}
+		.part-demo {
+			border-right: 3px solid #ddd;
+		}
+		.part-header .sign {
+			color: #f6931e;
+		}
+		.meet-information {
+			position: relative;
+			padding: 0 4.5%;
+			background: white;
+			margin-bottom: 0.24rem;
+		}
+		.meet-information .link {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+		}
+		.meet-information h1 {
+			overflow: hidden;
+			white-space: nowrap;
+    		text-overflow: ellipsis;
+			height: 1.38rem;
+			font-size: 0.6rem;
+			line-height: 1.38rem;
+		}
+		.meet-information>img {
+			display: block;
+			width: 100%;
+			height: 6.52rem;
+		}
+		.company {
+			margin-top: 0.29rem;
+			border-top: 2px solid #eaeaea;
+		}
+		.company p {
+			color: #959393;
+			font-size: 0.43rem;
+		}
+		.company>p {
+			overflow: hidden;
+			height: 5.71rem;
+			border: 1px solid #eaeaea;
+			padding: 0.43rem 3%;
+			line-height: 0.57rem;
+			-webkit-box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			box-sizing: border-box;
+		}
+		.company-name .time {
+			float: right;
+		}
+		.company-name .name {
+			float: left;
+		}
+		.company-name p {
+			height: 1.52rem;
+			line-height: 1.52rem;
+		}
+		.content {
+			float: left;
+			width: 100%;
+		}
+		.content>li {
+			display: none;
+		}
+		.content .display {
+			display: block;
+		}
+	</style>
+</head>	
+<body>
+	<div class="part-header" id="part-header">
+		<p class=" pq-host part-demo">
+			<span class="sign">会议报名</span>
+		</p>
+		<p class="pq-host">
+			<span class=""> <a href="" title="">会议签到</a></span>
+		</p>		
+	</div>
+	<ul class="content">
+		<!-- tab页面一 -->
+		<li class="display">
+			<div class="meet-information">
+				<h1>厦大第二届宫颈癌预防交流会</h1>
+				<img src="images/link16.png" alt="" title="">
+				<div class="company">
+					<div class="company-name clearfix">
+						<p class="name">主办发:XXX</p>
+						<p class="time">会议时间:2016-12-10</p>
+					</div>
+				</div>
+				<!-- a标签内填写链接 -->
+				<a href="" title="" class="link"></a>
+			</div>
+			<div class="meet-information">
+				<h1>厦大第二届宫颈癌预防交流会</h1>
+				<img src="images/link16.png" alt="" title="">
+				<div class="company">
+					<div class="company-name clearfix">
+						<p class="name">主办发:XXX</p>
+						<p class="time">会议时间:2016-12-10</p>
+					</div>
+				</div>
+				<!-- a标签内填写链接 -->
+				<a href="" title="" class="link"></a>
+			</div>
+		</li>
+		<!-- tab页面二 -->
+		<li>
+		</li>
+	</ul>
+</body>
+	<script>
+
+		// $(function(){
+		// 	// 功能描述：
+		// 	// 点击tab格，获取标签，绑定事件
+		// 	// 改变当前的样式，改变样式
+		// 	// 并且显示对应的内容，改变样式 索引值
+		// 	var tabBtn = $(".pq-host span");
+		// 	var tabCon = $(".content");
+
+
+		// 	tabBtn.click(function() {
+		// 		var index = $(this).parent().index();
+		// 		$(this).addClass("sign").parent().siblings().children().removeClass("sign");
+		// 		tabCon.children().eq(index).addClass("display").siblings().removeClass("display");
+		// 	})	
+		// })
+	
+	</script>
+</html>

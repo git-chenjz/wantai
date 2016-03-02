@@ -1,0 +1,226 @@
+﻿@model  IEnumerable<QuestionItem>
+@{
+    var questions = ViewBag.questions as IEnumerable<Question>;
+    var question = ViewBag.question as Question;
+    var id = ViewBag.id;
+    var no = Model.Count();
+}
+
+
+<div class="navbar-fixed-top row">
+    <div class="col-lg-12">
+        <ol class="breadcrumb">
+            <li>
+                <a href="@Url.Content("~/admin/home/main")">主页</a>
+            </li>
+            <li>
+                <strong>问卷问题</strong>
+            </li>
+        </ol>
+    </div>
+</div>
+
+<div class="animated m-t-lg">
+    <div class="row">
+        <div class="col-lg-12">
+
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>问卷问题</h5>
+                    <div class="ibox-tools">
+                        <a class="collapse-link" href="javascript:void();"><i class="fa fa-chevron-up"></i></a>
+                        <a href="javascript:void();" onclick="javascript:window.location.reload();"><i class="fa fa-refresh"></i></a>
+                    </div>
+                </div>
+                <div class="ibox-content">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <form class="form-horizontal">
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">选择问卷</label>
+
+                                    <div class="col-sm-10">
+                                        <select class="form-control m-b" name="meetingid" onchange="window.location = '@Url.Action("Item", new {id="" })?id='+$(this).find(':selected').val();">
+                                            @foreach (var x in questions)
+                                            {
+                                            <option value="@x.ID" @(id.Equals(x.ID) ? "selected" : "")>@x.Title</option>
+                                            }
+                                        </select>
+
+                                    </div>
+                                </div>
+                            </form>
+                            <form class="form-horizontal">
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">图片</label>
+                                    <div class="col-sm-10">
+                                        <p class="form-control-static">
+                                            <img class="img-responsive img-rounded" src="@question.ImgPath" />
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">标题</label>
+                                    <div class="col-sm-10">
+                                        <p class="form-control-static">@question.Title</p>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">备注</label>
+                                    <div class="col-sm-10">
+                                        <p class="form-control-static">@question.Des</p>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">状态</label>
+                                    <div class="col-sm-10">
+                                        <p class="form-control-static">
+                                            @question.Status.ToString()
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">创建时间</label>
+                                    <div class="col-sm-10">
+                                        <p class="form-control-static">@question.CreateTime.ToString("yyyy年MM月dd日 HH点mm分")</p>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-sm-8">
+                            <div class="table-responsive">
+
+                                <a class="btn btn-sm btn-primary" data-toggle="modal" href="#createitem"><i class="fa fa-plus"></i> 添加题目</a>
+
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th width="60">编号</th>
+                                            <th>题目</th>
+                                            <th>选项</th>
+                                            <th width="80">选择类型</th>
+                                            <th width="60">排序</th>
+                                            <th width="160">管理</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var x in Model)
+                                        {
+                                            <tr>
+                                                <td>@(no--)</td>
+                                                <td>@x.Title</td>
+                                                <td>
+                                                    @foreach (var y in x.QuestionSelects)
+                                                    {
+                                                        <p>@y.Value</p>
+                                                    }
+                                                </td>
+                                                <td>@(x.IsRadio ? "单选" : "多选")</td>
+                                                <td>@x.Sort</td>
+                                                <td>
+                                                    <a class="btn btn-primary btn-sm" onclick="$('#edititem').modal({remote:'@Url.Action("EditItem", new { id = x.ID })'})"><i class="fa fa-edit"></i> 编辑</a>
+                                                    <a href="@Url.Action("DeleteItem", new { id = x.ID })" class="btn btn-danger btn-sm" onclick="return confirm('确认删除吗')"><i class="fa fa-remove"></i> 删除</a>
+                                                </td>
+                                            </tr>
+                                        }
+                                    </tbody>
+                                    <tfoot>
+                                        <tr>
+                                            <td colspan="6"></td>
+                                        </tr>
+                                    </tfoot>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+
+        $('#createform').bootstrapValidator({
+            message: '表单数据验证无效',
+            feedbackIcons: {
+                valid: 'glyphicon glyphicon-ok',
+                invalid: 'glyphicon glyphicon-remove',
+                validating: 'glyphicon glyphicon-refresh'
+            },
+            fields: {
+                title: {
+                    validators: {
+                        notEmpty: { message: '请输入标题' }
+                    }
+                },
+                list: {
+                    validators: {
+                        notEmpty: { message: '请输入选项' }
+                    }
+                }
+            },
+            submitHandler: function (validator, form, submitButton) {
+                $.post(form.attr('action'), form.serialize(), function (result) {
+                    top.bootbox.alert(result.msg, function () {
+                        if (result.success)
+                            location.reload();
+                    });
+                }, 'json');
+            }
+        });
+
+        $("#edititem").on("hidden.bs.modal", function () {
+            $(this).removeData("bs.modal");
+        });
+    })
+</script>
+
+
+<div id="createitem" class="modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h4 class="m-t-none m-b">添加题目</h4>
+
+                        <form role="form" id="createform" method="post" action="@Url.Action("CreateItem", new { id = id })">
+                            <div class="form-group">
+                                <label>题目：</label>
+                                <input type="text" name="title" placeholder="请输入题目" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label>排序：</label>
+                                <input type="number" name="sort" value="@(Model.Count()+1)" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label>类型：</label>
+                                <input type="radio" name="type" value="true" checked /> 单选
+                                <input type="radio" name="type" value="false" /> 多选
+                            </div>
+                            <div class="form-group">
+                                <label>选项(多笔换行隔开)：</label>
+                                <textarea name="list" rows="5" class="form-control"></textarea>
+                            </div>
+                            <div>
+                                <button class="btn btn-sm btn-primary pull-right m-t-n-xs" type="submit">
+                                    <i class="fa fa-save"></i> 保存
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="edititem" class="modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+        </div>
+    </div>
+</div>

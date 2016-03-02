@@ -1,0 +1,137 @@
+﻿@model Question
+@{
+    ViewBag.Title = "有奖调研";
+    Layout = "~/Areas/Web/Views/Shared/_LayoutWeUI.cshtml";
+    var index = 1;
+    var i = 0;
+    var j = 0;
+}
+
+<div class="page slideIn cell">
+    <div class="hd" style="padding:10px 0;">
+        <h3 class="page_title" style="color: #225fba;text-align:center;">@Model.Title</h3>
+    </div>
+    <div class="bd">
+        <form method="post" action="@Url.Action("SaveSelects", new { id = Model.ID })" onsubmit="return checkform();">
+            @foreach (var x in Model.QuestionItems.OrderBy(a => a.Sort))
+            {
+                <div class="weui_cells_title"><h4>@(index++) 、 @(x.Title) (@(x.IsRadio ? "单选" : "多选"))</h4></div>
+                <div class="weui_cells weui_cells_checkbox">
+                    @foreach (var y in x.QuestionSelects.OrderBy(a => a.Sort))
+                    {
+                        <label class="weui_cell weui_check_label" for="s@(j)">
+                            <div class="weui_cell_hd">
+                                <input type="@(x.IsRadio ? "radio" : "checkbox")" class="weui_check" name="q_@i" id="s@(j)" value="@y.ID">
+                                <i class="weui_icon_checked"></i>
+                            </div>
+                            <div class="weui_cell_bd weui_cell_primary">
+                                <p>@y.Value</p>
+                            </div>
+                        </label>
+                        j++;
+                    }
+                </div>
+                    i++;
+            }
+
+            <div class="weui_cells_title"><h4>请先留下您宝贵的联系方式，便于跟踪调查结果</h4></div>
+            <div class="weui_cells">
+                <div class="weui_cell">
+                    <div class="weui_cell_hd"><label class="weui_label">姓名</label></div>
+                    <div class="weui_cell_bd weui_cell_primary">
+                        <input class="weui_input" type="text" name="Name">
+                    </div>
+                </div>
+                <div class="weui_cell">
+                    <div class="weui_cell_hd"><label class="weui_label">电话</label></div>
+                    <div class="weui_cell_bd weui_cell_primary">
+                        <input class="weui_input" type="text" name="Tel">
+                    </div>
+                </div>
+            </div>
+            <div class="weui_btn_area">
+                <button type="submit" class="weui_btn weui_btn_primary">参与抽奖</button>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="weui_dialog_alert" id="dialog2" style="display: none;">
+    <div class="weui_mask"></div>
+    <div class="weui_dialog">
+        <div class="weui_dialog_hd"><strong class="weui_dialog_title">提交失败</strong></div>
+        <div class="weui_dialog_bd">请先完成答卷,再提交</div>
+        <div class="weui_dialog_ft">
+            <a href="javascript:;" class="weui_btn_dialog primary" onclick="$('#dialog2').hide();">确定</a>
+        </div>
+    </div>
+</div>
+<div id="loadingToast" class="weui_loading_toast" style="display: none;">
+    <div class="weui_mask_transparent"></div>
+    <div class="weui_toast">
+        <div class="weui_loading">
+            <div class="weui_loading_leaf weui_loading_leaf_0"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_1"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_2"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_3"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_4"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_5"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_6"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_7"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_8"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_9"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_10"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_11"></div>
+        </div>
+        <p class="weui_toast_content">提交中</p>
+    </div>
+</div>
+
+<script>
+    function checkform() {
+        var total=@Model.QuestionItems.Count();
+
+        var binds=[];
+        for(var i=0;i<total;i++){
+            var items=$('input[name=q_'+i+']:checked');
+            if(items.length==0){
+                $('#dialog2').show();
+                return false;
+            }
+
+            for(var j=0;j<items.length;j++){
+                binds.push(items.eq(j).val());
+            }
+        }
+
+        var name=$.trim($('input[name=Name]').val());
+        var tel=$.trim($('input[name=Tel]').val());
+
+        if(name==''||tel==''){
+            $('#dialog2').show();
+            return false;
+        }
+
+        $.ajax({
+            url:'@Url.Action("SaveQuestion", new { id=Model.ID})',
+            dataType:'json',
+            type:'post',
+            data:{ids:binds.join(),name:name,tel:tel},
+            beforeSend:function(){
+                $('#loadingToast').show();
+            },
+            complete:function(){
+                $('#loadingToast').hide();
+            },
+            success:function(data){
+                if(data.success){
+                    location="@Url.Action("Index")";
+                }
+                else{
+                    location.reload();
+                }
+            }
+        });
+
+        return false;
+    }
+</script>

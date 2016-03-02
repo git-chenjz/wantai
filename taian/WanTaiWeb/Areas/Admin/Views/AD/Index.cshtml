@@ -1,0 +1,87 @@
+﻿@model IEnumerable<AD>
+@{
+    ViewBag.Title = "广告管理";
+}
+
+<div class="navbar-fixed-top row">
+    <div class="col-lg-12">
+        <ol class="breadcrumb">
+            <li>
+                <a href="@Url.Content("~/admin/home/main")">主页</a>
+            </li>
+            <li>
+                <strong>广告</strong>
+            </li>
+        </ol>
+    </div>
+</div>
+
+<div class="animated m-t-lg">
+    <div class="row">
+        <div class="col-lg-12">
+
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>广告</h5>
+                    <div class="ibox-tools">
+                        <a class="collapse-link" href="javascript:void();"><i class="fa fa-chevron-up"></i></a>
+                        <a href="javascript:void();" onclick="javascript:window.location.reload();"><i class="fa fa-refresh"></i></a>
+                    </div>
+                </div>
+                <div class="ibox-content">
+                    <a class="btn btn-sm btn-primary" href="@Url.Action("Edit")"><i class="fa fa-plus"></i> 新增</a>
+                    <div class="table-responsive">
+                        <table class="table table-striped">
+
+                            <thead>
+                                <tr>
+                                    <th width="200">图片</th>
+                                    <th>描述</th>
+                                    <th>链接</th>
+                                    <th>排序</th>
+                                    <th>创建时间</th>
+                                    <th>是否显示</th>
+                                    <th width="150">管理</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                @foreach(var x in Model)
+                                {
+                                    <tr>
+                                        <td>
+                                            @if(string.IsNullOrWhiteSpace(x.ImgPath)==false)
+                                            {
+                                                <img src="@x.ImgPath" class="img-rounded img-responsive"/>
+                                            }
+                                        </td>
+                                        <td>@x.Des</td>
+                                        <td>@x.Link</td>
+                                        <td>@x.Sort</td>
+                                        <td>@x.CreateTime.ToString("yyyy-MM-dd")</td>
+                                        <td>
+                                            @if (x.IsShow == 0)
+                                            {
+                                                <span style="color:green;">显示</span>
+                                            }
+                                            else
+                                            {
+                                                <span style="color:red;">不显示</span>
+                                            }
+                                        </td>
+                                        <td>
+                                            <a href="@Url.Action("Edit", new { id = x.Id })" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i> 编辑</a>
+                                            <a href="@Url.Action("Delete", new { id = x.Id })" class="btn btn-danger btn-sm" onclick="return confirm('确认删除吗')"><i class="fa fa-remove"></i> 删除</a>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            </div>
+    </div>
+</div>

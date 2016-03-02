@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="initial-scale=0.5, maximum-scale=0.5, minimum-scale=0.5, user-scalable=no">
+	<title>我的接种周期表</title>
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/content.css">
+	<script src="js/flexible.js" type="text/javascript"></script>
+</head>
+	<style>
+		.ed-wrap {
+			margin-bottom: 0.75rem;	
+		}
+		.ed-list {
+			float: left;
+			width: 84%;
+		}
+		.ed-list li {
+			float: left;
+			width: 100%;
+			height: 2rem;
+			margin-bottom: 0.75rem;
+		}
+		.ed-host,
+		.ed-ask {
+			float: left;
+			width: 4%;
+			height: 0.45rem;
+			margin: 0.75rem 8% 0 -2.1%;
+			-webkit-border-radius: 50%;
+			-moz-border-radius: 50%;
+			border-radius: 50%;
+		}
+		.ed-host {
+			background-color: #ff9619;
+		}
+		.ed-ask {
+			background-color: #b2b2b2;
+		}
+		.ed-long,
+		.ed-bay {
+			float: left;
+			width: 78%;
+			height: 2rem;
+			margin-right: 5%;
+			-webkit-border-radius: 0.1rem;
+			-moz-border-radius: 0.1rem;
+			border-radius: 0.1rem;
+		}
+		.ed-long {
+			background-color: #ff9619;
+		}
+		.ed-bay {
+			background-color: #b2b2b2;
+		}
+		.ed-long i,
+		.ed-bay i {
+			float: left;
+			width: 5%;
+			height: 0.6rem;
+			margin: 0.72rem 0 0 -5%;
+			background-image: url(images/demo03.png);
+			-webkit-background-size: 100% 100%;
+			background-size: 100% 100%;
+		}
+		.ed-long i {
+			background-image: url(images/demo03.png);
+		}
+		.ed-bay i {
+			background-image: url(images/demo04.png);
+		}
+		.ed-long span,
+		.ed-bay span {
+			float: left;
+			height: 2rem;
+			text-align: left;
+			line-height: 2rem;
+			color: #fff;
+			font-size: 0.6rem;
+		}
+		.ed-long-one{
+			overflow: hidden;
+			width: 40%;
+			padding-left: 4%;
+		}
+		.ed-long-two{
+			width: 27%;
+			padding-left: 2%;
+		}
+		.ed-long-three{
+			width: 24%;
+			padding-left: 2%;
+		}
+		.ed-and {
+			float: left;
+			width: 5%;
+			height: 0.88rem;
+			margin-top: 0.55rem;
+			background-image: url(images/demo02.png);
+			-webkit-background-size: 100% 100%;
+			background-size: 100% 100%;
+		}
+		.add-record {
+			position: absolute;
+			left: 3.5%;
+			bottom: 3.57rem;
+			width: 93%;
+			height: 1.86rem;
+			background: #ff9619;
+			color: #fcf9f9;
+			font-size: 0.67rem;
+			text-align: center;
+			line-height: 1.86rem;
+			-webkit-border-radius: 4px;
+			-moz-border-radius: 4px;
+			border-radius: 4px;
+		}
+	</style>
+<body>
+	<div class="ed-main clearfix">
+		<div class="ed-content clearfix">
+			<!--线条ed-left-->
+			<div class="ed-left clearfix">
+				<!--左边日期循环列表-->
+				<span class="ed-wrap">1/12</span>
+				<span class="ed-wrap">1/12</span>
+				<span class="ed-wrap">1/12</span>
+				<span class="ed-wrap">1/12</span>
+			</div>
+			<ul class="ed-list clearfix">
+				<!--已接种列表用en-list-one-->
+				<li class="en-list-one">
+					<!--圆点ed-host  颜色是黄色-->
+					<span class="ed-host"></span>
+					<p class="ed-long">
+						<!--三角形i-->
+						<i></i>
+						<span class="ed-long-one">戊肝疫苗</span>
+						<span class="ed-long-two">第一期</span>
+						<span class="ed-long-three">已接种</span>
+					</p>
+					<a href="" title="">
+						<b class="ed-and"></b>
+					</a>
+				</li>
+				<li class="en-list-one">
+					<!--圆点ed-host  颜色是黄色-->
+					<span class="ed-host"></span>
+					<p class="ed-long">
+						<!--三角形i-->
+						<i></i>
+						<span class="ed-long-one">戊肝疫苗</span>
+						<span class="ed-long-two">第一期</span>
+						<span class="ed-long-three">已接种</span>
+					</p>
+					<a href="" title="">
+						<b class="ed-and"></b>
+					</a>
+				</li>
+				<!--已接种列表用en-list-two-->
+				<li class="en-list-two">
+					<!--圆点ed-ask  颜色是灰色-->
+					<span class="ed-ask"></span>
+					<p class="ed-bay">
+						<!--三角形i-->
+						<i></i>
+						<span class="ed-long-one">戊肝疫苗</span>
+						<span class="ed-long-two">第二期</span>
+						<span class="ed-long-three">未接种</span>
+					</p>
+					<a href="" title="">
+						<b class="ed-and"></b>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<a href="" title="" class="add-record">添加接种记录</a>
+	<div class="bottom un-deable">
+		<span class="bottom-rac">地址：厦门市海沧区新园路130号</span>
+		<p class="bottom-text">
+			<span>电话：+86-592-6536555</span>
+			<span>传真：+86-592-6536567</span>
+		</p>
+	</div>			
+</body>
+</html>

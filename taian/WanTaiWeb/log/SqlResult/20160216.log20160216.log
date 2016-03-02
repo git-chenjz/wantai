@@ -1,0 +1,2857 @@
+2016-02-16 21:28:29,263 [6] INFO  SqlResult - Opened connection at 16-2-16 下午9:28:29 +08:00
+
+2016-02-16 21:28:29,281 [6] INFO  SqlResult - 
+SELECT Count(*)
+FROM INFORMATION_SCHEMA.TABLES AS t
+WHERE t.TABLE_SCHEMA + '.' + t.TABLE_NAME IN ('dbo.eb_admin','dbo.eb_role','dbo.eb_operate','dbo.eb_purview_field','dbo.eb_user','dbo.eb_features')
+    OR t.TABLE_NAME = 'EdmMetadata'
+2016-02-16 21:28:29,281 [6] INFO  SqlResult - 
+
+2016-02-16 21:28:29,281 [6] INFO  SqlResult - -- Executing at 16-2-16 下午9:28:29 +08:00
+
+2016-02-16 21:28:29,318 [6] INFO  SqlResult - -- Completed in 34 ms with result: 5
+
+2016-02-16 21:28:29,318 [6] INFO  SqlResult - 
+
+2016-02-16 21:28:29,318 [6] INFO  SqlResult - Closed connection at 16-2-16 下午9:28:29 +08:00
+
+2016-02-16 21:28:29,593 [6] INFO  SqlResult - Opened connection at 16-2-16 下午9:28:29 +08:00
+
+2016-02-16 21:28:30,461 [6] INFO  SqlResult - SELECT 
+    [GroupBy1].[A1] AS [C1]
+    FROM ( SELECT 
+        COUNT(1) AS [A1]
+        FROM [dbo].[__MigrationHistory] AS [Extent1]
+        WHERE [Extent1].[ContextKey] = @p__linq__0
+    )  AS [GroupBy1]
+2016-02-16 21:28:30,461 [6] INFO  SqlResult - 
+
+2016-02-16 21:28:30,464 [6] INFO  SqlResult - -- p__linq__0: 'DataAccess.Context.MySqlContext' (Type = String, Size = 4000)
+
+2016-02-16 21:28:30,464 [6] INFO  SqlResult - -- Executing at 16-2-16 下午9:28:30 +08:00
+
+2016-02-16 21:28:30,672 [6] INFO  SqlResult - -- Failed in 207 ms with error: 对象名 'dbo.__MigrationHistory' 无效。
+
+2016-02-16 21:28:30,673 [6] INFO  SqlResult - 
+
+2016-02-16 21:28:30,846 [6] INFO  SqlResult - Closed connection at 16-2-16 下午9:28:30 +08:00
+
+2016-02-16 21:28:30,934 [6] INFO  SqlResult - Opened connection at 16-2-16 下午9:28:30 +08:00
+
+2016-02-16 21:28:30,936 [6] INFO  SqlResult - SELECT 
+    [GroupBy1].[A1] AS [C1]
+    FROM ( SELECT 
+        COUNT(1) AS [A1]
+        FROM [dbo].[__MigrationHistory] AS [Extent1]
+    )  AS [GroupBy1]
+2016-02-16 21:28:30,936 [6] INFO  SqlResult - 
+
+2016-02-16 21:28:30,936 [6] INFO  SqlResult - -- Executing at 16-2-16 下午9:28:30 +08:00
+
+2016-02-16 21:28:31,183 [6] INFO  SqlResult - -- Failed in 246 ms with error: 对象名 'dbo.__MigrationHistory' 无效。
+
+2016-02-16 21:28:31,183 [6] INFO  SqlResult - 
+
+2016-02-16 21:28:31,314 [6] INFO  SqlResult - Closed connection at 16-2-16 下午9:28:31 +08:00
+
+2016-02-16 21:28:31,938 [6] INFO  SqlResult - Opened connection at 16-2-16 下午9:28:31 +08:00
+
+2016-02-16 21:28:32,101 [6] INFO  SqlResult - SELECT TOP (2) 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[role_name] AS [role_name], 
+    [Extent1].[Actions] AS [Actions], 
+    [Extent1].[Remark] AS [Remark]
+    FROM [dbo].[eb_role] AS [Extent1]
+    WHERE [Extent1].[ID] = @p0
+2016-02-16 21:28:32,102 [6] INFO  SqlResult - 
+
+2016-02-16 21:28:32,102 [6] INFO  SqlResult - -- p0: '1' (Type = Int32)
+
+2016-02-16 21:28:32,102 [6] INFO  SqlResult - -- Executing at 16-2-16 下午9:28:32 +08:00
+
+2016-02-16 21:28:32,138 [6] INFO  SqlResult - -- Completed in 36 ms with result: SqlDataReader
+
+2016-02-16 21:28:32,138 [6] INFO  SqlResult - 
+
+2016-02-16 21:28:32,180 [6] INFO  SqlResult - Closed connection at 16-2-16 下午9:28:32 +08:00
+
+2016-02-16 21:28:32,474 [6] INFO  SqlResult - Opened connection at 16-2-16 下午9:28:32 +08:00
+
+2016-02-16 21:28:32,481 [6] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[Pid] AS [Pid], 
+    [Extent1].[depth_pid] AS [depth_pid], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[Url] AS [Url], 
+    [Extent1].[Remark] AS [Remark], 
+    [Extent1].[Type] AS [Type], 
+    [Extent1].[Sort] AS [Sort], 
+    [Extent1].[Icon] AS [Icon]
+    FROM [dbo].[eb_features] AS [Extent1]
+    WHERE 1 = [Extent1].[Type]
+2016-02-16 21:28:32,481 [6] INFO  SqlResult - 
+
+2016-02-16 21:28:32,481 [6] INFO  SqlResult - -- Executing at 16-2-16 下午9:28:32 +08:00
+
+2016-02-16 21:28:32,499 [6] INFO  SqlResult - -- Completed in 17 ms with result: SqlDataReader
+
+2016-02-16 21:28:32,499 [6] INFO  SqlResult - 
+
+2016-02-16 21:28:32,506 [6] INFO  SqlResult - Closed connection at 16-2-16 下午9:28:32 +08:00
+
+2016-02-16 21:28:32,507 [6] INFO  SqlResult - Opened connection at 16-2-16 下午9:28:32 +08:00
+
+2016-02-16 21:28:32,517 [6] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[features_id] AS [features_id], 
+    [Extent1].[name] AS [name], 
+    [Extent1].[Url] AS [Url], 
+    [Extent1].[Remark] AS [Remark]
+    FROM [dbo].[eb_operate] AS [Extent1]
+2016-02-16 21:28:32,517 [6] INFO  SqlResult - 
+
+2016-02-16 21:28:32,517 [6] INFO  SqlResult - -- Executing at 16-2-16 下午9:28:32 +08:00
+
+2016-02-16 21:28:32,532 [6] INFO  SqlResult - -- Completed in 15 ms with result: SqlDataReader
+
+2016-02-16 21:28:32,533 [6] INFO  SqlResult - 
+
+2016-02-16 21:28:32,534 [6] INFO  SqlResult - Closed connection at 16-2-16 下午9:28:32 +08:00
+
+2016-02-16 21:28:46,618 [6] INFO  SqlResult - Opened connection at 16-2-16 下午9:28:46 +08:00
+
+2016-02-16 21:28:46,624 [6] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[features_id] AS [features_id], 
+    [Extent1].[name] AS [name], 
+    [Extent1].[Url] AS [Url], 
+    [Extent1].[Remark] AS [Remark]
+    FROM [dbo].[eb_operate] AS [Extent1]
+    WHERE [Extent1].[features_id] = @p__linq__0
+2016-02-16 21:28:46,625 [6] INFO  SqlResult - 
+
+2016-02-16 21:28:46,625 [6] INFO  SqlResult - -- p__linq__0: '3' (Type = Int32)
+
+2016-02-16 21:28:46,626 [6] INFO  SqlResult - -- Executing at 16-2-16 下午9:28:46 +08:00
+
+2016-02-16 21:28:46,642 [6] INFO  SqlResult - -- Completed in 16 ms with result: SqlDataReader
+
+2016-02-16 21:28:46,642 [6] INFO  SqlResult - 
+
+2016-02-16 21:28:46,642 [6] INFO  SqlResult - Closed connection at 16-2-16 下午9:28:46 +08:00
+
+2016-02-16 21:28:50,561 [6] INFO  SqlResult - Opened connection at 16-2-16 下午9:28:50 +08:00
+
+2016-02-16 21:28:50,562 [6] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[Pid] AS [Pid], 
+    [Extent1].[depth_pid] AS [depth_pid], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[Url] AS [Url], 
+    [Extent1].[Remark] AS [Remark], 
+    [Extent1].[Type] AS [Type], 
+    [Extent1].[Sort] AS [Sort], 
+    [Extent1].[Icon] AS [Icon]
+    FROM [dbo].[eb_features] AS [Extent1]
+2016-02-16 21:28:50,562 [6] INFO  SqlResult - 
+
+2016-02-16 21:28:50,563 [6] INFO  SqlResult - -- Executing at 16-2-16 下午9:28:50 +08:00
+
+2016-02-16 21:28:50,578 [6] INFO  SqlResult - -- Completed in 15 ms with result: SqlDataReader
+
+2016-02-16 21:28:50,578 [6] INFO  SqlResult - 
+
+2016-02-16 21:28:50,579 [6] INFO  SqlResult - Closed connection at 16-2-16 下午9:28:50 +08:00
+
+2016-02-16 21:28:54,235 [9] INFO  SqlResult - Opened connection at 16-2-16 下午9:28:54 +08:00
+
+2016-02-16 21:28:54,235 [9] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[features_id] AS [features_id], 
+    [Extent1].[name] AS [name], 
+    [Extent1].[Url] AS [Url], 
+    [Extent1].[Remark] AS [Remark]
+    FROM [dbo].[eb_operate] AS [Extent1]
+    WHERE [Extent1].[features_id] = @p__linq__0
+2016-02-16 21:28:54,236 [9] INFO  SqlResult - 
+
+2016-02-16 21:28:54,236 [9] INFO  SqlResult - -- p__linq__0: '3' (Type = Int32)
+
+2016-02-16 21:28:54,236 [9] INFO  SqlResult - -- Executing at 16-2-16 下午9:28:54 +08:00
+
+2016-02-16 21:28:54,270 [9] INFO  SqlResult - -- Completed in 33 ms with result: SqlDataReader
+
+2016-02-16 21:28:54,270 [9] INFO  SqlResult - 
+
+2016-02-16 21:28:54,270 [9] INFO  SqlResult - Closed connection at 16-2-16 下午9:28:54 +08:00
+
+2016-02-16 21:28:55,574 [6] INFO  SqlResult - Opened connection at 16-2-16 下午9:28:55 +08:00
+
+2016-02-16 21:28:55,575 [6] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[Pid] AS [Pid], 
+    [Extent1].[depth_pid] AS [depth_pid], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[Url] AS [Url], 
+    [Extent1].[Remark] AS [Remark], 
+    [Extent1].[Type] AS [Type], 
+    [Extent1].[Sort] AS [Sort], 
+    [Extent1].[Icon] AS [Icon]
+    FROM [dbo].[eb_features] AS [Extent1]
+    WHERE 1 = [Extent1].[Type]
+2016-02-16 21:28:55,575 [6] INFO  SqlResult - 
+
+2016-02-16 21:28:55,576 [6] INFO  SqlResult - -- Executing at 16-2-16 下午9:28:55 +08:00
+
+2016-02-16 21:28:55,598 [6] INFO  SqlResult - -- Completed in 21 ms with result: SqlDataReader
+
+2016-02-16 21:28:55,598 [6] INFO  SqlResult - 
+
+2016-02-16 21:28:55,598 [6] INFO  SqlResult - Closed connection at 16-2-16 下午9:28:55 +08:00
+
+2016-02-16 21:28:55,598 [6] INFO  SqlResult - Opened connection at 16-2-16 下午9:28:55 +08:00
+
+2016-02-16 21:28:55,598 [6] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[features_id] AS [features_id], 
+    [Extent1].[name] AS [name], 
+    [Extent1].[Url] AS [Url], 
+    [Extent1].[Remark] AS [Remark]
+    FROM [dbo].[eb_operate] AS [Extent1]
+2016-02-16 21:28:55,598 [6] INFO  SqlResult - 
+
+2016-02-16 21:28:55,598 [6] INFO  SqlResult - -- Executing at 16-2-16 下午9:28:55 +08:00
+
+2016-02-16 21:28:55,622 [6] INFO  SqlResult - -- Completed in 23 ms with result: SqlDataReader
+
+2016-02-16 21:28:55,623 [6] INFO  SqlResult - 
+
+2016-02-16 21:28:55,623 [6] INFO  SqlResult - Closed connection at 16-2-16 下午9:28:55 +08:00
+
+2016-02-16 21:29:08,026 [6] INFO  SqlResult - Opened connection at 16-2-16 下午9:29:08 +08:00
+
+2016-02-16 21:29:08,037 [6] INFO  SqlResult - Started transaction at 16-2-16 下午9:29:08 +08:00
+
+2016-02-16 21:29:08,214 [6] INFO  SqlResult - INSERT [dbo].[eb_operate]([features_id], [name], [Url], [Remark])
+VALUES (@0, @1, @2, @3)
+SELECT [ID]
+FROM [dbo].[eb_operate]
+WHERE @@ROWCOUNT > 0 AND [ID] = scope_identity()
+2016-02-16 21:29:08,214 [6] INFO  SqlResult - 
+
+2016-02-16 21:29:08,215 [6] INFO  SqlResult - -- @0: '3' (Type = Int32)
+
+2016-02-16 21:29:08,215 [6] INFO  SqlResult - -- @1: '新增角色' (Type = String, Size = -1)
+
+2016-02-16 21:29:08,215 [6] INFO  SqlResult - -- @2: '/admin/purview/roleinsert' (Type = String, Size = -1)
+
+2016-02-16 21:29:08,215 [6] INFO  SqlResult - -- @3: '新增角色(/admin/purview/roleinsert)' (Type = String, Size = -1)
+
+2016-02-16 21:29:08,215 [6] INFO  SqlResult - -- Executing at 16-2-16 下午9:29:08 +08:00
+
+2016-02-16 21:29:08,286 [6] INFO  SqlResult - -- Completed in 71 ms with result: SqlDataReader
+
+2016-02-16 21:29:08,287 [6] INFO  SqlResult - 
+
+2016-02-16 21:29:08,300 [6] INFO  SqlResult - Committed transaction at 16-2-16 下午9:29:08 +08:00
+
+2016-02-16 21:29:08,301 [6] INFO  SqlResult - Closed connection at 16-2-16 下午9:29:08 +08:00
+
+2016-02-16 21:29:09,569 [6] INFO  SqlResult - Opened connection at 16-2-16 下午9:29:09 +08:00
+
+2016-02-16 21:29:09,570 [6] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[features_id] AS [features_id], 
+    [Extent1].[name] AS [name], 
+    [Extent1].[Url] AS [Url], 
+    [Extent1].[Remark] AS [Remark]
+    FROM [dbo].[eb_operate] AS [Extent1]
+    WHERE [Extent1].[features_id] = @p__linq__0
+2016-02-16 21:29:09,587 [6] INFO  SqlResult - 
+
+2016-02-16 21:29:09,594 [6] INFO  SqlResult - -- p__linq__0: '3' (Type = Int32)
+
+2016-02-16 21:29:09,595 [6] INFO  SqlResult - -- Executing at 16-2-16 下午9:29:09 +08:00
+
+2016-02-16 21:29:09,636 [6] INFO  SqlResult - -- Completed in 41 ms with result: SqlDataReader
+
+2016-02-16 21:29:09,636 [6] INFO  SqlResult - 
+
+2016-02-16 21:29:09,637 [6] INFO  SqlResult - Closed connection at 16-2-16 下午9:29:09 +08:00
+
+2016-02-16 21:29:10,999 [9] INFO  SqlResult - Opened connection at 16-2-16 下午9:29:10 +08:00
+
+2016-02-16 21:29:11,000 [9] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[Pid] AS [Pid], 
+    [Extent1].[depth_pid] AS [depth_pid], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[Url] AS [Url], 
+    [Extent1].[Remark] AS [Remark], 
+    [Extent1].[Type] AS [Type], 
+    [Extent1].[Sort] AS [Sort], 
+    [Extent1].[Icon] AS [Icon]
+    FROM [dbo].[eb_features] AS [Extent1]
+    WHERE 1 = [Extent1].[Type]
+2016-02-16 21:29:11,001 [9] INFO  SqlResult - 
+
+2016-02-16 21:29:11,002 [9] INFO  SqlResult - -- Executing at 16-2-16 下午9:29:11 +08:00
+
+2016-02-16 21:29:11,024 [9] INFO  SqlResult - -- Completed in 20 ms with result: SqlDataReader
+
+2016-02-16 21:29:11,024 [9] INFO  SqlResult - 
+
+2016-02-16 21:29:11,024 [9] INFO  SqlResult - Closed connection at 16-2-16 下午9:29:11 +08:00
+
+2016-02-16 21:29:11,024 [9] INFO  SqlResult - Opened connection at 16-2-16 下午9:29:11 +08:00
+
+2016-02-16 21:29:11,024 [9] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[features_id] AS [features_id], 
+    [Extent1].[name] AS [name], 
+    [Extent1].[Url] AS [Url], 
+    [Extent1].[Remark] AS [Remark]
+    FROM [dbo].[eb_operate] AS [Extent1]
+2016-02-16 21:29:11,025 [9] INFO  SqlResult - 
+
+2016-02-16 21:29:11,025 [9] INFO  SqlResult - -- Executing at 16-2-16 下午9:29:11 +08:00
+
+2016-02-16 21:29:11,039 [9] INFO  SqlResult - -- Completed in 14 ms with result: SqlDataReader
+
+2016-02-16 21:29:11,039 [9] INFO  SqlResult - 
+
+2016-02-16 21:29:11,039 [9] INFO  SqlResult - Closed connection at 16-2-16 下午9:29:11 +08:00
+
+2016-02-16 21:29:17,131 [10] INFO  SqlResult - Opened connection at 16-2-16 下午9:29:17 +08:00
+
+2016-02-16 21:29:17,144 [10] INFO  SqlResult - Started transaction at 16-2-16 下午9:29:17 +08:00
+
+2016-02-16 21:29:17,144 [10] INFO  SqlResult - INSERT [dbo].[eb_operate]([features_id], [name], [Url], [Remark])
+VALUES (@0, @1, @2, @3)
+SELECT [ID]
+FROM [dbo].[eb_operate]
+WHERE @@ROWCOUNT > 0 AND [ID] = scope_identity()
+2016-02-16 21:29:17,144 [10] INFO  SqlResult - 
+
+2016-02-16 21:29:17,145 [10] INFO  SqlResult - -- @0: '3' (Type = Int32)
+
+2016-02-16 21:29:17,145 [10] INFO  SqlResult - -- @1: '编辑角色' (Type = String, Size = -1)
+
+2016-02-16 21:29:17,145 [10] INFO  SqlResult - -- @2: '/admin/purview/roleupdate' (Type = String, Size = -1)
+
+2016-02-16 21:29:17,145 [10] INFO  SqlResult - -- @3: '编辑角色(/admin/purview/roleupdate)' (Type = String, Size = -1)
+
+2016-02-16 21:29:17,145 [10] INFO  SqlResult - -- Executing at 16-2-16 下午9:29:17 +08:00
+
+2016-02-16 21:29:17,161 [10] INFO  SqlResult - -- Completed in 16 ms with result: SqlDataReader
+
+2016-02-16 21:29:17,162 [10] INFO  SqlResult - 
+
+2016-02-16 21:29:17,162 [10] INFO  SqlResult - Committed transaction at 16-2-16 下午9:29:17 +08:00
+
+2016-02-16 21:29:17,162 [10] INFO  SqlResult - Closed connection at 16-2-16 下午9:29:17 +08:00
+
+2016-02-16 21:29:18,241 [9] INFO  SqlResult - Opened connection at 16-2-16 下午9:29:18 +08:00
+
+2016-02-16 21:29:18,242 [9] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[features_id] AS [features_id], 
+    [Extent1].[name] AS [name], 
+    [Extent1].[Url] AS [Url], 
+    [Extent1].[Remark] AS [Remark]
+    FROM [dbo].[eb_operate] AS [Extent1]
+    WHERE [Extent1].[features_id] = @p__linq__0
+2016-02-16 21:29:18,242 [9] INFO  SqlResult - 
+
+2016-02-16 21:29:18,242 [9] INFO  SqlResult - -- p__linq__0: '3' (Type = Int32)
+
+2016-02-16 21:29:18,242 [9] INFO  SqlResult - -- Executing at 16-2-16 下午9:29:18 +08:00
+
+2016-02-16 21:29:18,261 [9] INFO  SqlResult - -- Completed in 18 ms with result: SqlDataReader
+
+2016-02-16 21:29:18,261 [9] INFO  SqlResult - 
+
+2016-02-16 21:29:18,262 [9] INFO  SqlResult - Closed connection at 16-2-16 下午9:29:18 +08:00
+
+2016-02-16 21:29:19,500 [10] INFO  SqlResult - Opened connection at 16-2-16 下午9:29:19 +08:00
+
+2016-02-16 21:29:19,500 [10] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[Pid] AS [Pid], 
+    [Extent1].[depth_pid] AS [depth_pid], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[Url] AS [Url], 
+    [Extent1].[Remark] AS [Remark], 
+    [Extent1].[Type] AS [Type], 
+    [Extent1].[Sort] AS [Sort], 
+    [Extent1].[Icon] AS [Icon]
+    FROM [dbo].[eb_features] AS [Extent1]
+    WHERE 1 = [Extent1].[Type]
+2016-02-16 21:29:19,500 [10] INFO  SqlResult - 
+
+2016-02-16 21:29:19,501 [10] INFO  SqlResult - -- Executing at 16-2-16 下午9:29:19 +08:00
+
+2016-02-16 21:29:19,529 [10] INFO  SqlResult - -- Completed in 26 ms with result: SqlDataReader
+
+2016-02-16 21:29:19,530 [10] INFO  SqlResult - 
+
+2016-02-16 21:29:19,532 [10] INFO  SqlResult - Closed connection at 16-2-16 下午9:29:19 +08:00
+
+2016-02-16 21:29:19,532 [10] INFO  SqlResult - Opened connection at 16-2-16 下午9:29:19 +08:00
+
+2016-02-16 21:29:19,532 [10] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[features_id] AS [features_id], 
+    [Extent1].[name] AS [name], 
+    [Extent1].[Url] AS [Url], 
+    [Extent1].[Remark] AS [Remark]
+    FROM [dbo].[eb_operate] AS [Extent1]
+2016-02-16 21:29:19,532 [10] INFO  SqlResult - 
+
+2016-02-16 21:29:19,532 [10] INFO  SqlResult - -- Executing at 16-2-16 下午9:29:19 +08:00
+
+2016-02-16 21:29:19,551 [10] INFO  SqlResult - -- Completed in 18 ms with result: SqlDataReader
+
+2016-02-16 21:29:19,552 [10] INFO  SqlResult - 
+
+2016-02-16 21:29:19,552 [10] INFO  SqlResult - Closed connection at 16-2-16 下午9:29:19 +08:00
+
+2016-02-16 21:29:23,372 [6] INFO  SqlResult - Opened connection at 16-2-16 下午9:29:23 +08:00
+
+2016-02-16 21:29:23,373 [6] INFO  SqlResult - Started transaction at 16-2-16 下午9:29:23 +08:00
+
+2016-02-16 21:29:23,373 [6] INFO  SqlResult - INSERT [dbo].[eb_operate]([features_id], [name], [Url], [Remark])
+VALUES (@0, @1, @2, @3)
+SELECT [ID]
+FROM [dbo].[eb_operate]
+WHERE @@ROWCOUNT > 0 AND [ID] = scope_identity()
+2016-02-16 21:29:23,373 [6] INFO  SqlResult - 
+
+2016-02-16 21:29:23,373 [6] INFO  SqlResult - -- @0: '3' (Type = Int32)
+
+2016-02-16 21:29:23,374 [6] INFO  SqlResult - -- @1: '保存角色' (Type = String, Size = -1)
+
+2016-02-16 21:29:23,374 [6] INFO  SqlResult - -- @2: '/admin/purview/rolesave' (Type = String, Size = -1)
+
+2016-02-16 21:29:23,374 [6] INFO  SqlResult - -- @3: '保存角色(/admin/purview/rolesave)' (Type = String, Size = -1)
+
+2016-02-16 21:29:23,375 [6] INFO  SqlResult - -- Executing at 16-2-16 下午9:29:23 +08:00
+
+2016-02-16 21:29:23,391 [6] INFO  SqlResult - -- Completed in 15 ms with result: SqlDataReader
+
+2016-02-16 21:29:23,391 [6] INFO  SqlResult - 
+
+2016-02-16 21:29:23,391 [6] INFO  SqlResult - Committed transaction at 16-2-16 下午9:29:23 +08:00
+
+2016-02-16 21:29:23,391 [6] INFO  SqlResult - Closed connection at 16-2-16 下午9:29:23 +08:00
+
+2016-02-16 21:29:24,547 [6] INFO  SqlResult - Opened connection at 16-2-16 下午9:29:24 +08:00
+
+2016-02-16 21:29:24,548 [6] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[features_id] AS [features_id], 
+    [Extent1].[name] AS [name], 
+    [Extent1].[Url] AS [Url], 
+    [Extent1].[Remark] AS [Remark]
+    FROM [dbo].[eb_operate] AS [Extent1]
+    WHERE [Extent1].[features_id] = @p__linq__0
+2016-02-16 21:29:24,549 [6] INFO  SqlResult - 
+
+2016-02-16 21:29:24,549 [6] INFO  SqlResult - -- p__linq__0: '3' (Type = Int32)
+
+2016-02-16 21:29:24,549 [6] INFO  SqlResult - -- Executing at 16-2-16 下午9:29:24 +08:00
+
+2016-02-16 21:29:24,572 [6] INFO  SqlResult - -- Completed in 23 ms with result: SqlDataReader
+
+2016-02-16 21:29:24,572 [6] INFO  SqlResult - 
+
+2016-02-16 21:29:24,573 [6] INFO  SqlResult - Closed connection at 16-2-16 下午9:29:24 +08:00
+
+2016-02-16 21:29:25,751 [9] INFO  SqlResult - Opened connection at 16-2-16 下午9:29:25 +08:00
+
+2016-02-16 21:29:25,754 [9] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[Pid] AS [Pid], 
+    [Extent1].[depth_pid] AS [depth_pid], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[Url] AS [Url], 
+    [Extent1].[Remark] AS [Remark], 
+    [Extent1].[Type] AS [Type], 
+    [Extent1].[Sort] AS [Sort], 
+    [Extent1].[Icon] AS [Icon]
+    FROM [dbo].[eb_features] AS [Extent1]
+    WHERE 1 = [Extent1].[Type]
+2016-02-16 21:29:25,754 [9] INFO  SqlResult - 
+
+2016-02-16 21:29:25,754 [9] INFO  SqlResult - -- Executing at 16-2-16 下午9:29:25 +08:00
+
+2016-02-16 21:29:25,778 [9] INFO  SqlResult - -- Completed in 22 ms with result: SqlDataReader
+
+2016-02-16 21:29:25,778 [9] INFO  SqlResult - 
+
+2016-02-16 21:29:25,779 [9] INFO  SqlResult - Closed connection at 16-2-16 下午9:29:25 +08:00
+
+2016-02-16 21:29:25,780 [9] INFO  SqlResult - Opened connection at 16-2-16 下午9:29:25 +08:00
+
+2016-02-16 21:29:25,780 [9] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[features_id] AS [features_id], 
+    [Extent1].[name] AS [name], 
+    [Extent1].[Url] AS [Url], 
+    [Extent1].[Remark] AS [Remark]
+    FROM [dbo].[eb_operate] AS [Extent1]
+2016-02-16 21:29:25,780 [9] INFO  SqlResult - 
+
+2016-02-16 21:29:25,780 [9] INFO  SqlResult - -- Executing at 16-2-16 下午9:29:25 +08:00
+
+2016-02-16 21:29:25,826 [9] INFO  SqlResult - -- Completed in 45 ms with result: SqlDataReader
+
+2016-02-16 21:29:25,826 [9] INFO  SqlResult - 
+
+2016-02-16 21:29:25,826 [9] INFO  SqlResult - Closed connection at 16-2-16 下午9:29:25 +08:00
+
+2016-02-16 21:29:30,879 [6] INFO  SqlResult - Opened connection at 16-2-16 下午9:29:30 +08:00
+
+2016-02-16 21:29:30,879 [6] INFO  SqlResult - Started transaction at 16-2-16 下午9:29:30 +08:00
+
+2016-02-16 21:29:30,879 [6] INFO  SqlResult - INSERT [dbo].[eb_operate]([features_id], [name], [Url], [Remark])
+VALUES (@0, @1, @2, @3)
+SELECT [ID]
+FROM [dbo].[eb_operate]
+WHERE @@ROWCOUNT > 0 AND [ID] = scope_identity()
+2016-02-16 21:29:30,880 [6] INFO  SqlResult - 
+
+2016-02-16 21:29:30,880 [6] INFO  SqlResult - -- @0: '3' (Type = Int32)
+
+2016-02-16 21:29:30,881 [6] INFO  SqlResult - -- @1: '删除角色' (Type = String, Size = -1)
+
+2016-02-16 21:29:30,881 [6] INFO  SqlResult - -- @2: '/admin/purview/roledelete' (Type = String, Size = -1)
+
+2016-02-16 21:29:30,881 [6] INFO  SqlResult - -- @3: '删除角色(/admin/purview/roledelete)' (Type = String, Size = -1)
+
+2016-02-16 21:29:30,881 [6] INFO  SqlResult - -- Executing at 16-2-16 下午9:29:30 +08:00
+
+2016-02-16 21:29:30,894 [6] INFO  SqlResult - -- Completed in 12 ms with result: SqlDataReader
+
+2016-02-16 21:29:30,894 [6] INFO  SqlResult - 
+
+2016-02-16 21:29:30,895 [6] INFO  SqlResult - Committed transaction at 16-2-16 下午9:29:30 +08:00
+
+2016-02-16 21:29:30,895 [6] INFO  SqlResult - Closed connection at 16-2-16 下午9:29:30 +08:00
+
+2016-02-16 21:29:32,121 [6] INFO  SqlResult - Opened connection at 16-2-16 下午9:29:32 +08:00
+
+2016-02-16 21:29:32,127 [6] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[features_id] AS [features_id], 
+    [Extent1].[name] AS [name], 
+    [Extent1].[Url] AS [Url], 
+    [Extent1].[Remark] AS [Remark]
+    FROM [dbo].[eb_operate] AS [Extent1]
+    WHERE [Extent1].[features_id] = @p__linq__0
+2016-02-16 21:29:32,127 [6] INFO  SqlResult - 
+
+2016-02-16 21:29:32,127 [6] INFO  SqlResult - -- p__linq__0: '3' (Type = Int32)
+
+2016-02-16 21:29:32,127 [6] INFO  SqlResult - -- Executing at 16-2-16 下午9:29:32 +08:00
+
+2016-02-16 21:29:32,149 [6] INFO  SqlResult - -- Completed in 21 ms with result: SqlDataReader
+
+2016-02-16 21:29:32,150 [6] INFO  SqlResult - 
+
+2016-02-16 21:29:32,150 [6] INFO  SqlResult - Closed connection at 16-2-16 下午9:29:32 +08:00
+
+2016-02-16 21:29:56,898 [6] INFO  SqlResult - Opened connection at 16-2-16 下午9:29:56 +08:00
+
+2016-02-16 21:29:56,974 [6] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[UserName] AS [UserName], 
+    [Extent1].[Password] AS [Password], 
+    [Extent1].[role_id] AS [role_id], 
+    [Extent1].[Login] AS [Login], 
+    [Extent1].[reg_time] AS [reg_time], 
+    [Extent1].[login_time] AS [login_time], 
+    [Extent1].[update_time] AS [update_time], 
+    [Extent1].[login_ip] AS [login_ip], 
+    [Extent1].[Status] AS [Status], 
+    [Extent1].[Remark] AS [Remark], 
+    [Extent2].[ID] AS [ID1], 
+    [Extent2].[role_name] AS [role_name], 
+    [Extent2].[Actions] AS [Actions], 
+    [Extent2].[Remark] AS [Remark1]
+    FROM  [dbo].[eb_admin] AS [Extent1]
+    LEFT OUTER JOIN [dbo].[eb_role] AS [Extent2] ON [Extent1].[role_id] = [Extent2].[ID]
+2016-02-16 21:29:56,974 [6] INFO  SqlResult - 
+
+2016-02-16 21:29:56,974 [6] INFO  SqlResult - -- Executing at 16-2-16 下午9:29:56 +08:00
+
+2016-02-16 21:29:56,989 [6] INFO  SqlResult - -- Completed in 14 ms with result: SqlDataReader
+
+2016-02-16 21:29:56,990 [6] INFO  SqlResult - 
+
+2016-02-16 21:29:57,034 [6] INFO  SqlResult - Closed connection at 16-2-16 下午9:29:57 +08:00
+
+2016-02-16 21:30:00,139 [9] INFO  SqlResult - Opened connection at 16-2-16 下午9:30:00 +08:00
+
+2016-02-16 21:30:00,139 [9] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[Pid] AS [Pid], 
+    [Extent1].[depth_pid] AS [depth_pid], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[Url] AS [Url], 
+    [Extent1].[Remark] AS [Remark], 
+    [Extent1].[Type] AS [Type], 
+    [Extent1].[Sort] AS [Sort], 
+    [Extent1].[Icon] AS [Icon]
+    FROM [dbo].[eb_features] AS [Extent1]
+2016-02-16 21:30:00,139 [9] INFO  SqlResult - 
+
+2016-02-16 21:30:00,140 [9] INFO  SqlResult - -- Executing at 16-2-16 下午9:30:00 +08:00
+
+2016-02-16 21:30:00,153 [9] INFO  SqlResult - -- Completed in 13 ms with result: SqlDataReader
+
+2016-02-16 21:30:00,153 [9] INFO  SqlResult - 
+
+2016-02-16 21:30:00,153 [9] INFO  SqlResult - Closed connection at 16-2-16 下午9:30:00 +08:00
+
+2016-02-16 21:30:01,952 [6] INFO  SqlResult - Opened connection at 16-2-16 下午9:30:01 +08:00
+
+2016-02-16 21:30:01,952 [6] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[features_id] AS [features_id], 
+    [Extent1].[name] AS [name], 
+    [Extent1].[Url] AS [Url], 
+    [Extent1].[Remark] AS [Remark]
+    FROM [dbo].[eb_operate] AS [Extent1]
+    WHERE [Extent1].[features_id] = @p__linq__0
+2016-02-16 21:30:01,952 [6] INFO  SqlResult - 
+
+2016-02-16 21:30:01,953 [6] INFO  SqlResult - -- p__linq__0: '4' (Type = Int32)
+
+2016-02-16 21:30:01,953 [6] INFO  SqlResult - -- Executing at 16-2-16 下午9:30:01 +08:00
+
+2016-02-16 21:30:01,988 [6] INFO  SqlResult - -- Completed in 35 ms with result: SqlDataReader
+
+2016-02-16 21:30:01,989 [6] INFO  SqlResult - 
+
+2016-02-16 21:30:01,989 [6] INFO  SqlResult - Closed connection at 16-2-16 下午9:30:01 +08:00
+
+2016-02-16 21:30:03,476 [5] INFO  SqlResult - Opened connection at 16-2-16 下午9:30:03 +08:00
+
+2016-02-16 21:30:03,477 [5] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[Pid] AS [Pid], 
+    [Extent1].[depth_pid] AS [depth_pid], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[Url] AS [Url], 
+    [Extent1].[Remark] AS [Remark], 
+    [Extent1].[Type] AS [Type], 
+    [Extent1].[Sort] AS [Sort], 
+    [Extent1].[Icon] AS [Icon]
+    FROM [dbo].[eb_features] AS [Extent1]
+    WHERE 1 = [Extent1].[Type]
+2016-02-16 21:30:03,477 [5] INFO  SqlResult - 
+
+2016-02-16 21:30:03,478 [5] INFO  SqlResult - -- Executing at 16-2-16 下午9:30:03 +08:00
+
+2016-02-16 21:30:03,494 [5] INFO  SqlResult - -- Completed in 16 ms with result: SqlDataReader
+
+2016-02-16 21:30:03,495 [5] INFO  SqlResult - 
+
+2016-02-16 21:30:03,495 [5] INFO  SqlResult - Closed connection at 16-2-16 下午9:30:03 +08:00
+
+2016-02-16 21:30:03,495 [5] INFO  SqlResult - Opened connection at 16-2-16 下午9:30:03 +08:00
+
+2016-02-16 21:30:03,496 [5] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[features_id] AS [features_id], 
+    [Extent1].[name] AS [name], 
+    [Extent1].[Url] AS [Url], 
+    [Extent1].[Remark] AS [Remark]
+    FROM [dbo].[eb_operate] AS [Extent1]
+2016-02-16 21:30:03,496 [5] INFO  SqlResult - 
+
+2016-02-16 21:30:03,496 [5] INFO  SqlResult - -- Executing at 16-2-16 下午9:30:03 +08:00
+
+2016-02-16 21:30:03,511 [5] INFO  SqlResult - -- Completed in 15 ms with result: SqlDataReader
+
+2016-02-16 21:30:03,512 [5] INFO  SqlResult - 
+
+2016-02-16 21:30:03,512 [5] INFO  SqlResult - Closed connection at 16-2-16 下午9:30:03 +08:00
+
+2016-02-16 21:30:08,386 [8] INFO  SqlResult - Opened connection at 16-2-16 下午9:30:08 +08:00
+
+2016-02-16 21:30:08,386 [8] INFO  SqlResult - Started transaction at 16-2-16 下午9:30:08 +08:00
+
+2016-02-16 21:30:08,387 [8] INFO  SqlResult - INSERT [dbo].[eb_operate]([features_id], [name], [Url], [Remark])
+VALUES (@0, @1, @2, @3)
+SELECT [ID]
+FROM [dbo].[eb_operate]
+WHERE @@ROWCOUNT > 0 AND [ID] = scope_identity()
+2016-02-16 21:30:08,387 [8] INFO  SqlResult - 
+
+2016-02-16 21:30:08,387 [8] INFO  SqlResult - -- @0: '4' (Type = Int32)
+
+2016-02-16 21:30:08,387 [8] INFO  SqlResult - -- @1: '新增管理员' (Type = String, Size = -1)
+
+2016-02-16 21:30:08,387 [8] INFO  SqlResult - -- @2: '/admin/purview/admininsert' (Type = String, Size = -1)
+
+2016-02-16 21:30:08,387 [8] INFO  SqlResult - -- @3: '新增管理员(/admin/purview/admininsert)' (Type = String, Size = -1)
+
+2016-02-16 21:30:08,387 [8] INFO  SqlResult - -- Executing at 16-2-16 下午9:30:08 +08:00
+
+2016-02-16 21:30:08,404 [8] INFO  SqlResult - -- Completed in 16 ms with result: SqlDataReader
+
+2016-02-16 21:30:08,404 [8] INFO  SqlResult - 
+
+2016-02-16 21:30:08,404 [8] INFO  SqlResult - Committed transaction at 16-2-16 下午9:30:08 +08:00
+
+2016-02-16 21:30:08,405 [8] INFO  SqlResult - Closed connection at 16-2-16 下午9:30:08 +08:00
+
+2016-02-16 21:30:09,432 [5] INFO  SqlResult - Opened connection at 16-2-16 下午9:30:09 +08:00
+
+2016-02-16 21:30:09,433 [5] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[features_id] AS [features_id], 
+    [Extent1].[name] AS [name], 
+    [Extent1].[Url] AS [Url], 
+    [Extent1].[Remark] AS [Remark]
+    FROM [dbo].[eb_operate] AS [Extent1]
+    WHERE [Extent1].[features_id] = @p__linq__0
+2016-02-16 21:30:09,433 [5] INFO  SqlResult - 
+
+2016-02-16 21:30:09,434 [5] INFO  SqlResult - -- p__linq__0: '4' (Type = Int32)
+
+2016-02-16 21:30:09,434 [5] INFO  SqlResult - -- Executing at 16-2-16 下午9:30:09 +08:00
+
+2016-02-16 21:30:09,456 [5] INFO  SqlResult - -- Completed in 21 ms with result: SqlDataReader
+
+2016-02-16 21:30:09,456 [5] INFO  SqlResult - 
+
+2016-02-16 21:30:09,457 [5] INFO  SqlResult - Closed connection at 16-2-16 下午9:30:09 +08:00
+
+2016-02-16 21:30:10,440 [10] INFO  SqlResult - Opened connection at 16-2-16 下午9:30:10 +08:00
+
+2016-02-16 21:30:10,442 [10] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[Pid] AS [Pid], 
+    [Extent1].[depth_pid] AS [depth_pid], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[Url] AS [Url], 
+    [Extent1].[Remark] AS [Remark], 
+    [Extent1].[Type] AS [Type], 
+    [Extent1].[Sort] AS [Sort], 
+    [Extent1].[Icon] AS [Icon]
+    FROM [dbo].[eb_features] AS [Extent1]
+    WHERE 1 = [Extent1].[Type]
+2016-02-16 21:30:10,442 [10] INFO  SqlResult - 
+
+2016-02-16 21:30:10,442 [10] INFO  SqlResult - -- Executing at 16-2-16 下午9:30:10 +08:00
+
+2016-02-16 21:30:10,464 [10] INFO  SqlResult - -- Completed in 21 ms with result: SqlDataReader
+
+2016-02-16 21:30:10,464 [10] INFO  SqlResult - 
+
+2016-02-16 21:30:10,464 [10] INFO  SqlResult - Closed connection at 16-2-16 下午9:30:10 +08:00
+
+2016-02-16 21:30:10,465 [10] INFO  SqlResult - Opened connection at 16-2-16 下午9:30:10 +08:00
+
+2016-02-16 21:30:10,465 [10] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[features_id] AS [features_id], 
+    [Extent1].[name] AS [name], 
+    [Extent1].[Url] AS [Url], 
+    [Extent1].[Remark] AS [Remark]
+    FROM [dbo].[eb_operate] AS [Extent1]
+2016-02-16 21:30:10,465 [10] INFO  SqlResult - 
+
+2016-02-16 21:30:10,465 [10] INFO  SqlResult - -- Executing at 16-2-16 下午9:30:10 +08:00
+
+2016-02-16 21:30:10,481 [10] INFO  SqlResult - -- Completed in 16 ms with result: SqlDataReader
+
+2016-02-16 21:30:10,482 [10] INFO  SqlResult - 
+
+2016-02-16 21:30:10,482 [10] INFO  SqlResult - Closed connection at 16-2-16 下午9:30:10 +08:00
+
+2016-02-16 21:30:13,763 [8] INFO  SqlResult - Opened connection at 16-2-16 下午9:30:13 +08:00
+
+2016-02-16 21:30:13,764 [8] INFO  SqlResult - Started transaction at 16-2-16 下午9:30:13 +08:00
+
+2016-02-16 21:30:13,764 [8] INFO  SqlResult - INSERT [dbo].[eb_operate]([features_id], [name], [Url], [Remark])
+VALUES (@0, @1, @2, @3)
+SELECT [ID]
+FROM [dbo].[eb_operate]
+WHERE @@ROWCOUNT > 0 AND [ID] = scope_identity()
+2016-02-16 21:30:13,764 [8] INFO  SqlResult - 
+
+2016-02-16 21:30:13,765 [8] INFO  SqlResult - -- @0: '4' (Type = Int32)
+
+2016-02-16 21:30:13,765 [8] INFO  SqlResult - -- @1: '编辑管理员' (Type = String, Size = -1)
+
+2016-02-16 21:30:13,765 [8] INFO  SqlResult - -- @2: '/admin/purview/adminupdate' (Type = String, Size = -1)
+
+2016-02-16 21:30:13,765 [8] INFO  SqlResult - -- @3: '编辑管理员(/admin/purview/adminupdate)' (Type = String, Size = -1)
+
+2016-02-16 21:30:13,765 [8] INFO  SqlResult - -- Executing at 16-2-16 下午9:30:13 +08:00
+
+2016-02-16 21:30:13,777 [8] INFO  SqlResult - -- Completed in 12 ms with result: SqlDataReader
+
+2016-02-16 21:30:13,778 [8] INFO  SqlResult - 
+
+2016-02-16 21:30:13,778 [8] INFO  SqlResult - Committed transaction at 16-2-16 下午9:30:13 +08:00
+
+2016-02-16 21:30:13,778 [8] INFO  SqlResult - Closed connection at 16-2-16 下午9:30:13 +08:00
+
+2016-02-16 21:30:14,850 [5] INFO  SqlResult - Opened connection at 16-2-16 下午9:30:14 +08:00
+
+2016-02-16 21:30:14,850 [5] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[features_id] AS [features_id], 
+    [Extent1].[name] AS [name], 
+    [Extent1].[Url] AS [Url], 
+    [Extent1].[Remark] AS [Remark]
+    FROM [dbo].[eb_operate] AS [Extent1]
+    WHERE [Extent1].[features_id] = @p__linq__0
+2016-02-16 21:30:14,850 [5] INFO  SqlResult - 
+
+2016-02-16 21:30:14,851 [5] INFO  SqlResult - -- p__linq__0: '4' (Type = Int32)
+
+2016-02-16 21:30:14,851 [5] INFO  SqlResult - -- Executing at 16-2-16 下午9:30:14 +08:00
+
+2016-02-16 21:30:14,876 [5] INFO  SqlResult - -- Completed in 24 ms with result: SqlDataReader
+
+2016-02-16 21:30:14,876 [5] INFO  SqlResult - 
+
+2016-02-16 21:30:14,877 [5] INFO  SqlResult - Closed connection at 16-2-16 下午9:30:14 +08:00
+
+2016-02-16 21:30:16,060 [10] INFO  SqlResult - Opened connection at 16-2-16 下午9:30:16 +08:00
+
+2016-02-16 21:30:16,061 [10] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[Pid] AS [Pid], 
+    [Extent1].[depth_pid] AS [depth_pid], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[Url] AS [Url], 
+    [Extent1].[Remark] AS [Remark], 
+    [Extent1].[Type] AS [Type], 
+    [Extent1].[Sort] AS [Sort], 
+    [Extent1].[Icon] AS [Icon]
+    FROM [dbo].[eb_features] AS [Extent1]
+    WHERE 1 = [Extent1].[Type]
+2016-02-16 21:30:16,061 [10] INFO  SqlResult - 
+
+2016-02-16 21:30:16,062 [10] INFO  SqlResult - -- Executing at 16-2-16 下午9:30:16 +08:00
+
+2016-02-16 21:30:16,083 [10] INFO  SqlResult - -- Completed in 19 ms with result: SqlDataReader
+
+2016-02-16 21:30:16,083 [10] INFO  SqlResult - 
+
+2016-02-16 21:30:16,084 [10] INFO  SqlResult - Closed connection at 16-2-16 下午9:30:16 +08:00
+
+2016-02-16 21:30:16,084 [10] INFO  SqlResult - Opened connection at 16-2-16 下午9:30:16 +08:00
+
+2016-02-16 21:30:16,084 [10] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[features_id] AS [features_id], 
+    [Extent1].[name] AS [name], 
+    [Extent1].[Url] AS [Url], 
+    [Extent1].[Remark] AS [Remark]
+    FROM [dbo].[eb_operate] AS [Extent1]
+2016-02-16 21:30:16,085 [10] INFO  SqlResult - 
+
+2016-02-16 21:30:16,085 [10] INFO  SqlResult - -- Executing at 16-2-16 下午9:30:16 +08:00
+
+2016-02-16 21:30:16,103 [10] INFO  SqlResult - -- Completed in 17 ms with result: SqlDataReader
+
+2016-02-16 21:30:16,103 [10] INFO  SqlResult - 
+
+2016-02-16 21:30:16,103 [10] INFO  SqlResult - Closed connection at 16-2-16 下午9:30:16 +08:00
+
+2016-02-16 21:30:19,980 [6] INFO  SqlResult - Opened connection at 16-2-16 下午9:30:19 +08:00
+
+2016-02-16 21:30:19,980 [6] INFO  SqlResult - Started transaction at 16-2-16 下午9:30:19 +08:00
+
+2016-02-16 21:30:19,981 [6] INFO  SqlResult - INSERT [dbo].[eb_operate]([features_id], [name], [Url], [Remark])
+VALUES (@0, @1, @2, @3)
+SELECT [ID]
+FROM [dbo].[eb_operate]
+WHERE @@ROWCOUNT > 0 AND [ID] = scope_identity()
+2016-02-16 21:30:19,981 [6] INFO  SqlResult - 
+
+2016-02-16 21:30:19,981 [6] INFO  SqlResult - -- @0: '4' (Type = Int32)
+
+2016-02-16 21:30:19,981 [6] INFO  SqlResult - -- @1: '保存管理员' (Type = String, Size = -1)
+
+2016-02-16 21:30:19,981 [6] INFO  SqlResult - -- @2: '/admin/purview/adminsave' (Type = String, Size = -1)
+
+2016-02-16 21:30:19,982 [6] INFO  SqlResult - -- @3: '保存管理员(/admin/purview/adminsave)' (Type = String, Size = -1)
+
+2016-02-16 21:30:19,982 [6] INFO  SqlResult - -- Executing at 16-2-16 下午9:30:19 +08:00
+
+2016-02-16 21:30:19,994 [6] INFO  SqlResult - -- Completed in 12 ms with result: SqlDataReader
+
+2016-02-16 21:30:19,994 [6] INFO  SqlResult - 
+
+2016-02-16 21:30:19,995 [6] INFO  SqlResult - Committed transaction at 16-2-16 下午9:30:19 +08:00
+
+2016-02-16 21:30:19,995 [6] INFO  SqlResult - Closed connection at 16-2-16 下午9:30:19 +08:00
+
+2016-02-16 21:30:21,024 [9] INFO  SqlResult - Opened connection at 16-2-16 下午9:30:21 +08:00
+
+2016-02-16 21:30:21,025 [9] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[features_id] AS [features_id], 
+    [Extent1].[name] AS [name], 
+    [Extent1].[Url] AS [Url], 
+    [Extent1].[Remark] AS [Remark]
+    FROM [dbo].[eb_operate] AS [Extent1]
+    WHERE [Extent1].[features_id] = @p__linq__0
+2016-02-16 21:30:21,025 [9] INFO  SqlResult - 
+
+2016-02-16 21:30:21,028 [9] INFO  SqlResult - -- p__linq__0: '4' (Type = Int32)
+
+2016-02-16 21:30:21,028 [9] INFO  SqlResult - -- Executing at 16-2-16 下午9:30:21 +08:00
+
+2016-02-16 21:30:21,042 [9] INFO  SqlResult - -- Completed in 13 ms with result: SqlDataReader
+
+2016-02-16 21:30:21,042 [9] INFO  SqlResult - 
+
+2016-02-16 21:30:21,042 [9] INFO  SqlResult - Closed connection at 16-2-16 下午9:30:21 +08:00
+
+2016-02-16 21:30:22,024 [5] INFO  SqlResult - Opened connection at 16-2-16 下午9:30:22 +08:00
+
+2016-02-16 21:30:22,025 [5] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[Pid] AS [Pid], 
+    [Extent1].[depth_pid] AS [depth_pid], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[Url] AS [Url], 
+    [Extent1].[Remark] AS [Remark], 
+    [Extent1].[Type] AS [Type], 
+    [Extent1].[Sort] AS [Sort], 
+    [Extent1].[Icon] AS [Icon]
+    FROM [dbo].[eb_features] AS [Extent1]
+    WHERE 1 = [Extent1].[Type]
+2016-02-16 21:30:22,025 [5] INFO  SqlResult - 
+
+2016-02-16 21:30:22,025 [5] INFO  SqlResult - -- Executing at 16-2-16 下午9:30:22 +08:00
+
+2016-02-16 21:30:22,042 [5] INFO  SqlResult - -- Completed in 16 ms with result: SqlDataReader
+
+2016-02-16 21:30:22,042 [5] INFO  SqlResult - 
+
+2016-02-16 21:30:22,042 [5] INFO  SqlResult - Closed connection at 16-2-16 下午9:30:22 +08:00
+
+2016-02-16 21:30:22,042 [5] INFO  SqlResult - Opened connection at 16-2-16 下午9:30:22 +08:00
+
+2016-02-16 21:30:22,043 [5] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[features_id] AS [features_id], 
+    [Extent1].[name] AS [name], 
+    [Extent1].[Url] AS [Url], 
+    [Extent1].[Remark] AS [Remark]
+    FROM [dbo].[eb_operate] AS [Extent1]
+2016-02-16 21:30:22,043 [5] INFO  SqlResult - 
+
+2016-02-16 21:30:22,043 [5] INFO  SqlResult - -- Executing at 16-2-16 下午9:30:22 +08:00
+
+2016-02-16 21:30:22,069 [5] INFO  SqlResult - -- Completed in 25 ms with result: SqlDataReader
+
+2016-02-16 21:30:22,069 [5] INFO  SqlResult - 
+
+2016-02-16 21:30:22,069 [5] INFO  SqlResult - Closed connection at 16-2-16 下午9:30:22 +08:00
+
+2016-02-16 21:30:25,230 [8] INFO  SqlResult - Opened connection at 16-2-16 下午9:30:25 +08:00
+
+2016-02-16 21:30:25,230 [8] INFO  SqlResult - Started transaction at 16-2-16 下午9:30:25 +08:00
+
+2016-02-16 21:30:25,231 [8] INFO  SqlResult - INSERT [dbo].[eb_operate]([features_id], [name], [Url], [Remark])
+VALUES (@0, @1, @2, @3)
+SELECT [ID]
+FROM [dbo].[eb_operate]
+WHERE @@ROWCOUNT > 0 AND [ID] = scope_identity()
+2016-02-16 21:30:25,231 [8] INFO  SqlResult - 
+
+2016-02-16 21:30:25,231 [8] INFO  SqlResult - -- @0: '4' (Type = Int32)
+
+2016-02-16 21:30:25,231 [8] INFO  SqlResult - -- @1: '删除管理员' (Type = String, Size = -1)
+
+2016-02-16 21:30:25,231 [8] INFO  SqlResult - -- @2: '/admin/purview/admindelete' (Type = String, Size = -1)
+
+2016-02-16 21:30:25,231 [8] INFO  SqlResult - -- @3: '删除管理员(/admin/purview/admindelete)' (Type = String, Size = -1)
+
+2016-02-16 21:30:25,232 [8] INFO  SqlResult - -- Executing at 16-2-16 下午9:30:25 +08:00
+
+2016-02-16 21:30:25,244 [8] INFO  SqlResult - -- Completed in 12 ms with result: SqlDataReader
+
+2016-02-16 21:30:25,245 [8] INFO  SqlResult - 
+
+2016-02-16 21:30:25,246 [8] INFO  SqlResult - Committed transaction at 16-2-16 下午9:30:25 +08:00
+
+2016-02-16 21:30:25,246 [8] INFO  SqlResult - Closed connection at 16-2-16 下午9:30:25 +08:00
+
+2016-02-16 21:30:26,299 [5] INFO  SqlResult - Opened connection at 16-2-16 下午9:30:26 +08:00
+
+2016-02-16 21:30:26,300 [5] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[features_id] AS [features_id], 
+    [Extent1].[name] AS [name], 
+    [Extent1].[Url] AS [Url], 
+    [Extent1].[Remark] AS [Remark]
+    FROM [dbo].[eb_operate] AS [Extent1]
+    WHERE [Extent1].[features_id] = @p__linq__0
+2016-02-16 21:30:26,300 [5] INFO  SqlResult - 
+
+2016-02-16 21:30:26,301 [5] INFO  SqlResult - -- p__linq__0: '4' (Type = Int32)
+
+2016-02-16 21:30:26,301 [5] INFO  SqlResult - -- Executing at 16-2-16 下午9:30:26 +08:00
+
+2016-02-16 21:30:26,318 [5] INFO  SqlResult - -- Completed in 16 ms with result: SqlDataReader
+
+2016-02-16 21:30:26,318 [5] INFO  SqlResult - 
+
+2016-02-16 21:30:26,318 [5] INFO  SqlResult - Closed connection at 16-2-16 下午9:30:26 +08:00
+
+2016-02-16 21:30:28,308 [10] INFO  SqlResult - Opened connection at 16-2-16 下午9:30:28 +08:00
+
+2016-02-16 21:30:28,309 [10] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[Pid] AS [Pid], 
+    [Extent1].[depth_pid] AS [depth_pid], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[Url] AS [Url], 
+    [Extent1].[Remark] AS [Remark], 
+    [Extent1].[Type] AS [Type], 
+    [Extent1].[Sort] AS [Sort], 
+    [Extent1].[Icon] AS [Icon]
+    FROM [dbo].[eb_features] AS [Extent1]
+2016-02-16 21:30:28,309 [10] INFO  SqlResult - 
+
+2016-02-16 21:30:28,309 [10] INFO  SqlResult - -- Executing at 16-2-16 下午9:30:28 +08:00
+
+2016-02-16 21:30:28,323 [10] INFO  SqlResult - -- Completed in 13 ms with result: SqlDataReader
+
+2016-02-16 21:30:28,323 [10] INFO  SqlResult - 
+
+2016-02-16 21:30:28,323 [10] INFO  SqlResult - Closed connection at 16-2-16 下午9:30:28 +08:00
+
+2016-02-16 21:30:30,367 [10] INFO  SqlResult - Opened connection at 16-2-16 下午9:30:30 +08:00
+
+2016-02-16 21:30:30,368 [10] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[role_name] AS [role_name], 
+    [Extent1].[Actions] AS [Actions], 
+    [Extent1].[Remark] AS [Remark]
+    FROM [dbo].[eb_role] AS [Extent1]
+2016-02-16 21:30:30,368 [10] INFO  SqlResult - 
+
+2016-02-16 21:30:30,368 [10] INFO  SqlResult - -- Executing at 16-2-16 下午9:30:30 +08:00
+
+2016-02-16 21:30:30,384 [10] INFO  SqlResult - -- Completed in 15 ms with result: SqlDataReader
+
+2016-02-16 21:30:30,384 [10] INFO  SqlResult - 
+
+2016-02-16 21:30:30,384 [10] INFO  SqlResult - Closed connection at 16-2-16 下午9:30:30 +08:00
+
+2016-02-16 21:30:33,017 [6] INFO  SqlResult - Opened connection at 16-2-16 下午9:30:33 +08:00
+
+2016-02-16 21:30:33,017 [6] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[Pid] AS [Pid], 
+    [Extent1].[depth_pid] AS [depth_pid], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[Url] AS [Url], 
+    [Extent1].[Remark] AS [Remark], 
+    [Extent1].[Type] AS [Type], 
+    [Extent1].[Sort] AS [Sort], 
+    [Extent1].[Icon] AS [Icon]
+    FROM [dbo].[eb_features] AS [Extent1]
+2016-02-16 21:30:33,018 [6] INFO  SqlResult - 
+
+2016-02-16 21:30:33,018 [6] INFO  SqlResult - -- Executing at 16-2-16 下午9:30:33 +08:00
+
+2016-02-16 21:30:33,043 [6] INFO  SqlResult - -- Completed in 24 ms with result: SqlDataReader
+
+2016-02-16 21:30:33,043 [6] INFO  SqlResult - 
+
+2016-02-16 21:30:33,044 [6] INFO  SqlResult - Closed connection at 16-2-16 下午9:30:33 +08:00
+
+2016-02-16 21:30:33,129 [6] INFO  SqlResult - Opened connection at 16-2-16 下午9:30:33 +08:00
+
+2016-02-16 21:30:33,131 [6] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[features_id] AS [features_id], 
+    [Extent1].[name] AS [name], 
+    [Extent1].[Url] AS [Url], 
+    [Extent1].[Remark] AS [Remark]
+    FROM [dbo].[eb_operate] AS [Extent1]
+2016-02-16 21:30:33,132 [6] INFO  SqlResult - 
+
+2016-02-16 21:30:33,132 [6] INFO  SqlResult - -- Executing at 16-2-16 下午9:30:33 +08:00
+
+2016-02-16 21:30:33,153 [6] INFO  SqlResult - -- Completed in 19 ms with result: SqlDataReader
+
+2016-02-16 21:30:33,153 [6] INFO  SqlResult - 
+
+2016-02-16 21:30:33,153 [6] INFO  SqlResult - Closed connection at 16-2-16 下午9:30:33 +08:00
+
+2016-02-16 21:30:33,238 [6] INFO  SqlResult - Opened connection at 16-2-16 下午9:30:33 +08:00
+
+2016-02-16 21:30:33,247 [6] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[obj_id] AS [obj_id], 
+    [Extent1].[name] AS [name], 
+    [Extent1].[Code] AS [Code], 
+    [Extent1].[Type] AS [Type]
+    FROM [dbo].[eb_purview_field] AS [Extent1]
+2016-02-16 21:30:33,247 [6] INFO  SqlResult - 
+
+2016-02-16 21:30:33,247 [6] INFO  SqlResult - -- Executing at 16-2-16 下午9:30:33 +08:00
+
+2016-02-16 21:30:33,268 [6] INFO  SqlResult - -- Completed in 20 ms with result: SqlDataReader
+
+2016-02-16 21:30:33,268 [6] INFO  SqlResult - 
+
+2016-02-16 21:30:33,268 [6] INFO  SqlResult - Closed connection at 16-2-16 下午9:30:33 +08:00
+
+2016-02-16 21:30:40,002 [6] INFO  SqlResult - Opened connection at 16-2-16 下午9:30:40 +08:00
+
+2016-02-16 21:30:40,003 [6] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[Pid] AS [Pid], 
+    [Extent1].[depth_pid] AS [depth_pid], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[Url] AS [Url], 
+    [Extent1].[Remark] AS [Remark], 
+    [Extent1].[Type] AS [Type], 
+    [Extent1].[Sort] AS [Sort], 
+    [Extent1].[Icon] AS [Icon]
+    FROM [dbo].[eb_features] AS [Extent1]
+2016-02-16 21:30:40,003 [6] INFO  SqlResult - 
+
+2016-02-16 21:30:40,003 [6] INFO  SqlResult - -- Executing at 16-2-16 下午9:30:40 +08:00
+
+2016-02-16 21:30:40,021 [6] INFO  SqlResult - -- Completed in 18 ms with result: SqlDataReader
+
+2016-02-16 21:30:40,021 [6] INFO  SqlResult - 
+
+2016-02-16 21:30:40,022 [6] INFO  SqlResult - Closed connection at 16-2-16 下午9:30:40 +08:00
+
+2016-02-16 21:30:42,679 [8] INFO  SqlResult - Opened connection at 16-2-16 下午9:30:42 +08:00
+
+2016-02-16 21:30:42,679 [8] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[features_id] AS [features_id], 
+    [Extent1].[name] AS [name], 
+    [Extent1].[Url] AS [Url], 
+    [Extent1].[Remark] AS [Remark]
+    FROM [dbo].[eb_operate] AS [Extent1]
+    WHERE [Extent1].[features_id] = @p__linq__0
+2016-02-16 21:30:42,679 [8] INFO  SqlResult - 
+
+2016-02-16 21:30:42,680 [8] INFO  SqlResult - -- p__linq__0: '2' (Type = Int32)
+
+2016-02-16 21:30:42,680 [8] INFO  SqlResult - -- Executing at 16-2-16 下午9:30:42 +08:00
+
+2016-02-16 21:30:42,696 [8] INFO  SqlResult - -- Completed in 15 ms with result: SqlDataReader
+
+2016-02-16 21:30:42,696 [8] INFO  SqlResult - 
+
+2016-02-16 21:30:42,696 [8] INFO  SqlResult - Closed connection at 16-2-16 下午9:30:42 +08:00
+
+2016-02-16 21:30:44,060 [5] INFO  SqlResult - Opened connection at 16-2-16 下午9:30:44 +08:00
+
+2016-02-16 21:30:44,061 [5] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[Pid] AS [Pid], 
+    [Extent1].[depth_pid] AS [depth_pid], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[Url] AS [Url], 
+    [Extent1].[Remark] AS [Remark], 
+    [Extent1].[Type] AS [Type], 
+    [Extent1].[Sort] AS [Sort], 
+    [Extent1].[Icon] AS [Icon]
+    FROM [dbo].[eb_features] AS [Extent1]
+    WHERE 1 = [Extent1].[Type]
+2016-02-16 21:30:44,061 [5] INFO  SqlResult - 
+
+2016-02-16 21:30:44,061 [5] INFO  SqlResult - -- Executing at 16-2-16 下午9:30:44 +08:00
+
+2016-02-16 21:30:44,078 [5] INFO  SqlResult - -- Completed in 17 ms with result: SqlDataReader
+
+2016-02-16 21:30:44,078 [5] INFO  SqlResult - 
+
+2016-02-16 21:30:44,078 [5] INFO  SqlResult - Closed connection at 16-2-16 下午9:30:44 +08:00
+
+2016-02-16 21:30:44,079 [5] INFO  SqlResult - Opened connection at 16-2-16 下午9:30:44 +08:00
+
+2016-02-16 21:30:44,079 [5] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[features_id] AS [features_id], 
+    [Extent1].[name] AS [name], 
+    [Extent1].[Url] AS [Url], 
+    [Extent1].[Remark] AS [Remark]
+    FROM [dbo].[eb_operate] AS [Extent1]
+2016-02-16 21:30:44,079 [5] INFO  SqlResult - 
+
+2016-02-16 21:30:44,079 [5] INFO  SqlResult - -- Executing at 16-2-16 下午9:30:44 +08:00
+
+2016-02-16 21:30:44,103 [5] INFO  SqlResult - -- Completed in 23 ms with result: SqlDataReader
+
+2016-02-16 21:30:44,103 [5] INFO  SqlResult - 
+
+2016-02-16 21:30:44,103 [5] INFO  SqlResult - Closed connection at 16-2-16 下午9:30:44 +08:00
+
+2016-02-16 21:30:49,310 [5] INFO  SqlResult - Opened connection at 16-2-16 下午9:30:49 +08:00
+
+2016-02-16 21:30:49,310 [5] INFO  SqlResult - Started transaction at 16-2-16 下午9:30:49 +08:00
+
+2016-02-16 21:30:49,311 [5] INFO  SqlResult - INSERT [dbo].[eb_operate]([features_id], [name], [Url], [Remark])
+VALUES (@0, @1, @2, @3)
+SELECT [ID]
+FROM [dbo].[eb_operate]
+WHERE @@ROWCOUNT > 0 AND [ID] = scope_identity()
+2016-02-16 21:30:49,311 [5] INFO  SqlResult - 
+
+2016-02-16 21:30:49,311 [5] INFO  SqlResult - -- @0: '2' (Type = Int32)
+
+2016-02-16 21:30:49,311 [5] INFO  SqlResult - -- @1: '新增功能' (Type = String, Size = -1)
+
+2016-02-16 21:30:49,311 [5] INFO  SqlResult - -- @2: '/admin/purview/featuresinsert' (Type = String, Size = -1)
+
+2016-02-16 21:30:49,311 [5] INFO  SqlResult - -- @3: '新增功能(/admin/purview/featuresinsert)' (Type = String, Size = -1)
+
+2016-02-16 21:30:49,311 [5] INFO  SqlResult - -- Executing at 16-2-16 下午9:30:49 +08:00
+
+2016-02-16 21:30:49,326 [5] INFO  SqlResult - -- Completed in 14 ms with result: SqlDataReader
+
+2016-02-16 21:30:49,326 [5] INFO  SqlResult - 
+
+2016-02-16 21:30:49,327 [5] INFO  SqlResult - Committed transaction at 16-2-16 下午9:30:49 +08:00
+
+2016-02-16 21:30:49,327 [5] INFO  SqlResult - Closed connection at 16-2-16 下午9:30:49 +08:00
+
+2016-02-16 21:30:50,344 [10] INFO  SqlResult - Opened connection at 16-2-16 下午9:30:50 +08:00
+
+2016-02-16 21:30:50,344 [10] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[features_id] AS [features_id], 
+    [Extent1].[name] AS [name], 
+    [Extent1].[Url] AS [Url], 
+    [Extent1].[Remark] AS [Remark]
+    FROM [dbo].[eb_operate] AS [Extent1]
+    WHERE [Extent1].[features_id] = @p__linq__0
+2016-02-16 21:30:50,345 [10] INFO  SqlResult - 
+
+2016-02-16 21:30:50,345 [10] INFO  SqlResult - -- p__linq__0: '2' (Type = Int32)
+
+2016-02-16 21:30:50,345 [10] INFO  SqlResult - -- Executing at 16-2-16 下午9:30:50 +08:00
+
+2016-02-16 21:30:50,363 [10] INFO  SqlResult - -- Completed in 17 ms with result: SqlDataReader
+
+2016-02-16 21:30:50,363 [10] INFO  SqlResult - 
+
+2016-02-16 21:30:50,364 [10] INFO  SqlResult - Closed connection at 16-2-16 下午9:30:50 +08:00
+
+2016-02-16 21:30:51,684 [5] INFO  SqlResult - Opened connection at 16-2-16 下午9:30:51 +08:00
+
+2016-02-16 21:30:51,685 [5] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[Pid] AS [Pid], 
+    [Extent1].[depth_pid] AS [depth_pid], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[Url] AS [Url], 
+    [Extent1].[Remark] AS [Remark], 
+    [Extent1].[Type] AS [Type], 
+    [Extent1].[Sort] AS [Sort], 
+    [Extent1].[Icon] AS [Icon]
+    FROM [dbo].[eb_features] AS [Extent1]
+    WHERE 1 = [Extent1].[Type]
+2016-02-16 21:30:51,685 [5] INFO  SqlResult - 
+
+2016-02-16 21:30:51,685 [5] INFO  SqlResult - -- Executing at 16-2-16 下午9:30:51 +08:00
+
+2016-02-16 21:30:51,702 [5] INFO  SqlResult - -- Completed in 17 ms with result: SqlDataReader
+
+2016-02-16 21:30:51,703 [5] INFO  SqlResult - 
+
+2016-02-16 21:30:51,703 [5] INFO  SqlResult - Closed connection at 16-2-16 下午9:30:51 +08:00
+
+2016-02-16 21:30:51,704 [5] INFO  SqlResult - Opened connection at 16-2-16 下午9:30:51 +08:00
+
+2016-02-16 21:30:51,705 [5] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[features_id] AS [features_id], 
+    [Extent1].[name] AS [name], 
+    [Extent1].[Url] AS [Url], 
+    [Extent1].[Remark] AS [Remark]
+    FROM [dbo].[eb_operate] AS [Extent1]
+2016-02-16 21:30:51,705 [5] INFO  SqlResult - 
+
+2016-02-16 21:30:51,706 [5] INFO  SqlResult - -- Executing at 16-2-16 下午9:30:51 +08:00
+
+2016-02-16 21:30:51,724 [5] INFO  SqlResult - -- Completed in 17 ms with result: SqlDataReader
+
+2016-02-16 21:30:51,724 [5] INFO  SqlResult - 
+
+2016-02-16 21:30:51,724 [5] INFO  SqlResult - Closed connection at 16-2-16 下午9:30:51 +08:00
+
+2016-02-16 21:30:54,367 [5] INFO  SqlResult - Opened connection at 16-2-16 下午9:30:54 +08:00
+
+2016-02-16 21:30:54,368 [5] INFO  SqlResult - Started transaction at 16-2-16 下午9:30:54 +08:00
+
+2016-02-16 21:30:54,368 [5] INFO  SqlResult - INSERT [dbo].[eb_operate]([features_id], [name], [Url], [Remark])
+VALUES (@0, @1, @2, @3)
+SELECT [ID]
+FROM [dbo].[eb_operate]
+WHERE @@ROWCOUNT > 0 AND [ID] = scope_identity()
+2016-02-16 21:30:54,369 [5] INFO  SqlResult - 
+
+2016-02-16 21:30:54,369 [5] INFO  SqlResult - -- @0: '2' (Type = Int32)
+
+2016-02-16 21:30:54,369 [5] INFO  SqlResult - -- @1: '保存功能' (Type = String, Size = -1)
+
+2016-02-16 21:30:54,369 [5] INFO  SqlResult - -- @2: '/admin/purview/featuressave' (Type = String, Size = -1)
+
+2016-02-16 21:30:54,369 [5] INFO  SqlResult - -- @3: '保存功能(/admin/purview/featuressave)' (Type = String, Size = -1)
+
+2016-02-16 21:30:54,369 [5] INFO  SqlResult - -- Executing at 16-2-16 下午9:30:54 +08:00
+
+2016-02-16 21:30:54,386 [5] INFO  SqlResult - -- Completed in 16 ms with result: SqlDataReader
+
+2016-02-16 21:30:54,386 [5] INFO  SqlResult - 
+
+2016-02-16 21:30:54,387 [5] INFO  SqlResult - Committed transaction at 16-2-16 下午9:30:54 +08:00
+
+2016-02-16 21:30:54,387 [5] INFO  SqlResult - Closed connection at 16-2-16 下午9:30:54 +08:00
+
+2016-02-16 21:30:55,790 [8] INFO  SqlResult - Opened connection at 16-2-16 下午9:30:55 +08:00
+
+2016-02-16 21:30:55,792 [8] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[features_id] AS [features_id], 
+    [Extent1].[name] AS [name], 
+    [Extent1].[Url] AS [Url], 
+    [Extent1].[Remark] AS [Remark]
+    FROM [dbo].[eb_operate] AS [Extent1]
+    WHERE [Extent1].[features_id] = @p__linq__0
+2016-02-16 21:30:55,792 [8] INFO  SqlResult - 
+
+2016-02-16 21:30:55,793 [8] INFO  SqlResult - -- p__linq__0: '2' (Type = Int32)
+
+2016-02-16 21:30:55,793 [8] INFO  SqlResult - -- Executing at 16-2-16 下午9:30:55 +08:00
+
+2016-02-16 21:30:55,810 [8] INFO  SqlResult - -- Completed in 17 ms with result: SqlDataReader
+
+2016-02-16 21:30:55,810 [8] INFO  SqlResult - 
+
+2016-02-16 21:30:55,810 [8] INFO  SqlResult - Closed connection at 16-2-16 下午9:30:55 +08:00
+
+2016-02-16 21:30:57,061 [6] INFO  SqlResult - Opened connection at 16-2-16 下午9:30:57 +08:00
+
+2016-02-16 21:30:57,062 [6] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[Pid] AS [Pid], 
+    [Extent1].[depth_pid] AS [depth_pid], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[Url] AS [Url], 
+    [Extent1].[Remark] AS [Remark], 
+    [Extent1].[Type] AS [Type], 
+    [Extent1].[Sort] AS [Sort], 
+    [Extent1].[Icon] AS [Icon]
+    FROM [dbo].[eb_features] AS [Extent1]
+    WHERE 1 = [Extent1].[Type]
+2016-02-16 21:30:57,062 [6] INFO  SqlResult - 
+
+2016-02-16 21:30:57,062 [6] INFO  SqlResult - -- Executing at 16-2-16 下午9:30:57 +08:00
+
+2016-02-16 21:30:57,079 [6] INFO  SqlResult - -- Completed in 16 ms with result: SqlDataReader
+
+2016-02-16 21:30:57,079 [6] INFO  SqlResult - 
+
+2016-02-16 21:30:57,079 [6] INFO  SqlResult - Closed connection at 16-2-16 下午9:30:57 +08:00
+
+2016-02-16 21:30:57,080 [6] INFO  SqlResult - Opened connection at 16-2-16 下午9:30:57 +08:00
+
+2016-02-16 21:30:57,080 [6] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[features_id] AS [features_id], 
+    [Extent1].[name] AS [name], 
+    [Extent1].[Url] AS [Url], 
+    [Extent1].[Remark] AS [Remark]
+    FROM [dbo].[eb_operate] AS [Extent1]
+2016-02-16 21:30:57,080 [6] INFO  SqlResult - 
+
+2016-02-16 21:30:57,080 [6] INFO  SqlResult - -- Executing at 16-2-16 下午9:30:57 +08:00
+
+2016-02-16 21:30:57,095 [6] INFO  SqlResult - -- Completed in 14 ms with result: SqlDataReader
+
+2016-02-16 21:30:57,095 [6] INFO  SqlResult - 
+
+2016-02-16 21:30:57,095 [6] INFO  SqlResult - Closed connection at 16-2-16 下午9:30:57 +08:00
+
+2016-02-16 21:31:00,713 [5] INFO  SqlResult - Opened connection at 16-2-16 下午9:31:00 +08:00
+
+2016-02-16 21:31:00,714 [5] INFO  SqlResult - Started transaction at 16-2-16 下午9:31:00 +08:00
+
+2016-02-16 21:31:00,714 [5] INFO  SqlResult - INSERT [dbo].[eb_operate]([features_id], [name], [Url], [Remark])
+VALUES (@0, @1, @2, @3)
+SELECT [ID]
+FROM [dbo].[eb_operate]
+WHERE @@ROWCOUNT > 0 AND [ID] = scope_identity()
+2016-02-16 21:31:00,714 [5] INFO  SqlResult - 
+
+2016-02-16 21:31:00,715 [5] INFO  SqlResult - -- @0: '2' (Type = Int32)
+
+2016-02-16 21:31:00,715 [5] INFO  SqlResult - -- @1: '删除功能' (Type = String, Size = -1)
+
+2016-02-16 21:31:00,715 [5] INFO  SqlResult - -- @2: '/admin/purview/featuresdelete' (Type = String, Size = -1)
+
+2016-02-16 21:31:00,715 [5] INFO  SqlResult - -- @3: '删除功能(/admin/purview/featuresdelete)' (Type = String, Size = -1)
+
+2016-02-16 21:31:00,715 [5] INFO  SqlResult - -- Executing at 16-2-16 下午9:31:00 +08:00
+
+2016-02-16 21:31:00,729 [5] INFO  SqlResult - -- Completed in 13 ms with result: SqlDataReader
+
+2016-02-16 21:31:00,729 [5] INFO  SqlResult - 
+
+2016-02-16 21:31:00,730 [5] INFO  SqlResult - Committed transaction at 16-2-16 下午9:31:00 +08:00
+
+2016-02-16 21:31:00,730 [5] INFO  SqlResult - Closed connection at 16-2-16 下午9:31:00 +08:00
+
+2016-02-16 21:31:01,850 [5] INFO  SqlResult - Opened connection at 16-2-16 下午9:31:01 +08:00
+
+2016-02-16 21:31:01,850 [5] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[features_id] AS [features_id], 
+    [Extent1].[name] AS [name], 
+    [Extent1].[Url] AS [Url], 
+    [Extent1].[Remark] AS [Remark]
+    FROM [dbo].[eb_operate] AS [Extent1]
+    WHERE [Extent1].[features_id] = @p__linq__0
+2016-02-16 21:31:01,850 [5] INFO  SqlResult - 
+
+2016-02-16 21:31:01,850 [5] INFO  SqlResult - -- p__linq__0: '2' (Type = Int32)
+
+2016-02-16 21:31:01,851 [5] INFO  SqlResult - -- Executing at 16-2-16 下午9:31:01 +08:00
+
+2016-02-16 21:31:01,868 [5] INFO  SqlResult - -- Completed in 17 ms with result: SqlDataReader
+
+2016-02-16 21:31:01,869 [5] INFO  SqlResult - 
+
+2016-02-16 21:31:01,869 [5] INFO  SqlResult - Closed connection at 16-2-16 下午9:31:01 +08:00
+
+2016-02-16 21:31:02,937 [8] INFO  SqlResult - Opened connection at 16-2-16 下午9:31:02 +08:00
+
+2016-02-16 21:31:02,939 [8] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[Pid] AS [Pid], 
+    [Extent1].[depth_pid] AS [depth_pid], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[Url] AS [Url], 
+    [Extent1].[Remark] AS [Remark], 
+    [Extent1].[Type] AS [Type], 
+    [Extent1].[Sort] AS [Sort], 
+    [Extent1].[Icon] AS [Icon]
+    FROM [dbo].[eb_features] AS [Extent1]
+    WHERE 1 = [Extent1].[Type]
+2016-02-16 21:31:02,940 [8] INFO  SqlResult - 
+
+2016-02-16 21:31:02,941 [8] INFO  SqlResult - -- Executing at 16-2-16 下午9:31:02 +08:00
+
+2016-02-16 21:31:02,963 [8] INFO  SqlResult - -- Completed in 20 ms with result: SqlDataReader
+
+2016-02-16 21:31:02,963 [8] INFO  SqlResult - 
+
+2016-02-16 21:31:02,963 [8] INFO  SqlResult - Closed connection at 16-2-16 下午9:31:02 +08:00
+
+2016-02-16 21:31:02,964 [8] INFO  SqlResult - Opened connection at 16-2-16 下午9:31:02 +08:00
+
+2016-02-16 21:31:02,964 [8] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[features_id] AS [features_id], 
+    [Extent1].[name] AS [name], 
+    [Extent1].[Url] AS [Url], 
+    [Extent1].[Remark] AS [Remark]
+    FROM [dbo].[eb_operate] AS [Extent1]
+2016-02-16 21:31:02,964 [8] INFO  SqlResult - 
+
+2016-02-16 21:31:02,964 [8] INFO  SqlResult - -- Executing at 16-2-16 下午9:31:02 +08:00
+
+2016-02-16 21:31:02,982 [8] INFO  SqlResult - -- Completed in 17 ms with result: SqlDataReader
+
+2016-02-16 21:31:02,983 [8] INFO  SqlResult - 
+
+2016-02-16 21:31:02,985 [8] INFO  SqlResult - Closed connection at 16-2-16 下午9:31:02 +08:00
+
+2016-02-16 21:31:05,831 [5] INFO  SqlResult - Opened connection at 16-2-16 下午9:31:05 +08:00
+
+2016-02-16 21:31:05,831 [5] INFO  SqlResult - Started transaction at 16-2-16 下午9:31:05 +08:00
+
+2016-02-16 21:31:05,831 [5] INFO  SqlResult - INSERT [dbo].[eb_operate]([features_id], [name], [Url], [Remark])
+VALUES (@0, @1, @2, @3)
+SELECT [ID]
+FROM [dbo].[eb_operate]
+WHERE @@ROWCOUNT > 0 AND [ID] = scope_identity()
+2016-02-16 21:31:05,832 [5] INFO  SqlResult - 
+
+2016-02-16 21:31:05,832 [5] INFO  SqlResult - -- @0: '2' (Type = Int32)
+
+2016-02-16 21:31:05,832 [5] INFO  SqlResult - -- @1: '功能操作' (Type = String, Size = -1)
+
+2016-02-16 21:31:05,832 [5] INFO  SqlResult - -- @2: '/admin/purview/operate' (Type = String, Size = -1)
+
+2016-02-16 21:31:05,832 [5] INFO  SqlResult - -- @3: '功能操作(/admin/purview/operate)' (Type = String, Size = -1)
+
+2016-02-16 21:31:05,832 [5] INFO  SqlResult - -- Executing at 16-2-16 下午9:31:05 +08:00
+
+2016-02-16 21:31:05,853 [5] INFO  SqlResult - -- Completed in 20 ms with result: SqlDataReader
+
+2016-02-16 21:31:05,853 [5] INFO  SqlResult - 
+
+2016-02-16 21:31:05,856 [5] INFO  SqlResult - Committed transaction at 16-2-16 下午9:31:05 +08:00
+
+2016-02-16 21:31:05,857 [5] INFO  SqlResult - Closed connection at 16-2-16 下午9:31:05 +08:00
+
+2016-02-16 21:31:06,885 [5] INFO  SqlResult - Opened connection at 16-2-16 下午9:31:06 +08:00
+
+2016-02-16 21:31:06,886 [5] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[features_id] AS [features_id], 
+    [Extent1].[name] AS [name], 
+    [Extent1].[Url] AS [Url], 
+    [Extent1].[Remark] AS [Remark]
+    FROM [dbo].[eb_operate] AS [Extent1]
+    WHERE [Extent1].[features_id] = @p__linq__0
+2016-02-16 21:31:06,886 [5] INFO  SqlResult - 
+
+2016-02-16 21:31:06,886 [5] INFO  SqlResult - -- p__linq__0: '2' (Type = Int32)
+
+2016-02-16 21:31:06,886 [5] INFO  SqlResult - -- Executing at 16-2-16 下午9:31:06 +08:00
+
+2016-02-16 21:31:06,906 [5] INFO  SqlResult - -- Completed in 19 ms with result: SqlDataReader
+
+2016-02-16 21:31:06,906 [5] INFO  SqlResult - 
+
+2016-02-16 21:31:06,906 [5] INFO  SqlResult - Closed connection at 16-2-16 下午9:31:06 +08:00
+
+2016-02-16 21:31:08,081 [10] INFO  SqlResult - Opened connection at 16-2-16 下午9:31:08 +08:00
+
+2016-02-16 21:31:08,083 [10] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[Pid] AS [Pid], 
+    [Extent1].[depth_pid] AS [depth_pid], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[Url] AS [Url], 
+    [Extent1].[Remark] AS [Remark], 
+    [Extent1].[Type] AS [Type], 
+    [Extent1].[Sort] AS [Sort], 
+    [Extent1].[Icon] AS [Icon]
+    FROM [dbo].[eb_features] AS [Extent1]
+    WHERE 1 = [Extent1].[Type]
+2016-02-16 21:31:08,083 [10] INFO  SqlResult - 
+
+2016-02-16 21:31:08,084 [10] INFO  SqlResult - -- Executing at 16-2-16 下午9:31:08 +08:00
+
+2016-02-16 21:31:08,106 [10] INFO  SqlResult - -- Completed in 21 ms with result: SqlDataReader
+
+2016-02-16 21:31:08,106 [10] INFO  SqlResult - 
+
+2016-02-16 21:31:08,106 [10] INFO  SqlResult - Closed connection at 16-2-16 下午9:31:08 +08:00
+
+2016-02-16 21:31:08,106 [10] INFO  SqlResult - Opened connection at 16-2-16 下午9:31:08 +08:00
+
+2016-02-16 21:31:08,106 [10] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[features_id] AS [features_id], 
+    [Extent1].[name] AS [name], 
+    [Extent1].[Url] AS [Url], 
+    [Extent1].[Remark] AS [Remark]
+    FROM [dbo].[eb_operate] AS [Extent1]
+2016-02-16 21:31:08,107 [10] INFO  SqlResult - 
+
+2016-02-16 21:31:08,107 [10] INFO  SqlResult - -- Executing at 16-2-16 下午9:31:08 +08:00
+
+2016-02-16 21:31:08,124 [10] INFO  SqlResult - -- Completed in 16 ms with result: SqlDataReader
+
+2016-02-16 21:31:08,124 [10] INFO  SqlResult - 
+
+2016-02-16 21:31:08,124 [10] INFO  SqlResult - Closed connection at 16-2-16 下午9:31:08 +08:00
+
+2016-02-16 21:31:11,751 [5] INFO  SqlResult - Opened connection at 16-2-16 下午9:31:11 +08:00
+
+2016-02-16 21:31:11,752 [5] INFO  SqlResult - Started transaction at 16-2-16 下午9:31:11 +08:00
+
+2016-02-16 21:31:11,752 [5] INFO  SqlResult - INSERT [dbo].[eb_operate]([features_id], [name], [Url], [Remark])
+VALUES (@0, @1, @2, @3)
+SELECT [ID]
+FROM [dbo].[eb_operate]
+WHERE @@ROWCOUNT > 0 AND [ID] = scope_identity()
+2016-02-16 21:31:11,752 [5] INFO  SqlResult - 
+
+2016-02-16 21:31:11,752 [5] INFO  SqlResult - -- @0: '2' (Type = Int32)
+
+2016-02-16 21:31:11,752 [5] INFO  SqlResult - -- @1: '编辑功能' (Type = String, Size = -1)
+
+2016-02-16 21:31:11,752 [5] INFO  SqlResult - -- @2: '/admin/purview/featuresupdate' (Type = String, Size = -1)
+
+2016-02-16 21:31:11,752 [5] INFO  SqlResult - -- @3: '编辑功能(/admin/purview/featuresupdate)' (Type = String, Size = -1)
+
+2016-02-16 21:31:11,753 [5] INFO  SqlResult - -- Executing at 16-2-16 下午9:31:11 +08:00
+
+2016-02-16 21:31:11,767 [5] INFO  SqlResult - -- Completed in 14 ms with result: SqlDataReader
+
+2016-02-16 21:31:11,767 [5] INFO  SqlResult - 
+
+2016-02-16 21:31:11,768 [5] INFO  SqlResult - Committed transaction at 16-2-16 下午9:31:11 +08:00
+
+2016-02-16 21:31:11,768 [5] INFO  SqlResult - Closed connection at 16-2-16 下午9:31:11 +08:00
+
+2016-02-16 21:31:12,911 [8] INFO  SqlResult - Opened connection at 16-2-16 下午9:31:12 +08:00
+
+2016-02-16 21:31:12,911 [8] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[features_id] AS [features_id], 
+    [Extent1].[name] AS [name], 
+    [Extent1].[Url] AS [Url], 
+    [Extent1].[Remark] AS [Remark]
+    FROM [dbo].[eb_operate] AS [Extent1]
+    WHERE [Extent1].[features_id] = @p__linq__0
+2016-02-16 21:31:12,911 [8] INFO  SqlResult - 
+
+2016-02-16 21:31:12,912 [8] INFO  SqlResult - -- p__linq__0: '2' (Type = Int32)
+
+2016-02-16 21:31:12,912 [8] INFO  SqlResult - -- Executing at 16-2-16 下午9:31:12 +08:00
+
+2016-02-16 21:31:12,928 [8] INFO  SqlResult - -- Completed in 15 ms with result: SqlDataReader
+
+2016-02-16 21:31:12,928 [8] INFO  SqlResult - 
+
+2016-02-16 21:31:12,928 [8] INFO  SqlResult - Closed connection at 16-2-16 下午9:31:12 +08:00
+
+2016-02-16 21:31:16,101 [5] INFO  SqlResult - Opened connection at 16-2-16 下午9:31:16 +08:00
+
+2016-02-16 21:31:16,102 [5] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[Pid] AS [Pid], 
+    [Extent1].[depth_pid] AS [depth_pid], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[Url] AS [Url], 
+    [Extent1].[Remark] AS [Remark], 
+    [Extent1].[Type] AS [Type], 
+    [Extent1].[Sort] AS [Sort], 
+    [Extent1].[Icon] AS [Icon]
+    FROM [dbo].[eb_features] AS [Extent1]
+    WHERE 1 = [Extent1].[Type]
+2016-02-16 21:31:16,102 [5] INFO  SqlResult - 
+
+2016-02-16 21:31:16,102 [5] INFO  SqlResult - -- Executing at 16-2-16 下午9:31:16 +08:00
+
+2016-02-16 21:31:16,117 [5] INFO  SqlResult - -- Completed in 13 ms with result: SqlDataReader
+
+2016-02-16 21:31:16,117 [5] INFO  SqlResult - 
+
+2016-02-16 21:31:16,117 [5] INFO  SqlResult - Closed connection at 16-2-16 下午9:31:16 +08:00
+
+2016-02-16 21:31:16,118 [5] INFO  SqlResult - Opened connection at 16-2-16 下午9:31:16 +08:00
+
+2016-02-16 21:31:16,118 [5] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[features_id] AS [features_id], 
+    [Extent1].[name] AS [name], 
+    [Extent1].[Url] AS [Url], 
+    [Extent1].[Remark] AS [Remark]
+    FROM [dbo].[eb_operate] AS [Extent1]
+2016-02-16 21:31:16,118 [5] INFO  SqlResult - 
+
+2016-02-16 21:31:16,118 [5] INFO  SqlResult - -- Executing at 16-2-16 下午9:31:16 +08:00
+
+2016-02-16 21:31:16,134 [5] INFO  SqlResult - -- Completed in 15 ms with result: SqlDataReader
+
+2016-02-16 21:31:16,134 [5] INFO  SqlResult - 
+
+2016-02-16 21:31:16,134 [5] INFO  SqlResult - Closed connection at 16-2-16 下午9:31:16 +08:00
+
+2016-02-16 21:31:22,395 [6] INFO  SqlResult - Opened connection at 16-2-16 下午9:31:22 +08:00
+
+2016-02-16 21:31:22,396 [6] INFO  SqlResult - Started transaction at 16-2-16 下午9:31:22 +08:00
+
+2016-02-16 21:31:22,396 [6] INFO  SqlResult - INSERT [dbo].[eb_operate]([features_id], [name], [Url], [Remark])
+VALUES (@0, @1, @2, @3)
+SELECT [ID]
+FROM [dbo].[eb_operate]
+WHERE @@ROWCOUNT > 0 AND [ID] = scope_identity()
+2016-02-16 21:31:22,397 [6] INFO  SqlResult - 
+
+2016-02-16 21:31:22,397 [6] INFO  SqlResult - -- @0: '2' (Type = Int32)
+
+2016-02-16 21:31:22,397 [6] INFO  SqlResult - -- @1: '编辑功能操作' (Type = String, Size = -1)
+
+2016-02-16 21:31:22,397 [6] INFO  SqlResult - -- @2: '/admin/purview/operateupdate' (Type = String, Size = -1)
+
+2016-02-16 21:31:22,397 [6] INFO  SqlResult - -- @3: '编辑功能操作(/admin/purview/operateupdate)' (Type = String, Size = -1)
+
+2016-02-16 21:31:22,397 [6] INFO  SqlResult - -- Executing at 16-2-16 下午9:31:22 +08:00
+
+2016-02-16 21:31:22,409 [6] INFO  SqlResult - -- Completed in 11 ms with result: SqlDataReader
+
+2016-02-16 21:31:22,409 [6] INFO  SqlResult - 
+
+2016-02-16 21:31:22,409 [6] INFO  SqlResult - Committed transaction at 16-2-16 下午9:31:22 +08:00
+
+2016-02-16 21:31:22,409 [6] INFO  SqlResult - Closed connection at 16-2-16 下午9:31:22 +08:00
+
+2016-02-16 21:31:23,425 [5] INFO  SqlResult - Opened connection at 16-2-16 下午9:31:23 +08:00
+
+2016-02-16 21:31:23,426 [5] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[features_id] AS [features_id], 
+    [Extent1].[name] AS [name], 
+    [Extent1].[Url] AS [Url], 
+    [Extent1].[Remark] AS [Remark]
+    FROM [dbo].[eb_operate] AS [Extent1]
+    WHERE [Extent1].[features_id] = @p__linq__0
+2016-02-16 21:31:23,426 [5] INFO  SqlResult - 
+
+2016-02-16 21:31:23,426 [5] INFO  SqlResult - -- p__linq__0: '2' (Type = Int32)
+
+2016-02-16 21:31:23,426 [5] INFO  SqlResult - -- Executing at 16-2-16 下午9:31:23 +08:00
+
+2016-02-16 21:31:23,445 [5] INFO  SqlResult - -- Completed in 18 ms with result: SqlDataReader
+
+2016-02-16 21:31:23,445 [5] INFO  SqlResult - 
+
+2016-02-16 21:31:23,446 [5] INFO  SqlResult - Closed connection at 16-2-16 下午9:31:23 +08:00
+
+2016-02-16 21:31:24,572 [5] INFO  SqlResult - Opened connection at 16-2-16 下午9:31:24 +08:00
+
+2016-02-16 21:31:24,574 [5] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[Pid] AS [Pid], 
+    [Extent1].[depth_pid] AS [depth_pid], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[Url] AS [Url], 
+    [Extent1].[Remark] AS [Remark], 
+    [Extent1].[Type] AS [Type], 
+    [Extent1].[Sort] AS [Sort], 
+    [Extent1].[Icon] AS [Icon]
+    FROM [dbo].[eb_features] AS [Extent1]
+    WHERE 1 = [Extent1].[Type]
+2016-02-16 21:31:24,574 [5] INFO  SqlResult - 
+
+2016-02-16 21:31:24,574 [5] INFO  SqlResult - -- Executing at 16-2-16 下午9:31:24 +08:00
+
+2016-02-16 21:31:24,595 [5] INFO  SqlResult - -- Completed in 20 ms with result: SqlDataReader
+
+2016-02-16 21:31:24,595 [5] INFO  SqlResult - 
+
+2016-02-16 21:31:24,596 [5] INFO  SqlResult - Closed connection at 16-2-16 下午9:31:24 +08:00
+
+2016-02-16 21:31:24,596 [5] INFO  SqlResult - Opened connection at 16-2-16 下午9:31:24 +08:00
+
+2016-02-16 21:31:24,596 [5] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[features_id] AS [features_id], 
+    [Extent1].[name] AS [name], 
+    [Extent1].[Url] AS [Url], 
+    [Extent1].[Remark] AS [Remark]
+    FROM [dbo].[eb_operate] AS [Extent1]
+2016-02-16 21:31:24,596 [5] INFO  SqlResult - 
+
+2016-02-16 21:31:24,596 [5] INFO  SqlResult - -- Executing at 16-2-16 下午9:31:24 +08:00
+
+2016-02-16 21:31:24,614 [5] INFO  SqlResult - -- Completed in 17 ms with result: SqlDataReader
+
+2016-02-16 21:31:24,616 [5] INFO  SqlResult - 
+
+2016-02-16 21:31:24,617 [5] INFO  SqlResult - Closed connection at 16-2-16 下午9:31:24 +08:00
+
+2016-02-16 21:31:27,185 [6] INFO  SqlResult - Opened connection at 16-2-16 下午9:31:27 +08:00
+
+2016-02-16 21:31:27,185 [6] INFO  SqlResult - Started transaction at 16-2-16 下午9:31:27 +08:00
+
+2016-02-16 21:31:27,186 [6] INFO  SqlResult - INSERT [dbo].[eb_operate]([features_id], [name], [Url], [Remark])
+VALUES (@0, @1, @2, @3)
+SELECT [ID]
+FROM [dbo].[eb_operate]
+WHERE @@ROWCOUNT > 0 AND [ID] = scope_identity()
+2016-02-16 21:31:27,186 [6] INFO  SqlResult - 
+
+2016-02-16 21:31:27,186 [6] INFO  SqlResult - -- @0: '2' (Type = Int32)
+
+2016-02-16 21:31:27,186 [6] INFO  SqlResult - -- @1: '保存功能操作' (Type = String, Size = -1)
+
+2016-02-16 21:31:27,186 [6] INFO  SqlResult - -- @2: '/admin/purview/operatesave' (Type = String, Size = -1)
+
+2016-02-16 21:31:27,186 [6] INFO  SqlResult - -- @3: '保存功能操作(/admin/purview/operatesave)' (Type = String, Size = -1)
+
+2016-02-16 21:31:27,186 [6] INFO  SqlResult - -- Executing at 16-2-16 下午9:31:27 +08:00
+
+2016-02-16 21:31:27,202 [6] INFO  SqlResult - -- Completed in 15 ms with result: SqlDataReader
+
+2016-02-16 21:31:27,202 [6] INFO  SqlResult - 
+
+2016-02-16 21:31:27,203 [6] INFO  SqlResult - Committed transaction at 16-2-16 下午9:31:27 +08:00
+
+2016-02-16 21:31:27,203 [6] INFO  SqlResult - Closed connection at 16-2-16 下午9:31:27 +08:00
+
+2016-02-16 21:31:28,202 [10] INFO  SqlResult - Opened connection at 16-2-16 下午9:31:28 +08:00
+
+2016-02-16 21:31:28,203 [10] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[features_id] AS [features_id], 
+    [Extent1].[name] AS [name], 
+    [Extent1].[Url] AS [Url], 
+    [Extent1].[Remark] AS [Remark]
+    FROM [dbo].[eb_operate] AS [Extent1]
+    WHERE [Extent1].[features_id] = @p__linq__0
+2016-02-16 21:31:28,203 [10] INFO  SqlResult - 
+
+2016-02-16 21:31:28,203 [10] INFO  SqlResult - -- p__linq__0: '2' (Type = Int32)
+
+2016-02-16 21:31:28,203 [10] INFO  SqlResult - -- Executing at 16-2-16 下午9:31:28 +08:00
+
+2016-02-16 21:31:28,231 [10] INFO  SqlResult - -- Completed in 28 ms with result: SqlDataReader
+
+2016-02-16 21:31:28,232 [10] INFO  SqlResult - 
+
+2016-02-16 21:31:28,232 [10] INFO  SqlResult - Closed connection at 16-2-16 下午9:31:28 +08:00
+
+2016-02-16 21:31:30,265 [8] INFO  SqlResult - Opened connection at 16-2-16 下午9:31:30 +08:00
+
+2016-02-16 21:31:30,265 [8] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[Pid] AS [Pid], 
+    [Extent1].[depth_pid] AS [depth_pid], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[Url] AS [Url], 
+    [Extent1].[Remark] AS [Remark], 
+    [Extent1].[Type] AS [Type], 
+    [Extent1].[Sort] AS [Sort], 
+    [Extent1].[Icon] AS [Icon]
+    FROM [dbo].[eb_features] AS [Extent1]
+    WHERE 1 = [Extent1].[Type]
+2016-02-16 21:31:30,266 [8] INFO  SqlResult - 
+
+2016-02-16 21:31:30,270 [8] INFO  SqlResult - -- Executing at 16-2-16 下午9:31:30 +08:00
+
+2016-02-16 21:31:30,291 [8] INFO  SqlResult - -- Completed in 20 ms with result: SqlDataReader
+
+2016-02-16 21:31:30,292 [8] INFO  SqlResult - 
+
+2016-02-16 21:31:30,292 [8] INFO  SqlResult - Closed connection at 16-2-16 下午9:31:30 +08:00
+
+2016-02-16 21:31:30,292 [8] INFO  SqlResult - Opened connection at 16-2-16 下午9:31:30 +08:00
+
+2016-02-16 21:31:30,292 [8] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[features_id] AS [features_id], 
+    [Extent1].[name] AS [name], 
+    [Extent1].[Url] AS [Url], 
+    [Extent1].[Remark] AS [Remark]
+    FROM [dbo].[eb_operate] AS [Extent1]
+2016-02-16 21:31:30,292 [8] INFO  SqlResult - 
+
+2016-02-16 21:31:30,292 [8] INFO  SqlResult - -- Executing at 16-2-16 下午9:31:30 +08:00
+
+2016-02-16 21:31:30,305 [8] INFO  SqlResult - -- Completed in 12 ms with result: SqlDataReader
+
+2016-02-16 21:31:30,305 [8] INFO  SqlResult - 
+
+2016-02-16 21:31:30,305 [8] INFO  SqlResult - Closed connection at 16-2-16 下午9:31:30 +08:00
+
+2016-02-16 21:31:32,690 [6] INFO  SqlResult - Opened connection at 16-2-16 下午9:31:32 +08:00
+
+2016-02-16 21:31:32,690 [6] INFO  SqlResult - Started transaction at 16-2-16 下午9:31:32 +08:00
+
+2016-02-16 21:31:32,691 [6] INFO  SqlResult - INSERT [dbo].[eb_operate]([features_id], [name], [Url], [Remark])
+VALUES (@0, @1, @2, @3)
+SELECT [ID]
+FROM [dbo].[eb_operate]
+WHERE @@ROWCOUNT > 0 AND [ID] = scope_identity()
+2016-02-16 21:31:32,691 [6] INFO  SqlResult - 
+
+2016-02-16 21:31:32,691 [6] INFO  SqlResult - -- @0: '2' (Type = Int32)
+
+2016-02-16 21:31:32,691 [6] INFO  SqlResult - -- @1: '删除功能操作' (Type = String, Size = -1)
+
+2016-02-16 21:31:32,691 [6] INFO  SqlResult - -- @2: '/admin/purview/operatedelete' (Type = String, Size = -1)
+
+2016-02-16 21:31:32,691 [6] INFO  SqlResult - -- @3: '删除功能操作(/admin/purview/operatedelete)' (Type = String, Size = -1)
+
+2016-02-16 21:31:32,691 [6] INFO  SqlResult - -- Executing at 16-2-16 下午9:31:32 +08:00
+
+2016-02-16 21:31:32,704 [6] INFO  SqlResult - -- Completed in 12 ms with result: SqlDataReader
+
+2016-02-16 21:31:32,704 [6] INFO  SqlResult - 
+
+2016-02-16 21:31:32,705 [6] INFO  SqlResult - Committed transaction at 16-2-16 下午9:31:32 +08:00
+
+2016-02-16 21:31:32,706 [6] INFO  SqlResult - Closed connection at 16-2-16 下午9:31:32 +08:00
+
+2016-02-16 21:31:33,657 [6] INFO  SqlResult - Opened connection at 16-2-16 下午9:31:33 +08:00
+
+2016-02-16 21:31:33,659 [6] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[features_id] AS [features_id], 
+    [Extent1].[name] AS [name], 
+    [Extent1].[Url] AS [Url], 
+    [Extent1].[Remark] AS [Remark]
+    FROM [dbo].[eb_operate] AS [Extent1]
+    WHERE [Extent1].[features_id] = @p__linq__0
+2016-02-16 21:31:33,660 [6] INFO  SqlResult - 
+
+2016-02-16 21:31:33,660 [6] INFO  SqlResult - -- p__linq__0: '2' (Type = Int32)
+
+2016-02-16 21:31:33,660 [6] INFO  SqlResult - -- Executing at 16-2-16 下午9:31:33 +08:00
+
+2016-02-16 21:31:33,678 [6] INFO  SqlResult - -- Completed in 17 ms with result: SqlDataReader
+
+2016-02-16 21:31:33,678 [6] INFO  SqlResult - 
+
+2016-02-16 21:31:33,678 [6] INFO  SqlResult - Closed connection at 16-2-16 下午9:31:33 +08:00
+
+2016-02-16 21:31:34,913 [10] INFO  SqlResult - Opened connection at 16-2-16 下午9:31:34 +08:00
+
+2016-02-16 21:31:34,914 [10] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[Pid] AS [Pid], 
+    [Extent1].[depth_pid] AS [depth_pid], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[Url] AS [Url], 
+    [Extent1].[Remark] AS [Remark], 
+    [Extent1].[Type] AS [Type], 
+    [Extent1].[Sort] AS [Sort], 
+    [Extent1].[Icon] AS [Icon]
+    FROM [dbo].[eb_features] AS [Extent1]
+    WHERE 1 = [Extent1].[Type]
+2016-02-16 21:31:34,914 [10] INFO  SqlResult - 
+
+2016-02-16 21:31:34,914 [10] INFO  SqlResult - -- Executing at 16-2-16 下午9:31:34 +08:00
+
+2016-02-16 21:31:34,929 [10] INFO  SqlResult - -- Completed in 14 ms with result: SqlDataReader
+
+2016-02-16 21:31:34,930 [10] INFO  SqlResult - 
+
+2016-02-16 21:31:34,930 [10] INFO  SqlResult - Closed connection at 16-2-16 下午9:31:34 +08:00
+
+2016-02-16 21:31:34,930 [10] INFO  SqlResult - Opened connection at 16-2-16 下午9:31:34 +08:00
+
+2016-02-16 21:31:34,930 [10] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[features_id] AS [features_id], 
+    [Extent1].[name] AS [name], 
+    [Extent1].[Url] AS [Url], 
+    [Extent1].[Remark] AS [Remark]
+    FROM [dbo].[eb_operate] AS [Extent1]
+2016-02-16 21:31:34,931 [10] INFO  SqlResult - 
+
+2016-02-16 21:31:34,931 [10] INFO  SqlResult - -- Executing at 16-2-16 下午9:31:34 +08:00
+
+2016-02-16 21:31:34,948 [10] INFO  SqlResult - -- Completed in 16 ms with result: SqlDataReader
+
+2016-02-16 21:31:34,948 [10] INFO  SqlResult - 
+
+2016-02-16 21:31:34,949 [10] INFO  SqlResult - Closed connection at 16-2-16 下午9:31:34 +08:00
+
+2016-02-16 21:31:39,016 [6] INFO  SqlResult - Opened connection at 16-2-16 下午9:31:39 +08:00
+
+2016-02-16 21:31:39,017 [6] INFO  SqlResult - Started transaction at 16-2-16 下午9:31:39 +08:00
+
+2016-02-16 21:31:39,017 [6] INFO  SqlResult - INSERT [dbo].[eb_operate]([features_id], [name], [Url], [Remark])
+VALUES (@0, @1, @2, @3)
+SELECT [ID]
+FROM [dbo].[eb_operate]
+WHERE @@ROWCOUNT > 0 AND [ID] = scope_identity()
+2016-02-16 21:31:39,017 [6] INFO  SqlResult - 
+
+2016-02-16 21:31:39,017 [6] INFO  SqlResult - -- @0: '2' (Type = Int32)
+
+2016-02-16 21:31:39,017 [6] INFO  SqlResult - -- @1: '新增功能操作' (Type = String, Size = -1)
+
+2016-02-16 21:31:39,017 [6] INFO  SqlResult - -- @2: '/admin/purview/operateinsert' (Type = String, Size = -1)
+
+2016-02-16 21:31:39,018 [6] INFO  SqlResult - -- @3: '新增功能操作(/admin/purview/operateinsert)' (Type = String, Size = -1)
+
+2016-02-16 21:31:39,018 [6] INFO  SqlResult - -- Executing at 16-2-16 下午9:31:39 +08:00
+
+2016-02-16 21:31:39,032 [6] INFO  SqlResult - -- Completed in 13 ms with result: SqlDataReader
+
+2016-02-16 21:31:39,032 [6] INFO  SqlResult - 
+
+2016-02-16 21:31:39,033 [6] INFO  SqlResult - Committed transaction at 16-2-16 下午9:31:39 +08:00
+
+2016-02-16 21:31:39,034 [6] INFO  SqlResult - Closed connection at 16-2-16 下午9:31:39 +08:00
+
+2016-02-16 21:31:40,131 [8] INFO  SqlResult - Opened connection at 16-2-16 下午9:31:40 +08:00
+
+2016-02-16 21:31:40,131 [8] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[features_id] AS [features_id], 
+    [Extent1].[name] AS [name], 
+    [Extent1].[Url] AS [Url], 
+    [Extent1].[Remark] AS [Remark]
+    FROM [dbo].[eb_operate] AS [Extent1]
+    WHERE [Extent1].[features_id] = @p__linq__0
+2016-02-16 21:31:40,132 [8] INFO  SqlResult - 
+
+2016-02-16 21:31:40,132 [8] INFO  SqlResult - -- p__linq__0: '2' (Type = Int32)
+
+2016-02-16 21:31:40,132 [8] INFO  SqlResult - -- Executing at 16-2-16 下午9:31:40 +08:00
+
+2016-02-16 21:31:40,151 [8] INFO  SqlResult - -- Completed in 18 ms with result: SqlDataReader
+
+2016-02-16 21:31:40,151 [8] INFO  SqlResult - 
+
+2016-02-16 21:31:40,152 [8] INFO  SqlResult - Closed connection at 16-2-16 下午9:31:40 +08:00
+
+2016-02-16 21:31:43,439 [6] INFO  SqlResult - Opened connection at 16-2-16 下午9:31:43 +08:00
+
+2016-02-16 21:31:43,439 [6] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[Pid] AS [Pid], 
+    [Extent1].[depth_pid] AS [depth_pid], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[Url] AS [Url], 
+    [Extent1].[Remark] AS [Remark], 
+    [Extent1].[Type] AS [Type], 
+    [Extent1].[Sort] AS [Sort], 
+    [Extent1].[Icon] AS [Icon]
+    FROM [dbo].[eb_features] AS [Extent1]
+2016-02-16 21:31:43,439 [6] INFO  SqlResult - 
+
+2016-02-16 21:31:43,439 [6] INFO  SqlResult - -- Executing at 16-2-16 下午9:31:43 +08:00
+
+2016-02-16 21:31:43,453 [6] INFO  SqlResult - -- Completed in 13 ms with result: SqlDataReader
+
+2016-02-16 21:31:43,454 [6] INFO  SqlResult - 
+
+2016-02-16 21:31:43,454 [6] INFO  SqlResult - Closed connection at 16-2-16 下午9:31:43 +08:00
+
+2016-02-16 21:31:46,141 [6] INFO  SqlResult - Opened connection at 16-2-16 下午9:31:46 +08:00
+
+2016-02-16 21:31:46,141 [6] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[role_name] AS [role_name], 
+    [Extent1].[Actions] AS [Actions], 
+    [Extent1].[Remark] AS [Remark]
+    FROM [dbo].[eb_role] AS [Extent1]
+2016-02-16 21:31:46,141 [6] INFO  SqlResult - 
+
+2016-02-16 21:31:46,141 [6] INFO  SqlResult - -- Executing at 16-2-16 下午9:31:46 +08:00
+
+2016-02-16 21:31:46,156 [6] INFO  SqlResult - -- Completed in 14 ms with result: SqlDataReader
+
+2016-02-16 21:31:46,156 [6] INFO  SqlResult - 
+
+2016-02-16 21:31:46,156 [6] INFO  SqlResult - Closed connection at 16-2-16 下午9:31:46 +08:00
+
+2016-02-16 21:31:48,224 [10] INFO  SqlResult - Opened connection at 16-2-16 下午9:31:48 +08:00
+
+2016-02-16 21:31:48,225 [10] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[Pid] AS [Pid], 
+    [Extent1].[depth_pid] AS [depth_pid], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[Url] AS [Url], 
+    [Extent1].[Remark] AS [Remark], 
+    [Extent1].[Type] AS [Type], 
+    [Extent1].[Sort] AS [Sort], 
+    [Extent1].[Icon] AS [Icon]
+    FROM [dbo].[eb_features] AS [Extent1]
+2016-02-16 21:31:48,225 [10] INFO  SqlResult - 
+
+2016-02-16 21:31:48,225 [10] INFO  SqlResult - -- Executing at 16-2-16 下午9:31:48 +08:00
+
+2016-02-16 21:31:48,238 [10] INFO  SqlResult - -- Completed in 12 ms with result: SqlDataReader
+
+2016-02-16 21:31:48,238 [10] INFO  SqlResult - 
+
+2016-02-16 21:31:48,238 [10] INFO  SqlResult - Closed connection at 16-2-16 下午9:31:48 +08:00
+
+2016-02-16 21:31:48,238 [10] INFO  SqlResult - Opened connection at 16-2-16 下午9:31:48 +08:00
+
+2016-02-16 21:31:48,239 [10] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[features_id] AS [features_id], 
+    [Extent1].[name] AS [name], 
+    [Extent1].[Url] AS [Url], 
+    [Extent1].[Remark] AS [Remark]
+    FROM [dbo].[eb_operate] AS [Extent1]
+2016-02-16 21:31:48,239 [10] INFO  SqlResult - 
+
+2016-02-16 21:31:48,239 [10] INFO  SqlResult - -- Executing at 16-2-16 下午9:31:48 +08:00
+
+2016-02-16 21:31:48,252 [10] INFO  SqlResult - -- Completed in 13 ms with result: SqlDataReader
+
+2016-02-16 21:31:48,253 [10] INFO  SqlResult - 
+
+2016-02-16 21:31:48,253 [10] INFO  SqlResult - Closed connection at 16-2-16 下午9:31:48 +08:00
+
+2016-02-16 21:31:48,253 [10] INFO  SqlResult - Opened connection at 16-2-16 下午9:31:48 +08:00
+
+2016-02-16 21:31:48,253 [10] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[obj_id] AS [obj_id], 
+    [Extent1].[name] AS [name], 
+    [Extent1].[Code] AS [Code], 
+    [Extent1].[Type] AS [Type]
+    FROM [dbo].[eb_purview_field] AS [Extent1]
+2016-02-16 21:31:48,254 [10] INFO  SqlResult - 
+
+2016-02-16 21:31:48,254 [10] INFO  SqlResult - -- Executing at 16-2-16 下午9:31:48 +08:00
+
+2016-02-16 21:31:48,269 [10] INFO  SqlResult - -- Completed in 15 ms with result: SqlDataReader
+
+2016-02-16 21:31:48,269 [10] INFO  SqlResult - 
+
+2016-02-16 21:31:48,269 [10] INFO  SqlResult - Closed connection at 16-2-16 下午9:31:48 +08:00
+
+2016-02-16 21:31:54,567 [8] INFO  SqlResult - Opened connection at 16-2-16 下午9:31:54 +08:00
+
+2016-02-16 21:31:54,568 [8] INFO  SqlResult - Started transaction at 16-2-16 下午9:31:54 +08:00
+
+2016-02-16 21:31:54,576 [8] INFO  SqlResult - UPDATE [dbo].[eb_role]
+SET [role_name] = @0, [Actions] = @1, [Remark] = NULL
+WHERE ([ID] = @2)
+
+2016-02-16 21:31:54,576 [8] INFO  SqlResult - -- @0: '超级管理员' (Type = String, Size = -1)
+
+2016-02-16 21:31:54,577 [8] INFO  SqlResult - -- @1: '[{"ID":1,"Url":"","Type":0,"Fields":[]},{"ID":2,"Url":"/admin/purview/index","Type":1,"Fields":[]},{"ID":4,"Url":"/admin/purview/admininfo","Type":1,"Fields":[]},{"ID":3,"Url":"/admin/purview/roleinfo","Type":1,"Fields":[]},{"ID":9,"Url":"/admin/purview/featuresinsert","Type":3,"Fields":[]},{"ID":10,"Url":"/admin/purview/featuressave","Type":3,"Fields":[]},{"ID":11,"Url":"/admin/purview/featuresdelete","Type":3,"Fields":[]},{"ID":12,"Url":"/admin/purview/operate","Type":3,"Fields":[]},{"ID":13,"Url":"/admin/purview/featuresupdate","Type":3,"Fields":[]},{"ID":14,"Url":"/admin/purview/operateupdate","Type":3,"Fields":[]},{"ID":15,"Url":"/admin/purview/operatesave","Type":3,"Fields":[]},{"ID":16,"Url":"/admin/purview/operatedelete","Type":3,"Fields":[]},{"ID":17,"Url":"/admin/purview/operateinsert","Type":3,"Fields":[]},{"ID":5,"Url":"/admin/purview/admininsert","Type":3,"Fields":[]},{"ID":6,"Url":"/admin/purview/adminupdate","Type":3,"Fields":[]},{"ID":7,"Url":"/admin/purview/adminsave","Type":3,"Fields":[]},{"ID":8,"Url":"/admin/purview/admindelete","Type":3,"Fields":[]},{"ID":1,"Url":"/admin/purview/roleinsert","Type":3,"Fields":[]},{"ID":2,"Url":"/admin/purview/roleupdate","Type":3,"Fields":[]},{"ID":3,"Url":"/admin/purview/rolesave","Type":3,"Fields":[]},{"ID":4,"Url":"/admin/purview/roledelete","Type":3,"Fields":[]}]' (Type = String, Size = -1)
+
+2016-02-16 21:31:54,577 [8] INFO  SqlResult - -- @2: '1' (Type = Int32)
+
+2016-02-16 21:31:54,577 [8] INFO  SqlResult - -- Executing at 16-2-16 下午9:31:54 +08:00
+
+2016-02-16 21:31:54,595 [8] INFO  SqlResult - -- Completed in 17 ms with result: 1
+
+2016-02-16 21:31:54,595 [8] INFO  SqlResult - 
+
+2016-02-16 21:31:54,596 [8] INFO  SqlResult - Committed transaction at 16-2-16 下午9:31:54 +08:00
+
+2016-02-16 21:31:54,596 [8] INFO  SqlResult - Closed connection at 16-2-16 下午9:31:54 +08:00
+
+2016-02-16 21:31:55,966 [6] INFO  SqlResult - Opened connection at 16-2-16 下午9:31:55 +08:00
+
+2016-02-16 21:31:55,966 [6] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[role_name] AS [role_name], 
+    [Extent1].[Actions] AS [Actions], 
+    [Extent1].[Remark] AS [Remark]
+    FROM [dbo].[eb_role] AS [Extent1]
+2016-02-16 21:31:55,967 [6] INFO  SqlResult - 
+
+2016-02-16 21:31:55,967 [6] INFO  SqlResult - -- Executing at 16-2-16 下午9:31:55 +08:00
+
+2016-02-16 21:31:55,988 [6] INFO  SqlResult - -- Completed in 21 ms with result: SqlDataReader
+
+2016-02-16 21:31:55,988 [6] INFO  SqlResult - 
+
+2016-02-16 21:31:55,989 [6] INFO  SqlResult - Closed connection at 16-2-16 下午9:31:55 +08:00
+
+2016-02-16 21:32:01,719 [6] INFO  SqlResult - Opened connection at 16-2-16 下午9:32:01 +08:00
+
+2016-02-16 21:32:01,734 [6] INFO  SqlResult - SELECT TOP (1) 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[UserName] AS [UserName], 
+    [Extent1].[Password] AS [Password], 
+    [Extent1].[role_id] AS [role_id], 
+    [Extent1].[Login] AS [Login], 
+    [Extent1].[reg_time] AS [reg_time], 
+    [Extent1].[login_time] AS [login_time], 
+    [Extent1].[update_time] AS [update_time], 
+    [Extent1].[login_ip] AS [login_ip], 
+    [Extent1].[Status] AS [Status], 
+    [Extent1].[Remark] AS [Remark]
+    FROM [dbo].[eb_admin] AS [Extent1]
+    WHERE (([Extent1].[UserName] = @p__linq__0) OR (([Extent1].[UserName] IS NULL) AND (@p__linq__0 IS NULL))) AND (([Extent1].[Password] = @p__linq__1) OR (([Extent1].[Password] IS NULL) AND (@p__linq__1 IS NULL)))
+2016-02-16 21:32:01,735 [6] INFO  SqlResult - 
+
+2016-02-16 21:32:01,735 [6] INFO  SqlResult - -- p__linq__0: 'admin' (Type = String, Size = 4000)
+
+2016-02-16 21:32:01,735 [6] INFO  SqlResult - -- p__linq__1: '21232f297a57a5a743894a0e4a801fc3' (Type = String, Size = 4000)
+
+2016-02-16 21:32:01,735 [6] INFO  SqlResult - -- Executing at 16-2-16 下午9:32:01 +08:00
+
+2016-02-16 21:32:01,752 [6] INFO  SqlResult - -- Completed in 16 ms with result: SqlDataReader
+
+2016-02-16 21:32:01,752 [6] INFO  SqlResult - 
+
+2016-02-16 21:32:01,752 [6] INFO  SqlResult - Closed connection at 16-2-16 下午9:32:01 +08:00
+
+2016-02-16 21:32:01,757 [6] INFO  SqlResult - Opened connection at 16-2-16 下午9:32:01 +08:00
+
+2016-02-16 21:32:01,757 [6] INFO  SqlResult - Started transaction at 16-2-16 下午9:32:01 +08:00
+
+2016-02-16 21:32:01,763 [6] INFO  SqlResult - UPDATE [dbo].[eb_admin]
+SET [UserName] = @0, [Password] = @1, [role_id] = @2, [Login] = @3, [reg_time] = @4, [login_time] = @5, [update_time] = @6, [login_ip] = @7, [Status] = @8, [Remark] = NULL
+WHERE ([ID] = @9)
+
+2016-02-16 21:32:01,763 [6] INFO  SqlResult - -- @0: 'admin' (Type = String, Size = 50)
+
+2016-02-16 21:32:01,763 [6] INFO  SqlResult - -- @1: '21232f297a57a5a743894a0e4a801fc3' (Type = String, Size = -1)
+
+2016-02-16 21:32:01,763 [6] INFO  SqlResult - -- @2: '1' (Type = Int32)
+
+2016-02-16 21:32:01,763 [6] INFO  SqlResult - -- @3: '111' (Type = Int32)
+
+2016-02-16 21:32:01,763 [6] INFO  SqlResult - -- @4: '15-1-15 上午12:00:00' (Type = DateTime2)
+
+2016-02-16 21:32:01,764 [6] INFO  SqlResult - -- @5: '16-2-16 下午9:32:01' (Type = DateTime2)
+
+2016-02-16 21:32:01,764 [6] INFO  SqlResult - -- @6: '15-1-15 上午12:00:00' (Type = DateTime2)
+
+2016-02-16 21:32:01,764 [6] INFO  SqlResult - -- @7: '::1' (Type = String, Size = -1)
+
+2016-02-16 21:32:01,764 [6] INFO  SqlResult - -- @8: '0' (Type = Int32)
+
+2016-02-16 21:32:01,764 [6] INFO  SqlResult - -- @9: '1' (Type = Int32)
+
+2016-02-16 21:32:01,764 [6] INFO  SqlResult - -- Executing at 16-2-16 下午9:32:01 +08:00
+
+2016-02-16 21:32:01,776 [6] INFO  SqlResult - -- Completed in 11 ms with result: 1
+
+2016-02-16 21:32:01,776 [6] INFO  SqlResult - 
+
+2016-02-16 21:32:01,777 [6] INFO  SqlResult - Committed transaction at 16-2-16 下午9:32:01 +08:00
+
+2016-02-16 21:32:01,777 [6] INFO  SqlResult - Closed connection at 16-2-16 下午9:32:01 +08:00
+
+2016-02-16 21:32:01,801 [10] INFO  SqlResult - Opened connection at 16-2-16 下午9:32:01 +08:00
+
+2016-02-16 21:32:01,801 [10] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[Pid] AS [Pid], 
+    [Extent1].[depth_pid] AS [depth_pid], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[Url] AS [Url], 
+    [Extent1].[Remark] AS [Remark], 
+    [Extent1].[Type] AS [Type], 
+    [Extent1].[Sort] AS [Sort], 
+    [Extent1].[Icon] AS [Icon]
+    FROM [dbo].[eb_features] AS [Extent1]
+2016-02-16 21:32:01,802 [10] INFO  SqlResult - 
+
+2016-02-16 21:32:01,802 [10] INFO  SqlResult - -- Executing at 16-2-16 下午9:32:01 +08:00
+
+2016-02-16 21:32:01,817 [10] INFO  SqlResult - -- Completed in 14 ms with result: SqlDataReader
+
+2016-02-16 21:32:01,817 [10] INFO  SqlResult - 
+
+2016-02-16 21:32:01,817 [10] INFO  SqlResult - Closed connection at 16-2-16 下午9:32:01 +08:00
+
+2016-02-16 21:32:03,321 [6] INFO  SqlResult - Opened connection at 16-2-16 下午9:32:03 +08:00
+
+2016-02-16 21:32:03,321 [6] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[Pid] AS [Pid], 
+    [Extent1].[depth_pid] AS [depth_pid], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[Url] AS [Url], 
+    [Extent1].[Remark] AS [Remark], 
+    [Extent1].[Type] AS [Type], 
+    [Extent1].[Sort] AS [Sort], 
+    [Extent1].[Icon] AS [Icon]
+    FROM [dbo].[eb_features] AS [Extent1]
+2016-02-16 21:32:03,321 [6] INFO  SqlResult - 
+
+2016-02-16 21:32:03,322 [6] INFO  SqlResult - -- Executing at 16-2-16 下午9:32:03 +08:00
+
+2016-02-16 21:32:03,341 [6] INFO  SqlResult - -- Completed in 19 ms with result: SqlDataReader
+
+2016-02-16 21:32:03,342 [6] INFO  SqlResult - 
+
+2016-02-16 21:32:03,343 [6] INFO  SqlResult - Closed connection at 16-2-16 下午9:32:03 +08:00
+
+2016-02-16 21:32:05,608 [6] INFO  SqlResult - Opened connection at 16-2-16 下午9:32:05 +08:00
+
+2016-02-16 21:32:05,609 [6] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[Pid] AS [Pid], 
+    [Extent1].[depth_pid] AS [depth_pid], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[Url] AS [Url], 
+    [Extent1].[Remark] AS [Remark], 
+    [Extent1].[Type] AS [Type], 
+    [Extent1].[Sort] AS [Sort], 
+    [Extent1].[Icon] AS [Icon]
+    FROM [dbo].[eb_features] AS [Extent1]
+2016-02-16 21:32:05,609 [6] INFO  SqlResult - 
+
+2016-02-16 21:32:05,610 [6] INFO  SqlResult - -- Executing at 16-2-16 下午9:32:05 +08:00
+
+2016-02-16 21:32:05,636 [6] INFO  SqlResult - -- Completed in 25 ms with result: SqlDataReader
+
+2016-02-16 21:32:05,636 [6] INFO  SqlResult - 
+
+2016-02-16 21:32:05,636 [6] INFO  SqlResult - Closed connection at 16-2-16 下午9:32:05 +08:00
+
+2016-02-16 21:32:05,707 [6] INFO  SqlResult - Opened connection at 16-2-16 下午9:32:05 +08:00
+
+2016-02-16 21:32:05,708 [6] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[Pid] AS [Pid], 
+    [Extent1].[depth_pid] AS [depth_pid], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[Url] AS [Url], 
+    [Extent1].[Remark] AS [Remark], 
+    [Extent1].[Type] AS [Type], 
+    [Extent1].[Sort] AS [Sort], 
+    [Extent1].[Icon] AS [Icon]
+    FROM [dbo].[eb_features] AS [Extent1]
+    WHERE 1 = [Extent1].[Type]
+2016-02-16 21:32:05,708 [6] INFO  SqlResult - 
+
+2016-02-16 21:32:05,708 [6] INFO  SqlResult - -- Executing at 16-2-16 下午9:32:05 +08:00
+
+2016-02-16 21:32:05,725 [6] INFO  SqlResult - -- Completed in 16 ms with result: SqlDataReader
+
+2016-02-16 21:32:05,725 [6] INFO  SqlResult - 
+
+2016-02-16 21:32:05,725 [6] INFO  SqlResult - Closed connection at 16-2-16 下午9:32:05 +08:00
+
+2016-02-16 21:32:05,725 [6] INFO  SqlResult - Opened connection at 16-2-16 下午9:32:05 +08:00
+
+2016-02-16 21:32:05,726 [6] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[features_id] AS [features_id], 
+    [Extent1].[name] AS [name], 
+    [Extent1].[Url] AS [Url], 
+    [Extent1].[Remark] AS [Remark]
+    FROM [dbo].[eb_operate] AS [Extent1]
+2016-02-16 21:32:05,726 [6] INFO  SqlResult - 
+
+2016-02-16 21:32:05,726 [6] INFO  SqlResult - -- Executing at 16-2-16 下午9:32:05 +08:00
+
+2016-02-16 21:32:05,742 [6] INFO  SqlResult - -- Completed in 16 ms with result: SqlDataReader
+
+2016-02-16 21:32:05,742 [6] INFO  SqlResult - 
+
+2016-02-16 21:32:05,743 [6] INFO  SqlResult - Closed connection at 16-2-16 下午9:32:05 +08:00
+
+2016-02-16 21:32:12,643 [6] INFO  SqlResult - Opened connection at 16-2-16 下午9:32:12 +08:00
+
+2016-02-16 21:32:12,643 [6] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[UserName] AS [UserName], 
+    [Extent1].[Password] AS [Password], 
+    [Extent1].[role_id] AS [role_id], 
+    [Extent1].[Login] AS [Login], 
+    [Extent1].[reg_time] AS [reg_time], 
+    [Extent1].[login_time] AS [login_time], 
+    [Extent1].[update_time] AS [update_time], 
+    [Extent1].[login_ip] AS [login_ip], 
+    [Extent1].[Status] AS [Status], 
+    [Extent1].[Remark] AS [Remark], 
+    [Extent2].[ID] AS [ID1], 
+    [Extent2].[role_name] AS [role_name], 
+    [Extent2].[Actions] AS [Actions], 
+    [Extent2].[Remark] AS [Remark1]
+    FROM  [dbo].[eb_admin] AS [Extent1]
+    LEFT OUTER JOIN [dbo].[eb_role] AS [Extent2] ON [Extent1].[role_id] = [Extent2].[ID]
+2016-02-16 21:32:12,644 [6] INFO  SqlResult - 
+
+2016-02-16 21:32:12,644 [6] INFO  SqlResult - -- Executing at 16-2-16 下午9:32:12 +08:00
+
+2016-02-16 21:32:12,661 [6] INFO  SqlResult - -- Completed in 17 ms with result: SqlDataReader
+
+2016-02-16 21:32:12,662 [6] INFO  SqlResult - 
+
+2016-02-16 21:32:12,662 [6] INFO  SqlResult - Closed connection at 16-2-16 下午9:32:12 +08:00
+
+2016-02-16 21:32:14,264 [6] INFO  SqlResult - Opened connection at 16-2-16 下午9:32:14 +08:00
+
+2016-02-16 21:32:14,265 [6] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[role_name] AS [role_name], 
+    [Extent1].[Actions] AS [Actions], 
+    [Extent1].[Remark] AS [Remark]
+    FROM [dbo].[eb_role] AS [Extent1]
+2016-02-16 21:32:14,265 [6] INFO  SqlResult - 
+
+2016-02-16 21:32:14,265 [6] INFO  SqlResult - -- Executing at 16-2-16 下午9:32:14 +08:00
+
+2016-02-16 21:32:14,285 [6] INFO  SqlResult - -- Completed in 18 ms with result: SqlDataReader
+
+2016-02-16 21:32:14,285 [6] INFO  SqlResult - 
+
+2016-02-16 21:32:14,285 [6] INFO  SqlResult - Closed connection at 16-2-16 下午9:32:14 +08:00
+
+2016-02-16 21:32:19,611 [6] INFO  SqlResult - Opened connection at 16-2-16 下午9:32:19 +08:00
+
+2016-02-16 21:32:19,611 [6] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[role_name] AS [role_name], 
+    [Extent1].[Actions] AS [Actions], 
+    [Extent1].[Remark] AS [Remark]
+    FROM [dbo].[eb_role] AS [Extent1]
+2016-02-16 21:32:19,611 [6] INFO  SqlResult - 
+
+2016-02-16 21:32:19,611 [6] INFO  SqlResult - -- Executing at 16-2-16 下午9:32:19 +08:00
+
+2016-02-16 21:32:19,632 [6] INFO  SqlResult - -- Completed in 20 ms with result: SqlDataReader
+
+2016-02-16 21:32:19,632 [6] INFO  SqlResult - 
+
+2016-02-16 21:32:19,632 [6] INFO  SqlResult - Closed connection at 16-2-16 下午9:32:19 +08:00
+
+2016-02-16 21:32:23,010 [8] INFO  SqlResult - Opened connection at 16-2-16 下午9:32:23 +08:00
+
+2016-02-16 21:32:23,039 [8] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[role_name] AS [role_name], 
+    [Extent1].[Actions] AS [Actions], 
+    [Extent1].[Remark] AS [Remark]
+    FROM [dbo].[eb_role] AS [Extent1]
+2016-02-16 21:32:23,039 [8] INFO  SqlResult - 
+
+2016-02-16 21:32:23,039 [8] INFO  SqlResult - -- Executing at 16-2-16 下午9:32:23 +08:00
+
+2016-02-16 21:32:23,083 [8] INFO  SqlResult - -- Completed in 43 ms with result: SqlDataReader
+
+2016-02-16 21:32:23,107 [8] INFO  SqlResult - 
+
+2016-02-16 21:32:23,122 [8] INFO  SqlResult - Closed connection at 16-2-16 下午9:32:23 +08:00
+
+2016-02-16 21:32:24,501 [12] INFO  SqlResult - Opened connection at 16-2-16 下午9:32:24 +08:00
+
+2016-02-16 21:32:24,501 [12] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[Pid] AS [Pid], 
+    [Extent1].[depth_pid] AS [depth_pid], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[Url] AS [Url], 
+    [Extent1].[Remark] AS [Remark], 
+    [Extent1].[Type] AS [Type], 
+    [Extent1].[Sort] AS [Sort], 
+    [Extent1].[Icon] AS [Icon]
+    FROM [dbo].[eb_features] AS [Extent1]
+2016-02-16 21:32:24,502 [12] INFO  SqlResult - 
+
+2016-02-16 21:32:24,502 [12] INFO  SqlResult - -- Executing at 16-2-16 下午9:32:24 +08:00
+
+2016-02-16 21:32:24,538 [12] INFO  SqlResult - -- Completed in 36 ms with result: SqlDataReader
+
+2016-02-16 21:32:24,539 [12] INFO  SqlResult - 
+
+2016-02-16 21:32:24,539 [12] INFO  SqlResult - Closed connection at 16-2-16 下午9:32:24 +08:00
+
+2016-02-16 21:32:24,659 [12] INFO  SqlResult - Opened connection at 16-2-16 下午9:32:24 +08:00
+
+2016-02-16 21:32:24,659 [12] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[features_id] AS [features_id], 
+    [Extent1].[name] AS [name], 
+    [Extent1].[Url] AS [Url], 
+    [Extent1].[Remark] AS [Remark]
+    FROM [dbo].[eb_operate] AS [Extent1]
+2016-02-16 21:32:24,659 [12] INFO  SqlResult - 
+
+2016-02-16 21:32:24,659 [12] INFO  SqlResult - -- Executing at 16-2-16 下午9:32:24 +08:00
+
+2016-02-16 21:32:24,677 [12] INFO  SqlResult - -- Completed in 17 ms with result: SqlDataReader
+
+2016-02-16 21:32:24,677 [12] INFO  SqlResult - 
+
+2016-02-16 21:32:24,678 [12] INFO  SqlResult - Closed connection at 16-2-16 下午9:32:24 +08:00
+
+2016-02-16 21:32:24,778 [12] INFO  SqlResult - Opened connection at 16-2-16 下午9:32:24 +08:00
+
+2016-02-16 21:32:24,778 [12] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[obj_id] AS [obj_id], 
+    [Extent1].[name] AS [name], 
+    [Extent1].[Code] AS [Code], 
+    [Extent1].[Type] AS [Type]
+    FROM [dbo].[eb_purview_field] AS [Extent1]
+2016-02-16 21:32:24,778 [12] INFO  SqlResult - 
+
+2016-02-16 21:32:24,778 [12] INFO  SqlResult - -- Executing at 16-2-16 下午9:32:24 +08:00
+
+2016-02-16 21:32:24,825 [12] INFO  SqlResult - -- Completed in 42 ms with result: SqlDataReader
+
+2016-02-16 21:32:24,825 [12] INFO  SqlResult - 
+
+2016-02-16 21:32:24,825 [12] INFO  SqlResult - Closed connection at 16-2-16 下午9:32:24 +08:00
+
+2016-02-16 21:32:30,131 [10] INFO  SqlResult - Opened connection at 16-2-16 下午9:32:30 +08:00
+
+2016-02-16 21:32:30,131 [10] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[role_name] AS [role_name], 
+    [Extent1].[Actions] AS [Actions], 
+    [Extent1].[Remark] AS [Remark]
+    FROM [dbo].[eb_role] AS [Extent1]
+2016-02-16 21:32:30,131 [10] INFO  SqlResult - 
+
+2016-02-16 21:32:30,131 [10] INFO  SqlResult - -- Executing at 16-2-16 下午9:32:30 +08:00
+
+2016-02-16 21:32:30,149 [10] INFO  SqlResult - -- Completed in 18 ms with result: SqlDataReader
+
+2016-02-16 21:32:30,149 [10] INFO  SqlResult - 
+
+2016-02-16 21:32:30,151 [10] INFO  SqlResult - Closed connection at 16-2-16 下午9:32:30 +08:00
+
+2016-02-16 21:32:31,898 [6] INFO  SqlResult - Opened connection at 16-2-16 下午9:32:31 +08:00
+
+2016-02-16 21:32:31,899 [6] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[Pid] AS [Pid], 
+    [Extent1].[depth_pid] AS [depth_pid], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[Url] AS [Url], 
+    [Extent1].[Remark] AS [Remark], 
+    [Extent1].[Type] AS [Type], 
+    [Extent1].[Sort] AS [Sort], 
+    [Extent1].[Icon] AS [Icon]
+    FROM [dbo].[eb_features] AS [Extent1]
+2016-02-16 21:32:31,899 [6] INFO  SqlResult - 
+
+2016-02-16 21:32:31,900 [6] INFO  SqlResult - -- Executing at 16-2-16 下午9:32:31 +08:00
+
+2016-02-16 21:32:31,924 [6] INFO  SqlResult - -- Completed in 21 ms with result: SqlDataReader
+
+2016-02-16 21:32:31,925 [6] INFO  SqlResult - 
+
+2016-02-16 21:32:31,925 [6] INFO  SqlResult - Closed connection at 16-2-16 下午9:32:31 +08:00
+
+2016-02-16 21:32:31,925 [6] INFO  SqlResult - Opened connection at 16-2-16 下午9:32:31 +08:00
+
+2016-02-16 21:32:31,925 [6] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[features_id] AS [features_id], 
+    [Extent1].[name] AS [name], 
+    [Extent1].[Url] AS [Url], 
+    [Extent1].[Remark] AS [Remark]
+    FROM [dbo].[eb_operate] AS [Extent1]
+2016-02-16 21:32:31,925 [6] INFO  SqlResult - 
+
+2016-02-16 21:32:31,925 [6] INFO  SqlResult - -- Executing at 16-2-16 下午9:32:31 +08:00
+
+2016-02-16 21:32:31,940 [6] INFO  SqlResult - -- Completed in 15 ms with result: SqlDataReader
+
+2016-02-16 21:32:31,941 [6] INFO  SqlResult - 
+
+2016-02-16 21:32:31,941 [6] INFO  SqlResult - Closed connection at 16-2-16 下午9:32:31 +08:00
+
+2016-02-16 21:32:31,941 [6] INFO  SqlResult - Opened connection at 16-2-16 下午9:32:31 +08:00
+
+2016-02-16 21:32:31,941 [6] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[obj_id] AS [obj_id], 
+    [Extent1].[name] AS [name], 
+    [Extent1].[Code] AS [Code], 
+    [Extent1].[Type] AS [Type]
+    FROM [dbo].[eb_purview_field] AS [Extent1]
+2016-02-16 21:32:31,941 [6] INFO  SqlResult - 
+
+2016-02-16 21:32:31,941 [6] INFO  SqlResult - -- Executing at 16-2-16 下午9:32:31 +08:00
+
+2016-02-16 21:32:31,961 [6] INFO  SqlResult - -- Completed in 19 ms with result: SqlDataReader
+
+2016-02-16 21:32:31,961 [6] INFO  SqlResult - 
+
+2016-02-16 21:32:31,961 [6] INFO  SqlResult - Closed connection at 16-2-16 下午9:32:31 +08:00
+
+2016-02-16 21:32:37,917 [8] INFO  SqlResult - Opened connection at 16-2-16 下午9:32:37 +08:00
+
+2016-02-16 21:32:37,918 [8] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[Pid] AS [Pid], 
+    [Extent1].[depth_pid] AS [depth_pid], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[Url] AS [Url], 
+    [Extent1].[Remark] AS [Remark], 
+    [Extent1].[Type] AS [Type], 
+    [Extent1].[Sort] AS [Sort], 
+    [Extent1].[Icon] AS [Icon]
+    FROM [dbo].[eb_features] AS [Extent1]
+2016-02-16 21:32:37,918 [8] INFO  SqlResult - 
+
+2016-02-16 21:32:37,918 [8] INFO  SqlResult - -- Executing at 16-2-16 下午9:32:37 +08:00
+
+2016-02-16 21:32:37,938 [8] INFO  SqlResult - -- Completed in 18 ms with result: SqlDataReader
+
+2016-02-16 21:32:37,938 [8] INFO  SqlResult - 
+
+2016-02-16 21:32:37,939 [8] INFO  SqlResult - Closed connection at 16-2-16 下午9:32:37 +08:00
+
+2016-02-16 21:32:46,924 [6] INFO  SqlResult - Opened connection at 16-2-16 下午9:32:46 +08:00
+
+2016-02-16 21:32:46,924 [6] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[UserName] AS [UserName], 
+    [Extent1].[Password] AS [Password], 
+    [Extent1].[role_id] AS [role_id], 
+    [Extent1].[Login] AS [Login], 
+    [Extent1].[reg_time] AS [reg_time], 
+    [Extent1].[login_time] AS [login_time], 
+    [Extent1].[update_time] AS [update_time], 
+    [Extent1].[login_ip] AS [login_ip], 
+    [Extent1].[Status] AS [Status], 
+    [Extent1].[Remark] AS [Remark], 
+    [Extent2].[ID] AS [ID1], 
+    [Extent2].[role_name] AS [role_name], 
+    [Extent2].[Actions] AS [Actions], 
+    [Extent2].[Remark] AS [Remark1]
+    FROM  [dbo].[eb_admin] AS [Extent1]
+    LEFT OUTER JOIN [dbo].[eb_role] AS [Extent2] ON [Extent1].[role_id] = [Extent2].[ID]
+2016-02-16 21:32:46,924 [6] INFO  SqlResult - 
+
+2016-02-16 21:32:46,924 [6] INFO  SqlResult - -- Executing at 16-2-16 下午9:32:46 +08:00
+
+2016-02-16 21:32:46,939 [6] INFO  SqlResult - -- Completed in 14 ms with result: SqlDataReader
+
+2016-02-16 21:32:46,939 [6] INFO  SqlResult - 
+
+2016-02-16 21:32:46,940 [6] INFO  SqlResult - Closed connection at 16-2-16 下午9:32:46 +08:00
+
+2016-02-16 21:32:48,884 [10] INFO  SqlResult - Opened connection at 16-2-16 下午9:32:48 +08:00
+
+2016-02-16 21:32:48,886 [10] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[Pid] AS [Pid], 
+    [Extent1].[depth_pid] AS [depth_pid], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[Url] AS [Url], 
+    [Extent1].[Remark] AS [Remark], 
+    [Extent1].[Type] AS [Type], 
+    [Extent1].[Sort] AS [Sort], 
+    [Extent1].[Icon] AS [Icon]
+    FROM [dbo].[eb_features] AS [Extent1]
+2016-02-16 21:32:48,888 [10] INFO  SqlResult - 
+
+2016-02-16 21:32:48,888 [10] INFO  SqlResult - -- Executing at 16-2-16 下午9:32:48 +08:00
+
+2016-02-16 21:32:48,906 [10] INFO  SqlResult - -- Completed in 17 ms with result: SqlDataReader
+
+2016-02-16 21:32:48,906 [10] INFO  SqlResult - 
+
+2016-02-16 21:32:48,906 [10] INFO  SqlResult - Closed connection at 16-2-16 下午9:32:48 +08:00
+
+2016-02-16 21:32:58,034 [6] INFO  SqlResult - Opened connection at 16-2-16 下午9:32:58 +08:00
+
+2016-02-16 21:32:58,035 [6] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[Pid] AS [Pid], 
+    [Extent1].[depth_pid] AS [depth_pid], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[Url] AS [Url], 
+    [Extent1].[Remark] AS [Remark], 
+    [Extent1].[Type] AS [Type], 
+    [Extent1].[Sort] AS [Sort], 
+    [Extent1].[Icon] AS [Icon]
+    FROM [dbo].[eb_features] AS [Extent1]
+2016-02-16 21:32:58,035 [6] INFO  SqlResult - 
+
+2016-02-16 21:32:58,035 [6] INFO  SqlResult - -- Executing at 16-2-16 下午9:32:58 +08:00
+
+2016-02-16 21:32:58,095 [6] INFO  SqlResult - -- Completed in 42 ms with result: SqlDataReader
+
+2016-02-16 21:32:58,095 [6] INFO  SqlResult - 
+
+2016-02-16 21:32:58,095 [6] INFO  SqlResult - Closed connection at 16-2-16 下午9:32:58 +08:00
+
+2016-02-16 21:33:01,960 [6] INFO  SqlResult - Opened connection at 16-2-16 下午9:33:01 +08:00
+
+2016-02-16 21:33:01,960 [6] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[features_id] AS [features_id], 
+    [Extent1].[name] AS [name], 
+    [Extent1].[Url] AS [Url], 
+    [Extent1].[Remark] AS [Remark]
+    FROM [dbo].[eb_operate] AS [Extent1]
+    WHERE [Extent1].[features_id] = @p__linq__0
+2016-02-16 21:33:01,961 [6] INFO  SqlResult - 
+
+2016-02-16 21:33:01,961 [6] INFO  SqlResult - -- p__linq__0: '2' (Type = Int32)
+
+2016-02-16 21:33:01,961 [6] INFO  SqlResult - -- Executing at 16-2-16 下午9:33:01 +08:00
+
+2016-02-16 21:33:01,976 [6] INFO  SqlResult - -- Completed in 14 ms with result: SqlDataReader
+
+2016-02-16 21:33:01,976 [6] INFO  SqlResult - 
+
+2016-02-16 21:33:01,976 [6] INFO  SqlResult - Closed connection at 16-2-16 下午9:33:01 +08:00
+
+2016-02-16 21:33:07,972 [6] INFO  SqlResult - Opened connection at 16-2-16 下午9:33:07 +08:00
+
+2016-02-16 21:33:07,972 [6] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[Pid] AS [Pid], 
+    [Extent1].[depth_pid] AS [depth_pid], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[Url] AS [Url], 
+    [Extent1].[Remark] AS [Remark], 
+    [Extent1].[Type] AS [Type], 
+    [Extent1].[Sort] AS [Sort], 
+    [Extent1].[Icon] AS [Icon]
+    FROM [dbo].[eb_features] AS [Extent1]
+2016-02-16 21:33:07,972 [6] INFO  SqlResult - 
+
+2016-02-16 21:33:07,972 [6] INFO  SqlResult - -- Executing at 16-2-16 下午9:33:07 +08:00
+
+2016-02-16 21:33:07,986 [6] INFO  SqlResult - -- Completed in 13 ms with result: SqlDataReader
+
+2016-02-16 21:33:07,986 [6] INFO  SqlResult - 
+
+2016-02-16 21:33:07,986 [6] INFO  SqlResult - Closed connection at 16-2-16 下午9:33:07 +08:00
+
+2016-02-16 21:33:22,656 [6] INFO  SqlResult - Opened connection at 16-2-16 下午9:33:22 +08:00
+
+2016-02-16 21:33:22,657 [6] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[features_id] AS [features_id], 
+    [Extent1].[name] AS [name], 
+    [Extent1].[Url] AS [Url], 
+    [Extent1].[Remark] AS [Remark]
+    FROM [dbo].[eb_operate] AS [Extent1]
+    WHERE [Extent1].[features_id] = @p__linq__0
+2016-02-16 21:33:22,657 [6] INFO  SqlResult - 
+
+2016-02-16 21:33:22,657 [6] INFO  SqlResult - -- p__linq__0: '2' (Type = Int32)
+
+2016-02-16 21:33:22,657 [6] INFO  SqlResult - -- Executing at 16-2-16 下午9:33:22 +08:00
+
+2016-02-16 21:33:22,675 [6] INFO  SqlResult - -- Completed in 17 ms with result: SqlDataReader
+
+2016-02-16 21:33:22,675 [6] INFO  SqlResult - 
+
+2016-02-16 21:33:22,675 [6] INFO  SqlResult - Closed connection at 16-2-16 下午9:33:22 +08:00
+
+2016-02-16 21:33:29,558 [5] INFO  SqlResult - Opened connection at 16-2-16 下午9:33:29 +08:00
+
+2016-02-16 21:33:29,558 [5] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[Pid] AS [Pid], 
+    [Extent1].[depth_pid] AS [depth_pid], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[Url] AS [Url], 
+    [Extent1].[Remark] AS [Remark], 
+    [Extent1].[Type] AS [Type], 
+    [Extent1].[Sort] AS [Sort], 
+    [Extent1].[Icon] AS [Icon]
+    FROM [dbo].[eb_features] AS [Extent1]
+2016-02-16 21:33:29,558 [5] INFO  SqlResult - 
+
+2016-02-16 21:33:29,558 [5] INFO  SqlResult - -- Executing at 16-2-16 下午9:33:29 +08:00
+
+2016-02-16 21:33:29,572 [5] INFO  SqlResult - -- Completed in 13 ms with result: SqlDataReader
+
+2016-02-16 21:33:29,573 [5] INFO  SqlResult - 
+
+2016-02-16 21:33:29,575 [5] INFO  SqlResult - Closed connection at 16-2-16 下午9:33:29 +08:00
+
+2016-02-16 21:33:31,677 [11] INFO  SqlResult - Opened connection at 16-2-16 下午9:33:31 +08:00
+
+2016-02-16 21:33:31,681 [11] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[features_id] AS [features_id], 
+    [Extent1].[name] AS [name], 
+    [Extent1].[Url] AS [Url], 
+    [Extent1].[Remark] AS [Remark]
+    FROM [dbo].[eb_operate] AS [Extent1]
+    WHERE [Extent1].[features_id] = @p__linq__0
+2016-02-16 21:33:31,685 [11] INFO  SqlResult - 
+
+2016-02-16 21:33:31,691 [11] INFO  SqlResult - -- p__linq__0: '2' (Type = Int32)
+
+2016-02-16 21:33:31,692 [11] INFO  SqlResult - -- Executing at 16-2-16 下午9:33:31 +08:00
+
+2016-02-16 21:33:31,726 [11] INFO  SqlResult - -- Completed in 33 ms with result: SqlDataReader
+
+2016-02-16 21:33:31,726 [11] INFO  SqlResult - 
+
+2016-02-16 21:33:31,726 [11] INFO  SqlResult - Closed connection at 16-2-16 下午9:33:31 +08:00
+
+2016-02-16 21:33:34,365 [11] INFO  SqlResult - Opened connection at 16-2-16 下午9:33:34 +08:00
+
+2016-02-16 21:33:34,373 [11] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[Pid] AS [Pid], 
+    [Extent1].[depth_pid] AS [depth_pid], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[Url] AS [Url], 
+    [Extent1].[Remark] AS [Remark], 
+    [Extent1].[Type] AS [Type], 
+    [Extent1].[Sort] AS [Sort], 
+    [Extent1].[Icon] AS [Icon]
+    FROM [dbo].[eb_features] AS [Extent1]
+    WHERE 1 = [Extent1].[Type]
+2016-02-16 21:33:34,374 [11] INFO  SqlResult - 
+
+2016-02-16 21:33:34,374 [11] INFO  SqlResult - -- Executing at 16-2-16 下午9:33:34 +08:00
+
+2016-02-16 21:33:34,417 [11] INFO  SqlResult - -- Completed in 42 ms with result: SqlDataReader
+
+2016-02-16 21:33:34,417 [11] INFO  SqlResult - 
+
+2016-02-16 21:33:34,417 [11] INFO  SqlResult - Closed connection at 16-2-16 下午9:33:34 +08:00
+
+2016-02-16 21:33:34,417 [11] INFO  SqlResult - Opened connection at 16-2-16 下午9:33:34 +08:00
+
+2016-02-16 21:33:34,417 [11] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[features_id] AS [features_id], 
+    [Extent1].[name] AS [name], 
+    [Extent1].[Url] AS [Url], 
+    [Extent1].[Remark] AS [Remark]
+    FROM [dbo].[eb_operate] AS [Extent1]
+2016-02-16 21:33:34,417 [11] INFO  SqlResult - 
+
+2016-02-16 21:33:34,418 [11] INFO  SqlResult - -- Executing at 16-2-16 下午9:33:34 +08:00
+
+2016-02-16 21:33:34,469 [11] INFO  SqlResult - -- Completed in 43 ms with result: SqlDataReader
+
+2016-02-16 21:33:34,473 [11] INFO  SqlResult - 
+
+2016-02-16 21:33:34,491 [11] INFO  SqlResult - Closed connection at 16-2-16 下午9:33:34 +08:00
+
+2016-02-16 21:33:59,069 [15] INFO  SqlResult - Opened connection at 16-2-16 下午9:33:59 +08:00
+
+2016-02-16 21:33:59,069 [15] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[UserName] AS [UserName], 
+    [Extent1].[Password] AS [Password], 
+    [Extent1].[role_id] AS [role_id], 
+    [Extent1].[Login] AS [Login], 
+    [Extent1].[reg_time] AS [reg_time], 
+    [Extent1].[login_time] AS [login_time], 
+    [Extent1].[update_time] AS [update_time], 
+    [Extent1].[login_ip] AS [login_ip], 
+    [Extent1].[Status] AS [Status], 
+    [Extent1].[Remark] AS [Remark], 
+    [Extent2].[ID] AS [ID1], 
+    [Extent2].[role_name] AS [role_name], 
+    [Extent2].[Actions] AS [Actions], 
+    [Extent2].[Remark] AS [Remark1]
+    FROM  [dbo].[eb_admin] AS [Extent1]
+    LEFT OUTER JOIN [dbo].[eb_role] AS [Extent2] ON [Extent1].[role_id] = [Extent2].[ID]
+2016-02-16 21:33:59,070 [15] INFO  SqlResult - 
+
+2016-02-16 21:33:59,070 [15] INFO  SqlResult - -- Executing at 16-2-16 下午9:33:59 +08:00
+
+2016-02-16 21:33:59,106 [15] INFO  SqlResult - -- Completed in 36 ms with result: SqlDataReader
+
+2016-02-16 21:33:59,106 [15] INFO  SqlResult - 
+
+2016-02-16 21:33:59,107 [15] INFO  SqlResult - Closed connection at 16-2-16 下午9:33:59 +08:00
+
+2016-02-16 21:33:59,755 [6] INFO  SqlResult - Opened connection at 16-2-16 下午9:33:59 +08:00
+
+2016-02-16 21:33:59,756 [6] INFO  SqlResult - SELECT 
+    [Extent1].[ID] AS [ID], 
+    [Extent1].[role_name] AS [role_name], 
+    [Extent1].[Actions] AS [Actions], 
+    [Extent1].[Remark] AS [Remark]
+    FROM [dbo].[eb_role] AS [Extent1]
+2016-02-16 21:33:59,757 [6] INFO  SqlResult - 
+
+2016-02-16 21:33:59,757 [6] INFO  SqlResult - -- Executing at 16-2-16 下午9:33:59 +08:00
+
+2016-02-16 21:33:59,783 [6] INFO  SqlResult - -- Completed in 26 ms with result: SqlDataReader
+
+2016-02-16 21:33:59,784 [6] INFO  SqlResult - 
+
+2016-02-16 21:33:59,784 [6] INFO  SqlResult - Closed connection at 16-2-16 下午9:33:59 +08:00
+

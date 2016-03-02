@@ -1,0 +1,128 @@
+﻿@model IEnumerable<InnovateFeed>
+@{
+    ViewBag.Title = "创新疫苗";
+    var type = ViewBag.type;
+    var status = ViewBag.status;
+}
+
+<div class="navbar-fixed-top row">
+    <div class="col-lg-12">
+        <ol class="breadcrumb">
+            <li>
+                <a href="@Url.Content("~/admin/home/main")">主页</a>
+            </li>
+            <li>
+                <strong>创新疫苗</strong>
+            </li>
+        </ol>
+    </div>
+</div>
+
+<div class="animated m-t-lg">
+    <div class="row">
+        <div class="col-lg-12">
+
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>创新疫苗</h5>
+                    <div class="ibox-tools">
+                        <a class="collapse-link" href="javascript:void();"><i class="fa fa-chevron-up"></i></a>
+                        <a href="javascript:void();" onclick="javascript:window.location.reload();"><i class="fa fa-refresh"></i></a>
+                    </div>
+                </div>
+                <div class="ibox-content">
+                    <div class="row">
+                        <div class="col-xs-12">
+
+                            <a href="@Url.Action("EditInnovate")" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i>&nbsp;新增</a>
+
+                            <div data-toggle="buttons" class="btn-group">
+                                <label class="btn btn-default @(type == null ? "active" : "")">
+                                    <input type="radio" value="" name="type" @(type == null ? "checked" : "") />全部
+                                </label>
+                                @foreach (InnovateFeedType x in Enum.GetValues(typeof(InnovateFeedType)))
+                                {
+                                    <label class="btn btn-default @(type == x ? "active" : "")">
+                                        <input type="radio" value="@((int)x)" name="type" @(type == x ? "checked" : "") />@x.ToString()
+                                    </label>
+                                }
+                            </div>
+
+                            <div data-toggle="buttons" class="btn-group">
+                                <label class="btn btn-default @(status == null ? "active" : "")">
+                                    <input type="radio" value="" name="status" @(status == null ? "checked" : "") />全部
+                                </label>
+                                @foreach (ActiveStatus x in Enum.GetValues(typeof(ActiveStatus)))
+                                {
+                                    <label class="btn btn-default @(status == x ? "active" : "")">
+                                        <input type="radio" value="@((int)x)" name="status" @(status == x ? "checked" : "") />@x.ToString()
+                                    </label>
+                                }
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table table-striped">
+
+                            <thead>
+                                <tr>
+                                    <th width="150">图片</th>
+                                    <th width="200">标题</th>
+                                    <th width="70">类型</th>
+                                    <th width="70">作者</th>
+                                    <th width="60">点击量</th>
+                                    <th width="50">状态</th>
+                                    <th width="130">添加时间</th>
+                                    <th>说明</th>
+                                    <th width="160">管理</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                @foreach (var x in Model)
+                                {
+                                    <tr>
+                                        <td>
+                                            <img src="@x.ImgPath" class="img-responsive img-rounded" />
+                                        </td>
+                                        <td>@x.Title</td>
+                                        <td>@x.Type.ToString()</td>
+                                        <td>@x.Author</td>
+                                        <td>@x.ClickNum</td>
+                                        <td>@x.Status.ToString()</td>
+                                        <td>@x.CreateTime.ToString("yyyy-MM-dd hh:mm")</td>
+                                        <td>@x.Des</td>
+                                        <td>
+                                            <a href="@Url.Action("EditInnovate", new { id=x.ID })" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i> 编辑</a>
+                                            <a href="@Url.Action("DeleteInnovate", new { id = x.ID })" class="btn btn-danger btn-sm" onclick="return confirm('确认删除吗')"><i class="fa fa-remove"></i> 删除</a>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+
+                            <tfoot>
+                                <tr>
+                                    <td colspan="9"></td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $('input[name=type]').change(function () {
+        var type = $('input[name="type"]:checked').val();
+
+        window.location = '@Html.Raw(Url.Action("Innovate", new { status = status, _test = 1 }))&type=' + type;
+    });
+    $('input[name=status]').change(function () {
+        var status = $('input[name="status"]:checked').val();
+
+        window.location = '@Html.Raw(Url.Action("Innovate", new { type = type, _test= 1 }))&status=' + status;
+    });
+</script>

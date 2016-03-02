@@ -1,0 +1,201 @@
+﻿@model WanTaiWeb.Areas.Web.Models.LBSModel
+@{
+    ViewBag.Title = "接种点分布";
+}
+
+@section style{
+    <link href="~/Content/css/reset.css" rel="stylesheet" />
+    <link href="~/Content/css/vaccination_list.css" rel="stylesheet" />
+}
+
+
+<div class="list-header">
+    <div class="list-top">
+        <p class="list-top-one">
+            <span>@Model.VaccineTypeName</span>
+            <i></i>
+        </p>
+        <ul class="list-fixed-one">
+            <li data-value="">全部疫苗</li>
+            @foreach (var x in Model.VaccineTypes)
+            {
+                <li data-value="@x.Id">@x.Name</li>
+            }
+        </ul>
+        <p class="list-top-two">
+            <span>@Model.Province</span>
+            <i></i>
+        </p>
+        <ul class="list-fixed-two">
+            @foreach (var x in Model.Provinces)
+            {
+                <li>@x</li>
+            }
+        </ul>
+        <p class="list-top-three">
+            <span>@Model.City</span>
+            <i></i>
+        </p>
+        <ul class="list-fixed-three">
+            @foreach (var x in Model.Cities)
+            {
+                <li>@x</li>
+            }
+        </ul>
+        <p class="list-top-frun">
+            <span>@Model.District</span>
+            <i></i>
+        </p>
+        <ul class="list-fixed-frun">
+            @foreach (var x in Model.Districts)
+            {
+                <li>@x</li>
+            }
+        </ul>
+    </div>
+</div>
+<!--弹出灰色底层-->
+<div class="list-ding"></div>
+@foreach (var x in Model.Top3LBS)
+{
+    <div class="place-main">
+        <h2>@x.Name</h2>
+        <p class="place-rac">
+            <span>接种项目：</span>
+            <strong>@string.Join("、", x.LBSVaccineTypes.Select(a => a.VaccineType.Name))</strong>
+        </p>
+        <p class="place-long">
+            <span>联系电话：</span>
+            <a href="tel:@x.Tel">@x.Tel</a>
+        </p>
+        <p class="place-bing">
+            <span>联系地址：</span>
+            <strong>@(x.Province + x.City + x.District+x.Address)</strong>
+        </p>
+        <a href="@Url.Action("Map", new { id = x.Id })" title="" class="place-bottom">查看地图</a>
+        <p class="host">@x.Des</p>
+    </div>
+}
+
+@section scripts{
+    <script src="~/Content/js/flexible.js"></script>
+    <script src="~/Content/js/jquery-1.11.3.min.js"></script>
+    <script>
+        $(function () {
+            $(".list-top p").click(function () {
+                $(".list-ding").show();
+            })
+            /*点击疫苗下拉框出现 再次点击 下拉框消失*/
+            $(".list-top-one").click(function () {
+                if ($(".list-fixed-one").css("display") == "none") {
+                    $(".list-fixed-one").css({
+                        "display": "block"
+                    });
+                    $(this).children("i").css({
+                        "transform": "rotate(180deg)"
+                    })
+                } else {
+                    $(".list-fixed-one").css({
+                        "display": "none"
+                    });
+                    $(this).children("i").css({
+                        "transform": "rotate(0deg)"
+                    })
+                }
+            });
+            /*点击全国下拉框出现 再次点击 下拉框消失*/
+            $(".list-top-two").click(function () {
+                if ($(".list-fixed-two").css("display") == "none") {
+                    $(".list-fixed-two").css({
+                        "display": "block"
+                    });
+                    $(this).children("i").css({
+                        "transform": "rotate(180deg)"
+                    })
+                } else {
+                    $(".list-fixed-two").css({
+                        "display": "none"
+                    });
+                    $(this).children("i").css({
+                        "transform": "rotate(0deg)"
+                    })
+                }
+            });
+            /*点击城市下拉框出现 再次点击 下拉框消失*/
+            $(".list-top-three").click(function () {
+                if ($(".list-fixed-three").css("display") == "none") {
+                    $(".list-fixed-three").css({
+                        "display": "block"
+                    });
+                    $(this).children("i").css({
+                        "transform": "rotate(180deg)"
+                    })
+                } else {
+                    $(".list-fixed-three").css({
+                        "display": "none"
+                    });
+                    $(this).children("i").css({
+                        "transform": "rotate(0deg)"
+                    })
+                }
+            });
+            /*点击地区下拉框出现 再次点击 下拉框消失*/
+            $(".list-top-frun").click(function () {
+                if ($(".list-fixed-frun").css("display") == "none") {
+                    $(".list-fixed-frun").css({
+                        "display": "block"
+                    });
+                    $(this).children("i").css({
+                        "transform": "rotate(180deg)"
+                    })
+                } else {
+                    $(".list-fixed-frun").css({
+                        "display": "none"
+                    });
+                    $(this).children("i").css({
+                        "transform": "rotate(0deg)"
+                    })
+                }
+            });
+            // 鼠标点击li，所点击的li值出现在span部分,完了之后整个下拉列表隐藏
+            $(".list-fixed-one li").click(function () {
+                $(".list-top-one span").text($(this).text());
+                $(".list-fixed-one").hide();
+                $(".list-ding").hide();
+                $(".list-top-one i").css({
+                    "transform": "rotate(0deg)"
+                });
+
+                window.location = "@Html.Raw(Url.Action("Index", new { Province=Model.Province,City=Model.City,District=Model.District}))&VaccineTypeID=" + $(this).attr("data-value");
+            })
+            $(".list-fixed-two li").click(function () {
+                $(".list-top-two span").text($(this).text());
+                $(".list-fixed-two").hide();
+                $(".list-ding").hide();
+                $(".list-top-two i").css({
+                    "transform": "rotate(0deg)"
+                });
+                
+                window.location = "@Html.Raw(Url.Action("Index", new { City = Model.City, District = Model.District, VaccineTypeID = Model.VaccineTypeID }))&Province=" + $(this).text();
+            })
+            $(".list-fixed-three li").click(function () {
+                $(".list-top-three span").text($(this).text());
+                $(".list-fixed-three").hide();
+                $(".list-ding").hide();
+                $(".list-top-three i").css({
+                    "transform": "rotate(0deg)"
+                });
+                window.location = "@Html.Raw(Url.Action("Index", new { Province = Model.Province, District = Model.District, VaccineTypeID = Model.VaccineTypeID }))&City=" + $(this).text();
+            })
+            $(".list-fixed-frun li").click(function () {
+                $(".list-top-frun span").text($(this).text());
+                $(".list-fixed-frun").hide();
+                $(".list-ding").hide();
+                $(".list-top-frun i").css({
+                    "transform": "rotate(0deg)"
+                });
+                window.location = "@Html.Raw(Url.Action("Index", new { City = Model.City, Province = Model.Province, VaccineTypeID = Model.VaccineTypeID }))&District=" + $(this).text();
+            })
+        })
+    </script>
+}

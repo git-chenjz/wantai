@@ -1,0 +1,84 @@
+﻿@{
+    ViewBag.Title = "绑定邮箱";
+    var isBindEmail = (bool)ViewBag.isBindEmail;
+}
+
+@model Users
+
+@section style{
+    <link href="~/Content/css/reset.css" rel="stylesheet" />
+    <link href="~/Content/css/content.css" rel="stylesheet" />
+    <style>
+        html, body {
+            padding: 0;
+            margin: 0;
+            background-color: #efefef;
+        }
+    </style>
+}
+
+<div class="unb-main">
+    @if (isBindEmail)
+    {
+        <span>已绑定邮箱</span>
+        <p>@Model.BindEmail</p>
+        <a href="#" title="" id="unBindEmail">
+            <strong>解绑</strong>
+        </a>
+    }
+    else
+    {
+        <span>邮箱账号</span>
+        <form>
+            <input type="text" placeholder="请输入要绑定的邮箱地址" class="unb-input" id="email">
+        </form>
+        <a href="#" title="" id="BindEmail">
+            <strong>绑定</strong>
+        </a>
+    }
+</div>
+<div class="bottom un-deable">
+    <span class="bottom-rac">地址：厦门市海沧区新园路130号</span>
+    <p class="bottom-text">
+        <span>电话：+86-592-6536555</span>
+        <span>传真：+86-592-6536567</span>
+    </p>
+</div>
+
+@section scripts{
+    <script src="~/Content/js/flexible.js"></script>
+    <script type="text/javascript">
+        function Check() {
+            var email = $("#email").val();
+            if (!IsEmpty(email)) {
+                toastr.warning('请输入邮箱地址');
+                return false;
+            }
+
+            if (!IsEmail(email)) {
+                toastr.warning('请输入正确的邮箱地址');
+                return false;
+            }
+            return true;
+        }
+
+        $(function () {
+            $("#unBindEmail").click(function () {
+                $.post("/web/account/UnBindEmail", function (result) {
+                    if (result.success)
+                        window.location.reload();
+                });
+            });
+
+            $("#BindEmail").click(function () {
+                if (!Check())
+                    return;
+                $.post("/web/account/BindEmail", { email: $("#email").val() }, function (result) {
+                    if (result.success)
+                        window.location.reload();
+                });
+            });
+        });
+    </script>
+}
+

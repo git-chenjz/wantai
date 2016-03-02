@@ -1,0 +1,21 @@
+﻿@model QuestionUser
+@{
+    Layout = "~/Areas/Web/Views/Shared/_LayoutWeUI.cshtml";
+}
+
+<div class="container js_container">
+    <div class="page slideIn msg">
+        <div class="weui_msg">
+            <div class="weui_icon_area"><i class="weui_icon_success weui_icon_msg"></i></div>
+            <div class="weui_text_area">
+                <p class="weui_msg_desc">您已经填写过了</p>
+            </div>
+            <div class="weui_opr_area">
+                <p class="weui_btn_area">
+                    <a href="@Url.Action("Index")" class="weui_btn weui_btn_primary">确定</a>
+                    <a href="@Url.Action("QuestionDetail", new { id=Model.QuestionID})" class="weui_btn weui_btn_plain_primary">查看问卷</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>

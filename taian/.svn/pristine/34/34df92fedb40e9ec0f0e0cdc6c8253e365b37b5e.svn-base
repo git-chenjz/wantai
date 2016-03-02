@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="initial-scale=0.5, maximum-scale=0.5, minimum-scale=0.5, user-scalable=no">
+	<title>我的接种周期表</title>
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/answer.css">
+	<script src="js/flexible.js" type="text/javascript"></script>
+	<style>
+		html,body {
+			padding-top: 0.38rem;
+			/*background: #efefef;*/
+		}
+		.content-link {
+			display: block;
+			background: white;
+		}
+		.answer-bing-top p {
+			overflow: hidden; 
+		    text-overflow: ellipsis;
+		    white-space: nowrap;
+		    float: left;
+		    width: 84%;
+		    height: 1.32rem;
+		    margin-left: 1%;
+		    padding-left: 2%;
+		    font-size: 0.6rem;
+		    line-height: 1.35rem;
+		}
+		.detail>p {
+			float: left;
+		    width: 91%;
+		    margin-left: 3%;
+		    padding: 0.3rem 0 0 2%;
+		    color: #000;
+		    font-size: 0.55rem;
+		    line-height: 1rem;
+		}
+	</style>
+</head>
+<body>
+	<div class="answer-bing content-link">
+		<form action="" class="detail">
+			<div class="answer-bing-top">
+				<span>标题</span>
+				<p>文章标题</p>
+			</div>
+			<strong class="ans-nav">提问</strong>
+			<p>提问详情提问详情提问详情提问详情提问详情提问详情提问详情提问详情提问详情提问详情提问详情提问详情提问详情提问详情提问详情提问详情提问详情提问详情提问详情</p>
+			<strong class="ans-nav">潘博士回答</strong>
+			<p>潘博士回答内容潘博士回答内容潘博士回答内容潘博士回答内容潘博士回答内容潘博士回答内容潘博士回答内容潘博士回答内容潘博士回答内容潘博士回答内容潘博士回答内容</p>
+		</form>	
+	</div>
+</body>
+</html>

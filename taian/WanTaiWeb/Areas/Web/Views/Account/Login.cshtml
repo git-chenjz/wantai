@@ -1,0 +1,84 @@
+﻿@{
+    ViewBag.Title = "用户登录";
+}
+
+@section style{
+    <link href="~/Content/css/reset.css" rel="stylesheet" />
+    <link href="~/Content/css/content.css" rel="stylesheet" />
+    <style>
+        html, body {
+            padding: 0;
+            margin: 0;
+            background-color: #efefef;
+        }
+    </style>
+}
+
+<div class="reg-main clearfix">
+    <form method="post">
+        <div class="reg-list">
+            <i></i>
+            <input type="text" placeholder="请输入邮箱地址" name="LoginName" id="username">
+            <em></em>
+        </div>
+        <div class="reg-host">
+            <i></i>
+            <input type="text" placeholder="请输入密码" name="Password" id="password">
+            <em></em>
+        </div>
+        <a href="/web/account/findpassword" title="">
+            <span class="land-host">忘记密码？</span>
+        </a>
+        @if (ViewBag.Message != null)
+        {
+            <span class="land-host" style="text-align:center;color:red;">@ViewBag.Message</span>
+        }
+
+        <a href="" title="">
+            <input type="submit" value="登录" class="reg-bottom" id="submit">
+        </a>
+        <a href="/web/account/register" title="">
+            <span class="reg-bottom reg-rost">我还没有帐号，马上创建</span>
+        </a>
+    </form>
+</div>
+<div class="bottom un-deable">
+    <span class="bottom-rac">地址：厦门市海沧区新园路130号</span>
+    <p class="bottom-text">
+        <span>电话：+86-592-6536555</span>
+        <span>传真：+86-592-6536567</span>
+    </p>
+</div>
+
+@section scripts{
+    <script src="~/Content/js/flexible.js"></script>
+    <script type="text/javascript">
+        function check() {
+            var username = $("#username").val();
+            if (!IsEmpty(username)) {
+                toastr.warning('请输入邮箱地址');
+                return false;
+            }
+            if (!IsEmail(username)) {
+                toastr.warning('请输入正确的邮箱地址');
+                return false;
+            }
+
+            var $password = $("#password");
+            if ($password.val() == "") {
+                toastr.warning("请输入密码!");
+                $password.focus();
+                return false;
+            }
+        }
+
+        $(function () {
+            $("#submit").click(function () {
+                return check();
+            });
+        });
+    </script>
+}
+
+
+

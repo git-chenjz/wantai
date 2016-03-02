@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="initial-scale=0.5, maximum-scale=0.5, minimum-scale=0.5, user-scalable=no">
+	<title>新增或者更改接种周期</title>
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/content.css">
+	<script src="js/flexible.js" type="text/javascript"></script>
+	<script src="js/jquery-1.11.3.min.js"></script>
+	<style>
+		html,body {
+			min-height: 100%;
+			background: #efefef;
+		}
+		p {
+			float: left;
+			color: #1d1a1a;
+			text-indent: 2px;
+			font-size: 0.62rem;
+			line-height: 1.33rem;
+		}
+		input {
+			display: none;
+		}
+		.record {
+			width: 94%;
+			margin: 0 auto;
+			padding-top: 0.95rem;
+		}
+		.record>ul>li {
+			margin-bottom: 0.9rem;
+			height: 1.33rem;
+		}
+		.record>ul>li>p {
+			margin-right: 0.42rem;
+		}
+		.choice-box {
+			float: left;
+			position: relative;
+			width: 10.19rem;
+			height: 100%;
+			border: 1px solid #b2b2b2;
+			background: white;
+			border-radius: 3px;
+			-webkit-box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			box-sizing: border-box;
+		}
+		.choice-box p {
+			overflow: hidden;
+		    white-space: nowrap;
+		    text-overflow: ellipsis;
+			float: none;
+			width: 100%;
+			height: 1.33rem;
+			color: #999;
+			font-size: 0.57rem;
+			text-indent: 0.5rem;
+			line-height: 1.33rem;
+		}
+		.choice-box span {
+			position: absolute;
+			right: 0;
+			top: 0;
+			width: 0.83rem;
+			height: 100%;
+			background: #b2b2b2 url(images/arrow03.png) no-repeat;
+			background-size: 100% 100%;
+			border-radius: 0 3px 3px 0;
+		}
+		.choice-box ul {
+			display: none;
+			overflow: auto;
+			position: absolute;
+			top: 1.32rem;
+			left: -1px;
+			z-index: 2;
+			width: 100%;
+			height: 3.44rem;
+			border: 1px solid #b2b2b2;
+			border-top: none;
+			background: white;
+		}
+		.choice-box .display {
+			display: block;
+		}
+		.time .choice-box:nth-child(2) {
+			width: 3.14rem;
+		}
+		.time .choice-box:nth-child(4) {
+			width: 2.43rem;
+		}
+		.time .choice-box:nth-child(6) {
+			width: 2.43rem;
+		}
+		.time p:nth-child(7) {
+			margin-right: 0;
+		}
+		.record>div {
+			width: 75%;
+			margin: 0 auto;
+			margin-top: 1.8rem;
+		}
+		.record>div a {
+			width: 4.98rem;
+			height: 1.43rem;
+			font-size: 0.7rem;
+			line-height: 1.43rem;
+			text-align: center;
+			-webkit-border-radius: 3px;
+			-moz-border-radius: 3px;
+			border-radius: 3px;
+		}
+		.record .save{
+			float: left;
+			border: 1px solid #ff9619;
+			background: #ff9619;
+			color: #fcf9f9;
+		}
+		.record .del{
+			float: right;
+			border: 1px solid #ff9619;
+			background: white;
+			color: #ff9619;
+		}
+	</style>
+</head>
+<body>
+	<form action="" class="record">
+		<ul>
+			<!-- 疫苗类型模块 -->
+			<li class="clearfix" >
+				<p>疫苗类型</p>
+				<div class="choice-box">
+					<input type="text" name="" value="" placeholde="请选择" >
+					<div>
+						<p>请选择<span></span></p>
+						<ul>
+							<!-- 循环li内容写在p标签内部 -->
+							<li><p>11111</p></li>
+						</ul>
+					</div>
+				</div>
+			</li>
+			<!-- 接种阶段模块 -->
+			<li class="clearfix" >
+				<p>接种阶段</p>
+				<div class="choice-box">
+					<input type="text" name="" value="" placeholde="请选择" >
+					<div>
+						<p>请选择<span></span></p>
+						<ul>
+							<!-- 循环li内容写在p标签内部 -->
+							<li><p></p></li>
+						</ul>
+					</div>
+				</div>
+			</li>
+			<!-- 接种日期模块 -->
+			<li class="time clearfix">
+				<p>接种日期</p>
+				<div class="choice-box">
+					<input type="text" name="" value="" placeholde="请选择" >
+					<div>
+						<p>2016<span></span></p>
+						<ul>
+							<!-- 循环li内容写在p标签内部 -->
+							<li><p></p></li>
+						</ul>
+					</div>
+				</div>
+				<p>年</p>
+				<div class="choice-box">
+					<input type="text" name="" value="" placeholde="请选择" >
+					<div>
+						<p>01<span></span></p>
+						<ul>
+							<!-- 循环li内容写在p标签内部 -->
+							<li><p></p></li>
+						</ul>
+					</div>
+				</div>
+				<p>月</p>
+				<div class="choice-box">
+					<input type="text" name="" value="" placeholde="请选择" >
+					<div>
+						<p>01<span></span></p>
+						<ul>
+							<!-- 循环li内容写在p标签内部 -->
+							<li><p></p></li>
+						</ul>
+					</div>
+				</div>
+				<p>日</p>
+			</li>
+		</ul>
+		<div class="clearfix">
+			<a href="" title="" class="save">保存记录</a>
+			<a href="" title="" class="del">删除记录</a>
+		</div>
+	</form>
+</body>
+	<script >
+
+		// 功能描述：
+		// 点击下拉按钮
+		// 显示列表
+		// 复制给input和文本上
+		$(".choice-box div>p").on("click",function(){
+			if(!$(this).hasClass("open")) {
+				$(".choice-box ul").removeClass("display");
+				$(this).siblings().addClass("display");
+				$(this).addClass("open")
+			}else {
+				$(this).siblings().removeClass("display");
+				$(this).removeClass("open")
+			}
+
+		})
+		// 点击列表内容列表页隐藏并且赋值
+		// 点击页面其他部分也隐藏
+		$(".choice-box li p").on("click",function(){
+			var text = $(this).text();
+			var htmlStr = text + "<span></span>";
+			console.log($(this).parent().parent().siblings().text());
+			$(this).parent().parent().removeClass("display").siblings().removeClass("open").html(htmlStr);
+			$(this).parent().parent().parent().siblings().val(text);
+		})
+		// $("body").on("click",function(e) {
+		//     var name = $(e.target)[1];
+		//     console.log(name,$(e.target));
+		//     if( name != "p") {
+		// 	    $(".choice-box ul").removeClass("display");
+		// 	    $(".choice-box p").removeClass("open");
+		//     }
+		// })
+	</script>
+</html>
+		

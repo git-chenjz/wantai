@@ -1,0 +1,139 @@
+﻿@model PagedResult<MyProblem>
+@{
+    ViewBag.Title = "问答";
+    int page = ViewBag.page;
+    int msg = ViewBag.msg;
+    int audit = ViewBag.audit;
+}
+
+<div class="navbar-fixed-top row">
+    <div class="col-lg-12">
+        <ol class="breadcrumb">
+            <li>
+                <a href="@Url.Content("~/admin/home/main")">主页</a>
+            </li>
+            <li>
+                <strong>问答</strong>
+            </li>
+        </ol>
+    </div>
+</div>
+
+<div class="animated m-t-lg">
+    <div class="row">
+        <div class="col-lg-12">
+
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>问答</h5>
+                    <div class="ibox-tools">
+                        <a class="collapse-link" href="javascript:void();"><i class="fa fa-chevron-up"></i></a>
+                        <a href="javascript:void();" onclick="javascript:window.location.reload();"><i class="fa fa-refresh"></i></a>
+                    </div>
+                </div>
+                <div class="ibox-content">
+                    <div class="row">
+                        <div class="col-xs-12">
+
+                            <div data-toggle="buttons" class="btn-group">
+                                <label class="btn btn-default @(audit == 10 ? "active" : "")">
+                                    <input id="option1" type="radio" value="10" name="audit" @(audit == 10 ? "checked" : "") />全部
+                                </label>
+                                <label class="btn btn-default @(audit == 0 ? "active" : "")">
+                                    <input id="option2" type="radio" value="0" name="audit" @(audit == 0 ? "checked" : "") />审核通过
+                                </label>
+                                <label class="btn btn-default @(audit == 1 ? "active" : "")">
+                                    <input id="option3" type="radio" value="1" name="audit" @(audit == 1 ? "checked" : "") />审核不通过
+                                </label>
+                                <label class="btn btn-default @(audit == 2 ? "active" : "")">
+                                    <input id="option4" type="radio" value="2" name="audit" @(audit == 2 ? "checked" : "") />未审核
+                                </label>
+                            </div>
+
+                            <div data-toggle="buttons" class="btn-group">
+                                <label class="btn btn-default @(msg == 10 ? "active" : "")">
+                                    <input type="radio" value="10" name="msg" @(msg == 10 ? "checked" : "") />全部
+                                </label>
+                                <label class="btn btn-default @(msg == 0 ? "active" : "")">
+                                    <input type="radio" value="0" name="msg" @(msg == 0 ? "checked" : "") />已回复
+                                </label>
+                                <label class="btn btn-default @(msg == 1 ? "active" : "")">
+                                    <input type="radio" value="1" name="msg" @(msg == 1 ? "checked" : "") />未回复
+                                </label>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table table-striped">
+
+                            <thead>
+                                <tr>
+                                    <th>标题</th>
+                                    <th>创建时间</th>
+                                    <th>审核结果</th>
+                                    <th>回复结果</th>
+                                    <th width="100">管理</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                @foreach (var x in Model.Result)
+                                {
+                                    <tr>
+                                        <td>@x.Title</td>
+                                        <td>@x.CreateTime.ToString("yyyy-MM-dd hh:mm:ss")</td>
+                                        <td>@Html.Raw(x.IsAudit == 0 ? "<span style='color:green'>通过</span>" : (x.IsAudit == 1 ? "<span style='color:red'>未通过</span>" : ""))</td>
+                                        <td>@Html.Raw(x.IsReport == 0 ? "<span style='color:green'>已回复</span>" : "")</td>
+                                        <td>
+                                            <a href="@Url.Action("Edit", new { id = x.ID, page = Model.PageIndex, msg = msg, audit = audit })" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i> 编辑</a>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+
+                            <tfoot>
+                                <tr>
+                                    <td colspan="5">
+                                        <ul class="pagination pull-right">
+                                            <li><a href="@Url.Action("Index", new { page = 1, msg = msg, audit = audit })">第一页</a></li>
+
+                                            @for (var i = Model.PageIndex - 3 >= 1 ? Model.PageIndex - 3 : 1; i < Model.PageIndex; i++)
+                                            {
+                                                <li><a href="@Url.Action("Index", new { page = i, msg = msg, audit = audit })">@i</a></li>
+                                            }
+                                            <li class="active"><span>@Model.PageIndex</span></li>
+                                            @for (var i = Model.PageIndex + 1; i <= Model.TotalPageCount && i <= Model.PageIndex + 3; i++)
+                                            {
+                                                <li><a href="@Url.Action("Index", new { page = i,msg=msg,audit=audit })">@i</a></li>
+                                            }
+                                            @if (Model.PageIndex + 3 < Model.TotalPageCount)
+                                            {
+                                                <li><span>...</span></li>
+                                                <li><a href="@Url.Action("Index", new { page = Model.TotalPageCount, msg = msg, audit = audit })">@Model.TotalPageCount</a></li>
+                                            }
+                                            <li><a href="@Url.Action("Index", new { page = Model.TotalPageCount, msg = msg, audit = audit })">最后一页</a></li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $('input[name=msg]').change(function () {
+        var msg = $('input[name="msg"]:checked').val();
+
+        window.location = '@Url.Action("Index", new { audit=audit})&msg=' + msg;
+    });
+    $('input[name=audit]').change(function () {
+        var audit = $('input[name="audit"]:checked').val();
+
+        window.location = '@Url.Action("Index", new { msg = msg })&audit=' + audit;
+    });
+</script>

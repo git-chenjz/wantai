@@ -1,0 +1,91 @@
+﻿@model IEnumerable<Question>
+@{
+    ViewBag.Title = "有奖调研";
+}
+
+@section style{
+    <link href="~/Content/css/reset.css" rel="stylesheet" />
+    <style>
+        .intgti-main {
+            float: left;
+            width: 100%;
+        }
+
+        .intgti-list {
+            float: left;
+            width: 100%;
+            height: 10.28rem;
+            border-bottom: 1px solid #d3d3d3;
+        }
+
+        .intgti-bac {
+            display: block;
+            width: 91%;
+            height: 6.5rem;
+            margin: 0.4rem auto 0;
+        }
+
+            .intgti-bac a img {
+                display: block;
+                width: 100%;
+                height: 100%;
+            }
+
+        .intgti-long {
+            display: block;
+            width: 91%;
+            height: 2.58rem;
+            margin: 0.4rem auto 0;
+        }
+
+            .intgti-long a p {
+                overflow: hidden;
+                float: left;
+                width: 70%;
+                height: 2.58rem;
+                color: #333;
+                font-size: 0.6rem;
+                line-height: 0.9rem;
+                text-align: left;
+            }
+
+            .intgti-long a span {
+                overflow: hidden;
+                float: right;
+                width: 23%;
+                height: 1.35rem;
+                border: 1px solid #f6931e;
+                margin: 0.3rem 0 0 4%;
+                border-radius: 0.13rem;
+                color: #f6931e;
+                font-size: 0.6rem;
+                line-height: 1.35rem;
+                text-align: center;
+            }
+    </style>
+}
+
+@section scripts{
+    <script src="~/Content/js/flexible.js"></script>
+}
+
+<div class="intgti-main clearfix">
+    @foreach (var x in Model)
+    {
+        <dl class="intgti-list">
+            <dt class="intgti-bac">
+                <a href="" title="">
+                    <img src="@x.ImgPath" alt="" title="">
+                </a>
+            </dt>
+            <dd class="intgti-long">
+                <a href="" title="">
+                    <p>@x.Title</p>
+                </a>
+                <a href="@Url.Action("Detail", new { id = x.ID })" title="">
+                <span>参与调查</span>
+                </a>
+            </dd>
+        </dl>
+    }
+</div>

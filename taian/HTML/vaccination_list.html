@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="initial-scale=0.5, maximum-scale=0.5, minimum-scale=0.5, user-scalable=no">
+	<title>接种地点分布</title>
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/vaccination_list.css">
+	<script src="js/flexible.js" type="text/javascript"></script>
+	<script src="js/jquery-1.11.3.min.js"></script>
+</head>	
+<body>
+	<div class="list-header">
+		<div class="list-top">
+			<p class="list-top-one">
+				<span>全部疫苗</span>
+				<i></i>
+			</p>
+			<ul class="list-fixed-one">
+				<li>乙肝疫苗</li>
+				<li>艾滋疫苗</li>
+				<li>非典疫苗</li>
+				<li>病毒疫苗</li>
+				<li>傻逼疫苗</li>
+				<li>乙肝疫苗</li>
+				<li>艾滋疫苗</li>
+				<li>非典疫苗</li>
+				<li>病毒疫苗</li>
+				<li>傻逼疫苗</li>
+			</ul>
+			<p class="list-top-two">
+				<span>全国</span>
+				<i></i>
+			</p>
+			<ul class="list-fixed-two">
+				<li>福建省</li>
+				<li>浙江省</li>
+				<li>广州省</li>
+				<li>云南省</li>
+				<li>山东省</li>
+			</ul>
+			<p class="list-top-three">
+				<span>城市</span>
+				<i></i>
+			</p>
+			<ul class="list-fixed-three">
+				<li>泉州市</li>
+				<li>厦门市</li>
+				<li>漳州市</li>
+				<li>龙岩市</li>
+				<li>南平市</li>
+				<li>三明市</li>
+			</ul>
+			<p class="list-top-frun">
+				<span>地区</span>
+				<i></i>
+			</p>
+			<ul class="list-fixed-frun">
+				<li>湖里区</li>
+				<li>思明区</li>
+				<li>同安区</li>
+				<li>集美区</li>
+				<li>翔安区</li>
+			</ul>
+		</div>	
+	</div>
+	<!--弹出灰色底层-->
+	<div class="list-ding"></div>
+	<div class="place-main">
+		<h2>鼓楼区知青路接种点</h2>
+		<p class="place-rac">
+			<span>接种项目：</span>
+			<strong>戊肝疫苗、宫颈癌疫苗</strong>
+		</p>
+		<p class="place-long">
+			<span>联系电话：</span>
+			<a href="tel:13770009001">13770009001</a>
+			<em>/</em>
+			<a href="tel:0592-7563634">0592-7563634</a>
+		</p>
+		<p class="place-bing">
+			<span>联系地址：</span>
+			<strong></strong>
+		</p>
+		<a href="" title="" class="place-bottom">查看地图</a>
+		<p class="host">如果你无法简洁的表达你的想法，那只能说明你还不够了解它,如果你无法简洁的表达你的想法，那只能说明你还不够了解它……</p>
+	</div>
+	<div class="place-main">
+		<h2>鼓楼区知青路接种点</h2>
+		<p class="place-rac">
+			<span>接种项目：</span>
+			<strong>戊肝疫苗、宫颈癌疫苗</strong>
+		</p>
+		<p class="place-long">
+			<span>联系电话：</span>
+			<a href="tel:13770009001">13770009001</a>
+			<em>/</em>
+			<a href="tel:0592-7563634">0592-7563634</a>
+		</p>
+		<p class="place-bing">
+			<span>联系地址：</span>
+			<strong></strong>
+		</p>
+		<a href="" title="" class="place-bottom">查看地图</a>
+		<p class="host">如果你无法简洁的表达你的想法，那只能说明你还不够了解它,如果你无法简洁的表达你的想法，那只能说明你还不够了解它……</p>
+	</div>
+</body>
+	<script>
+		$(function(){
+			$(".list-top p").click(function(){
+				$(".list-ding").show();
+			})
+			/*点击疫苗下拉框出现 再次点击 下拉框消失*/
+			$(".list-top-one").click(function(){
+				if($(".list-fixed-one").css("display") == "none") {
+					$(".list-fixed-one").css({
+						"display" : "block"
+					});
+					$(this).children("i").css({
+						"transform": "rotate(180deg)"
+					})
+				}else{
+					$(".list-fixed-one").css({
+						"display" : "none"
+					});
+					$(this).children("i").css({
+						"transform": "rotate(0deg)"
+					})
+				}
+			});
+			/*点击全国下拉框出现 再次点击 下拉框消失*/
+			$(".list-top-two").click(function(){
+				if($(".list-fixed-two").css("display") == "none") {
+					$(".list-fixed-two").css({
+						"display" : "block"
+					});
+					$(this).children("i").css({
+						"transform": "rotate(180deg)"
+					})
+				}else{
+					$(".list-fixed-two").css({
+						"display" : "none"
+					});
+					$(this).children("i").css({
+						"transform": "rotate(0deg)"
+					})
+				}
+			});	
+			/*点击城市下拉框出现 再次点击 下拉框消失*/
+			$(".list-top-three").click(function(){
+				if($(".list-fixed-three").css("display") == "none") {
+					$(".list-fixed-three").css({
+						"display" : "block"
+					});
+					$(this).children("i").css({
+						"transform": "rotate(180deg)"
+					})
+				}else{
+					$(".list-fixed-three").css({
+						"display" : "none"
+					});
+					$(this).children("i").css({
+						"transform": "rotate(0deg)"
+					})
+				}
+			});	
+			/*点击地区下拉框出现 再次点击 下拉框消失*/
+			$(".list-top-frun").click(function(){
+				if($(".list-fixed-frun").css("display") == "none") {
+					$(".list-fixed-frun").css({
+						"display" : "block"
+					});
+					$(this).children("i").css({
+						"transform": "rotate(180deg)"
+					})
+				}else{
+					$(".list-fixed-frun").css({
+						"display" : "none"
+					});
+					$(this).children("i").css({
+						"transform": "rotate(0deg)"
+					})
+				}
+			});	
+			// 鼠标点击li，所点击的li值出现在span部分,完了之后整个下拉列表隐藏
+			$(".list-fixed-one li").click(function() {
+				$(".list-top-one span").text($(this).text());
+				$(".list-fixed-one").hide();
+				$(".list-ding").hide();
+				$(".list-top-one i").css({
+					"transform": "rotate(0deg)"
+				})
+			})
+			$(".list-fixed-two li").click(function() {
+				$(".list-top-two span").text($(this).text());
+				$(".list-fixed-two").hide();
+				$(".list-ding").hide();
+				$(".list-top-two i").css({
+					"transform": "rotate(0deg)"
+				})
+			})
+			$(".list-fixed-three li").click(function() {
+				$(".list-top-three span").text($(this).text());
+				$(".list-fixed-three").hide();
+				$(".list-ding").hide();
+				$(".list-top-three i").css({
+					"transform": "rotate(0deg)"
+				})
+			})
+			$(".list-fixed-frun li").click(function() {
+				$(".list-top-frun span").text($(this).text());
+				$(".list-fixed-frun").hide();
+				$(".list-ding").hide();
+				$(".list-top-frun i").css({
+					"transform": "rotate(0deg)"
+				})
+			})	
+		})	
+	</script>
+</html>

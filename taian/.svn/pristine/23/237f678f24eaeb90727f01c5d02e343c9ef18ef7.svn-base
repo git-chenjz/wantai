@@ -1,0 +1,162 @@
+﻿@{
+    ViewBag.Title = "万泰后台管理-角色";
+}
+@section style{}
+<div class="navbar-fixed-top row">
+    <div class="col-lg-12">
+        <ol class="breadcrumb">
+            <li>
+                <a href="@Url.Content("~/admin/home/main")">主页</a>
+            </li>
+            <li>
+                <a href="@Url.Content("~/admin/purview/roleinfo")">角色</a>
+            </li>
+            <li>
+                <strong>新增</strong>
+            </li>
+        </ol>
+    </div>
+</div>
+<form class="form-horizontal m-t" method="post" id="role_frm" action="@Url.Content("~/admin/purview/rolesave")">
+    <div class="animated fadeInRight m-t-lg">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>新增</h5>
+                        <div class="ibox-tools">
+                            <a class="collapse-link" href="javascript:void();"><i class="fa fa-chevron-up"></i></a>
+                            <a href="javascript:void();" onclick="javacript:window.location.reload();"><i class="fa fa-refresh"></i></a>
+                        </div>
+                    </div>
+                    <div class="ibox-content">
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">名称：</label>
+                            <div class="col-sm-8">
+                                <input name="rolename" class="form-control" type="text" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">备注：</label>
+                            <div class="col-sm-8">
+                                <textarea name="remark" class="form-control"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                @{var features = ViewBag.Features as IEnumerable<Features>;
+                  var operates = ViewBag.Operates as IEnumerable<Operate>;
+                  var fields = ViewBag.Fields as IEnumerable<PurviewField>;
+                  foreach (var feature in features) {
+                    <div class="ibox float-e-margins role_actions">
+                        <div class="ibox-title">
+                            <label class="col-sm-10" style="padding-left: 0px;">
+                                <input name="role_feature" value="@feature.ID,@feature.Url,@feature.Type" type="checkbox" />
+                                @feature.Name
+                            </label>
+                            <div class="ibox-tools">
+                                <a class="collapse-link" href="javascript:void();"><i class="fa fa-chevron-up"></i></a>
+                            </div>
+                        </div>
+                        <div class="ibox-content">
+                            @foreach (var child in feature.Childrens) {
+                                var f_fields = fields.Where(c => c.Type == 0 && c.ObjID == child.ID);
+                                <div class="form-group">
+                                    <label class="col-sm-10">
+                                        <input name="role_feature" value="@child.ID,@child.Url,@child.Type" type="checkbox" />
+                                        @child.Name @if (f_fields.Count() > 0) {<span>(
+                                                        @foreach (var f_f in f_fields) {
+                                                            <input name="role_field" value="0,@child.ID,@f_f.Code" type="checkbox" /> @f_f.Name
+                                                        })</span>
+                                                    }
+                                    </label>
+                                </div>
+                                <div class="btn-group">
+                                    @{  
+                                                    var fos = operates.Where(c => c.FeaturesID == child.ID);
+                                                    foreach (var fo in fos) {
+                                                        var fo_fields = fields.Where(c => c.Type == 1 && c.ObjID == fo.ID);
+                                        <div class="btn btn-default">
+                                            <label>
+                                                <input name="role_actions" value="@fo.ID,@fo.Url,3" type="checkbox" />
+                                                @fo.Name @if (fo_fields.Count() > 0) {<span>(
+                                                        @foreach (var f_f in fo_fields) {
+                                                            <input name="role_field" value="1,@fo.ID,@f_f.Code" type="checkbox" /> @f_f.Name
+                                                        })</span>
+                                                         }
+                                            </label>
+                                        </div>
+                                                    }
+                                    }
+                                </div>
+                            }
+                        </div>
+                    </div>
+                  }
+                }
+            </div>
+            <div class="col-lg-12">
+                <div class="form-group">
+                    <div class="col-sm-8 col-sm-offset-3">
+                        <button class="btn btn-primary" type="submit"><i class="fa fa-save"></i>&nbsp;保存</button>
+                        <button class="btn btn-primary" type="button" onclick="javacript:history.go(-1);"><i class="fa fa-circle-o-notch"></i>&nbsp;取消</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+@section scripts{
+    <script type="text/javascript">
+        $(function () {
+            $('.role_actions').each(function () {
+                var f0 = $('.ibox-title .col-sm-10 input', this);
+                var f1 = $('.ibox-content .form-group .col-sm-10 input[name=role_feature]', this);
+                var f2 = $('.ibox-content .btn-group .btn-default input[name=role_actions]', this);
+                f0.click(function () {
+                    f1.prop('checked', this.checked);
+                    f2.prop('checked', this.checked);
+                });
+                f1.each(function () {
+                    var f0_1 = $(this);
+                    f0_1.click(function () {
+                        $(this).parents('.form-group').next('.btn-group').find('.btn-default input[name=role_actions]').prop('checked', this.checked);
+                        f0.prop('checked', $(f1).is(':checked'));
+                    });
+                    var f0_2 = f0_1.parents('.form-group').next('.btn-group').find('.btn-default input[name=role_actions]');
+                    f0_2.each(function () {
+                        $(this).click(function () {
+                            f0_1.prop('checked', f0_1.parents('.form-group').next('.btn-group').find('.btn-default input[name=role_actions]:checked').length == 0 ? false : true);
+                            f0.prop('checked', $(f2).is(':checked'));
+                        });
+                    });
+                });
+            });
+
+            $('#role_frm').bootstrapValidator({
+                message: '表单数据验证无效',
+                feedbackIcons: {
+                    valid: 'glyphicon glyphicon-ok',
+                    invalid: 'glyphicon glyphicon-remove',
+                    validating: 'glyphicon glyphicon-refresh'
+                },
+                fields: {
+                    rolename: {
+                        validators: {
+                            notEmpty: { message: '请填写名称' },
+                            stringLength: { max: 25, message: '名称的长度在1-25个字' }
+                        }
+                    }
+                },
+                submitHandler: function (validator, form, submitButton) {
+                    $.post(form.attr('action'), form.serialize(), function (result) {
+                        top.bootbox.alert(result.msg, function () {
+                            if (result.success)
+                                location.href = '@Url.Content("~/admin/purview/roleinfo")';
+                        });
+                    }, 'json');
+                }
+            });
+        });
+    </script>
+}

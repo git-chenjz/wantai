@@ -1,0 +1,131 @@
+﻿@{
+    ViewBag.Title = "企业视频";
+}
+@model IEnumerable<Video>
+
+@section style{
+    <link href="~/Content/css/reset.css" rel="stylesheet" />
+    <link href="~/Content/css/content.css" rel="stylesheet" />
+    <style>
+        html, body {
+            padding-top: 0.38rem;
+            background: #efefef;
+        }
+
+        .corporate-video {
+            padding: 0 0.5rem;
+            background: white;
+        }
+
+            .corporate-video li {
+                padding-top: 0.17rem;
+                border-bottom: 1px solid #ddd;
+            }
+
+                .corporate-video li dl {
+                    position: relative;
+                }
+
+                .corporate-video li dt {
+                    position: relative;
+                }
+
+                    .corporate-video li dt img {
+                        display: block;
+                        width: 100%;
+                        height: 7.71rem;
+                    }
+
+                .corporate-video li .cover {
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: rgba(0,0,0,.6);
+                }
+
+                    .corporate-video li .cover span {
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        width: 2.92rem;
+                        height: 2.92rem;
+                        margin-top: -1.46rem;
+                        margin-left: -1.46rem;
+                        background-image: url(images/demo.png);
+                        -webkit-background-size: 100% 100%;
+                        background-size: 100% 100%;
+                    }
+
+                .corporate-video li dd .time {
+                    height: 1.33rem;
+                    color: #333;
+                    font-size: 0.5rem;
+                    line-height: 1.33rem;
+                }
+
+                    .corporate-video li dd .time span {
+                        position: relative;
+                        display: inline-block;
+                        margin-left: 0.5rem;
+                        padding-left: 0.93rem;
+                    }
+
+                        .corporate-video li dd .time span:before {
+                            position: absolute;
+                            bottom: 50%;
+                            left: 0;
+                            margin-bottom: -0.2rem;
+                            width: 0.76rem;
+                            height: 0.4rem;
+                            content: "\200B";
+                            background: url(images/link11.png);
+                            background-size: 100% 100%;
+                        }
+
+                .corporate-video li dd .text {
+                    font-size: 0.58rem;
+                    line-height: 1rem;
+                    margin-top: -0.25rem;
+                }
+
+                .corporate-video li dd .link {
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    width: 100%;
+                    height: 100%;
+                }
+    </style>
+}
+
+<ul class="corporate-video">
+    <!-- 链接统一写在类名为link的a标签中，统一循环li -->
+    @foreach (var video in Model)
+    {
+        if (video.IsTop == 1)
+        {
+            <li>
+                <dl>
+                    <dt>
+                        <img src="" alt="" title="">
+                        <div class="cover"><span></span></div>
+                    </dt>
+                    <dd>
+                        <p class="time">@video.CreateTime.ToString("yyyy-MM-dd") <span>@video.ViewNum</span></p>
+                        <p class="text">@video.Content</p>
+                        <a href="" title="" class="link">
+                            <iframe height="80%" width="100%" src="@video.VideoPath" frameborder=0 allowfullscreen></iframe>
+                        </a>
+                    </dd>
+                </dl>
+            </li>
+        }
+    }
+</ul>
+
+@section scripts{
+    <script src="~/Content/js/flexible.js"></script>
+}
+

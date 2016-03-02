@@ -1,0 +1,148 @@
+﻿@{
+    ViewBag.Title = "万泰";
+}
+
+<form class="form-horizontal m-t" method="post" action="">
+    <b>Customer Number: </b><span data-bind="text: CustomerID"></span>
+    <div class="form-group" @* data-bind="css: { 'has-feedback has-error': !FirstName.isValid() }"*@>
+        <label class="col-sm-3 control-label">First Name：</label>
+        <div class="col-sm-8">
+            <input type="text" class="form-control" data-bind="value: FirstName" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-3 control-label">Last Name：</label>
+        <div class="col-sm-8">
+            <input type="text" class="form-control" data-bind="value: LastName" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-3 control-label">Age：</label>
+        <div class="col-sm-8">
+            <input type="text" class="form-control" data-bind="value: Age" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-3 control-label">Sex：</label>
+        <div class="col-sm-8">
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" data-bind="checked: IsMale" />Male
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-3 control-label">Country：</label>
+        <div class="col-sm-8">
+            <select class="form-control" data-bind="options: CountryOptions, optionsValue: 'CountryID',optionsText: 'Name', value: CountryID, optionsCaption: '-- Country --'"></select>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-8 col-sm-offset-3">
+            <button class="btn btn-primary" type="submit" data-bind="click: KnockoutDemoNamespace.addCustomer"><i class="fa fa-save"></i>&nbsp;Add Customer</button>
+        </div>
+    </div>
+    <div id="message"></div>
+</form>
+
+@section scripts{
+    @Scripts.Render("~/bundles/knockout")
+    <script type="text/javascript">
+        // Initialized the namespace
+        var KnockoutDemoNamespace = {};
+
+        // View model declaration
+        KnockoutDemoNamespace.initViewModel = function (customer, countries) {
+            var customerViewModel = ko.validatedObservable({
+                CustomerID: ko.observable(customer ? customer.CustomerID : ''),
+                FirstName: ko.observable(customer ? customer.FirstName : '').extend({ required: true }),
+                LastName: ko.observable(customer ? customer.LastName : '').extend({ required: true }),
+                IsMale: ko.observable(customer ? customer.IsMale : ''),
+                Age: ko.observable(customer ? customer.Age : '').extend({ required: true }).extend({ number: true }),
+                CountryID: ko.observable(customer ? customer.CountryID : ''),//.extend({ required: true }),
+                CountryOptions: ko.observableArray(countries)
+            });
+
+            var validationOptions = {
+                closestClass: 'form-group',
+                highlightClass: 'has-success',
+                validClass: 'has-error',
+                errorMessageClass: 'help-block'
+            };
+            ko.validation.init(validationOptions);
+
+            return customerViewModel;
+        }
+
+        // Bind the customer
+        KnockoutDemoNamespace.bindData = function (customer) {
+            // get the country list
+            //KnockoutDemoNamespace.getCountries();
+
+            // Create the view model
+            KnockoutDemoNamespace.viewModel = KnockoutDemoNamespace.initViewModel(customer, KnockoutDemoNamespace.countries);
+            ko.applyBindings(this.viewModel);
+        }
+
+        KnockoutDemoNamespace.getCountries = function () {
+            $.ajax({
+                url: "/Country/",
+                type: 'post',
+                //contentType: 'application/json',
+                cache: false,
+                async: false,
+                success: function (result) {
+                    KnockoutDemoNamespace.countries = result;
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                    var errorMessage = '';
+                    $('#message').html(jqXHR.responseText);
+                }
+            });
+        }
+
+        KnockoutDemoNamespace.getCustomer = function (customerID) {
+            $.ajax({
+                url: "/Home/Get/",
+                type: 'post',
+                data: { customerID: customerID },
+                //contentType: 'application/json',
+                cache: false,
+                success: function (result) {
+                    KnockoutDemoNamespace.bindData(result);
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                    var errorMessage = '';
+                    $('#message').html(jqXHR.responseText);
+                }
+            });
+        }
+
+        KnockoutDemoNamespace.addCustomer = function () {
+            var errors = ko.validation.group(KnockoutDemoNamespace.viewModel);
+            if (KnockoutDemoNamespace.viewModel.isValid()) {
+                $.ajax({
+                    url: "/Home/Add/",
+                    type: 'post',
+                    data: ko.toJSON(this),
+                    contentType: 'application/json',
+                    success: function (result) {
+                        $('#message').html(result);
+                    }
+                });
+            }
+            else {
+                errors.showAllMessages();
+            }
+        }
+
+
+        $(document).ready(function () {
+            //KnockoutDemoNamespace.getCustomer(1);
+
+            KnockoutDemoNamespace.bindData();
+        });
+
+    </script>
+}

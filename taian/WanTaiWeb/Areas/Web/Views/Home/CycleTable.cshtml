@@ -1,0 +1,84 @@
+﻿@{
+    ViewBag.Title = "疫苗接种周期表";
+}
+
+@model IEnumerable<VaccineType>
+
+@section style{
+    <link href="~/Content/css/reset.css" rel="stylesheet" />
+    <style>
+        html, body {
+            padding: 0;
+            margin: 0;
+            background-color: #efefef;
+        }
+
+        .vacy-main {
+            float: left;
+            width: 97%;
+            padding-top: 0.5rem;
+        }
+
+        .vacy-content {
+            float: left;
+            width: 46%;
+            height: 8.38rem;
+            border: 1px solid #d4d8d9;
+            margin: 0 0 0.5rem 3.3%;
+            border-radius: 0.25rem;
+            background-color: #fff;
+        }
+
+            .vacy-content dt {
+                float: left;
+                width: 100%;
+                height: 6.58rem;
+                border-bottom: 1px solid #d4d8d9;
+                border-radius: 0.25rem 0.25rem 0 0;
+            }
+
+                .vacy-content dt a img {
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 0.25rem 0.25rem 0 0;
+                }
+
+            .vacy-content dd {
+                overflow: hidden;
+                float: left;
+                width: 96%;
+                height: 0.87rem;
+                margin: 0.4rem 0 0 2%;
+                line-height: 0.82rem;
+                text-align: center;
+            }
+
+                .vacy-content dd a {
+                    color: #f6931e;
+                    font-size: 0.8rem;
+                }
+    </style>
+}
+
+<div class="vacy-main">
+    @foreach (var item in Model)
+    {
+        <dl class="vacy-content">
+            <dt>
+                <a href="" title="">
+                    <img src="@item.ImgUrl" alt="" title="">
+                </a>
+            </dt>
+            <dd>
+                <a href="/web/home/cycleTableDetail/@item.Id" title="">@item.Name</a>
+            </dd>
+        </dl>
+    }
+</div>
+
+
+@section scripts{
+    <script src="~/Content/js/flexible.js"></script>
+}
+

@@ -1,0 +1,178 @@
+2015-10-23 16:22:42,487 [6] INFO  SqlResult - 已于 2015/10/23 16:22:42 +08:00
+ 打开了连接
+2015-10-23 16:22:43,297 [6] INFO  SqlResult - SELECT
+`GroupBy1`.`A1` AS `C1`
+FROM (SELECT
+COUNT(1) AS `A1`
+FROM `__MigrationHistory` AS `Extent1`
+ WHERE `Extent1`.`ContextKey` = @p__linq__0) AS `GroupBy1`
+2015-10-23 16:22:43,297 [6] INFO  SqlResult - 
+
+2015-10-23 16:22:43,299 [6] INFO  SqlResult - -- p__linq__0: 'DataAccess.Context.MySqlContext' (Type = String, Size = 31)
+
+2015-10-23 16:22:43,299 [6] INFO  SqlResult - -- 正在 2015/10/23 16:22:43 +08:00
+ 执行
+2015-10-23 16:22:43,530 [6] INFO  SqlResult - -- 已在 229 毫秒内失败，错误为: Table 'trip.__MigrationHistory' doesn't exist
+
+2015-10-23 16:22:43,530 [6] INFO  SqlResult - 
+
+2015-10-23 16:22:43,671 [6] INFO  SqlResult - 已于 2015/10/23 16:22:43 +08:00
+ 关闭了连接
+2015-10-23 16:22:43,718 [6] INFO  SqlResult - 已于 2015/10/23 16:22:43 +08:00
+ 打开了连接
+2015-10-23 16:22:43,719 [6] INFO  SqlResult - SELECT
+`GroupBy1`.`A1` AS `C1`
+FROM (SELECT
+COUNT(1) AS `A1`
+FROM `__MigrationHistory` AS `Extent1`) AS `GroupBy1`
+2015-10-23 16:22:43,720 [6] INFO  SqlResult - 
+
+2015-10-23 16:22:43,720 [6] INFO  SqlResult - -- 正在 2015/10/23 16:22:43 +08:00
+ 执行
+2015-10-23 16:22:43,917 [6] INFO  SqlResult - -- 已在 197 毫秒内失败，错误为: Table 'trip.__MigrationHistory' doesn't exist
+
+2015-10-23 16:22:43,918 [6] INFO  SqlResult - 
+
+2015-10-23 16:22:44,052 [6] INFO  SqlResult - 已于 2015/10/23 16:22:44 +08:00
+ 关闭了连接
+2015-10-23 16:22:44,680 [6] INFO  SqlResult - 已于 2015/10/23 16:22:44 +08:00
+ 打开了连接
+2015-10-23 16:22:44,718 [6] INFO  SqlResult - SELECT
+`Extent1`.`ID`, 
+`Extent1`.`Title`, 
+`Extent1`.`Url`, 
+`Extent1`.`Image`, 
+`Extent1`.`Desc`, 
+`Extent1`.`AddTime`, 
+`Extent1`.`update_time`, 
+`Extent1`.`Status`, 
+`Extent1`.`Class`, 
+`Extent1`.`Width`, 
+`Extent1`.`Height`, 
+`Extent1`.`Sort`, 
+`Extent1`.`jump_mode`, 
+`Extent1`.`Gid`
+FROM `eb_ad` AS `Extent1`
+ ORDER BY 
+`Extent1`.`ID` DESC LIMIT 20
+2015-10-23 16:22:44,718 [6] INFO  SqlResult - 
+
+2015-10-23 16:22:44,718 [6] INFO  SqlResult - -- 正在 2015/10/23 16:22:44 +08:00
+ 执行
+2015-10-23 16:22:44,730 [6] INFO  SqlResult - -- 已在 11 毫秒内完成，结果为: EFMySqlDataReader
+
+2015-10-23 16:22:44,730 [6] INFO  SqlResult - 
+
+2015-10-23 16:22:44,791 [6] INFO  SqlResult - 已于 2015/10/23 16:22:44 +08:00
+ 关闭了连接
+2015-10-23 16:22:44,794 [6] INFO  SqlResult - 已于 2015/10/23 16:22:44 +08:00
+ 打开了连接
+2015-10-23 16:22:44,798 [6] INFO  SqlResult - SELECT
+`GroupBy1`.`A1` AS `C1`
+FROM (SELECT
+COUNT(1) AS `A1`
+FROM `eb_ad` AS `Extent1`) AS `GroupBy1`
+2015-10-23 16:22:44,798 [6] INFO  SqlResult - 
+
+2015-10-23 16:22:44,798 [6] INFO  SqlResult - -- 正在 2015/10/23 16:22:44 +08:00
+ 执行
+2015-10-23 16:22:44,800 [6] INFO  SqlResult - -- 已在 1 毫秒内完成，结果为: EFMySqlDataReader
+
+2015-10-23 16:22:44,800 [6] INFO  SqlResult - 
+
+2015-10-23 16:22:44,803 [6] INFO  SqlResult - 已于 2015/10/23 16:22:44 +08:00
+ 关闭了连接
+2015-10-23 16:23:15,720 [11] INFO  SqlResult - 已于 2015/10/23 16:23:15 +08:00
+ 打开了连接
+2015-10-23 16:23:15,722 [11] INFO  SqlResult - SELECT
+`Extent1`.`ID`, 
+`Extent1`.`Title`, 
+`Extent1`.`Url`, 
+`Extent1`.`Image`, 
+`Extent1`.`Desc`, 
+`Extent1`.`AddTime`, 
+`Extent1`.`update_time`, 
+`Extent1`.`Status`, 
+`Extent1`.`Class`, 
+`Extent1`.`Width`, 
+`Extent1`.`Height`, 
+`Extent1`.`Sort`, 
+`Extent1`.`jump_mode`, 
+`Extent1`.`Gid`
+FROM `eb_ad` AS `Extent1`
+ ORDER BY 
+`Extent1`.`ID` DESC LIMIT 20
+2015-10-23 16:23:15,722 [11] INFO  SqlResult - 
+
+2015-10-23 16:23:15,722 [11] INFO  SqlResult - -- 正在 2015/10/23 16:23:15 +08:00
+ 执行
+2015-10-23 16:23:15,726 [11] INFO  SqlResult - -- 已在 4 毫秒内完成，结果为: EFMySqlDataReader
+
+2015-10-23 16:23:15,726 [11] INFO  SqlResult - 
+
+2015-10-23 16:23:15,728 [11] INFO  SqlResult - 已于 2015/10/23 16:23:15 +08:00
+ 关闭了连接
+2015-10-23 16:23:15,730 [11] INFO  SqlResult - 已于 2015/10/23 16:23:15 +08:00
+ 打开了连接
+2015-10-23 16:23:15,730 [11] INFO  SqlResult - SELECT
+`GroupBy1`.`A1` AS `C1`
+FROM (SELECT
+COUNT(1) AS `A1`
+FROM `eb_ad` AS `Extent1`) AS `GroupBy1`
+2015-10-23 16:23:15,731 [11] INFO  SqlResult - 
+
+2015-10-23 16:23:15,731 [11] INFO  SqlResult - -- 正在 2015/10/23 16:23:15 +08:00
+ 执行
+2015-10-23 16:23:15,732 [11] INFO  SqlResult - -- 已在 1 毫秒内完成，结果为: EFMySqlDataReader
+
+2015-10-23 16:23:15,732 [11] INFO  SqlResult - 
+
+2015-10-23 16:23:15,733 [11] INFO  SqlResult - 已于 2015/10/23 16:23:15 +08:00
+ 关闭了连接
+2015-10-23 16:23:18,572 [11] INFO  SqlResult - 已于 2015/10/23 16:23:18 +08:00
+ 打开了连接
+2015-10-23 16:23:18,573 [11] INFO  SqlResult - SELECT
+`Extent1`.`ID`, 
+`Extent1`.`Title`, 
+`Extent1`.`Url`, 
+`Extent1`.`Image`, 
+`Extent1`.`Desc`, 
+`Extent1`.`AddTime`, 
+`Extent1`.`update_time`, 
+`Extent1`.`Status`, 
+`Extent1`.`Class`, 
+`Extent1`.`Width`, 
+`Extent1`.`Height`, 
+`Extent1`.`Sort`, 
+`Extent1`.`jump_mode`, 
+`Extent1`.`Gid`
+FROM `eb_ad` AS `Extent1`
+ ORDER BY 
+`Extent1`.`ID` DESC LIMIT 20
+2015-10-23 16:23:18,573 [11] INFO  SqlResult - 
+
+2015-10-23 16:23:18,573 [11] INFO  SqlResult - -- 正在 2015/10/23 16:23:18 +08:00
+ 执行
+2015-10-23 16:23:18,575 [11] INFO  SqlResult - -- 已在 2 毫秒内完成，结果为: EFMySqlDataReader
+
+2015-10-23 16:23:18,575 [11] INFO  SqlResult - 
+
+2015-10-23 16:23:18,575 [11] INFO  SqlResult - 已于 2015/10/23 16:23:18 +08:00
+ 关闭了连接
+2015-10-23 16:23:18,578 [11] INFO  SqlResult - 已于 2015/10/23 16:23:18 +08:00
+ 打开了连接
+2015-10-23 16:23:18,580 [11] INFO  SqlResult - SELECT
+`GroupBy1`.`A1` AS `C1`
+FROM (SELECT
+COUNT(1) AS `A1`
+FROM `eb_ad` AS `Extent1`) AS `GroupBy1`
+2015-10-23 16:23:18,580 [11] INFO  SqlResult - 
+
+2015-10-23 16:23:18,580 [11] INFO  SqlResult - -- 正在 2015/10/23 16:23:18 +08:00
+ 执行
+2015-10-23 16:23:18,581 [11] INFO  SqlResult - -- 已在 1 毫秒内完成，结果为: EFMySqlDataReader
+
+2015-10-23 16:23:18,581 [11] INFO  SqlResult - 
+
+2015-10-23 16:23:18,581 [11] INFO  SqlResult - 已于 2015/10/23 16:23:18 +08:00
+ 关闭了连接

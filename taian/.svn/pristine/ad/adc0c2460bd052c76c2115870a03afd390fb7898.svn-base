@@ -1,0 +1,236 @@
+﻿@charset "utf-8";
+/* 公共样式 */
+.bottom {
+	float: left;
+	width: 100%;
+	height: 3.15rem;
+	background-color: #dadce0;
+	text-align: center;
+}
+.bottom-rac {
+	display: block;
+	padding-top: 0.85rem;
+	color: #333;
+	font-size: 0.5rem;
+}
+.bottom-text {
+	display: block;
+	margin-top: 0.3rem;
+}
+.bottom-text span { 
+	color: #333;
+	font-size: 0.5rem;
+	padding-left: 3%;
+}
+.unb-main {
+	float: left;
+	width: 94%;
+	height: 11.55rem;
+	margin-left: 3%;
+}
+.un-deable {
+	position: absolute;
+	bottom: 0;
+	left: 0
+}
+.unb-main span{
+	overflow: hidden;
+	float: left;
+	width: 97%;
+	height: 0.9rem;
+	padding-left: 3%;
+	margin: 0.88rem 0 2.13rem 0;
+	color: #333;
+	font-size: 0.7rem;
+	line-height: 0.9rem;
+}
+.unb-content {
+	float: left;
+	width: 100%;
+	height: 7.2rem;
+}
+.unb-content dt {
+	float: left;
+	width: 21%;
+	height: 3.1rem;
+	margin: 0 39% 0.6rem 39%;
+	border: 0.1rem solid #fff;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	border-radius: 50%;
+}
+.unb-content dt img {
+	display: block;
+	width: 100%;
+	height: 3.1rem;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	border-radius: 50%;
+}
+.unb-content dd {
+	overflow: hidden;
+	float: left;
+	width: 50%;
+	height: 0.72rem;
+	margin: 0 0 1.5rem 25%;
+	font-size: 0.6rem;
+	text-align: center;
+	line-height: 0.7rem;
+}
+.unb-main a strong {
+	float: left;
+	width: 100%;
+	height: 1.95rem;
+	background-color: #f6931e;
+	-webkit-border-radius: 0.13rem;
+	-moz-border-radius: 0.13rem;
+	border-radius: 0.13rem;
+	color: #fff;
+	font-size: 0.75rem;
+	text-align: center;
+	line-height: 1.95rem;
+}
+.unb-input {
+	float: left;
+	width: 96%;
+	height: 2.05rem;
+	margin-bottom: 1rem;
+	padding-left: 3%;
+	color: #333;
+	font-size: 0.65rem;
+	line-height: 2.05rem;
+	border: 1px solid #d3d3d3;
+	background-color: #fff;
+}
+.unb-main p {
+	overflow: hidden;
+	float: left;
+	width: 90%;
+	height: 1rem;
+	margin: 0 0 1rem 5%;
+	color: #333;
+	font-size: 0.65rem;
+	line-height: 1rem;
+	text-align: center;
+	white-space: nowrap; 
+	text-overflow: ellipsis;
+}
+
+.reg-main {
+	float: left;
+	width: 100%;
+	padding-top: 0.88rem;
+}
+.reg-list,
+.reg-host,
+.reg-link {
+	float: left;
+	width: 100%;
+	height: 2.25rem;
+	background-color: #fff;
+}
+.reg-list i {
+	float: left;
+	width: 5%;
+	height: 0.5rem;
+	margin: 0.9rem 0 0 6%;
+	background-image: url(/images/demo06.png);
+	-webkit-background-size: 100% 100%;
+	background-size: 100% 100%;
+}
+.reg-host i {
+	background-image: url(/images/demo07.png);
+}
+.reg-link i {
+	background-image: url(/images/demo07.png);
+}
+.reg-list,
+.reg-host {
+	border-bottom: 1px solid #c0c0c0;
+}
+.reg-host i,
+.reg-link i {
+	float: left;
+	width: 4%;
+	height: 0.82rem;
+	margin: 0.55rem 0 0 6%;
+	-webkit-background-size: 100% 100%;
+	background-size: 100% 100%;
+}
+.reg-list input, 
+.reg-host input, 
+.reg-link input {
+	float: left;
+	width: 82%;
+	height: 2.25rem;
+	margin-left: 3%;
+	padding-left: 3%; 
+	color: #333;
+	font-size: 0.7rem;
+	line-height: 2.25rem;
+}
+
+.reg-bottom {
+	float: left;
+	width: 94%;
+	height: 1.95rem;
+	margin: 1.5rem 0 0 3%;
+	background-color: #f6931e;
+	-webkit-border-radius: 0.13rem;
+	-moz-border-radius: 0.13rem;
+	border-radius: 0.13rem;
+	color: #fff;
+	font-size: 0.75rem;
+	text-align: center;
+	line-height: 1.95rem;
+}
+.reg-main form a .reg-rost {
+	margin-top: 1rem;
+	color: #666;
+	background-color: #fff;
+	border: 1px solid #666;
+}
+
+.land-host {
+	float: left;
+	width: 94%;
+	height: 0.65rem;
+	color: #999;
+	line-height: 0.65rem;
+	text-align: right;
+	font-size: 0.55rem;
+	margin: 0.5rem 0 0 3%;
+}
+
+.ed-left {
+	overflow: hidden;
+	float: left;
+	color: #999;
+	font-size: 0.6rem;
+	text-align: left;
+	line-height: 2rem;
+	padding-bottom: 8rem;
+	border-left: 2px solid #dadce0;
+}
+
+.ed-main {
+	float: left;
+	width: 94%;
+	margin: 0.75rem 0 0 3%;
+}
+.ed-content {
+	float: left;
+	width: 100%;
+	margin-bottom: 0.8rem;
+}
+.ed-wrap {
+	overflow: hidden;
+	float: left;
+	width: 19%;
+	height: 2rem;
+	margin-left: -20%;
+	color: #999;
+	font-size: 0.6rem;
+	text-align: center;
+	line-height: 2rem;
+}

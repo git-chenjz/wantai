@@ -1,0 +1,35 @@
+﻿@model MyProblem
+@{
+    ViewBag.Title = "问答详情";
+    Layout = "~/Areas/Web/Views/Shared/_LayoutWeUI.cshtml";
+}
+
+<div class="page slideIn article">
+    <div class="hd" style="padding:2em 0;">
+        <h1 class="page_title" style=" color: #de7c23;text-align: center;font-size: 24px;font-weight: 400;margin: 0 15%;">
+            @Model.Title
+        </h1>
+        <p style="text-align:right;">
+            <small style="margin-right:15px;">@Model.CreateTime.ToString("yyyy-MM-dd hh:mm")</small>
+        </p>
+    </div>
+    <div class="bd">
+        <article class="weui_article" style="overflow:hidden;">
+            <h1>提问</h1>
+            <section>
+                <p>@Model.Title</p>
+                <p>@Model.Content</p>
+            </section>
+            <h1>潘博士回答</h1>
+            <section>
+                <p>@Model.Reports</p>
+            </section>
+            
+            @if(Model.WechatUserID==UserCache.WechatUser.ID)
+            { 
+            <a href="@Url.Action("DeleteProblem", new { id=Model.ID})" onclick="return confirm('确认删除吗');" class="weui_btn weui_btn_warn" style="margin-top:40px;">删除</a>
+            }
+        </article>
+
+    </div>
+</div>

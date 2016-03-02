@@ -1,0 +1,99 @@
+﻿@model DataAccess.Domain.Page
+@{
+    ViewBag.Title = "关于我们";
+}
+
+<div class="navbar-fixed-top row">
+    <div class="col-lg-12">
+        <ol class="breadcrumb">
+            <li>
+                <a href="@Url.Content("~/admin/home/main")">主页</a>
+            </li>
+            <li>
+                <strong>关于我们</strong>
+            </li>
+        </ol>
+    </div>
+</div>
+
+<div class="m-t-lg">
+    <div class="row">
+        <div class="col-lg-12">
+
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>关于我们</h5>
+                    <div class="ibox-tools">
+                        <a class="collapse-link" href="javascript:void();"><i class="fa fa-chevron-up"></i></a>
+                        <a href="javascript:void();" onclick="javascript:window.location.reload();"><i class="fa fa-refresh"></i></a>
+                    </div>
+                </div>
+                <div class="ibox-content">
+                    <form class="form-horizontal m-t" id="adform" method="post" action="@Url.Action("Save")">
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">标题：</label>
+                            <div class="col-sm-8">
+                                <input class="form-control" name="Title" value="@Model.Title" type="text" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">内容：</label>
+                            <div class="col-sm-8">
+                                <textarea name="Content" id="des" rows="10">@Model.Content</textarea>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-8 col-sm-offset-3">
+                                <button class="btn btn-primary" type="submit"><i class="fa fa-save"></i>&nbsp;保存</button>
+                                <button class="btn btn-primary" type="button" onclick="javascript:history.go(-1);"><i class="fa fa-circle-o-notch"></i>&nbsp;取消</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+    <script src="~/Scripts/ueditor/ueditor.config.js"></script>
+    <script src="~/Scripts/ueditor/ueditor.all.min.js"></script>
+    <script type="text/javascript">
+        var eidtor;
+        $(function () {
+            (function initRichTextEditor() {
+                eidtor = UE.getEditor('des');
+                eidtor.addListener('contentChange', function () {
+                    $('#contentError').hide();
+                });
+            })();
+
+            $('#adform').bootstrapValidator({
+                message: '表单数据验证无效',
+                feedbackIcons: {
+                    valid: 'glyphicon glyphicon-ok',
+                    invalid: 'glyphicon glyphicon-remove',
+                    validating: 'glyphicon glyphicon-refresh'
+                },
+                fields: {
+                    Title: {
+                        validators: {
+                            notEmpty: { message: '请填写标题' },
+                            stringLength: { max: 50, message: '名称的长度在1-50个字' }
+                        }
+                    }
+                },
+                submitHandler: function (validator, form, submitButton) {
+                    //var content = eidtor.getContent();
+                    $.post(form.attr('action'), form.serialize(), function (result) {
+                        top.bootbox.alert(result.msg, function () {
+                            if (result.success)
+                                location.href = '@Url.Action("Index")';
+                        });
+                    }, 'json');
+                }
+            });
+
+        });
+    </script>
+}

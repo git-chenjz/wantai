@@ -1,0 +1,103 @@
+﻿@model PagedResult<Question>
+@{
+    ViewBag.Title = "问卷管理";
+}
+
+<div class="navbar-fixed-top row">
+    <div class="col-lg-12">
+        <ol class="breadcrumb">
+            <li>
+                <a href="@Url.Content("~/admin/home/main")">主页</a>
+            </li>
+            <li>
+                <strong>问卷管理</strong>
+            </li>
+        </ol>
+    </div>
+</div>
+
+<div class="animated m-t-lg">
+    <div class="row">
+        <div class="col-lg-12">
+
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>问卷管理</h5>
+                    <div class="ibox-tools">
+                        <a class="collapse-link" href="javascript:void();"><i class="fa fa-chevron-up"></i></a>
+                        <a href="javascript:void();" onclick="javascript:window.location.reload();"><i class="fa fa-refresh"></i></a>
+                    </div>
+                </div>
+                <div class="ibox-content">
+                    <div class="table-responsive">
+                        <a class="btn btn-sm btn-primary" href="@Url.Action("Edit")"><i class="fa fa-plus"></i> 新增</a>
+                        <table class="table table-striped">
+
+                            <thead>
+                                <tr>
+                                    <th width="150">图片</th>
+                                    <th width="200">标题</th>
+                                    <th>说明</th>
+                                    <th width="150">创建时间</th>
+                                    <th width="70">状态</th>
+                                    <th width="250">管理</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                @foreach (var x in Model.Result)
+                                {
+                                    <tr>
+                                        <td>
+                                            <img src="@x.ImgPath" style="max-width:150px;" />
+                                        </td>
+                                        <td>@x.Title</td>
+                                        <td>@x.Des</td>
+                                        <td>@x.CreateTime.ToString("yyyy-MM-dd hh:mm")</td>
+                                        <td>
+                                            @if (x.Status == QuestionStatus.启用)
+                                            {
+                                                <i class="fa fa-check" style="color:red;"></i>
+                                            }@x.Status.ToString()
+                                        </td>
+                                        <td>
+                                            <a href="@Url.Action("Edit", new { id = x.ID })" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i> 编辑</a>
+                                            <a href="@Url.Action("Item", new { id = x.ID })" class="btn btn-success btn-sm"><i class="fa fa-angellist"></i> 题目设置</a>
+                                            <a href="@Url.Action("Delete", new { id = x.ID })" class="btn btn-danger btn-sm" onclick="return confirm('确认删除吗')"><i class="fa fa-remove"></i> 删除</a>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+
+                            <tfoot>
+                                <tr>
+                                    <td colspan="6">
+                                        <ul class="pagination pull-right">
+                                            <li><a href="@Url.Action("Index", new { page = 1})">第一页</a></li>
+
+                                            @for (var i = Model.PageIndex - 3 >= 1 ? Model.PageIndex - 3 : 1; i < Model.PageIndex; i++)
+                                            {
+                                                <li><a href="@Url.Action("Index", new { page = i})">@i</a></li>
+                                            }
+                                            <li class="active"><span>@Model.PageIndex</span></li>
+                                            @for (var i = Model.PageIndex + 1; i <= Model.TotalPageCount && i <= Model.PageIndex + 3; i++)
+                                            {
+                                                <li><a href="@Url.Action("Index", new { page = i })">@i</a></li>
+                                            }
+                                            @if (Model.PageIndex + 3 < Model.TotalPageCount)
+                                            {
+                                                <li><span>...</span></li>
+                                                <li><a href="@Url.Action("Index", new { page = Model.TotalPageCount})">@Model.TotalPageCount</a></li>
+                                            }
+                                            <li><a href="@Url.Action("Index", new { page = Model.TotalPageCount})">最后一页</a></li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

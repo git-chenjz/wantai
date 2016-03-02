@@ -1,0 +1,7 @@
+﻿
+@{
+    ViewBag.Title = "CycleTimeTable";
+}
+
+<h2>CycleTimeTable</h2>
+

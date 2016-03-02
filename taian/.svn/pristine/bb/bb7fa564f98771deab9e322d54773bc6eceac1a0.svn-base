@@ -1,0 +1,78 @@
+﻿@{
+    ViewBag.Title = "绑定微信";
+    var isBindWX = (bool)ViewBag.isBindWX;
+}
+
+@model WechatUser
+
+@section style{
+    <link href="~/Content/css/reset.css" rel="stylesheet" />
+    <link href="~/Content/css/content.css" rel="stylesheet" />
+    <style>
+        html, body {
+            padding: 0;
+            margin: 0;
+            background-color: #efefef;
+        }
+    </style>
+}
+
+<div class="unb-main">
+    @if (isBindWX)
+    {
+        <span>您已绑定任何微信号</span>
+        <dl class="unb-content">
+            <dt>
+                <img src="@Model.HeadImgUrl" alt="" title="">
+            </dt>
+            <dd>已绑定</dd>
+        </dl>
+        <a href="" title="" id="UnBindWx">
+            <strong>解绑</strong>
+        </a>
+    }
+    else
+    {
+        <span>您未绑定任何微信号</span>
+        <dl class="unb-content">
+            <dt>
+                <img src="images/demo05.png" alt="" title="">
+            </dt>
+            <dd>未绑定</dd>
+        </dl>
+        <a href="" title="" id="bindWx">
+            <strong>登录微信绑定</strong>
+        </a>
+    }
+</div>
+<div class="bottom un-deable">
+    <span class="bottom-rac">地址：厦门市海沧区新园路130号</span>
+    <p class="bottom-text">
+        <span>电话：+86-592-6536555</span>
+        <span>传真：+86-592-6536567</span>
+    </p>
+</div>
+
+@section scripts{
+    <script src="~/Content/js/flexible.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            //解除微信绑定
+            $("#UnBindWx").click(function () {
+                $.post("/web/account/UnBindWeChat", function (result) {
+                    if (result.success)
+                        window.reload();
+                });
+            });
+            //绑定微信
+            $("#bindWx").click(function () {
+                $.post("/web/account/BindWeChat", function (result) {
+                    if (result.success)
+                        window.reload();
+                });
+            });
+        });
+    </script>
+}
+
+

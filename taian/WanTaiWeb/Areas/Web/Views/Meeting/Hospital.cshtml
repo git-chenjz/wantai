@@ -1,0 +1,95 @@
+﻿<ul class="sign">
+    <li>
+        <p>姓名</p>
+        <input type="text" name="UserName" value="" placeholder="请输入性别">
+    </li>
+    <li>
+        <p>单位</p>
+        <input type="text" name="Unit" value="" placeholder="请输入单位名称">
+    </li>
+    <li>
+        <p>科室</p>
+        <input type="text" name="Dept" value="" placeholder="请输入科室名称">
+    </li>
+    <li>
+        <p>电话</p>
+        <input type="text" name="Tel" value="" placeholder="请输入手机号码">
+    </li>
+    <li>
+        <p>性别</p>
+        <div>
+            <input type="radio" name="Gender" value="0" id="man">
+            <span></span>
+            <label for="man">男</label>
+        </div>
+        <div>
+            <input type="radio" name="Gender" value="1" id="woman">
+            <span></span>
+            <label for="woman">女</label>
+        </div>
+    </li>
+    <li>
+        <p>职业</p>
+        <input type="text" name="JobName" value="" placeholder="请输入职位">
+    </li>
+    <li>
+        <p>邮箱</p>
+        <input type="text" name="Email" value="" placeholder="请输入邮箱">
+    </li>
+</ul>
+
+<input type="hidden" id="Gender" value="0" />
+
+<div class="login-in">
+    <a title="" class="in" id="hospitalDue">报名</a>
+</div>
+
+<script type="text/javascript">
+    $(function () {
+        $("input[type='radio'],label").on("click", function () {
+            $(this).siblings("span").addClass("checked").parent().siblings().children("span").removeClass("checked");
+        });
+
+        $("#man").click(function () {
+            $("#Gender").val(0);
+        });
+
+        $("#woman").click(function () {
+            $("#Gender").val(1);
+        });
+
+        $("#hospitalDue").click(function () {
+
+            var data = {};
+            data['MeetingId'] = $("#meetingId").val();
+            data['UserIdentity.UserName'] = $("input[name='UserName']").val();
+            data['UserIdentity.Unit'] = $("input[name='Unit']").val();
+            data['UserIdentity.Dept'] = $("input[name='Dept']").val();
+            data['UserIdentity.Tel'] = $("input[name='Tel']").val();
+            data['UserIdentity.Gender'] = $("#Gender").val();
+            data['UserIdentity.JobName'] = $("input[name='JobName']").val();
+            data['UserIdentity.Email'] = $("input[name='Email']").val();
+            data['UserIdentity.JobType'] = $("#JobType").val();
+
+            var partten = /^1[3,5,8]\d{9}$/;
+            if (partten.test($("input[name='Tel']").val()) == false) {
+                toastr.warning('请输入正确的手机号码');
+                return;
+            }
+
+            if (!IsEmail($("input[name='Email']").val())) {
+                toastr.warning('请输入正确邮箱地址');
+                return;
+            }
+
+            $.post('/web/meeting/Enroll', data, function (result) {
+                if (result.success)
+                    alert("报名成功");
+                else
+                    alert("报名失败");
+
+                window.location.reload();
+            });
+        });
+    });
+</script>

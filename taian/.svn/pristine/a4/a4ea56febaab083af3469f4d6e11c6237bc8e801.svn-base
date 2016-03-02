@@ -1,0 +1,21 @@
+﻿@model PagedResult<MeetingUser>
+
+<ul class="content">
+    <li class="display">
+        @foreach (var item in Model.Result)
+        {
+            <div class="meet-information">
+                <h1>@item.Meeting.Title</h1>
+                <img src="@item.Meeting.ImgUrl" alt="" title="">
+                <div class="company">
+                    <div class="company-name clearfix">
+                        <p class="name">主办发:@item.Meeting.Sponsor</p>
+                        <p class="time">会议时间:@item.Meeting.MeetingTime</p>
+                    </div>
+                </div>
+                <!-- a标签内填写链接 -->
+                <a href="/web/account/meetingDetail/@item.MeetingID" title="" class="link"></a>
+            </div>
+        }
+    </li>
+</ul>

@@ -1,0 +1,106 @@
+﻿@{Layout = "";}
+@model IEnumerable<Features>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="renderer" content="webkit">
+    <title>后台管理</title>
+    <meta name="keywords" content="后台">
+    <meta name="description" content="">
+    @Styles.Render("~/content/bootstrap")
+    @Styles.Render("~/content/font-awesome")
+    <link href="~/content/css/plugins/morris/morris-0.4.3.min.css" rel="stylesheet">
+    <link href="~/content/js/plugins/gritter/jquery.gritter.css" rel="stylesheet">
+    <style type="text/css">
+        html, body {
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <nav class="navbar-default navbar-static-side" role="navigation">
+            <div class="sidebar-collapse">
+                <ul class="nav" id="side-menu">
+                    <li class="nav-header">
+                        <div class="dropdown profile-element">
+                            <h2>后台管理</h2>
+                            <a data-toggle="dropdown" class="dropdown-toggle" href="javascript:void(0);">
+                                <span class="clear"><span class="block m-t-xs"><strong class="font-bold">@User.Identity.Name</strong>
+                                </span><span class="text-muted text-xs block">超级管理员 <b class="caret"></b></span></span>
+                            </a>
+                            <ul class="dropdown-menu animated fadeInRight m-t-xs">
+                                <li><a href="@Url.Content("~/admin/home/profile")" target="frame_main">个人资料</a></li>
+                                <li><a href="@Url.Content("~/admin/home/changepassword")" target="frame_main">修改密码</a></li>
+                                <li class="divider"></li>
+                                <li><a href="@Url.Content("~/admin/home/logout")">安全退出</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="logo-element">
+                            @User.Identity.Name
+                        </div>
+                    </li>
+                    @{int i = 0;
+                      foreach (var item in Model) {
+                        <li class="@(i == 0 ? "active" : "")">
+                            <a href="javascript:void(0);"><i class="fa @item.Icon"></i><span class="nav-label">@item.Name</span> <span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                @foreach (var child in item.Childrens) {
+                                    <li><a href="@Url.Content(child.Url)" target="frame_main"><i class="fa @child.Icon"></i>@child.Name</a></li>
+                                }
+                            </ul>
+                        </li>i++;
+                      }
+                    }
+                </ul>
+            </div>
+        </nav>
+        <div id="page-wrapper" class="gray-bg dashbard-1">
+            <div class="row border-bottom header">
+                <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0; margin-left: 15px;">
+                    <div class="navbar-header">
+                        <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="javascript:void(0);"><i class="fa fa-bars"></i></a>
+                    </div>
+                    <ul class="nav navbar-top-links navbar-right">
+                        <li>
+                            <span class="m-r-sm text-muted welcome-message"><a href="@Url.Content("~/admin")" title="返回首页"><i class="fa fa-home"></i></a>欢迎使用**软件</span>
+                        </li>
+                        <li>
+                            <a href="@Url.Content("~/admin/home/logout")">
+                                <i class="fa fa-sign-out"></i>退出
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <iframe frameborder="0" marginheight="0" scrolling="auto" id="frame_main" name="frame_main" width="100%" src="/admin/home/main"></iframe>
+            <div class="footer">
+                <div class="pull-right">
+                    By：<a href="#" target="_blank">******</a>
+                </div>
+                <div>
+                    <strong>Copyright</strong>
+                </div>
+            </div>
+        </div>
+    </div>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    <script src="~/content/js/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="~/content/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $('#side-menu').metisMenu();
+            $('.nav .nav-second-level li').click(function () {
+                $(this).parent().find('li.active').removeClass('active');
+                $(this).addClass('active');
+            });
+            var bh = $('body').height();
+            $('#frame_main').height(bh - $('.header').height() - $('.footer').height() - 27);
+        })
+    </script>
+</body>
+</html>

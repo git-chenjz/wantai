@@ -1,0 +1,41 @@
+﻿@{
+    ViewBag.Title = "关于我们";
+}
+
+@model DataAccess.Domain.Page
+
+@section style{
+    <link href="~/Content/css/reset.css" rel="stylesheet" />
+    <style>
+        .about-main {
+            width: 91%;
+            margin: 0.6rem auto 0;
+            padding-bottom: 3.75rem;
+        }
+
+            .about-main img {
+                display: block;
+                width: 100%;
+                height: 5.65rem;
+                margin-bottom: 0.7rem;
+            }
+
+            .about-main p {
+                float: left;
+                width: 100%;
+                color: #333;
+                font-size: 0.6rem;
+                line-height: 1rem;
+                text-align: left;
+            }
+    </style>
+}
+
+<div class="about-main clearfix">
+    @Html.Raw(Model.Content)
+</div>
+
+@section scripts{
+    <script src="~/Content/js/flexible.js"></script>
+}
+

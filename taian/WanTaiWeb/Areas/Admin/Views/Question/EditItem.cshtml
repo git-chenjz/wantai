@@ -1,0 +1,73 @@
+﻿@model QuestionItem
+@{
+    Layout = null;
+}
+<div class="modal-body">
+    <div class="row">
+        <div class="col-sm-12">
+            <h4 class="m-t-none m-b">修改题目</h4>
+
+            <form role="form" id="editform" method="post" action="@Url.Action("EditItem", new { id = Model.ID })">
+                <div class="form-group">
+                    <label>题目：</label>
+                    <input type="text" name="title" placeholder="请输入题目" class="form-control" value="@Model.Title">
+                </div>
+                <div class="form-group">
+                    <label>排序：</label>
+                    <input type="number" name="sort" value="@(Model.Sort)" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label>类型：</label>
+                    <input type="radio" name="type" value="true" @(Model.IsRadio ? "checked" : "") /> 单选
+                    <input type="radio" name="type" value="false" @(Model.IsRadio ? "" : "checked") /> 多选
+                </div>
+                <div class="form-group">
+                    <label>选项(多笔换行隔开)：</label>
+                    <textarea name="list" rows="5" class="form-control">@(string.Join("\r\n", Model.QuestionSelects.Select(a => a.Value)))</textarea>
+                </div>
+                <div>
+                    <button class="btn btn-sm btn-primary pull-right m-t-n-xs" type="submit">
+                        <i class="fa fa-save"></i> 保存
+                    </button>
+                </div>
+            </form>
+        </div>
+
+    </div>
+</div>
+
+<script>
+    $(function () {
+
+        $('#editform').bootstrapValidator({
+            message: '表单数据验证无效',
+            feedbackIcons: {
+                valid: 'glyphicon glyphicon-ok',
+                invalid: 'glyphicon glyphicon-remove',
+                validating: 'glyphicon glyphicon-refresh'
+            },
+            fields: {
+                title: {
+                    validators: {
+                        notEmpty: { message: '请输入标题' }
+                    }
+                },
+                list: {
+                    validators: {
+                        notEmpty: { message: '请输入选项' }
+                    }
+                }
+            },
+            submitHandler: function (validator, form, submitButton) {
+                $.post(form.attr('action'), form.serialize(), function (result) {
+                    top.bootbox.alert(result.msg, function () {
+                        if (result.success)
+                            location.reload();
+                    });
+                }, 'json');
+            }
+        });
+
+
+    })
+</script>

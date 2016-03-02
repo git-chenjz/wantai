@@ -1,0 +1,78 @@
+﻿using DataAccess.Domain;
+using DataService;
+using MyFrameWork.Ioc;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+
+namespace WanTaiWeb.Areas.Web.Models
+{
+    public class LBSModel
+    {
+        #region 参数
+        public string Province { get; set; }
+        public string City { get; set; }
+        public string District { get; set; }
+        public int? VaccineTypeID { get; set; }
+        public string VaccineTypeName { get; set; }
+        #endregion
+
+        #region 数据
+        public IEnumerable<VaccineType> VaccineTypes { get; set; }
+        public IEnumerable<string> Provinces { get; set; }
+        public IEnumerable<string> Cities { get; set; }
+        public IEnumerable<string> Districts { get; set; }
+        public IEnumerable<LBS> Top3LBS { get; set; }
+        #endregion
+
+        #region 方法
+        public void SetData()
+        {
+            var sv = ServiceLocator.Instance.Resolve<ILBSService>();
+
+            #region 疫苗
+            VaccineTypes = sv.GetVaccineTypes();
+            if (VaccineTypeID == null)
+                VaccineTypeName = "全部疫苗";
+            else
+            {
+                var type = sv.GetVaccineType(VaccineTypeID.Value);
+                if(type==null)
+                {
+                    VaccineTypeID = null;
+                    VaccineTypeName = "全部疫苗";
+                }
+                else
+                {
+                    VaccineTypeName = type.Name;
+                }
+            }
+            #endregion
+
+            #region 城市
+            Provinces = sv.GetProvinces(VaccineTypeID);
+            if(Provinces.Contains(Province)==false)
+            {
+                Province = Provinces.First();
+            }
+
+            Cities = sv.GetCities(VaccineTypeID,Province);
+            if (Cities.Contains(City) == false)
+            {
+                City = Cities.First();
+            }
+
+            Districts = sv.GetDistricts(VaccineTypeID, Province, City);
+            if (Districts.Contains(District) == false)
+            {
+                District = Districts.First();
+            }
+
+            #endregion
+
+            Top3LBS = sv.GetLBSByArea(VaccineTypeID, Province, City, District);
+        }
+        #endregion
+    }
+}

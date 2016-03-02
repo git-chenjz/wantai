@@ -1,0 +1,114 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace MyFrameWork.Wechat
+{
+    public class SessionService
+    {
+        const string GETACCESSTOKENURL = "https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid={0}&secret={1}";
+        const string GETUSERINFOURL = "https://api.weixin.qq.com/cgi-bin/user/info?access_token={0}&openid={1}&lang=zh_CN";
+        const string GETUSERINFOSURL = "https://api.weixin.qq.com/cgi-bin/user/info/batchget?access_token={0}";
+        const string GETIPS = "https://api.weixin.qq.com/cgi-bin/getcallbackip?access_token={0}";
+        const string GETUSERLIST = "https://api.weixin.qq.com/cgi-bin/user/get?access_token={0}&next_openid={1}";
+        const string SENDMSG = "https://api.weixin.qq.com/cgi-bin/message/custom/send?access_token={0}";
+        const string SENDTEMPLATEMSG = "https://api.weixin.qq.com/cgi-bin/message/template/send?access_token={0}";
+        const string CREATEMENU = "https://api.weixin.qq.com/cgi-bin/menu/create?access_token={0}";
+
+        #region 基础支持
+        /// <summary>
+        /// 获取access_token。
+        /// 建议用中控服务器获取token
+        /// </summary>
+        /// <returns></returns>
+        public static WX_AccessToken GetAccessToken()
+        {
+            var url = string.Format(GETACCESSTOKENURL, Config.APPID, Config.APPSECRET);
+            return WXHelper.GetWebContentByGet<WX_AccessToken>(url);
+        }
+        /// <summary>
+        /// 获取微信服务器IP地址
+        /// 如果公众号基于安全等考虑，需要获知微信服务器的IP地址列表，以便进行相关限制，可以通过该接口获得微信服务器IP地址列表。
+        /// </summary>
+        /// <param name="token"></param>
+        /// <returns></returns>
+        public static WX_IP GetIPs(string token)
+        {
+            var url = string.Format(GETIPS, token);
+            return WXHelper.GetWebContentByGet<WX_IP>(url);
+        }
+        #endregion
+
+        #region 发送消息
+        /// <summary>
+        /// 客服发送
+        /// </summary>
+        public static WX_Base ServiceSendText(string token, string openid, string source)
+        {
+            string url = string.Format(SENDMSG, token);
+            var json = new { touser = openid, msgtype = "text", text = new { content = source } };
+
+            return WXHelper.GetWebContentByPost<WX_Base>(url, json);
+        }
+        /// <summary>
+        /// 发送模板消息
+        /// </summary>
+        /// <param name="send"></param>
+        /// <returns></returns>
+        public static WX_TemplateResult ServiceSendTemplate(WX_TemplateSend send)
+        {
+            var url = string.Format(SENDTEMPLATEMSG,Config.APPToken);
+
+            return WXHelper.GetWebContentByPost<WX_TemplateResult>(url, send);
+        }
+        #endregion
+
+        #region 用户管理
+        /// <summary>
+        /// 获取单个用户信息
+        /// </summary>
+        /// <param name="token">系统token</param>
+        /// <param name="openid">用户openid</param>
+        /// <returns></returns>
+        public static WX_UserInfo GetUserInfo(string openid)
+        {
+            var url = string.Format(GETUSERINFOURL, Config.APPToken, openid);
+            return WXHelper.GetWebContentByGet<WX_UserInfo>(url);
+        }
+        /// <summary>
+        /// 获取多个用户信息
+        /// 最多100个
+        /// </summary>
+        /// <param name="token">系统token</param>
+        /// <param name="openids">用户openid列表</param>
+        /// <returns></returns>
+        public static WX_UserInfos GetUserInfos(string token, IEnumerable<string> openids)
+        {
+            var url = string.Format(GETUSERINFOSURL, token);
+            return WXHelper.GetWebContentByPost<WX_UserInfos>(url, new { user_list = openids.Select(a => new { openid = a }) });
+        }
+        /// <summary>
+        /// 获取用户列表
+        /// </summary>
+        /// <param name="token"></param>
+        /// <param name="nextid"></param>
+        /// <returns></returns>
+        public static WX_UserList GetUserList(string token, string nextid = "")
+        {
+            var url = string.Format(GETUSERLIST, token, nextid);
+            return WXHelper.GetWebContentByGet<WX_UserList>(url);
+        }
+        #endregion
+
+        #region 界面丰富
+        public static WX_Base CreateMenu(string token, object source)
+        {
+            string url = string.Format(CREATEMENU, token);
+
+            return WXHelper.GetWebContentByPost<WX_Base>(url, source);
+        }
+        #endregion
+    }
+}

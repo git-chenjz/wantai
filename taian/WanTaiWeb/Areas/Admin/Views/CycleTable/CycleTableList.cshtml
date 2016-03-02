@@ -1,0 +1,76 @@
+﻿@model PagedResult<CycleTable>
+
+<div class="table-responsive" style="position: relative;">
+    <table id="purview_tb" class="table table-striped">
+        <thead>
+            <tr>
+                <th></th>
+                <th>类型</th>
+                <th>标题</th>
+                <th>内容</th>
+                <th>主办方</th>
+                <th>点击数</th>
+                <th>显示</th>
+                <th>创建时间</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Result)
+            {
+                <tr>
+                    <td>
+                        <input type="checkbox" class="i-checks itemCheck" name="id" value="@item.Id">
+                    </td>
+                    <td>@(MyFrameWork.Ioc.ServiceLocator.Instance.Resolve<ILBSService>().GetVaccineType(item.Type).Name)</td>
+                    <td>@item.Title</td>
+                    <td>@item.Content</td>
+                    <td>@item.Sponsor</td>
+                    <td>@item.ViewNum</td>
+                    <td>@(item.IsShow == 1 ? "是" : "否")</td>
+                    <td>@item.CreateTime.ToString("yyyy-MM-dd")</td>
+                    <td>
+                        <a href="@Url.Content("~/admin/CycleTable/UpdateCycleTable?id=" + item.Id)"><i class="fa fa-edit text-navy"></i>编辑</a>
+                        <a href="javascript:void(0);" data-url="@Url.Content("~/admin/CycleTable/DeleteCycleTable?ids=" + item.Id)" class="del"><i class="fa fa-edit text-navy"></i>删除</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<div class="row">
+    <div class="col-sm-8">
+        <div class="dataTables_paginate">
+            @Ajax.Pager(Model.Total, Model.PageSize, Model.PageIndex, new PagerOptions
+                       {
+                           PageIndexParameterName = "page",
+                           ContainerTagName = "ul",
+                           CssClass = "pagination",
+                           CurrentPagerItemTemplate = "<li class=\"active\"><a href=\"#\">{0}</a></li>",
+                           DisabledPagerItemTemplate = "<li class=\"disabled\"><a>{0}</a></li>",
+                           PagerItemTemplate = "<li>{0}</li>",
+                           Id = "bootstrappager",
+                           PageIndexBoxId = "pageIndexBox",
+                           GoToButtonId = "goToBtn"
+                       },
+                                                      new MvcAjaxOptions { EnablePartialLoading = true, UpdateTargetId = "CycleTableId" })
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="dataTables_info">
+            <div class="input-group">
+                <span class="input-group-addon input-sm">共 @Model.TotalPageCount 页 @Model.Total 条记录，当前第 @Model.PageIndex 页</span>
+                <select id="pageIndexBox" class="form-control input-sm pageIndexBox"></select>
+                <span class="input-group-btn">
+                    <button class="btn btn-primary btn-sm" id="goToBtn">跳转</button>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+@this.ScriptBlock(
+    @<script type="text/javascript">
+        @{Html.RegisterMvcPagerScriptResource();}
+    </script>)

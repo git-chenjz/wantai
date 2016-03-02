@@ -1,0 +1,165 @@
+﻿@{
+    ViewBag.Title = "会员中心";
+}
+
+@section style{
+    <link href="~/Content/css/reset.css" rel="stylesheet" />
+    <style>
+        html, body {
+            padding: 0;
+            margin: 0;
+            background-color: #fff;
+        }
+
+        .cen-main {
+            float: left;
+            border-top: 0.25rem solid #e8e8e8;
+            width: 100%;
+            background-color: #fff;
+        }
+
+            .cen-main li {
+                float: left;
+                width: 94%;
+                height: 1.74rem;
+                margin-left: 3%;
+                border-bottom: 1px solid #d3d3d3;
+            }
+
+        .cen-img-one,
+        .cen-img-two,
+        .cen-img-free,
+        .cen-img-four,
+        .cen-img-long,
+        .cen-img-six,
+        .cen-img-host {
+            float: left;
+        }
+
+        .cen-img-one {
+            width: 6%;
+            height: 0.79rem;
+            margin: 0.55rem 6% 0 5%;
+        }
+
+        .cen-img-two {
+            width: 6%;
+            height: 0.74rem;
+            margin: 0.59rem 6% 0 5%;
+        }
+
+        .cen-img-free {
+            width: 7%;
+            height: 1rem;
+            margin: 0.35rem 5% 0 5%;
+        }
+
+        .cen-img-four {
+            width: 5%;
+            height: 1rem;
+            margin: 0.35rem 7% 0 5%;
+        }
+
+        .cen-img-long {
+            width: 7%;
+            height: 0.75rem;
+            margin: 0.61rem 5% 0 5%;
+        }
+
+        .cen-img-six {
+            width: 7%;
+            height: 0.59rem;
+            margin: 0.7rem 5% 0 5%;
+        }
+
+        .cen-img-host {
+            width: 6.5%;
+            height: 0.85rem;
+            margin: 0.5rem 5.5% 0 5%;
+        }
+
+        .cen-text {
+            overflow: hidden;
+            float: left;
+            width: 73%;
+            height: 1.74rem;
+            color: #1d1a1a;
+            font-size: 0.65rem;
+            line-height: 1.74rem;
+        }
+
+        .cen-trip {
+            float: left;
+            width: 2%;
+            height: 0.57rem;
+            margin: 0.75rem 0 0 1%;
+            background-image: url(/images/center07.png);
+            -webkit-background-size: 100%;
+            background-size: 100%;
+        }
+    </style>
+}
+
+<ul class="cen-main clearfix">
+    <li>
+        <a href="/web/account/MyProfile" title="">
+            <img src="/images/center01.png" alt="" title="" class="cen-img-one">
+            <span class="cen-text">我的资料</span>
+            <i class="cen-trip"></i>
+        </a>
+    </li>
+    <li>
+        <a href="/web/account/CycleTimeTable" title="">
+            <img src="/images/center02.png" alt="" title="" class="cen-img-two">
+            <span class="cen-text">接种周期表</span>
+            <i class="cen-trip"></i>
+        </a>
+    </li>
+    <li>
+        <a href="/web/account/Meeting" title="">
+            <img src="/images/center03.png" alt="" title="" class="cen-img-free">
+            <span class="cen-text">会议信息</span>
+            <i class="cen-trip"></i>
+        </a>
+    </li>
+    <li>
+        <a href="/web/account/MessageTip" title="">
+            <img src="/images/center04.png" alt="" title="" class="cen-img-four">
+            <span class="cen-text">消息提醒</span>
+            <i class="cen-trip"></i>
+        </a>
+    </li>
+    <li>
+        <a href="/web/account/BindWeChart" title="">
+            <img src="/images/center05.png" alt="" title="" class="cen-img-long">
+            <span class="cen-text">绑定微信号</span>
+            <i class="cen-trip"></i>
+        </a>
+    </li>
+    <li>
+        <a href="/web/account/BindEmail" title="">
+            <img src="/images/center06.png" alt="" title="" class="cen-img-six">
+            <span class="cen-text">绑定邮箱号</span>
+            <i class="cen-trip"></i>
+        </a>
+    </li>
+    <li>
+        <a href="/web/account/UpdatePassword" title="">
+            <img src="/images/center09.png" alt="" title="" class="cen-img-host">
+            <span class="cen-text">修改密码</span>
+            <i class="cen-trip"></i>
+        </a>
+    </li>
+    <li>
+        <a href="/web/account/Logout" title="">
+            <img src="/images/center08.png" alt="" title="" class="cen-img-host">
+            <span class="cen-text">退出登录</span>
+            <i class="cen-trip"></i>
+        </a>
+    </li>
+</ul>
+
+@section scripts{
+    <script src="~/Content/js/flexible.js"></script>
+}			
+
