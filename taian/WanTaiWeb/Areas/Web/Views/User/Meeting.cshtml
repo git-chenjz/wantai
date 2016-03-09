@@ -1,0 +1,155 @@
+﻿@model MeetingModel
+@{
+    ViewBag.Title = "会议信息";
+}
+@section style{
+    <link href="~/Content/css/reset.css" rel="stylesheet" />
+    <link href="~/Content/css/content.css" rel="stylesheet" />
+    <style>
+        html, body {
+            padding: 0;
+            margin: 0;
+            background-color: #efefef;
+        }
+
+        .part-header {
+            float: left;
+            width: 100%;
+            height: 2rem;
+            margin: 0.3rem 0;
+            background-color: #fff;
+        }
+
+            .part-header p {
+                float: left;
+                width: 49.5%;
+                height: 1.2rem;
+                margin-top: 0.4rem;
+                color: #1d1d1e;
+                font-size: 0.75rem;
+                line-height: 1.2rem;
+                text-align: center;
+            }
+
+        .part-demo {
+            border-right: 3px solid #ddd;
+        }
+
+        .part-header .sign {
+            color: #f6931e;
+        }
+
+        .meet-information {
+            position: relative;
+            padding: 0 4.5%;
+            background: white;
+            margin-bottom: 0.24rem;
+        }
+
+            .meet-information .link {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+            }
+
+            .meet-information h1 {
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                height: 1.38rem;
+                font-size: 0.6rem;
+                line-height: 1.38rem;
+            }
+
+            .meet-information > img {
+                display: block;
+                width: 100%;
+                height: 6.52rem;
+            }
+
+        .company {
+            margin-top: 0.29rem;
+            border-top: 2px solid #eaeaea;
+        }
+
+            .company p {
+                color: #959393;
+                font-size: 0.43rem;
+            }
+
+            .company > p {
+                overflow: hidden;
+                height: 5.71rem;
+                border: 1px solid #eaeaea;
+                padding: 0.43rem 3%;
+                line-height: 0.57rem;
+                -webkit-box-sizing: border-box;
+                -moz-box-sizing: border-box;
+                box-sizing: border-box;
+            }
+
+        .company-name .time {
+            float: right;
+        }
+
+        .company-name .name {
+            float: left;
+        }
+
+        .company-name p {
+            height: 1.52rem;
+            line-height: 1.52rem;
+        }
+
+        .content {
+            float: left;
+            width: 100%;
+        }
+
+            .content > li {
+                display: none;
+            }
+
+            .content .display {
+                display: block;
+            }
+    </style>
+}
+
+<div class="part-header" id="part-header">
+    <p class=" pq-host part-demo">
+        <span class="@(Model.Tag==0?"sign":"")" id="attendMeeting" onclick="location='@Url.Action("Meeting","User", new { Tag=0})'">已报名会议</span>
+    </p>
+    <p class="pq-host">
+        <span class="@(Model.Tag==1?"sign":"")" id="signMeeting" onclick="location='@Url.Action("Meeting", "User", new { Tag = 1 })'">已参加会议</span>
+    </p>
+</div>
+
+<div id="meetingList">
+    <ul class="content">
+        <li class="display">
+            @foreach (var x in Model.Meetings)
+            {
+                <div class="meet-information">
+                    <h1>@x.Title</h1>
+                    <img src="@x.ImgUrl" alt="" title="">
+                    <div class="company">
+                        <div class="company-name clearfix">
+                            <p class="name">主办发:@x.Sponsor</p>
+                            <p class="time">会议时间:@x.MeetingTime</p>
+                        </div>
+                    </div>
+                    <!-- a标签内填写链接 -->
+                    <a href="@Url.Action("MeetingDetail", new { id=x.ID})" title="" class="link"></a>
+                </div>
+            }
+        </li>
+    </ul>
+
+</div>
+
+@section scripts{
+    <script src="~/Content/js/flexible.js"></script>
+}

@@ -1,0 +1,97 @@
+﻿@model IEnumerable<InoculationConfig>
+@{
+    ViewBag.Title = "添加接种记录";
+    Layout = "~/Areas/Web/Views/Shared/_LayoutWeUI.cshtml";
+    var i = 0;
+    var j = 0;
+}
+
+@using (Html.BeginForm())
+{
+
+    <div class="weui_cells_title">疫苗类型</div>
+    <div class="weui_cells weui_cells_checkbox">
+        @foreach (var x in Model.GroupBy(a => new { a.VaccineTypeID, a.VaccineType.Name }))
+    {
+    <label class="weui_cell weui_check_label" for="s@(i)">
+        <div class="weui_cell_hd">
+            <input type="radio" class="weui_check" name="VaccineTypeID" data-jd=@Html.Raw(JsonHelper.ToJson(x.Select(a => new { a.ID, a.PhaseName }))) id="s@(i)" onchange="selectconfig(this);">
+            <i class="weui_icon_checked"></i>
+        </div>
+        <div class="weui_cell_bd weui_cell_primary">
+            <p>@x.Key.Name</p>
+        </div>
+    </label>
+        i++;
+    }
+    </div>
+
+    <div class="weui_cells_title">接种阶段</div>
+    <div class="weui_cells weui_cells_checkbox" id="j-config">
+
+    </div>
+    <div class="weui_cells_title">计划接种时间</div>
+    <div class="weui_cells weui_cells_form">
+
+        <div class="weui_cell">
+            <div class="weui_cell_bd weui_cell_primary">
+                <input class="weui_input" type="date" value="@DateTime.Now.ToString("yyyy-MM-dd")" name="InoculabilityTime">
+            </div>
+        </div>
+
+    </div>
+    <div class="weui_cells_title">实际接种时间</div>
+    <div class="weui_cells weui_cells_form">
+
+        <div class="weui_cell">
+            <div class="weui_cell_bd weui_cell_primary">
+                <input class="weui_input" type="date" value="" name="ActualInoculabilityTime">
+            </div>
+        </div>
+
+    </div>
+    <div class="weui_cells_title">我的备注</div>
+    <div class="weui_cells weui_cells_form">
+        <div class="weui_cell">
+            <div class="weui_cell_bd weui_cell_primary">
+                <textarea class="weui_textarea" placeholder="" rows="3" name="MyDescription"></textarea>
+            </div>
+        </div>
+    </div>
+    <div class="weui_cells_title">接种状态</div>
+    <div class="weui_cells weui_cells_checkbox">
+        @foreach (InoculationStatus x in Enum.GetValues(typeof(InoculationStatus)))
+    {
+    <label class="weui_cell weui_check_label" for="ss@(j)">
+        <div class="weui_cell_hd">
+            <input type="radio" class="weui_check" name="Status" id="ss@(j)" value="@((int)x)" @(j==1?"checked":"")>
+            <i class="weui_icon_checked"></i>
+        </div>
+        <div class="weui_cell_bd weui_cell_primary">
+            <p>@x.ToString()</p>
+        </div>
+    </label>
+        j++;
+    }
+    </div>
+    <div class="weui_btn_area">
+        <button class="weui_btn weui_btn_primary" type="submit" id="showTooltips">保存</button>
+    </div>
+
+}
+<script>
+    function selectconfig(e) {
+        $('#j-config').html('');
+        var data = eval('(' + $(e).attr('data-jd') + ')');
+        var options = $('<label class="weui_cell weui_check_label"><div class="weui_cell_hd"><input type="radio" class="weui_check" name="InoculationConfigID"/><i class="weui_icon_checked"></i></div><div class="weui_cell_bd weui_cell_primary"><p></p></div></label>');
+
+        for (var i = 0; i < data.length; i++) {
+            var temp = options.clone();
+            temp.find('label').attr('for', 'j_' + i);
+            temp.find('input').attr('id', 'j_' + i).attr('value', data[i]['ID']);
+            temp.find('p').text(data[i]['PhaseName']);
+            $('#j-config').append(temp);
+        }
+
+    }
+</script>

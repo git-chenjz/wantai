@@ -1,0 +1,137 @@
+﻿@model PagedResult<InoculationRecord>
+@{
+    var status = ViewBag.status;
+}
+
+<div class="navbar-fixed-top row">
+    <div class="col-lg-12">
+        <ol class="breadcrumb">
+            <li>
+                <a href="@Url.Content("~/admin/home/main")">主页</a>
+            </li>
+            <li>
+                <strong>用户接种信息</strong>
+            </li>
+        </ol>
+    </div>
+</div>
+
+<div class="animated m-t-lg">
+    <div class="row">
+        <div class="col-lg-12">
+
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>用户接种信息</h5>
+                    <div class="ibox-tools">
+                        <a class="collapse-link" href="javascript:void();"><i class="fa fa-chevron-up"></i></a>
+                        <a href="javascript:void();" onclick="javascript:window.location.reload();"><i class="fa fa-refresh"></i></a>
+                    </div>
+                </div>
+                <div class="ibox-content">
+                    <div class="row">
+                        <div class="col-xs-12">
+
+                            <div data-toggle="buttons" class="btn-group">
+                                <label class="btn btn-default @(status == null ? "active" : "")">
+                                    <input type="radio" value="" name="status" @(status == null ? "checked" : "") />全部
+                                </label>
+                                @foreach (InoculationStatus x in Enum.GetValues(typeof(InoculationStatus)))
+                                {
+                                    <label class="btn btn-default @(status == x ? "active" : "")">
+                                        <input type="radio" value="@((int)x)" name="status" @(status == x ? "checked" : "") />@x.ToString()
+                                    </label>
+                                }
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table table-striped">
+
+                            <thead>
+                                <tr>
+                                    <th width="60">图片</th>
+                                    <th width="100">微信名</th>
+                                    <th width="200">疫苗类型</th>
+                                    <th width="160">接种时间</th>
+                                    <th width="80">状态</th>
+                                    <th>备注</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                @foreach (var x in Model.Result)
+                                {
+                                    <tr>
+                                        <td>
+                                            <img src="@x.WechatUser.HeadImgUrl" class="img-responsive img-rounded" />
+                                        </td>
+                                        <td>@x.WechatUser.NickName</td>
+                                        <td>@(x.InoculationConfig==null?"":x.InoculationConfig.VaccineType.Name) @x.PhaseName</td>
+                                        <td>
+                                            <p>计划时间 @x.InoculabilityTime.ToString("yyyy-MM-dd")</p>
+                                            @if(x.ActualInoculabilityTime!=null)
+                                            {
+                                            <p>实际时间 @x.ActualInoculabilityTime.Value.ToString("yyyy-MM-dd")</p>
+                                            }
+                                        </td>
+                                        <td>
+                                            @if (x.Status == InoculationStatus.未接种)
+                                            {
+                                                <i class="fa fa-undo" style="color:green;"></i> 
+                                            }
+                                            else
+                                            {
+                                                <i class="fa fa-check" style="color:red;"></i> 
+                                            }
+
+                                            @x.Status.ToString()
+                                        </td>
+                                        <td>
+                                            @x.MyDescription
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+
+                            <tfoot>
+                                <tr>
+                                    <td colspan="6">
+                                        <ul class="pagination pull-right">
+                                            <li><a href="@Url.Action("User", new { page = 1,status=status })">第一页</a></li>
+
+                                            @for (var i = Model.PageIndex - 3 >= 1 ? Model.PageIndex - 3 : 1; i < Model.PageIndex; i++)
+                                            {
+                                                <li><a href="@Url.Action("User", new { page = i, status = status })">@i</a></li>
+                                            }
+                                            <li class="active"><span>@Model.PageIndex</span></li>
+                                            @for (var i = Model.PageIndex + 1; i <= Model.TotalPageCount && i <= Model.PageIndex + 3; i++)
+                                            {
+                                                <li><a href="@Url.Action("User", new { page = i, status = status })">@i</a></li>
+                                            }
+                                            @if (Model.PageIndex + 3 < Model.TotalPageCount)
+                                            {
+                                                <li><span>...</span></li>
+                                                <li><a href="@Url.Action("User", new { page = Model.TotalPageCount, status = status })">@Model.TotalPageCount</a></li>
+                                            }
+                                            <li><a href="@Url.Action("User", new { page = Model.TotalPageCount, status = status })">最后一页</a></li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $('input[name=status]').change(function () {
+        var status = $('input[name="status"]:checked').val();
+
+        window.location = '@Html.Raw(Url.Action("User", new { _test= 1 }))&status=' + status;
+    });
+</script>

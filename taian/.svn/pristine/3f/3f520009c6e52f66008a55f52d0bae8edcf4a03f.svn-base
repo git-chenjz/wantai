@@ -1,0 +1,128 @@
+﻿@model InoculationRecord
+
+@using (Html.BeginForm("SaveRecord","User",FormMethod.Post))
+{
+    <input type="hidden" name="ID" value="@Model.ID"/>
+    <div class="weui_cells_title">疫苗类型</div>
+    <div class="weui_cells">
+        <div class="weui_cell">
+            <div class="weui_cell_bd weui_cell_primary">
+                <p>@Model.InoculationConfig.VaccineType.Name</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="weui_cells_title">接种阶段</div>
+    <div class="weui_cells">
+        <div class="weui_cell">
+            <div class="weui_cell_bd weui_cell_primary">
+                <p>@Model.InoculationConfig.PhaseName</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="weui_cells_title">计划接种时间</div>
+
+    if (Model.Status == InoculationStatus.未接种)
+    {
+        <div class="weui_cells weui_cells_form">
+            <div class="weui_cell">
+                <div class="weui_cell_bd weui_cell_primary">
+                    <input class="weui_input" type="date" value="@Model.InoculabilityTime.ToString("yyyy-MM-dd")" name="InoculabilityTime">
+                </div>
+            </div>
+        </div>
+    }
+    else
+    {
+        <div class="weui_cells">
+            <div class="weui_cell">
+                <div class="weui_cell_bd weui_cell_primary">
+                    <p>@Model.InoculabilityTime.ToString("yyyy-MM-dd")</p>
+                </div>
+            </div>
+        </div>
+    }
+
+
+    <div class="weui_cells_title">实际接种时间</div>
+    if (Model.Status == InoculationStatus.未接种)
+    {
+        <div class="weui_cells weui_cells_form">
+            <div class="weui_cell">
+                <div class="weui_cell_bd weui_cell_primary">
+                    <input class="weui_input" type="date" value="@(Model.ActualInoculabilityTime==null?"":Model.ActualInoculabilityTime.Value.ToString("yyyy-MM-dd"))" name="ActualInoculabilityTime">
+                </div>
+            </div>
+        </div>
+    }
+    else
+    {
+        <div class="weui_cells">
+            <div class="weui_cell">
+                <div class="weui_cell_bd weui_cell_primary">
+                    <p>@(Model.ActualInoculabilityTime == null ? "" : Model.ActualInoculabilityTime.Value.ToString("yyyy-MM-dd"))</p>
+                </div>
+            </div>
+        </div>
+    }
+
+    <div class="weui_cells_title">我的备注</div>
+    if (Model.Status == InoculationStatus.未接种)
+    {
+        <div class="weui_cells weui_cells_form">
+            <div class="weui_cell_bd weui_cell_primary">
+                <textarea class="weui_textarea" placeholder="" rows="3" name="MyDescription">@Model.MyDescription</textarea>
+            </div>
+        </div>
+    }
+    else
+    {
+        <div class="weui_cells">
+            <div class="weui_cell">
+                <div class="weui_cell_bd weui_cell_primary">
+                    <p>@(Model.MyDescription)</p>
+                </div>
+            </div>
+        </div>
+    }
+    <div class="weui_cells_title">接种状态</div>
+    if (Model.Status == InoculationStatus.未接种)
+    {
+        var i = 0;
+        <div class="weui_cells weui_cells_checkbox">
+
+            @foreach (InoculationStatus x in Enum.GetValues(typeof(InoculationStatus)))
+            {
+                <label class="weui_cell weui_check_label" for="ss_(@i)">
+                    <div class="weui_cell_hd">
+                        <input type="radio" class="weui_check" name="Status" value="@((int)x)" id="ss_(@i)" @(Model.Status == x ? "checked" : "")>
+                        <i class="weui_icon_checked"></i>
+                    </div>
+                    <div class="weui_cell_bd weui_cell_primary">
+                        <p>@x.ToString()</p>
+                    </div>
+                </label>
+                i++;
+            }
+        </div>
+    }
+    else
+    {
+        <div class="weui_cells">
+            <div class="weui_cell">
+                <div class="weui_cell_bd weui_cell_primary">
+                    <p>@(Model.Status.ToString())</p>
+                </div>
+            </div>
+        </div>
+    }
+    <div class="weui_btn_area">
+        @if (Model.Status == InoculationStatus.未接种)
+        {
+            <button class="weui_btn weui_btn_primary" type="submit" id="showTooltips">保存</button>
+        }
+        <a class="weui_btn weui_btn_warn" href="@Url.Action("DeleteRecord", new { id = Model.ID })" onclick="return confirm('确认删除吗')">删除</a>
+    </div>
+
+}

@@ -1,0 +1,44 @@
+﻿@model PagedResult<WechatTemplate>
+@{
+    ViewBag.Title = "消息";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/Content/weui.min.css" rel="stylesheet" />
+<div class="row">
+    <div class="col-sm-12">
+        <div class="wrapper wrapper-content">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="ibox float-e-margins">
+                        <div class="" id="ibox-content">
+
+                            <div id="vertical-timeline" class="vertical-container light-timeline">
+                                @foreach (var x in Model.Result)
+                                {
+                                    <div class="vertical-timeline-block">
+                                        <div class="vertical-timeline-icon navy-bg">
+                                            <i class="fa fa-@(x.Status == "WAIT" ? "undo" : "check")"></i>
+                                        </div>
+
+                                        <div class="vertical-timeline-content">
+                                            <p>
+                                                @x.Data
+                                            </p>
+                                            <a href="@Url.Action("Record", new { id=x.ID})" class="btn btn-sm btn-primary"><i class="fa fa-remove"></i> 删除</a>
+                                            <span class="vertical-date">
+                                                <small>@(x.SendTime.ToString("yyyy-MM-dd hh:mm:ss"))</small>
+                                            </span>
+                                        </div>
+                                    </div>
+                                }
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

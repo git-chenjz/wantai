@@ -1,0 +1,129 @@
+﻿@model InoculationConfig
+@{
+    ViewBag.Title = "接种信息编辑";
+    var types = ViewBag.types as IEnumerable<VaccineType>;
+}
+
+<div class="navbar-fixed-top row">
+    <div class="col-lg-12">
+        <ol class="breadcrumb">
+            <li>
+                <a href="@Url.Content("~/admin/home/main")">主页</a>
+            </li>
+            <li>
+                <a href="@Url.Action("Index")">接种信息</a>
+            </li>
+            <li>
+                <strong>@(Model.ID == 0 ? "添加接种信息" : "修改接种信息")</strong>
+            </li>
+        </ol>
+    </div>
+</div>
+
+<div class="m-t-lg">
+    <div class="row">
+        <div class="col-lg-12">
+
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>@(Model.ID == 0 ? "添加接种信息" : "修改接种信息")</h5>
+                    <div class="ibox-tools">
+                        <a class="collapse-link" href="javascript:void();"><i class="fa fa-chevron-up"></i></a>
+                        <a href="javascript:void();" onclick="javascript:window.location.reload();"><i class="fa fa-refresh"></i></a>
+                    </div>
+                </div>
+                <div class="ibox-content">
+                    <form class="form-horizontal m-t" id="adform" method="post" action="@Url.Action("SaveConfig")">
+                        <input name="id" value="@Model.ID" type="hidden" />
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">疫苗类型：</label>
+                            <div class="col-sm-8">
+                                <select class="form-control" name="VaccineTypeID">
+                                    @foreach(var x in types)
+                                    {
+                                        <option value="@x.Id" @(Model.VaccineTypeID==x.Id?"selected":"")>@x.Name</option>
+                                    }
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">期数名称：</label>
+                            <div class="col-sm-8">
+                                <input class="form-control" name="PhaseName" value="@Model.PhaseName" type="text"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">期数代码：</label>
+                            <div class="col-sm-8">
+                                <input class="form-control" name="PhaseCode" value="@Model.PhaseCode" type="text" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">下一期周期：</label>
+                            <div class="col-sm-8">
+                                <input class="form-control" name="CycleDay" value="@Model.CycleDay" type="number" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">注意事项：</label>
+                            <div class="col-sm-8">
+                                <textarea name="Description" class="form-control" rows="5">@Model.Description</textarea>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-8 col-sm-offset-3">
+                                <button class="btn btn-primary" type="submit"><i class="fa fa-save"></i>&nbsp;保存</button>
+                                <button class="btn btn-primary" type="button" onclick="javascript:history.go(-1);"><i class="fa fa-circle-o-notch"></i>&nbsp;取消</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+
+        $('#adform').bootstrapValidator({
+            message: '表单数据验证无效',
+            feedbackIcons: {
+                valid: 'glyphicon glyphicon-ok',
+                invalid: 'glyphicon glyphicon-remove',
+                validating: 'glyphicon glyphicon-refresh'
+            },
+            fields: {
+                VaccineTypeID: {
+                    validators: {
+                        notEmpty: { message: '请选择疫苗类型' }
+                    }
+                },
+                PhaseName: {
+                    validators: {
+                        notEmpty: { message: '请填写期数名称' }
+                    }
+                },
+                PhaseCode: {
+                    validators: {
+                        notEmpty: { message: '请填写期数代码' }
+                    }
+                },
+                CycleDay: {
+                    validators: {
+                        notEmpty: { message: '请填写下一期周期' }
+                    }
+                }
+            },
+            submitHandler: function (validator, form, submitButton) {
+                $.post(form.attr('action'), form.serialize(), function (result) {
+                    top.bootbox.alert(result.msg, function () {
+                        if (result.success)
+                            location.href = '@Url.Action("index")';
+                    });
+                }, 'json');
+            }
+        });
+
+    })
+</script>

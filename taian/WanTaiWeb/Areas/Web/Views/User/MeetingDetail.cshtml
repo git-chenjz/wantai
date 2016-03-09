@@ -1,0 +1,202 @@
+﻿@{
+    ViewBag.Title = "会议详情";
+}
+
+@model MeetingModel
+
+@section style{
+    <link href="~/Content/css/reset.css" rel="stylesheet" />
+    <link href="~/Content/css/content.css" rel="stylesheet" />
+    <style>
+        body {
+            padding-top: 0.3rem;
+            background: #efefef;
+        }
+
+        .meet-information {
+            padding: 0 4.5%;
+            background: white;
+        }
+
+            .meet-information h1 {
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                height: 1.38rem;
+                font-size: 0.6rem;
+                line-height: 1.38rem;
+            }
+
+            .meet-information > img {
+                display: block;
+                width: 100%;
+                height: 6.52rem;
+            }
+
+        .company {
+            margin-top: 0.29rem;
+            border-top: 2px solid #eaeaea;
+        }
+
+            .company p {
+                color: #959393;
+                font-size: 0.43rem;
+            }
+
+            .company > p {
+                overflow: hidden;
+                height: 5.71rem;
+                border: 1px solid #eaeaea;
+                padding: 0.43rem 3%;
+                line-height: 0.57rem;
+                -webkit-box-sizing: border-box;
+                -moz-box-sizing: border-box;
+                box-sizing: border-box;
+            }
+
+        .company-name .time {
+            float: right;
+        }
+
+        .company-name .name {
+            float: left;
+        }
+
+        .company-name p {
+            height: 1.52rem;
+            line-height: 1.52rem;
+        }
+
+        .sign {
+            width: 91%;
+            margin: 0 auto;
+            padding: 0.57rem 4.5% 1rem;
+            background: white;
+        }
+
+            .sign li {
+                position: relative;
+                overflow: hidden;
+                padding-left: 1.57rem;
+            }
+
+            .sign span {
+                float: left;
+                width: 0.36rem;
+                height: 0.36rem;
+                margin: 0.43rem;
+                line-height: 1.24rem;
+                border: 1px solid black;
+                border-radius: 50%;
+            }
+
+            .sign .checked {
+                background: #f6931e;
+            }
+
+            .sign input[type="radio"] {
+                position: absolute;
+                left: 0.43rem;
+                top: 0.43rem;
+                width: 0.37rem;
+                height: 0.37rem;
+                opacity: 0;
+            }
+
+            .sign li p,
+            .sign li label {
+                float: left;
+                color: #1d1a1a;
+                font-size: 0.57rem;
+                line-height: 1.24rem;
+            }
+
+            .sign li div {
+                float: left;
+                position: relative;
+            }
+
+            .sign li p:nth-child(1) {
+                position: absolute;
+                top: 0;
+                left: 0;
+                margin-right: 0.52rem;
+            }
+
+            .sign li input[type="text"] {
+                height: 1.24rem;
+                width: 100%;
+                font-size: 0.52rem;
+                color: #d3d3d3;
+                text-indent: 12px;
+                border: 1px solid #d3d3d3;
+                -webkit-box-sizing: border-box;
+                -moz-box-sizing: border-box;
+                box-sizing: border-box;
+                -webkit-border-radius: 6px;
+                -moz-border-radius: 6px;
+                border-radius: 6px;
+            }
+
+            .sign li {
+                margin-bottom: 1rem;
+            }
+
+                .sign li:nth-child(8) {
+                    margin-bottom: 0;
+                }
+
+                .sign li:nth-child(1) div:nth-child(1) {
+                    margin-right: 3.76rem;
+                }
+
+                .sign li:nth-child(6) div:nth-child(2) {
+                    margin-right: 1.79rem;
+                }
+
+        .login-in {
+            background: white;
+            padding-top: 0.95rem;
+            border: 1px solid #ddd;
+        }
+
+            .login-in a {
+                display: block;
+                color: #d3d3d3;
+                font-size: 0.57rem;
+                text-align: center;
+                line-height: 1.14rem;
+            }
+
+            .login-in .in {
+                width: 91%;
+                height: 1.86rem;
+                margin: 0 auto;
+                background: #f6931e;
+                color: white;
+                font-size: 0.71rem;
+                line-height: 1.86rem;
+                border-radius: 6px;
+            }
+    </style>
+}
+
+<div class="meet-information">
+    <h1>@Model.Meeting.Title</h1>
+    <img src="@Model.Meeting.ImgUrl" alt="" title="">
+    <div class="company">
+        <div class="company-name clearfix">
+            <p class="name">主办发:@Model.Meeting.Sponsor</p>
+            <p class="time">会议时间:@Model.Meeting.MeetingTime</p>
+        </div>
+        <!-- 下面p标签放的是会议简介 -->
+        <p>@Model.Meeting.Des</p>
+    </div>
+</div>
+
+
+@section scripts{
+    <script src="~/Content/js/flexible.js"></script>
+}
+
+

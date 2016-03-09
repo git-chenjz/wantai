@@ -1,0 +1,79 @@
+﻿@model IEnumerable<InoculationConfig>
+@{
+    ViewBag.Title = "接种信息配置";
+}
+
+<div class="navbar-fixed-top row">
+    <div class="col-lg-12">
+        <ol class="breadcrumb">
+            <li>
+                <a href="@Url.Content("~/admin/home/main")">主页</a>
+            </li>
+            <li>
+                <strong>接种信息配置</strong>
+            </li>
+        </ol>
+    </div>
+</div>
+
+<div class="animated m-t-lg">
+    <div class="row">
+        <div class="col-lg-12">
+
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>接种信息配置</h5>
+                    <div class="ibox-tools">
+                        <a class="collapse-link" href="javascript:void();"><i class="fa fa-chevron-up"></i></a>
+                        <a href="javascript:void();" onclick="javascript:window.location.reload();"><i class="fa fa-refresh"></i></a>
+                    </div>
+                </div>
+                <div class="ibox-content">
+
+                    <a href="@Url.Action("EditConfig")" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i>&nbsp;新增</a>
+
+                    <div class="table-responsive">
+                        <table class="table table-striped">
+
+                            <thead>
+                                <tr>
+                                    <th width="200">疫苗类型</th>
+                                    <th width="120">期数名称</th>
+                                    <th width="120">期数代码</th>
+                                    <th width="120">下一期周期</th>
+                                    <th>注意事项</th>
+                                    <th width="160">管理</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                @foreach (var x in Model)
+                                {
+                                    <tr>
+                                        <td>@x.VaccineType.Name</td>
+                                        <td>@x.PhaseName</td>
+                                        <td>@x.PhaseCode</td>
+                                        <td>@x.CycleDay</td>
+                                        <td>@x.Description</td>
+                                        <td>
+                                            <a href="@Url.Action("EditConfig", new { id=x.ID })" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i> 编辑</a>
+                                            <a href="@Url.Action("DeleteConfig", new { id = x.ID })" class="btn btn-danger btn-sm" onclick="return confirm('确认删除吗')"><i class="fa fa-remove"></i> 删除</a>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+
+                            <tfoot>
+                                <tr>
+                                    <td colspan="6">
+                                        
+                                    </td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

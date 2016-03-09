@@ -1,0 +1,14 @@
+﻿@model InoculationRecord
+@{
+    ViewBag.Title = "修改记录";
+    Layout = "~/Areas/Web/Views/Shared/_LayoutWeUI.cshtml";
+}
+
+@if(Model.InoculationConfigID!=null)
+{
+    @Html.Partial("Record1")
+}
+else
+{
+    @Html.Partial("Record2")
+}
